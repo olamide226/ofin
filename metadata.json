@@ -1,0 +1,37 @@
+{
+  "team_id": "TODO-after-devpost-registration",
+  "domain": "corporate_enterprise",
+  "language_scope": ["en", "pcm", "yo", "ha", "ig"],
+  "african_alpha_claim": true,
+  "budget_laptop_claim": true,
+  "submitter": {
+    "name": "Olamide Adebayo",
+    "email": "olamideadebayo2001@gmail.com",
+    "github_handle": "TODO-confirm-handle"
+  },
+  "cross_disciplinary_pairing": {
+    "discipline": "law",
+    "load_bearing": true,
+    "description": "Neuro-symbolic legal assistant: the LLM handles language understanding and cited explanation over Nigerian labour/tenancy/tax statutes, while a deterministic rules engine (PAYE tax bands, severance and notice-period computations encoded from statute) performs all calculations. A deterministic citation verifier checks every legal claim against the local corpus before display. Remove either component and the product breaks."
+  },
+  "test_prompts": [
+    {
+      "prompt_id": "tp_001",
+      "prompt": "PLACEHOLDER — selected strategically in Week 6 per plan"
+    },
+    {
+      "prompt_id": "tp_002",
+      "prompt": "PLACEHOLDER — selected strategically in Week 6 per plan"
+    }
+  ],
+  "model": {
+    "name": "Llama-3.2-3B-Instruct-Q4_K_M",
+    "runtime": "llama.cpp",
+    "quantization": "GGUF Q4_K_M",
+    "parameters_estimate": "3B",
+    "packaging": "binary_bundle"
+  },
+  "_runtime": {
+    "model_path": "model/ofin-model.gguf"
+  }
+}

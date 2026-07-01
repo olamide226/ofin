@@ -1,0 +1,5 @@
+Labour Act, Cap L1 LFN 2004, section 11(2): The notice to be given shall be- (a) one day, where the contract has continued for three months or less; (b) one week, where more than three months but less than two years; (c) two weeks, where two years but less than five years; (d) one month, where five years or more. Section 11(3): Any notice for a period of one week or more shall be in writing.
+
+QUESTION: State the notice periods for terminating an employment contract in Nigeria.
+
+|- CLAIM: The notice periods for terminating an employment contract in Nigeria are as follows: (a) one day for contracts lasting three months or less; (b) one week for contracts exceeding three months but not more than two years; (c) two weeks for contracts between two and five years; (d) one month for contracts lasting five years or more. || CITE: [Labour Act, LFN 2004, s.11(2)]

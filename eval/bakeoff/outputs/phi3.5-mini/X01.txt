@@ -1,0 +1,12 @@
+-\ ```json
+{
+  "computation": "paye",
+  "gross_income": 450000,
+  "income_period": "monthly",
+  "employment_start": "unknown",
+  "employment_years": null,
+  "hours_per_day": null,
+  "days_per_week": null
+}
+```
+Note: The actual PAYE tax calculation would depend on Nigerian tax laws and rates applicable at the time of inquiry, which are not provided in the message. The "employment_start" and "employment_years" fields are set to null as there is no specific start date or duration mentioned. For an accurate tax calculation, these details along with any applicable deductions or tax allowances would be necessary. It is recommended to consult with a tax professional or the relevant tax authority for precise figures.

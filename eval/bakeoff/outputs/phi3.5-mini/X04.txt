@@ -1,0 +1,13 @@
+-\| ```json
+{
+  "computation": "termination_notice",
+  "gross_income": 250000,
+  "income_period": "monthly",
+  "employment_start": "unknown",
+  "employment_years": null,
+  "hours_per_day": null,
+  "days_per_week": null
+}
+```
+
+Note: The provided JSON object focuses on the concern related to the termination notice (potential eviction or the need to find a new place due to unaffordable rent) rather than the computation of paye (tax), overtime, or any other financial computation. The gross income and income period are included as they relate to the user's ability to pay rent. The other fields are marked as null or unknown since the provided information does not specify details about employment start, employment years, hours per day, or days per week.

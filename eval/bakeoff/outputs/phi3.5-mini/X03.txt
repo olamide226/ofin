@@ -1,0 +1,11 @@
+-\|/-\ ```json
+{
+  "computation": "annual",
+  "gross_income": 1200000,
+  "income_period": "annual",
+  "employment_start": null,
+  "employment_years": null,
+  "hours_per_day": 12,
+  "days_per_week": 6
+}
+```

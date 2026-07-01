@@ -1,0 +1,10 @@
+-\ ```json
+{
+  "computation": "termination_notice",
+  "employment_start": "March 2020",
+  "employment_years": null,
+  "hours_per_day": null,
+  "days_per_week": null
+}
+```
+Note: The "gross_income" and "income_period" fields are omitted as the provided information does not include details about the employee's pay or the specific period of income.

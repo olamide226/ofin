@@ -1,0 +1,27 @@
+# Model weights — never committed (ADTC rule: evaluator downloads fresh)
+*.gguf
+model/*
+!model/.gitkeep
+
+# Bake-off / development models
+models-dev/
+
+# Corpus raw downloads (PDFs etc.); cleaned markdown IS committed
+corpus/**/raw/
+
+# Build artifacts
+engine/bin/
+*.db
+*.sqlite
+
+# Profiler outputs
+submission.json
+audit.json
+verdict.json
+
+# Python
+__pycache__/
+.venv/
+
+# OS
+.DS_Store
