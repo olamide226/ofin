@@ -164,7 +164,10 @@ def find_body_start(lines: list[str]) -> int:
             else:
                 break
         runs.append((line_idx, length))
-        i = j if j > i + 1 else i + 1
+        # Advance by ONE, not to the walk's end: a completed walk consumes
+        # later lower-numbered candidates as strays, which would hide a
+        # subsequent legitimate run (e.g. NMW body headings after its TOC).
+        i += 1
     if not runs:
         return candidates[0][0]
     best_len = max(length for _, length in runs)

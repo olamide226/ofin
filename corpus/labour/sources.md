@@ -27,7 +27,7 @@ are only as trustworthy as this table. As-at date: **July 2026**.
 | 2026-07-01 | `labour-act-…md` | **s.80 (Jurisdiction) restored** — missing from community transcription | Official PLAC PDF `raw/labour-act-L1-plac.pdf` p.~2366 |
 | 2026-07-01 | `trade-disputes-act-…md` | **National Industrial Court Rules split out** to `national-industrial-court-rules.md` (subsidiary legislation; its own rule numbering broke section parsing). Note: TDA ss.20–32 repealed by NIC Act 2006 No. 37 — the numbering gap is correct | PLAC PDF itself marks the repeal |
 | 2026-07-01 | `trade-disputes-essential-services-…md` | **ss.1, 2, 7 section numbers reconstructed** (number lines lost in transcription; bodies were bare "(1)…"). Marked inline with HTML comments | ⚠️ Unverified — PLAC has no T9.pdf (404); verify against LFN 2004 print when found |
-| — | `employees-compensation-act-2010.md` | **s.15 missing** from transcription (numbering jumps 14→16) | ⚠️ Open gap — need official ECA gazette to restore |
+| 2026-07-02 | `employees-compensation-act-2010.md` | **ss.5 and 21 number lines missing** from transcription (their text folds into s.4 / s.20 chunks; established after the chunker's body-detection fix — the earlier "s.15 missing" report was an artifact of that bug) | ⚠️ Open gap — need official ECA gazette to restore the number lines |
 
 ## Known corpus gotchas (learned Week 1)
 

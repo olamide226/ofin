@@ -1,5 +1,15 @@
-# Build-time pipeline dependencies (SAC enrichment). The runtime app has no
-# Python dependencies — it is a Go binary + llama.cpp + SQLite.
+# Build-time pipeline dependencies. The runtime app has no Python — it is a
+# Go binary + llama.cpp + SQLite.
+#
+# Setup (one env for ALL pipeline scripts):
+#   /opt/homebrew/bin/python3 -m venv .venv        # brew python: sqlite
+#   .venv/bin/pip install -r pipeline/requirements.txt
+#
+# NOTE: the venv must be created from a Python built with
+# --enable-loadable-sqlite-extensions (Homebrew's is; pyenv's default is NOT)
+# or ingest.py cannot load the sqlite-vec extension.
 litellm>=1.60
 pydantic>=2.7
 python-dotenv>=1.0
+sqlite-vec>=0.1.9
+pytest>=8.0

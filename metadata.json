@@ -1,13 +1,19 @@
 {
-  "team_id": "TODO-after-devpost-registration",
+  "team_id": "team-ruach",
   "domain": "corporate_enterprise",
-  "language_scope": ["en", "pcm", "yo", "ha", "ig"],
+  "language_scope": [
+    "en",
+    "pcm",
+    "yo",
+    "ha",
+    "ig"
+  ],
   "african_alpha_claim": true,
   "budget_laptop_claim": true,
   "submitter": {
     "name": "Olamide Adebayo",
     "email": "olamideadebayo2001@gmail.com",
-    "github_handle": "TODO-confirm-handle"
+    "github_handle": "olamide226"
   },
   "cross_disciplinary_pairing": {
     "discipline": "law",
