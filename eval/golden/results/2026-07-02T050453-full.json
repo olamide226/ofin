@@ -1,0 +1,100 @@
+{
+ "rows": [
+  {
+   "id": "L01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.8,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 11 of the Labour Act 2004, if a contract has continued for a period of two years but less than five years, the notice period is two weeks.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "According to Section 11 of the Labour Act 2004, if a contract has continued for a period of two years but less than five years, the notice period is two weeks.",
+     "similarity": 0.7699365985266685
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.6,
+   "verified": 5,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 54 of the Labour Act 2004, a pregnant employee is entitled to:\n\n1. Leave work six weeks before confinement if medically certified.\n2. Not be permitted to work during the six weeks following her confinement.\n3. Be paid at least 50% of her wages for six months or more during her absence, if she had been continuously employed by her then employer for a period of six months or more immediately prior to her absence.\n4. Nursing breaks, specifically half an hour twice a day during her working hours for nursing her child.\n\n[Labour Act 2004, s.54]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "According to Section 54 of the Labour Act 2004, a pregnant employee is entitled to:",
+     "similarity": 0.746596476889264
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Leave work six weeks before confinement if medically certified",
+     "similarity": 0.8274548512785577
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Not be permitted to work during the six weeks following her confinement",
+     "similarity": 0.8057445307745241
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Be paid at least 50% of her wages for six months or more during her absence, if she had been continuously employed by her then employer for a period of six months or more immediately prior to her absence",
+     "similarity": 0.7514421934704432
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54] [Labour Act 2004, s.54]",
+     "claim": "Nursing breaks, specifically half an hour twice a day during her working hours for nursing her child",
+     "similarity": 0.6638829847142093
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "category": "remedy",
+   "language": "en",
+   "recall": false,
+   "wall_s": 1.5,
+   "verified": 0,
+   "flagged": 1,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13 of the Labour Act 2004, you can take your case directly to the National Industrial Court, or file a formal complaint with the Minister of Labour and Employment. \n\nYou can also demand for compliance with the provisions of the National Minimum Wage Act 2019 with your trade union, and they must file the claim to the National Industrial Court within 30 days from the receipt of your complaint.\n\nAlternatively, you can also file an enforcement notice with an authorized officer, who will serve a notice of enforcement requiring your employer to pay the arrears of the wage to you within 30 days.",
+   "receipts": [
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.13]",
+     "claim": "According to Section 13 of the Labour Act 2004, you can take your case directly to the National Industrial Court, or file a formal complaint with the Minister of Labour and Employment",
+     "reasons": [
+      "weak semantic support (0.58)"
+     ],
+     "similarity": 0.5766422936210704
+    }
+   ]
+  }
+ ],
+ "mode": "full",
+ "timestamp": "2026-07-02T05:04:53",
+ "summary": "Retrieval recall@6: 2/3 = 67%\n  lookup: 2/2\n  remedy: 0/1\nClaims: 7 — verified 6 (86%), flagged 1, failed-after-regen 0\nCitation precision (verified / all shown): 86%\nRegeneration rate: 0/3\nRefusal calibration: 3/3"
+}

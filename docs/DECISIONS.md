@@ -6,6 +6,35 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-009 — Verifier architecture: deterministic layers first (2026-07-02)
+
+**Decision:** The Verified Citation Engine checks each cited claim in three
+layers, ordered by trustworthiness:
+
+1. **Existence** (deterministic): the citation must resolve to a real
+   section via `chunks(act_short, section_id)`. Kills invented citations.
+2. **Quantity consistency** (deterministic): every (value, unit) the model
+   introduced — i.e. not echoed from the user's question — must appear in
+   the cited section. Kills "7 days" cited against a 14-day rule, "21 days
+   leave", wrong wage figures. Question-echoed quantities are exempt: good
+   answers restate the user's situation.
+3. **Semantic support** (statistical, weakest): claim-vs-source bge-small
+   cosine. Calibration (2026-07-02, real pairs): true 0.699-0.822, false
+   0.552-0.628, band-mismap 0.680 — inside the true range. Thresholds
+   pass≥0.66 / flag≥0.55; this layer is only trusted to reject wrong-topic
+   citations.
+
+**Honest limitation (goes in REPORT.md):** a claim that picks the WRONG
+BAND from a graduated table (e.g. "4 years → one month's notice", where
+"one month" genuinely appears in s.11) is invisible to all three layers.
+Mitigation is architectural: the Week-4 intent router sends banded/tenure
+computations to the deterministic rules engine, and the notice bands are in
+its scope from day one.
+
+**Verdicts:** verified / flagged (weak support — shown with warning) /
+failed (unresolvable citation or ungrounded quantity — stripped and
+regenerated once with the correct section injected).
+
 ## ADR-008 — Embeddings: bge-small-en-v1.5 F16, summary-first embedding (2026-07-02)
 
 **Decision:** `bge-small-en-v1.5` (33M params, 384-dim, 64 MB F16 GGUF, via

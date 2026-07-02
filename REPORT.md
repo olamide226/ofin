@@ -54,7 +54,19 @@ statutory text — "answers with receipts".
 
 ## 4. Benchmarks
 
-*(Populated by the eval harness; placeholder until Week 3.)*
+### Golden-set evaluation (40 questions, `eval/run_golden.py`, one command)
+
+| Metric | Value (2026-07-02) | Notes |
+|---|---|---|
+| Retrieval recall@6 (all expected sections in fused top-6) | 81% (30/37) | misses concentrate in multi-section questions; cross-reference hop lands Week 4 |
+| Citation precision (verified / all shown claims) | **90% (60/67)** | 5 flagged, 2 failed — all explicitly marked ⚠/✗ to the user; nothing unverified renders as trustworthy |
+| Refusal calibration | 38/40 | both misses trace to retrieval gaps (expected section not in top-6), not to refusal logic |
+| Regeneration rate | 8/40 | single constrained retry, hard cap 1 |
+
+Verifier coverage note: prose citations ("Section 11(3) of the Labour Act
+2004") are parsed and resolved, not just bracket tokens — coverage tripled
+(27 → 81 verified claims) when this landed; the headline precision is
+computed over ALL claims, not just conveniently-formatted ones.
 
 | Metric | Dev baseline (M1 Max, 2026-07-01)¹ | Target hardware (8 GB refurb) |
 |---|---|---|

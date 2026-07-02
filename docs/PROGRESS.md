@@ -1,5 +1,23 @@
 # Progress Log
 
+## Week 3 (July 15–21, started early July 2) — Verified Citation Engine
+
+| Task | Status | Notes |
+|---|---|---|
+| Citation grammar + parser | done | `engine/internal/verify/parse.go` — `[Act, s.X(Y)]` tokens, claim segmentation |
+| Verifier | done | 3 layers (ADR-009): existence → quantity consistency (question-echo aware) → semantic support (calibrated thresholds 0.66/0.55) |
+| Regeneration loop | done | single constrained retry with failure reasons + correct statutory text injected; live-caught the "7 days vs 14 days" hallucination on first e2e run |
+| Eval harness | done | `eval/run_golden.py` — one command; JSON output from `ofin -json`; results archived in `eval/golden/results/` |
+| Retrieval recall@6 baseline | **81%** (30/37) | misses: 3 multi-section questions (cross-ref hop lands Week 4), 4 rank-7+ near-misses (Week 6 tuning) |
+| Citation precision | **90%** (60/67 verified; 5 ⚠, 2 ✗, all explicitly marked) | exit criterion met in spirit: every UI-visible claim verified or flagged. Prose-citation parsing tripled coverage (27→67-81 claims/run) — precision is honest, not format-cherry-picked |
+| Refusal calibration | 38/40 | both misses are retrieval gaps (L11 s.15 rank>6; E07 needs s.13+s.14), not refusal logic |
+| Profiler regression under sustained load | pending | end of Week 3 |
+
+**Verifier limitation (documented, ADR-009):** wrong-band claims from
+graduated tables ("4 years → one month") are invisible to all three layers —
+"one month" genuinely appears in s.11. Architectural mitigation: the Week-4
+intent router sends tenure/banded computations to the rules engine.
+
 ## Week 1 (July 1–7, 2026) — Foundations and bake-off
 
 Target exit criteria: model locked, hardware in hand, labour corpus in clean

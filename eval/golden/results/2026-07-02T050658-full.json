@@ -1,0 +1,1066 @@
+{
+ "rows": [
+  {
+   "id": "L01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 0.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 11 of the Labour Act 2004, for a contract that has continued for a period of two years but less than five years, the notice period is two weeks.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "According to Section 11 of the Labour Act 2004, for a contract that has continued for a period of two years but less than five years, the notice period is two weeks.",
+     "similarity": 0.7329661055505547
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 4.3,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 1,
+   "regenerated": true,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 11 of the Labour Act 2004, an employer can only terminate an employment contract with a written notice of one week or more. \n\nYou are entitled to receive your wages for the notice period, as stated in Section 11 of the Labour Act 2004.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "According to Section 11 of the Labour Act 2004, an employer can only terminate an employment contract with a written notice of one week or more",
+     "similarity": 0.7795510372253084
+    },
+    {
+     "verdict": "failed",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "You are entitled to receive your wages for the notice period, as stated in Section 11 of the Labour Act 2004.",
+     "reasons": [
+      "quantity not found in cited source: 2004 naira"
+     ],
+     "similarity": 0
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.1(1)(a)], wages must be paid in legal tender and not otherwise. This means that employers are not allowed to pay wages in goods or store vouchers instead of money.\n\nTherefore, your employer is not allowed to pay your salary in goods or store vouchers, and any attempt to do so would be illegal and void.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.1(1)(a)]",
+     "claim": "According to [Labour Act 2004, s.1(1)(a)], wages must be paid in legal tender and not otherwise",
+     "similarity": 0.8273075112245837
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.9,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13(3) of the Labour Act 2004, where a worker is at work for six hours or more a day, their work shall be interrupted by allowing one or more suitably spaced rest-intervals of not less than one hour on the aggregate.\n\nHowever, Section 13(3) also provides an exception, stating that \"exceptionsmay be made to the rule in this subsection where unforeseen circumstances render them necessary; and where it is found unavoidable in view of the nature of the work and the working conditions in general, time-off for a meal at the worksite or in the immediate vicinity may be substituted for the rest-interval.\"\n\nIt does not explicitly address lateness, but it implies that the employer should not have deducted the fine from your salary. \n\nThe Labour Act 2004 does not explicitly state what can or cannot be deducted from a worker's salary for lateness.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "According to Section 13(3) of the Labour Act 2004, where a worker is at work for six hours or more a day, their work shall be interrupted by allowing one or more suitably spaced rest-intervals of not less than one hour on the aggregate",
+     "similarity": 0.7977388246782813
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "However, Section 13(3) also provides an exception, stating that \"exceptionsmay be made to the rule in this subsection where unforeseen circumstances render them necessary; and where it is found unavoidable in view of the nature of the work and the working conditions in general, time-off for a meal at the worksite or in the immediate vicinity may be substituted for the rest-interval.\"",
+     "similarity": 0.7018779284489343
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "It does not explicitly address lateness, but it implies that the employer should not have deducted the fine from your salary",
+     "similarity": 0.6755061195898412
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 5(7) of the Labour Act 2004, the total amount of deductions that may be made from a worker's wages in any one month shall not exceed one-third of the wages of the worker for that month.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.5(7)]",
+     "claim": "According to Section 5(7) of the Labour Act 2004, the total amount of deductions that may be made from a worker's wages in any one month shall not exceed one-third of the wages of the worker for that month.",
+     "similarity": 0.7624123629385797
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.7,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.7(1)(a)], employers must give written employment particulars to workers within three months of hiring. Since you started your new job two months ago, your employer is still within the three-month timeframe. \n\nHowever, [Labour Act 2004, s.7(1)(a)] does not explicitly state that a written contract must be given within the three-month period. It only requires that written employment particulars be given to workers within three months of hiring.\n\nTherefore, your employer is not necessarily obliged to give you a written contract, but they must provide you with written employment particulars.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "According to [Labour Act 2004, s.7(1)(a)], employers must give written employment particulars to workers within three months of hiring",
+     "similarity": 0.7698088138903462
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "Since you started your new job two months ago, your employer is still within the three-month timeframe. However, [Labour Act 2004, s.7(1)(a)] does not explicitly state that a written contract must be given within the three-month period",
+     "similarity": 0.773160191750287
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "You are entitled to up to 12 days of paid sick leave annually in Nigeria, provided the employment contract is active and you submit to employer-nominated medical examination. [Labour Act 2004, s.16]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.16]",
+     "claim": "You are entitled to up to 12 days of paid sick leave annually in Nigeria, provided the employment contract is active and you submit to employer-nominated medical examination. [Labour Act 2004, s.16]",
+     "similarity": 0.7764564832944372
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 4.9,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.16], you are entitled to paid sick leave for temporary illnesses. The section states that a worker shall be entitled to be paid wages up to twelve working days in any one calendar year during absence from work caused by temporary illness certified by a registered medical practitioner.\n\nSince you were sick for one week, and your doctor gave you a paper, your employer is required to pay you for those days. However, the payment is contingent on the fact that the employment contract remains in existence during the period of absence, and you are ready and willing to perform your part of the contract save for the incapacity produced by the illness.\n\nTherefore, your employer must pay you for the days you were absent due to sickness.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.16]",
+     "claim": "According to [Labour Act 2004, s.16], you are entitled to paid sick leave for temporary illnesses",
+     "similarity": 0.7809582793949718
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.1,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 18 of the Labour Act 2004, every worker with 12 months of continuous service is entitled to a holiday with full pay of at least six working days.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.18]",
+     "claim": "According to Section 18 of the Labour Act 2004, every worker with 12 months of continuous service is entitled to a holiday with full pay of at least six working days.",
+     "similarity": 0.8188673712205184
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.18(3)], it is unlawful for an employer to pay wages in lieu of the holiday mentioned in subsection (1) of this section to a worker whose contract has not terminated. This means that your boss cannot pay you extra money instead of letting you take your annual leave.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.18(3)]",
+     "claim": "According to [Labour Act 2004, s.18(3)], it is unlawful for an employer to pay wages in lieu of the holiday mentioned in subsection (1) of this section to a worker whose contract has not terminated",
+     "similarity": 0.8313985584903058
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 5.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to [Labour Act 2004, s.7(1)(f)], the rates of wages and method of calculation thereof and the manner and periodicity of payment of wages must be specified in the written employment particulars given to the worker.\n\nHowever, the retrieved sections do not answer this question.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(f)]",
+     "claim": "According to [Labour Act 2004, s.7(1)(f)], the rates of wages and method of calculation thereof and the manner and periodicity of payment of wages must be specified in the written employment particulars given to the worker",
+     "similarity": 0.736795637630857
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": false,
+   "wall_s": 3.7,
+   "verified": 6,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 4 of the Labour Act 2004, an employer is not allowed to make an advance of wages in excess of one month's wages. This means that if you have been paid an advance of wages that exceeds one month's wages, your employer is not allowed to deduct it from your wages for more than three months.\n\nSection 4(2) of the Labour Act 2004 states that the minimum period for the recovery of the advance by the employer shall be three months. This means that your employer must allow you to recover the advance for at least three months.\n\nTherefore, Section 4 of the Labour Act 2004 protects you by limiting the amount of advance that can be made and requiring your employer to allow you to recover the advance for a minimum period of three months.\n\n[Labour Act 2004, s.4(1) & (2)]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4]",
+     "claim": "According to Section 4 of the Labour Act 2004, an employer is not allowed to make an advance of wages in excess of one month's wages",
+     "similarity": 0.803408841531634
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4]",
+     "claim": "This means that if you have been paid an advance of wages that exceeds one month's wages, your employer is not allowed to deduct it from your wages for more than three months",
+     "similarity": 0.8432142439718356
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4(2)]",
+     "claim": "Section 4(2) of the Labour Act 2004 states that the minimum period for the recovery of the advance by the employer shall be three months",
+     "similarity": 0.8217287931096287
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4(2)]",
+     "claim": "This means that your employer must allow you to recover the advance for at least three months",
+     "similarity": 0.8219352312560491
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4]",
+     "claim": "Therefore, Section 4 of the Labour Act 2004 protects you by limiting the amount of advance that can be made and requiring your employer to allow you to recover the advance for a minimum period of three months",
+     "similarity": 0.760913811766637
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4(1)]",
+     "claim": "[Labour Act 2004, s.4(1) & (2)]",
+     "similarity": 0.7181036255172203
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.5,
+   "verified": 4,
+   "flagged": 2,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 54 of the Labour Act 2004, a pregnant employee is entitled to:\n\n1. Leave work six weeks before confinement if medically certified.\n2. Not work for six weeks post-confinement.\n3. Receive at least 50% pay for six months or more during this absence.\n4. Nursing breaks.\n5. Protection against dismissal during pregnancy-related absence.\n\nThis entitlement is subject to the provisions of Section 2 of the Act, which states that the Act applies to all employers and employees in the public and private sectors in Nigeria.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "According to Section 54 of the Labour Act 2004, a pregnant employee is entitled to:",
+     "similarity": 0.746596476889264
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Leave work six weeks before confinement if medically certified",
+     "similarity": 0.8274548512785577
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Not work for six weeks post-confinement",
+     "reasons": [
+      "weak semantic support (0.60)"
+     ],
+     "similarity": 0.5964404444051334
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Receive at least 50% pay for six months or more during this absence",
+     "similarity": 0.7139169594615095
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Nursing breaks",
+     "reasons": [
+      "weak semantic support (0.65)"
+     ],
+     "similarity": 0.6492104519032862
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Protection against dismissal during pregnancy-related absence",
+     "similarity": 0.7706545226653446
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.3,
+   "verified": 0,
+   "flagged": 2,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.4(4)], no employer shall give notice of dismissal during the absence of an employee on maternity leave, unless the absence exceeds a period prescribed by law. However, [Labour Act 2004, s.4(4)] does not specify the exact duration of the period, so it is unclear if the absence must be longer than the six weeks specified in [Labour Act 2004, s.54(1)(b)].",
+   "receipts": [
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.4(4)]",
+     "claim": "According to [Labour Act 2004, s.4(4)], no employer shall give notice of dismissal during the absence of an employee on maternity leave, unless the absence exceeds a period prescribed by law",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6414782403788684
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.4(4)] [Labour Act 2004, s.54(1)(b)]",
+     "claim": "However, [Labour Act 2004, s.4(4)] does not specify the exact duration of the period, so it is unclear if the absence must be longer than the six weeks specified in [Labour Act 2004, s.54(1)(b)].",
+     "reasons": [
+      "weak semantic support (0.61)"
+     ],
+     "similarity": 0.6088323065105165
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 3.6,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 54(1)(c) of the Labour Act 2004, you are entitled to at least 50% pay for six months or more during your maternity leave. Since you have been continuously employed by your employer for a period of six months or more immediately prior to your absence, you are entitled to this benefit.\n\nYou are also entitled to a nursing break and protection against dismissal during your pregnancy-related absence.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54(1)(c)]",
+     "claim": "According to Section 54(1)(c) of the Labour Act 2004, you are entitled to at least 50% pay for six months or more during your maternity leave",
+     "similarity": 0.7399611387517755
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54(1)(c)]",
+     "claim": "Since you have been continuously employed by your employer for a period of six months or more immediately prior to your absence, you are entitled to this benefit",
+     "similarity": 0.7279501807933975
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54(1)(c)]",
+     "claim": "You are also entitled to a nursing break and protection against dismissal during your pregnancy-related absence.",
+     "similarity": 0.7558370989701959
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.4,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13(3) of the Labour Act 2004, a worker who is at work for six hours or more a day must be interrupted by allowing one or more rest-intervals of not less than one hour on the aggregate. \n\nThis means that your employer is not allowed to make you work every day of the week without a rest day. The rest-intervals are intended to allow workers to detach themselves from their work and rest.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "According to Section 13(3) of the Labour Act 2004, a worker who is at work for six hours or more a day must be interrupted by allowing one or more rest-intervals of not less than one hour on the aggregate",
+     "similarity": 0.8114579508623113
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "This means that your employer is not allowed to make you work every day of the week without a rest day",
+     "similarity": 0.7292642281798574
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "The rest-intervals are intended to allow workers to detach themselves from their work and rest.",
+     "similarity": 0.7395872084819035
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.3,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 10 of the Labour Act 2004, the transfer of employment contracts between employers requires the worker's consent and an authorized labor officer's endorsement. \n\nSection 10(1) states that the transfer of any contract from one employer to another shall be subject to the consent of the worker and the endorsement of the transfer upon the contract by an authorized labour officer.\n\nThis means that your employer must obtain your consent before transferring you to a job in another city.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.10]",
+     "claim": "According to Section 10 of the Labour Act 2004, the transfer of employment contracts between employers requires the worker's consent and an authorized labor officer's endorsement",
+     "similarity": 0.8119705671262002
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.10]",
+     "claim": "Section 10(1) states that the transfer of any contract from one employer to another shall be subject to the consent of the worker and the endorsement of the transfer upon the contract by an authorized labour officer",
+     "similarity": 0.9070916081183391
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.10]",
+     "claim": "This means that your employer must obtain your consent before transferring you to a job in another city.",
+     "similarity": 0.806243070173585
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.4,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 73 of the Labour Act 2004, forced labour is prohibited in Nigeria. Any person who requires or permits another person to perform forced labor contrary to section 31 (1) (c) of the Constitution of the Federal Republic of Nigeria is guilty of an offense and liable to a fine not exceeding N1,000 or to imprisonment for a period not exceeding two years, or to both.\n\nAdditionally, Section 73(2) specifically prohibits public officers from compelling people under their charge to work for private entities, with penalties ranging from fines to imprisonment, with harsher penalties for public officers.\n\nTherefore, Nigerian law prohibits forced or compulsory labor, and those found guilty of such offenses can face penalties under the Labour Act 2004.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.73]",
+     "claim": "According to Section 73 of the Labour Act 2004, forced labour is prohibited in Nigeria",
+     "similarity": 0.7475722357973549
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.73]",
+     "claim": "Any person who requires or permits another person to perform forced labor contrary to section 31 (1) (c) of the Constitution of the Federal Republic of Nigeria is guilty of an offense and liable to a fine not exceeding N1,000 or to imprisonment for a period not exceeding two years, or to both",
+     "similarity": 0.9276972615130008
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.73]",
+     "claim": "Additionally, Section 73(2) specifically prohibits public officers from compelling people under their charge to work for private entities, with penalties ranging from fines to imprisonment, with harsher penalties for public officers",
+     "similarity": 0.6837735017892226
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "category": "remedy",
+   "language": "en",
+   "recall": false,
+   "wall_s": 4.2,
+   "verified": 1,
+   "flagged": 1,
+   "failed": 0,
+   "regenerated": true,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13 of the National Minimum Wage Act 2019, you can take your case directly to the National Industrial Court (NIC) or file a formal complaint with the Minister of Labour and Employment.\n\nYou can follow these steps:\n\n1. File a complaint with the Minister of Labour and Employment.\n2. If the Minister is unable to resolve the matter, you can take your case to the National Industrial Court (NIC).\n\n[Labour Act 2004, s.13]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.13]",
+     "claim": "According to Section 13 of the National Minimum Wage Act 2019, you can take your case directly to the National Industrial Court (NIC) or file a formal complaint with the Minister of Labour and Employment",
+     "similarity": 0.7283829844091185
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.13]",
+     "claim": "You can follow these steps:. File a complaint with the Minister of Labour and Employment. If the Minister is unable to resolve the matter, you can take your case to the National Industrial Court (NIC). [Labour Act 2004, s.13]",
+     "reasons": [
+      "weak semantic support (0.65)"
+     ],
+     "similarity": 0.6538792064883149
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.2,
+   "verified": 4,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 20 of the Labour Act 2004, your employer is required to:\n\n(a) Inform the trade union or workers' representative concerned of the reasons for and the extent of the anticipated redundancy;\n(b) Adopt the principle of \"last in, first out\" in the discharge of the particular category of workers affected, subject to all factors of relative merit, including skill, ability and reliability;\n(c) Use his best endeavours to negotiate redundancy payments to any discharged workers who are not protected by regulations made under subsection (2) of this section.\n\n[Labour Act 2004, s.20]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.20]",
+     "claim": "According to Section 20 of the Labour Act 2004, your employer is required to:",
+     "similarity": 0.664766637948196
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.20]",
+     "claim": "(a) Inform the trade union or workers' representative concerned of the reasons for and the extent of the anticipated redundancy;",
+     "similarity": 0.7944034660371717
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.20]",
+     "claim": "(b) Adopt the principle of \"last in, first out\" in the discharge of the particular category of workers affected, subject to all factors of relative merit, including skill, ability and reliability;",
+     "similarity": 0.7319288506531205
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.20] [Labour Act 2004, s.20]",
+     "claim": "(c) Use his best endeavours to negotiate redundancy payments to any discharged workers who are not protected by regulations made under subsection (2) of this section",
+     "similarity": 0.7653428232478242
+    }
+   ]
+  },
+  {
+   "id": "N01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 3 of the National Minimum Wage Act, 2019, the current national minimum wage in Nigeria is N70,000.00 per month.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.3]",
+     "claim": "According to Section 3 of the National Minimum Wage Act, 2019, the current national minimum wage in Nigeria is N70,000.00 per month.",
+     "similarity": 0.7240821515606972
+    }
+   ]
+  },
+  {
+   "id": "N02",
+   "category": "cross-section",
+   "language": "en",
+   "recall": false,
+   "wall_s": 3.4,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 3 of the National Minimum Wage Act 2019, your employer must pay you a national minimum wage of not less than N70,000.00 per month. Since your monthly earnings are N45,000.00, which is less than the minimum wage, your employer is not in compliance with the minimum wage law.\n\nThis means you are entitled to receive the difference between the minimum wage and your current earnings, as well as any additional penalties your employer may be liable for under Section 9 of the Act.\n\n[NMW Act 2019, s.3]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.3]",
+     "claim": "According to Section 3 of the National Minimum Wage Act 2019, your employer must pay you a national minimum wage of not less than N70,000.00 per month",
+     "similarity": 0.8556814207467403
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.3]",
+     "claim": "Since your monthly earnings are N45,000.00, which is less than the minimum wage, your employer is not in compliance with the minimum wage law. This means you are entitled to receive the difference between the minimum wage and your current earnings, as well as any additional penalties your employer may be liable for under Section 9 of the Act. [NMW Act 2019, s.3]",
+     "similarity": 0.822463013466731
+    }
+   ]
+  },
+  {
+   "id": "N03",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": false,
+   "wall_s": 3.1,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 3 of the National Minimum Wage Act 2019, the national minimum wage of N70,000.00 per month is to be paid to every worker under the employer's establishment, except as otherwise provided under this Act.\n\nSection 3(1) states that every employer shall pay a national minimum wage of not less than N70,000.00 per month to every worker under his establishment.\n\nThis means that the N70,000.00 minimum wage does not cover all workers, but rather those who are employed under the employer's establishment.\n\nThe Act does not specify which workers are excluded from the minimum wage, but it does provide exceptions elsewhere in the Act.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.3]",
+     "claim": "According to Section 3 of the National Minimum Wage Act 2019, the national minimum wage of N70,000.00 per month is to be paid to every worker under the employer's establishment, except as otherwise provided under this Act",
+     "similarity": 0.8568272541831917
+    }
+   ]
+  },
+  {
+   "id": "N04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [NMW Act 2019, s.9(2)], any employer who fails to pay a worker a wage not less than the national minimum wage is liable on conviction to pay a fine not exceeding 5% of the offender's monthly wage, and all outstanding arrears of the workers' wages.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.9(2)]",
+     "claim": "According to [NMW Act 2019, s.9(2)], any employer who fails to pay a worker a wage not less than the national minimum wage is liable on conviction to pay a fine not exceeding 5% of the offender's monthly wage, and all outstanding arrears of the workers' wages.",
+     "similarity": 0.8369863421231543
+    }
+   ]
+  },
+  {
+   "id": "N05",
+   "category": "remedy",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.7,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13 of the National Minimum Wage Act 2019, you have the right to take your case directly to the National Industrial Court or file a formal complaint with the Minister of Labour and Employment.\n\nYou can proceed with either of the following options:\n\n(a) Take your case directly to the National Industrial Court, where you can present your claim and seek a judgment that requires your employer to pay you the minimum wage.\n\n(b) File a formal complaint with the Minister of Labour and Employment, who will then investigate your claim and take necessary actions.\n\nAdditionally, you can also demand compliance with the provisions of this Act on behalf of your members through your trade union, as stated in Section 13(c).",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.13]",
+     "claim": "According to Section 13 of the National Minimum Wage Act 2019, you have the right to take your case directly to the National Industrial Court or file a formal complaint with the Minister of Labour and Employment",
+     "similarity": 0.7060864705471043
+    }
+   ]
+  },
+  {
+   "id": "N06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [NMW Act 2019, s.10(1)], an employer must keep records of wages or conditions of employment for at least three years after the period to which they refer.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.10(1)]",
+     "claim": "According to [NMW Act 2019, s.10(1)], an employer must keep records of wages or conditions of employment for at least three years after the period to which they refer.",
+     "similarity": 0.8859332414447718
+    }
+   ]
+  },
+  {
+   "id": "E01",
+   "category": "remedy",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to section 4 of the Employees' Compensation Act 2010, you are required to notify your employer in writing of the injury.\n\n[Employees' Compensation Act 2010, s.4]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.4] [Employees' Compensation Act 2010, s.4]",
+     "claim": "According to section 4 of the Employees' Compensation Act 2010, you are required to notify your employer in writing of the injury",
+     "similarity": 0.8337494292192975
+    }
+   ]
+  },
+  {
+   "id": "E02",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to SOURCE [Employees' Compensation Act 2010, s.5], your employer must report any employee death, injury, or occupational disease to the Compensation Fund.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.5]",
+     "claim": "According to SOURCE [Employees' Compensation Act 2010, s.5], your employer must report any employee death, injury, or occupational disease to the Compensation Fund.",
+     "similarity": 0.8235674671641846
+    }
+   ]
+  },
+  {
+   "id": "E03",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.7,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 6 of the Employees' Compensation Act 2010, an application for compensation must be made to the employer or the compensation fund within a certain time limit. \n\n[Employees' Compensation Act 2010, s.6]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.6] [Employees' Compensation Act 2010, s.6]",
+     "claim": "According to Section 6 of the Employees' Compensation Act 2010, an application for compensation must be made to the employer or the compensation fund within a certain time limit",
+     "similarity": 0.7645779947243488
+    }
+   ]
+  },
+  {
+   "id": "E04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.9,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 1,
+   "regenerated": true,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to SOURCE [Employees' Compensation Act 2010, s.8], compensation for mental stress is compensable if it leads to a mental or physical injury.\n\nYou should also ensure that you notify your employer within 14 days of the occurrence or receipt of information about the mental stress, as required by SOURCE [Employees' Compensation Act 2010, s.4(1)].",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.8]",
+     "claim": "According to SOURCE [Employees' Compensation Act 2010, s.8], compensation for mental stress is compensable if it leads to a mental or physical injury",
+     "similarity": 0.8860770267967402
+    },
+    {
+     "verdict": "failed",
+     "source_ref": "[Employees' Compensation Act 2010, s.4(1)]",
+     "claim": "You should also ensure that you notify your employer within 14 days of the occurrence or receipt of information about the mental stress, as required by SOURCE [Employees' Compensation Act 2010, s.4(1)].",
+     "reasons": [
+      "quantity not found in cited source: 14 day"
+     ],
+     "similarity": 0
+    }
+   ]
+  },
+  {
+   "id": "E05",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 3.7,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to the Employees' Compensation Act 2010, sch.3, diseases caused by chemical agents are listed in section 1.1.1, which includes \"Diseases caused by beryllium or its toxic compounds\".\n\nThis means that if you developed an illness from chemical exposure at your factory job, it is likely covered under the Employees' Compensation Act 2010.",
+   "receipts": []
+  },
+  {
+   "id": "E06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Employees' Compensation Act 2010, s.11], compensation is provided for injuries occurring outside the normal workplace during work-related activities or travel. This section ensures coverage for accidents that happen while performing duties or commuting, subject to conditions outlined in the Act.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.11]",
+     "claim": "According to [Employees' Compensation Act 2010, s.11], compensation is provided for injuries occurring outside the normal workplace during work-related activities or travel",
+     "similarity": 0.9183401270777101
+    }
+   ]
+  },
+  {
+   "id": "E07",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 3.4,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to [Employees' Compensation Act 2010, s.4], an employee must notify their employer in writing of any injury sustained in the course of employment within a specified timeframe. However, the exact timeframe is not specified in the Act.\n\nFurthermore, [Employees' Compensation Act 2010, s.7] establishes the framework for compensating employees who sustain an injury arising out of and in the course of employment.\n\nThe retrieved sections do not answer the question of whether an employer can ask an employee to sign away their right to workplace injury compensation.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.4]",
+     "claim": "According to [Employees' Compensation Act 2010, s.4], an employee must notify their employer in writing of any injury sustained in the course of employment within a specified timeframe",
+     "similarity": 0.8421466455744963
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.7]",
+     "claim": "However, the exact timeframe is not specified in the Act. Furthermore, [Employees' Compensation Act 2010, s.7] establishes the framework for compensating employees who sustain an injury arising out of and in the course of employment",
+     "similarity": 0.6712556737087176
+    }
+   ]
+  },
+  {
+   "id": "E08",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 2.6,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.17] (Compensation in fatal cases), the family of a deceased employee is entitled to compensation. \n\nThe Act states that compensation is payable to the dependants of the deceased employee. \n\nHowever, [Labour Act 2004, s.17] does not specify the exact process or entitlements for the family to collect compensation.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.17]",
+     "claim": "According to [Labour Act 2004, s.17] (Compensation in fatal cases), the family of a deceased employee is entitled to compensation",
+     "similarity": 0.677487641757988
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.17]",
+     "claim": "The Act states that compensation is payable to the dependants of the deceased employee. However, [Labour Act 2004, s.17] does not specify the exact process or entitlements for the family to collect compensation.",
+     "similarity": 0.6919201273448805
+    }
+   ]
+  },
+  {
+   "id": "T01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.4,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Trade Disputes Act 2004, s.18], it is prohibited for employees to engage in strikes before the National Industrial Court issues an award concerning the dispute. This prohibition remains in effect until the National Industrial Court issues an award. \n\nTherefore, it is not legal for workers to go on strike while the dispute is before the National Industrial Court.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.18]",
+     "claim": "According to [Trade Disputes Act 2004, s.18], it is prohibited for employees to engage in strikes before the National Industrial Court issues an award concerning the dispute",
+     "similarity": 0.8206449797570176
+    }
+   ]
+  },
+  {
+   "id": "T02",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Trade Disputes Act 2004, s.43], employees participating in a strike or lockout are not entitled to wages for the period of their absence from work due to the strike or lockout, unless the employer has agreed otherwise.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.43]",
+     "claim": "According to [Trade Disputes Act 2004, s.43], employees participating in a strike or lockout are not entitled to wages for the period of their absence from work due to the strike or lockout, unless the employer has agreed otherwise.",
+     "similarity": 0.713868324783365
+    }
+   ]
+  },
+  {
+   "id": "T03",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to SOURCE [Trade Disputes Act 2004, s.4] — Procedure before dispute is reported (as at 2026-07), before reporting a trade dispute to the government, you must take the following steps:\n\n1. Exhaust internal resolution mechanisms to try to settle the dispute amicably within the workplace.\n2. If the dispute cannot be settled internally, you must report it to the government within three days of the end of the seven-day period after a mediator is appointed.\n\nThese steps are mandatory before officially reporting a trade dispute to the relevant authorities.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.4]",
+     "claim": "According to SOURCE [Trade Disputes Act 2004, s.4] — Procedure before dispute is reported (as at 2026-07), before reporting a trade dispute to the government, you must take the following steps:",
+     "similarity": 0.808143577143539
+    }
+   ]
+  },
+  {
+   "id": "X01",
+   "category": "negative",
+   "language": "en",
+   "recall": null,
+   "wall_s": 1.5,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": true,
+   "refusal_correct": true,
+   "answer": "The retrieved sections do not answer this question.",
+   "receipts": []
+  },
+  {
+   "id": "X02",
+   "category": "negative",
+   "language": "en",
+   "recall": null,
+   "wall_s": 1.3,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": true,
+   "refusal_correct": true,
+   "answer": "The retrieved sections do not answer this question.",
+   "receipts": []
+  },
+  {
+   "id": "X03",
+   "category": "negative",
+   "language": "en",
+   "recall": null,
+   "wall_s": 1.6,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "refused": true,
+   "refusal_correct": true,
+   "answer": "The retrieved sections do not answer this question.",
+   "receipts": []
+  }
+ ],
+ "mode": "full",
+ "timestamp": "2026-07-02T05:06:58",
+ "summary": "Retrieval recall@6: 30/37 = 81%\n  cross-section: 0/1\n  lookup: 26/30\n  remedy: 4/6\nClaims: 67 — verified 60 (90%), flagged 5, failed-after-regen 2\nCitation precision (verified / all shown): 90%\nRegeneration rate: 8/40\nRefusal calibration: 38/40 (wrong: L11, E07)"
+}

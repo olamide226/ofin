@@ -45,7 +45,8 @@ func (c *Chunk) Citation() string {
 }
 
 type Store struct {
-	db *sql.DB
+	db       *sql.DB
+	actNames map[string]string // normalized name -> act_short, lazily built
 }
 
 func Open(path string) (*Store, error) {
@@ -179,6 +180,57 @@ func (s *Store) chunkByID(id int64) (*Chunk, error) {
 	}
 	_ = json.Unmarshal([]byte(crossRefs), &c.CrossRefs)
 	return &c, nil
+}
+
+var actNormRe = regexp.MustCompile(`[^a-z0-9 ]`)
+
+func normalizeActName(s string) string {
+	s = strings.ToLower(s)
+	s = actNormRe.ReplaceAllString(s, " ")
+	fields := strings.Fields(s)
+	out := fields[:0]
+	for _, f := range fields {
+		if f != "the" {
+			out = append(out, f)
+		}
+	}
+	return strings.Join(out, " ")
+}
+
+// ResolveAct maps a prose act name from model output to the canonical
+// act_short used in the corpus. Matching is normalized containment in
+// either direction against both the short name and the formal source name
+// ("National Minimum Wage Act, 2019" matches source "National Minimum Wage
+// Act 2019 (as amended 2024)" -> "NMW Act 2019").
+func (s *Store) ResolveAct(raw string) (string, bool) {
+	if s.actNames == nil {
+		rows, err := s.db.Query(`SELECT DISTINCT act_short, source FROM chunks`)
+		if err != nil {
+			return "", false
+		}
+		defer rows.Close()
+		s.actNames = map[string]string{}
+		for rows.Next() {
+			var short, source string
+			if rows.Scan(&short, &source) == nil {
+				s.actNames[normalizeActName(short)] = short
+				s.actNames[normalizeActName(source)] = short
+			}
+		}
+	}
+	cand := normalizeActName(raw)
+	if cand == "" {
+		return "", false
+	}
+	if short, ok := s.actNames[cand]; ok {
+		return short, true
+	}
+	for norm, short := range s.actNames {
+		if strings.Contains(norm, cand) || strings.Contains(cand, norm) {
+			return short, true
+		}
+	}
+	return "", false
 }
 
 // SectionText returns the full text of a cited section — the verifier's

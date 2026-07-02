@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"ofin/internal/retrieve"
+	"ofin/internal/verify"
 )
 
 const SystemPrompt = `You are Òfin, a Nigerian legal information assistant. Follow these rules strictly:
@@ -47,5 +48,31 @@ func BuildUserMessage(question string, chunks []retrieve.Chunk) string {
 		fmt.Fprintf(&b, "SOURCE %s%s%s (as at %s):\n%s%s\n\n", c.Citation(), title, jur, c.AsAt, summary, text)
 	}
 	fmt.Fprintf(&b, "QUESTION: %s", question)
+	return b.String()
+}
+
+// BuildCorrectionMessage constructs the single-retry regeneration prompt:
+// name each failed claim with the verifier's reason and inject the correct
+// statutory text, then demand a rewrite without the unsupported claims.
+func BuildCorrectionMessage(failed []verify.Result) string {
+	var b strings.Builder
+	b.WriteString("VERIFICATION FAILED for these claims in your answer:\n\n")
+	for i, r := range failed {
+		fmt.Fprintf(&b, "%d. CLAIM: %s\n", i+1, r.Claim.Text)
+		for _, reason := range r.Reasons {
+			fmt.Fprintf(&b, "   PROBLEM: %s\n", reason)
+		}
+		if r.SourceText != "" {
+			text := r.SourceText
+			if len(text) > 2500 {
+				text = text[:2500] + " …"
+			}
+			fmt.Fprintf(&b, "   ACTUAL TEXT OF %s:\n   %s\n", r.SourceRef, text)
+		}
+		b.WriteString("\n")
+	}
+	b.WriteString("Rewrite your complete answer. Keep only claims the statutory text " +
+		"above and the original SOURCES support, with the same citation format. " +
+		"If the sources do not answer part of the question, say so instead of guessing.")
 	return b.String()
 }

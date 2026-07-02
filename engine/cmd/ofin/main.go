@@ -8,6 +8,7 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"fmt"
 	"os"
@@ -17,6 +18,7 @@ import (
 	"ofin/internal/answer"
 	"ofin/internal/llama"
 	"ofin/internal/retrieve"
+	"ofin/internal/verify"
 )
 
 const (
@@ -44,6 +46,7 @@ func main() {
 	dbPath := flag.String("db", filepath.Join(root, "data/ofin.db"), "retrieval database")
 	embedModel := flag.String("embed-model", filepath.Join(root, "models-dev/bge-small-en-v1.5-f16.gguf"), "embedding GGUF")
 	chatModel := flag.String("chat-model", filepath.Join(root, "models-dev/Llama-3.2-3B-Instruct-Q4_K_M.gguf"), "chat GGUF")
+	jsonOut := flag.Bool("json", false, "machine-readable JSON output (for the eval harness)")
 	flag.Parse()
 
 	args := flag.Args()
@@ -88,16 +91,22 @@ func main() {
 	}
 	retrievalMs := time.Since(t0).Milliseconds()
 
-	fmt.Fprintf(os.Stderr, "— retrieved %d sections in %dms:\n", len(chunks), retrievalMs)
-	for _, c := range chunks {
-		title := ""
-		if c.SectionTitle.Valid {
-			title = " — " + c.SectionTitle.String
+	if !*jsonOut {
+		fmt.Fprintf(os.Stderr, "— retrieved %d sections in %dms:\n", len(chunks), retrievalMs)
+		for _, c := range chunks {
+			title := ""
+			if c.SectionTitle.Valid {
+				title = " — " + c.SectionTitle.String
+			}
+			fmt.Fprintf(os.Stderr, "  %.4f  %s%s\n", c.Score, c.Citation(), title)
 		}
-		fmt.Fprintf(os.Stderr, "  %.4f  %s%s\n", c.Score, c.Citation(), title)
 	}
 
 	if cmd == "retrieve" {
+		if *jsonOut {
+			emitJSON(jsonReport{Question: question, RetrievalMs: retrievalMs,
+				Retrieved: jsonChunks(chunks)})
+		}
 		return
 	}
 
@@ -111,16 +120,145 @@ func main() {
 		{Role: "system", Content: answer.SystemPrompt},
 		{Role: "user", Content: answer.BuildUserMessage(question, chunks)},
 	}
+	stream := func(tok string) {
+		if !*jsonOut {
+			fmt.Print(tok)
+		}
+	}
 	fmt.Fprintln(os.Stderr, "—")
 	t1 := time.Now()
-	full, err := chat.ChatStream(messages, maxTokens, temp, func(tok string) {
-		fmt.Print(tok)
-	})
+	full, err := chat.ChatStream(messages, maxTokens, temp, stream)
 	if err != nil {
 		fatal(err)
 	}
-	fmt.Println()
+	if !*jsonOut {
+		fmt.Println()
+	}
 	fmt.Fprintf(os.Stderr, "— %d chars in %.1fs\n", len(full), time.Since(t1).Seconds())
+
+	verifier := &verify.Verifier{Corpus: store, Embed: embed, Resolve: store.ResolveAct}
+	results, uncited := verifier.VerifyAnswer(question, full)
+	regenerated := false
+
+	// One constrained regeneration pass when any claim failed: re-prompt
+	// with the failures spelled out and the correct statutory text injected.
+	if failed := failedResults(results); len(failed) > 0 {
+		regenerated = true
+		fmt.Fprintf(os.Stderr, "— %d claim(s) failed verification; regenerating…\n", len(failed))
+		messages = append(messages,
+			llama.ChatMessage{Role: "assistant", Content: full},
+			llama.ChatMessage{Role: "user", Content: answer.BuildCorrectionMessage(failed)},
+		)
+		if !*jsonOut {
+			fmt.Println("\n--- revised answer ---")
+		}
+		full, err = chat.ChatStream(messages, maxTokens, temp, stream)
+		if err != nil {
+			fatal(err)
+		}
+		if !*jsonOut {
+			fmt.Println()
+		}
+		results, uncited = verifier.VerifyAnswer(question, full)
+	}
+
+	if *jsonOut {
+		emitJSON(jsonReport{
+			Question: question, Answer: full, RetrievalMs: retrievalMs,
+			Regenerated: regenerated, Retrieved: jsonChunks(chunks),
+			Receipts: jsonReceipts(results), Uncited: uncited,
+		})
+		return
+	}
+	printReceipts(results, uncited)
+}
+
+type jsonChunk struct {
+	Act     string  `json:"act"`
+	Section string  `json:"section"`
+	Score   float64 `json:"score"`
+}
+
+type jsonReceipt struct {
+	Verdict    string   `json:"verdict"`
+	SourceRef  string   `json:"source_ref"`
+	Claim      string   `json:"claim"`
+	Reasons    []string `json:"reasons,omitempty"`
+	Similarity float64  `json:"similarity"`
+}
+
+type jsonReport struct {
+	Question    string        `json:"question"`
+	Answer      string        `json:"answer,omitempty"`
+	RetrievalMs int64         `json:"retrieval_ms"`
+	Regenerated bool          `json:"regenerated,omitempty"`
+	Retrieved   []jsonChunk   `json:"retrieved"`
+	Receipts    []jsonReceipt `json:"receipts,omitempty"`
+	Uncited     []string      `json:"uncited,omitempty"`
+}
+
+func jsonChunks(chunks []retrieve.Chunk) []jsonChunk {
+	out := make([]jsonChunk, 0, len(chunks))
+	for _, c := range chunks {
+		out = append(out, jsonChunk{Act: c.ActShort, Section: c.SectionID, Score: c.Score})
+	}
+	return out
+}
+
+func jsonReceipts(results []verify.Result) []jsonReceipt {
+	out := make([]jsonReceipt, 0, len(results))
+	for _, r := range results {
+		out = append(out, jsonReceipt{
+			Verdict: r.Verdict.String(), SourceRef: r.SourceRef,
+			Claim: r.Claim.Text, Reasons: r.Reasons, Similarity: r.Similarity,
+		})
+	}
+	return out
+}
+
+func emitJSON(r jsonReport) {
+	enc := json.NewEncoder(os.Stdout)
+	enc.SetEscapeHTML(false)
+	if err := enc.Encode(r); err != nil {
+		fatal(err)
+	}
+}
+
+func failedResults(results []verify.Result) []verify.Result {
+	var out []verify.Result
+	for _, r := range results {
+		if r.Verdict == verify.Failed {
+			out = append(out, r)
+		}
+	}
+	return out
+}
+
+func printReceipts(results []verify.Result, uncited []string) {
+	fmt.Println("\nRECEIPTS")
+	marks := map[verify.Verdict]string{
+		verify.Verified: "✓", verify.Flagged: "⚠", verify.Failed: "✗",
+	}
+	for _, r := range results {
+		ref := r.SourceRef
+		if ref == "" && len(r.Claim.Citations) > 0 {
+			ref = r.Claim.Citations[0].Raw
+		}
+		fmt.Printf("  %s %s  %s\n", marks[r.Verdict], ref, snippet(r.Claim.Text, 90))
+		for _, reason := range r.Reasons {
+			fmt.Printf("      %s\n", reason)
+		}
+	}
+	for _, u := range uncited {
+		fmt.Printf("  · uncited (general guidance, not verified against statute): %s\n", snippet(u, 90))
+	}
+}
+
+func snippet(s string, n int) string {
+	if len(s) <= n {
+		return s
+	}
+	return s[:n] + "…"
 }
 
 func fatal(err error) {
