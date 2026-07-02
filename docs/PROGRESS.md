@@ -1,5 +1,16 @@
 # Progress Log
 
+## Week 6 (Aug 5–11, started early July 2) — Hardening + polish
+
+| Task | Status | Notes |
+|---|---|---|
+| Web UI revamp (world-class chat experience) | done | Complete `index.html` rewrite: chat thread with multi-turn history, live pipeline timeline (search → understand → write → verify) collapsing to a summary line, source chips that expand to the statutory text, serif answer typography with inline citation chips that jump to their receipt, verification section with ✓/!/✕ pills and expandable receipt cards, deterministic-computation card with band table, light/dark themes, sticky composer with stop button. Still vanilla HTML/CSS/JS in one `go:embed` file (ADR-011 unchanged). Server fixes: `retrieved` SSE event now carries source text (chips can show the law); `computed` event now sends the real `ComputationHTML` table (was sending plain text twice). Browser-tested: PAYE computation, lookup with receipts, citation→receipt jump, dark mode — zero console errors. |
+| UI-exposed corpus polish item | noted | Source panels expose gazette margin-note artifacts in NTA chunk text (e.g. s.58 shows "Act No. 8, 2019" fragments) — display-side cleanup or chunker-side margin stripping to evaluate |
+
+Remaining Week 6 worklist: cross-act hop edges, "18 months" extractor,
+top-N tuning, Pidgin answer toggle, golden set → 90, test_prompts selection,
+evidence pack capture.
+
 ## Week 5 (July 29–Aug 4, started early July 2) — Performance + UX
 
 | Task | Status | Notes |

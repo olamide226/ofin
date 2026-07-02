@@ -71,14 +71,15 @@ func handleAsk(w http.ResponseWriter, a *app.App, question string) {
 
 	em := app.Emitter{
 		Retrieved: func(chunks []retrieve.Chunk, ms int64) {
-			items := make([]app.RetrievedChunk, 0, len(chunks))
+			items := make([]map[string]any, 0, len(chunks))
 			for _, c := range chunks {
 				title := ""
 				if c.SectionTitle.Valid {
 					title = c.SectionTitle.String
 				}
-				items = append(items, app.RetrievedChunk{
-					Act: c.ActShort, Section: c.SectionID, Title: title, Score: c.Score,
+				items = append(items, map[string]any{
+					"act": c.ActShort, "section": c.SectionID, "title": title,
+					"score": c.Score, "text": truncate(c.Text, 4000),
 				})
 			}
 			send(map[string]any{"type": "retrieved", "chunks": items, "ms": ms})
@@ -88,7 +89,7 @@ func handleAsk(w http.ResponseWriter, a *app.App, question string) {
 		},
 		Computed: func(outcome router.Outcome) {
 			send(map[string]any{"type": "computed", "kind": outcome.Kind,
-				"rendered": outcome.Rendered, "html": outcome.Rendered})
+				"rendered": outcome.Rendered, "html": app.ComputationHTML(outcome)})
 		},
 		Token: func(tok string) {
 			send(map[string]any{"type": "token", "text": tok})
@@ -145,6 +146,13 @@ func gzipHandler(next http.Handler) http.Handler {
 		gzw := &gzipResponseWriter{ResponseWriter: w, Writer: gz}
 		next.ServeHTTP(gzw, r)
 	})
+}
+
+func truncate(s string, n int) string {
+	if len(s) <= n {
+		return s
+	}
+	return s[:n]
 }
 
 type gzipResponseWriter struct {

@@ -197,7 +197,7 @@ func (a *App) Ask(question string, em Emitter) (*Report, error) {
 				report.Computation = outcome.Kind
 				report.ComputationJSON = json.RawMessage(outcome.JSON)
 				report.Answer = outcome.Rendered
-				report.ComputationHTML = computationHTML(outcome)
+				report.ComputationHTML = ComputationHTML(outcome)
 				if em.Routed != nil {
 					em.Routed(outcome.Kind, outcome.Summary)
 				}
@@ -280,7 +280,9 @@ func makeReceipts(results []verify.Result) []Receipt {
 	return out
 }
 
-func computationHTML(outcome router.Outcome) string {
+// ComputationHTML renders a computation outcome as an HTML breakdown
+// (PAYE band table, notice card). Used by the JSON report and the web UI.
+func ComputationHTML(outcome router.Outcome) string {
 	switch outcome.Kind {
 	case "paye":
 		return renderPAYETable(outcome)
