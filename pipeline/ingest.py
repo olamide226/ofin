@@ -29,9 +29,10 @@ import sqlite_vec
 
 REPO = Path(__file__).parent.parent
 EMBED_DIM = 384
-# ~450 tokens: keeps header+summary+leading text inside BGE's 512-token window.
-EMBED_MAX_CHARS = 1800
-EMBED_BATCH = 32
+# ~400 tokens: keeps text inside BGE's 512-token window even at the top of the
+# batch. Brew llama.cpp (b9850) crashes on 1800-char texts; 1700 is safe.
+EMBED_MAX_CHARS = 1700
+EMBED_BATCH = 8  # small batches: Homebrew llama.cpp has a firm ub limit
 
 
 def wait_for_server(port: int, timeout_s: int = 60) -> None:
@@ -168,7 +169,7 @@ def main() -> None:
 
     server = subprocess.Popen(
         ["llama-server", "-m", str(args.model), "--embedding",
-         "--port", str(port), "--host", "127.0.0.1", "-c", "512", "-ub", "512"],
+         "--port", str(port), "--host", "127.0.0.1", "-c", "512"],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
     )
     try:

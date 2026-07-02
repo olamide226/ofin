@@ -117,6 +117,12 @@ TAX_ACTS = [
         source="Nigeria Tax Act, 2025 (Act No. 7)",
         citation="Official Gazette No. 117 Vol. 112, 26 June 2025; in force 1 January 2026",
     ),
+    ActConfig(
+        file="corpus/tax/nigeria-tax-administration-act-2025.md",
+        act_short="Nigeria Tax Administration Act 2025",
+        source="Nigeria Tax Administration Act, 2025 (Act No. 5)",
+        citation="Official Gazette No. 117 Vol. 112, 26 June 2025; in force 1 January 2026",
+    ),
 ]
 
 DOMAINS = {"labour": LABOUR_ACTS, "tenancy": TENANCY_ACTS, "tax": TAX_ACTS}
