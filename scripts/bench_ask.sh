@@ -5,9 +5,9 @@
 set -euo pipefail
 
 RUNS=${1:-3}
-DRAFT_FLAG="--no-draft"
+DRAFT_FLAG=""   # draft is off by default (ADR-012)
 if [[ "${2:-}" == "--with-draft" ]]; then
-  DRAFT_FLAG=""
+  DRAFT_FLAG="--draft"
 fi
 
 cd "$(dirname "$0")/.."

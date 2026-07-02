@@ -33,10 +33,13 @@ type Config struct {
 // DefaultConfig returns the config used by the CLI and development.
 func DefaultConfig(root string) Config {
 	return Config{
-		DBPath:      root + "/data/ofin.db",
-		EmbedModel:  root + "/models-dev/bge-small-en-v1.5-f16.gguf",
-		ChatModel:   root + "/models-dev/Llama-3.2-3B-Instruct-Q4_K_M.gguf",
-		DraftModel:  root + "/models-dev/Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+		DBPath:     root + "/data/ofin.db",
+		EmbedModel: root + "/models-dev/bge-small-en-v1.5-f16.gguf",
+		ChatModel:  root + "/models-dev/Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+		// Speculative decoding is OFF by default (ADR-012): the draft GGUF
+		// is not shipped by download_model.sh, and a default path here made
+		// the chat server crash on fresh clones. Opt in with `ofin -draft`.
+		DraftModel:  "",
 		EmbedPort:   8091,
 		ChatPort:    8092,
 		TopN:        6,

@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"os/exec"
 	"strings"
 	"time"
@@ -54,7 +55,13 @@ func (s *Server) EnsureRunning() error {
 		args = append(args, "--embedding", "-c", "512", "-ub", "512")
 	}
 	if s.DraftModel != "" {
-		args = append(args, "--model-draft", s.DraftModel)
+		// A missing draft GGUF must never take the chat server down with it
+		// (llama-server exits at startup if --model-draft doesn't resolve).
+		if _, err := os.Stat(s.DraftModel); err != nil {
+			fmt.Fprintf(os.Stderr, "ofin: draft model %s not found; continuing without speculative decoding\n", s.DraftModel)
+		} else {
+			args = append(args, "--model-draft", s.DraftModel)
+		}
 	}
 	args = append(args, s.ExtraArgs...)
 	cmd := exec.Command("llama-server", args...)

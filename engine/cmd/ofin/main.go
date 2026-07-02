@@ -34,12 +34,14 @@ func repoRoot() string {
 }
 
 func main() {
-	cfg := app.DefaultConfig(repoRoot())
+	root := repoRoot()
+	cfg := app.DefaultConfig(root)
 	flag.StringVar(&cfg.DBPath, "db", cfg.DBPath, "retrieval database")
 	flag.StringVar(&cfg.EmbedModel, "embed-model", cfg.EmbedModel, "embedding GGUF")
 	flag.StringVar(&cfg.ChatModel, "chat-model", cfg.ChatModel, "chat GGUF")
-	noDraft := flag.Bool("no-draft", false, "disable speculative decoding")
+	draft := flag.Bool("draft", false, "enable speculative decoding (demo machines only, ADR-012; needs the 1B draft GGUF in models-dev/)")
 	jsonOut := flag.Bool("json", false, "machine-readable JSON output")
+	port := flag.Int("port", 8090, "web UI port (serve)")
 	flag.Parse()
 
 	args := flag.Args()
@@ -49,8 +51,17 @@ func main() {
 	}
 	cmd := args[0]
 
-	if *noDraft {
-		cfg.DraftModel = ""
+	// Go's flag package stops at the first positional, so `ofin ask -json "q"`
+	// would silently ignore -json. Re-parse whatever followed the subcommand.
+	if len(args) > 1 {
+		if err := flag.CommandLine.Parse(args[1:]); err != nil {
+			os.Exit(2)
+		}
+		args = append([]string{cmd}, flag.Args()...)
+	}
+
+	if *draft {
+		cfg.DraftModel = root + "/models-dev/Llama-3.2-1B-Instruct-Q4_K_M.gguf"
 	}
 	a := app.New(cfg)
 
@@ -61,11 +72,10 @@ func main() {
 	}
 
 	if cmd == "serve" {
-		port := 8090
-		if len(args) > 1 {
-			fmt.Sscanf(args[1], "%d", &port)
+		if len(args) > 1 { // positional port form: ofin serve 8091
+			fmt.Sscanf(args[1], "%d", port)
 		}
-		serve(a, port)
+		serve(a, *port)
 		return
 	}
 
