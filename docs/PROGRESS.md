@@ -9,6 +9,7 @@
 | Rules engine: notice + PAYE | done | `engine/internal/rules`, table-driven tests with hand-computed values; version-stamped |
 | Intent router | done | extraction (bake-off X-format) → rules engine → **deterministic rendering** (ADR-010: model never touches figures) |
 | Week-4 exit criterion | **met** | "how much PAYE on 450k monthly" returns the exact statutory computation with band breakdown (₦63,500/mo, 3 bands) |
+| Integrated golden run (2026-07-02T113658 + gated spot-run) | recall@k **84%** · citation precision **91%** (52/57) · refusal calibration **39/40** · notice/PAYE routed to rules engine, rendered deterministically (ADR-010) | intent gates added after two presence-of-numbers misroutes (L15, N02) — now regression-tested |
 | Tenancy + tax corpora | next session | Lagos Tenancy Law 2011, NTA 2025 text, VAT/CITA key provisions |
 | Golden set → 90 questions | next session | +tenancy/tax/cross-domain/computation questions |
 
