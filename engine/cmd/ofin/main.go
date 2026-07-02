@@ -1,8 +1,9 @@
-// ofin — offline Nigerian legal companion (Week 2 CLI slice).
+// ofin — offline Nigerian legal companion.
 //
-//	ofin ask "question"   retrieve → cited streamed answer (starts servers on demand)
-//	ofin retrieve "q"     show fused retrieval results only (debugging/eval)
-//	ofin stop             stop the background llama-server processes
+//	ofin ask "question"     retrieve → cited streamed answer
+//	ofin retrieve "q"       fused retrieval results only (debugging/eval)
+//	ofin serve [--port N]   local web UI (Week 5)
+//	ofin stop               stop the background llama-server processes
 //
 // Everything runs on 127.0.0.1; zero external network calls at runtime.
 package main
@@ -13,26 +14,16 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"time"
 
-	"ofin/internal/answer"
+	"ofin/internal/app"
 	"ofin/internal/llama"
 	"ofin/internal/retrieve"
 	"ofin/internal/router"
 	"ofin/internal/verify"
-)
-
-const (
-	embedPort = 8091
-	chatPort  = 8092
-	topN      = 6
-	maxTokens = 700
-	temp      = 0.2
+	"ofin/internal/web"
 )
 
 func repoRoot() string {
-	// The binary lives at engine/bin/ofin or runs via `go run ./cmd/ofin`
-	// from engine/ — walk up until we find metadata.json.
 	dir, _ := os.Getwd()
 	for d := dir; d != "/"; d = filepath.Dir(d) {
 		if _, err := os.Stat(filepath.Join(d, "metadata.json")); err == nil {
@@ -43,24 +34,38 @@ func repoRoot() string {
 }
 
 func main() {
-	root := repoRoot()
-	dbPath := flag.String("db", filepath.Join(root, "data/ofin.db"), "retrieval database")
-	embedModel := flag.String("embed-model", filepath.Join(root, "models-dev/bge-small-en-v1.5-f16.gguf"), "embedding GGUF")
-	chatModel := flag.String("chat-model", filepath.Join(root, "models-dev/Llama-3.2-3B-Instruct-Q4_K_M.gguf"), "chat GGUF")
-	jsonOut := flag.Bool("json", false, "machine-readable JSON output (for the eval harness)")
+	cfg := app.DefaultConfig(repoRoot())
+	flag.StringVar(&cfg.DBPath, "db", cfg.DBPath, "retrieval database")
+	flag.StringVar(&cfg.EmbedModel, "embed-model", cfg.EmbedModel, "embedding GGUF")
+	flag.StringVar(&cfg.ChatModel, "chat-model", cfg.ChatModel, "chat GGUF")
+	noDraft := flag.Bool("no-draft", false, "disable speculative decoding")
+	jsonOut := flag.Bool("json", false, "machine-readable JSON output")
 	flag.Parse()
 
 	args := flag.Args()
 	if len(args) < 1 {
-		fmt.Fprintln(os.Stderr, "usage: ofin [flags] ask|retrieve|stop [question]")
+		fmt.Fprintln(os.Stderr, "usage: ofin [flags] ask|retrieve|serve|stop [question]")
 		os.Exit(2)
 	}
 	cmd := args[0]
 
+	if *noDraft {
+		cfg.DraftModel = ""
+	}
+	a := app.New(cfg)
+
 	if cmd == "stop" {
-		_ = llama.Stop(embedPort)
-		_ = llama.Stop(chatPort)
+		a.StopServers()
 		fmt.Println("stopped llama servers")
+		return
+	}
+
+	if cmd == "serve" {
+		port := 8090
+		if len(args) > 1 {
+			fmt.Sscanf(args[1], "%d", &port)
+		}
+		serve(a, port)
 		return
 	}
 
@@ -70,30 +75,31 @@ func main() {
 	}
 	question := args[1]
 
-	embed := &llama.Server{Port: embedPort, ModelPath: *embedModel, Embedding: true}
-	if err := embed.EnsureRunning(); err != nil {
+	if err := a.Embed.EnsureRunning(); err != nil {
 		fatal(err)
 	}
-
-	store, err := retrieve.Open(*dbPath)
+	store, err := retrieve.Open(cfg.DBPath)
 	if err != nil {
 		fatal(err)
 	}
 	defer store.Close()
+	a.Store = store
 
-	t0 := time.Now()
-	vec, err := embed.Embed(llama.QueryPrefix + question)
+	vec, err := a.Embed.Embed(llama.QueryPrefix + question)
 	if err != nil {
-		fatal(fmt.Errorf("embedding query: %w", err))
+		fatal(fmt.Errorf("embedding: %w", err))
 	}
-	chunks, err := store.Search(vec, question, topN)
-	if err != nil {
-		fatal(err)
-	}
-	retrievalMs := time.Since(t0).Milliseconds()
 
-	if !*jsonOut {
-		fmt.Fprintf(os.Stderr, "— retrieved %d sections in %dms:\n", len(chunks), retrievalMs)
+	if cmd == "retrieve" {
+		chunks, err := store.Search(vec, question, cfg.TopN)
+		if err != nil {
+			fatal(err)
+		}
+		if *jsonOut {
+			emitJSON(jsonReport{Question: question, Retrieved: jsonChunks(chunks)})
+			return
+		}
+		fmt.Fprintf(os.Stderr, "— retrieved %d sections\n", len(chunks))
 		for _, c := range chunks {
 			title := ""
 			if c.SectionTitle.Valid {
@@ -101,132 +107,98 @@ func main() {
 			}
 			fmt.Fprintf(os.Stderr, "  %.4f  %s%s\n", c.Score, c.Citation(), title)
 		}
-	}
-
-	if cmd == "retrieve" {
-		if *jsonOut {
-			emitJSON(jsonReport{Question: question, RetrievalMs: retrievalMs,
-				Retrieved: jsonChunks(chunks)})
-		}
 		return
 	}
 
-	chat := &llama.Server{Port: chatPort, ModelPath: *chatModel,
-		ExtraArgs: []string{"-c", "8192"}}
-	if err := chat.EnsureRunning(); err != nil {
+	if err := a.Chat.EnsureRunning(); err != nil {
 		fatal(err)
 	}
 
-	// Intent router: one silent extraction call decides lookup vs
-	// computation. Computation answers render DETERMINISTICALLY — no LLM
-	// ever touches the figures (a 3B model recomputes numbers it was told
-	// to transcribe: observed live inventing ₦35,000 against a computed
-	// ₦63,500). Model-polished phrasing around the numbers is a Week-6
-	// layer; the numbers themselves never pass through the model.
-	if extRaw, err := chat.ChatStream([]llama.ChatMessage{
-		{Role: "system", Content: router.ExtractionPrompt},
-		{Role: "user", Content: question},
-	}, 250, 0, nil); err == nil {
-		if p, err := router.ParseParams(extRaw); err == nil {
-			if outcome, ok := router.Computation(p, question, time.Now()); ok {
-				fmt.Fprintf(os.Stderr, "— routed to computation engine (%s): %s\n",
-					outcome.Kind, outcome.Summary)
-				if *jsonOut {
-					emitJSON(jsonReport{Question: question, RetrievalMs: retrievalMs,
-						Answer: outcome.Rendered, Computation: outcome.Kind,
-						ComputationJSON: json.RawMessage(outcome.JSON),
-						Retrieved:       jsonChunks(chunks)})
-					return
+	em := app.Emitter{
+		Retrieved: func(chunks []retrieve.Chunk, ms int64) {
+			if *jsonOut {
+				return
+			}
+			fmt.Fprintf(os.Stderr, "— retrieved %d sections in %dms:\n", len(chunks), ms)
+			for _, c := range chunks {
+				title := ""
+				if c.SectionTitle.Valid {
+					title = " — " + c.SectionTitle.String
 				}
+				fmt.Fprintf(os.Stderr, "  %.4f  %s%s\n", c.Score, c.Citation(), title)
+			}
+		},
+		Routed: func(kind, summary string) {
+			fmt.Fprintf(os.Stderr, "— routed to computation engine (%s): %s\n", kind, summary)
+		},
+		Computed: func(outcome router.Outcome) {
+			if !*jsonOut {
 				fmt.Println(outcome.Rendered)
 				fmt.Println("\nRECEIPTS")
 				fmt.Println("  ✓ computed deterministically by the rules engine — citations shown inline")
+			}
+		},
+		Token: func(tok string) {
+			if !*jsonOut {
+				fmt.Print(tok)
+			}
+		},
+		AnswerDone: func(text string, wallSec float64) {
+			if !*jsonOut {
+				fmt.Println()
+			}
+			fmt.Fprintf(os.Stderr, "— %d chars in %.1fs\n", len(text), wallSec)
+		},
+		Regenerating: func(failedCount int) {
+			if !*jsonOut {
+				fmt.Fprintf(os.Stderr, "— %d claim(s) failed verification; regenerating…\n", failedCount)
+				fmt.Println("\n--- revised answer ---")
+			}
+		},
+		Receipts: func(results []verify.Result, uncited []string) {
+			if *jsonOut {
 				return
 			}
-		}
+			printReceipts(results, uncited)
+		},
 	}
 
-	messages := []llama.ChatMessage{
-		{Role: "system", Content: answer.SystemPrompt},
-		{Role: "user", Content: answer.BuildUserMessage(question, chunks)},
-	}
-	stream := func(tok string) {
-		if !*jsonOut {
-			fmt.Print(tok)
-		}
-	}
-	fmt.Fprintln(os.Stderr, "—")
-	t1 := time.Now()
-	full, err := chat.ChatStream(messages, maxTokens, temp, stream)
+	report, err := a.Ask(question, em)
 	if err != nil {
 		fatal(err)
 	}
-	if !*jsonOut {
-		fmt.Println()
-	}
-	fmt.Fprintf(os.Stderr, "— %d chars in %.1fs\n", len(full), time.Since(t1).Seconds())
-
-	verifier := &verify.Verifier{Corpus: store, Embed: embed, Resolve: store.ResolveAct}
-	results, uncited := verifier.VerifyAnswer(question, full)
-	regenerated := false
-
-	// One constrained regeneration pass when any claim failed: re-prompt
-	// with the failures spelled out and the correct statutory text injected.
-	if failed := failedResults(results); len(failed) > 0 {
-		regenerated = true
-		fmt.Fprintf(os.Stderr, "— %d claim(s) failed verification; regenerating…\n", len(failed))
-		messages = append(messages,
-			llama.ChatMessage{Role: "assistant", Content: full},
-			llama.ChatMessage{Role: "user", Content: answer.BuildCorrectionMessage(failed)},
-		)
-		if !*jsonOut {
-			fmt.Println("\n--- revised answer ---")
-		}
-		full, err = chat.ChatStream(messages, maxTokens, temp, stream)
-		if err != nil {
-			fatal(err)
-		}
-		if !*jsonOut {
-			fmt.Println()
-		}
-		results, uncited = verifier.VerifyAnswer(question, full)
-	}
+	a.Close()
 
 	if *jsonOut {
 		emitJSON(jsonReport{
-			Question: question, Answer: full, RetrievalMs: retrievalMs,
-			Regenerated: regenerated, Retrieved: jsonChunks(chunks),
-			Receipts: jsonReceipts(results), Uncited: uncited,
+			Question:        report.Question,
+			Answer:          report.Answer,
+			RetrievalMs:     report.RetrievalMs,
+			Regenerated:     report.Regenerated,
+			Computation:     report.Computation,
+			ComputationJSON: report.ComputationJSON,
+			Retrieved:       report.Retrieved,
+			Receipts:        report.Receipts,
+			Uncited:         report.Uncited,
 		})
-		return
 	}
-	printReceipts(results, uncited)
 }
 
-type jsonChunk struct {
-	Act     string  `json:"act"`
-	Section string  `json:"section"`
-	Score   float64 `json:"score"`
-}
+// ---- JSON types (eval-harness contract) ------------------------------------
 
-type jsonReceipt struct {
-	Verdict    string   `json:"verdict"`
-	SourceRef  string   `json:"source_ref"`
-	Claim      string   `json:"claim"`
-	Reasons    []string `json:"reasons,omitempty"`
-	Similarity float64  `json:"similarity"`
-}
+type jsonChunk = app.RetrievedChunk
+type jsonReceipt = app.Receipt
 
 type jsonReport struct {
-	Question        string          `json:"question"`
-	Answer          string          `json:"answer,omitempty"`
-	RetrievalMs     int64           `json:"retrieval_ms"`
-	Regenerated     bool            `json:"regenerated,omitempty"`
-	Computation     string          `json:"computation,omitempty"`
-	ComputationJSON json.RawMessage `json:"computation_result,omitempty"`
-	Retrieved       []jsonChunk     `json:"retrieved"`
-	Receipts        []jsonReceipt   `json:"receipts,omitempty"`
-	Uncited         []string        `json:"uncited,omitempty"`
+	Question        string            `json:"question"`
+	Answer          string            `json:"answer,omitempty"`
+	RetrievalMs     int64             `json:"retrieval_ms"`
+	Regenerated     bool              `json:"regenerated,omitempty"`
+	Computation     string            `json:"computation,omitempty"`
+	ComputationJSON json.RawMessage   `json:"computation_result,omitempty"`
+	Retrieved       []jsonChunk       `json:"retrieved"`
+	Receipts        []jsonReceipt     `json:"receipts,omitempty"`
+	Uncited         []string          `json:"uncited,omitempty"`
 }
 
 func jsonChunks(chunks []retrieve.Chunk) []jsonChunk {
@@ -248,23 +220,13 @@ func jsonReceipts(results []verify.Result) []jsonReceipt {
 	return out
 }
 
-func emitJSON(r jsonReport) {
+func emitJSON(v any) {
 	enc := json.NewEncoder(os.Stdout)
 	enc.SetEscapeHTML(false)
-	if err := enc.Encode(r); err != nil {
-		fatal(err)
-	}
+	_ = enc.Encode(v)
 }
 
-func failedResults(results []verify.Result) []verify.Result {
-	var out []verify.Result
-	for _, r := range results {
-		if r.Verdict == verify.Failed {
-			out = append(out, r)
-		}
-	}
-	return out
-}
+// ---- CLI receipts output ---------------------------------------------------
 
 func printReceipts(results []verify.Result, uncited []string) {
 	fmt.Println("\nRECEIPTS")
@@ -296,4 +258,12 @@ func snippet(s string, n int) string {
 func fatal(err error) {
 	fmt.Fprintln(os.Stderr, "ofin:", err)
 	os.Exit(1)
+}
+
+// ---- serve stub (replaced by web package in the next step) -----------------
+
+func serve(a *app.App, port int) {
+	if err := web.Serve(port, a); err != nil {
+		fatal(err)
+	}
 }

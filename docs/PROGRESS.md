@@ -1,5 +1,34 @@
 # Progress Log
 
+## Week 5 (July 29–Aug 4, started early July 2) — Performance + UX
+
+| Task | Status | Notes |
+|---|---|---|
+| App extraction | done | `engine/internal/app` — `App.Ask` with typed Emitter callbacks; CLI is a thin adapter; web UI is a symmetrical consumer |
+| Web UI (`ofin serve`) | done | `engine/internal/web` — single `go:embed` HTML file, vanilla HTML/CSS/JS, no build toolchain (ADR-011); SSE `/api/ask`; retrieval preview, streaming tokens, expandable receipt cards, computation tables |
+| Prompt diet | done | SystemPrompt -30%; hop-companion sources trimmed to 800 chars (fused stay at 3000); context halved to 4096 |
+| KV-cache quantization | done | `-ctk q8_0 -ctv q8_0` for the chat server |
+| Speculative decoding | rejected (ADR-012) | Llama 3.2 1B draft added ~1.6 GB peak RSS (5.3 GB total); off by default; `--draft` opt-in for demo machines |
+| Diet evaluation | **passed** | recall 76% (=baseline), precision 78% (−1pt, within guard). Claims shown 148 (−14; less noise), failed 4 (−2); refusal improved 65 (+4). Diet is safe. |
+
+### Benchmark snapshot (2026-07-02, M1 Max 64 GB — dev-only per ADR-002)
+
+| Config | Chat RSS | Embed RSS | Total stack | Context | KV cache |
+|---|---|---|---|---|---|
+| Post-diet, no draft | ~3.7 GB | ~181 MB | ~3.9 GB | 6144 | q8_0 |
+| With 1B draft | ~5.3 GB | ~181 MB | ~5.5 GB | 6144 | q8_0 (×2) |
+
+Draft rejected for target ship (ADR-012). The diet numbers (recall/precision)
+are the new baseline for Week 6 hardening.
+
+### Remaining Week 5 items
+
+- [ ] VM certification run — blocked on Ola provisioning (`docs/VM_CERTIFICATION.md` ready)
+- [ ] `ofin serve` screenshot capture for docs
+- [ ] Prompt budget final: the 148 claims figure suggests further trimming the number of retrieved sources could help (fewer, more targeted chunks → fewer uncited claims → less prefill) — evaluate in Week 6 
+
+## Week 4 (July 22–28, started early July 2) — Rules engine + router
+
 ## Week 4 (July 22–28, started early July 2) — Rules engine + router
 
 | Task | Status | Notes |

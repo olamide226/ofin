@@ -19,10 +19,11 @@ import (
 const QueryPrefix = "Represent this sentence for searching relevant passages: "
 
 type Server struct {
-	Port      int
-	ModelPath string
-	Embedding bool
-	ExtraArgs []string
+	Port       int
+	ModelPath  string
+	DraftModel string // optional: speculative decoding draft GGUF
+	Embedding  bool
+	ExtraArgs  []string
 }
 
 func (s *Server) baseURL() string { return fmt.Sprintf("http://127.0.0.1:%d", s.Port) }
@@ -51,6 +52,9 @@ func (s *Server) EnsureRunning() error {
 	}
 	if s.Embedding {
 		args = append(args, "--embedding", "-c", "512", "-ub", "512")
+	}
+	if s.DraftModel != "" {
+		args = append(args, "--model-draft", s.DraftModel)
 	}
 	args = append(args, s.ExtraArgs...)
 	cmd := exec.Command("llama-server", args...)

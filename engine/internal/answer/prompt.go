@@ -1,6 +1,4 @@
 // Package answer builds the citation-enforcing prompt from retrieved chunks.
-// The format follows the Week-1 bake-off grounded questions (eval/bakeoff/),
-// which Llama 3.2 3B handled well at temp 0.2.
 package answer
 
 import (
@@ -11,24 +9,29 @@ import (
 	"ofin/internal/verify"
 )
 
-const SystemPrompt = `You are Òfin, a Nigerian legal information assistant. Follow these rules strictly:
-1. Answer ONLY from the provided statute text. Never use outside knowledge.
-2. Every legal claim must end with a citation in the exact format [Act name, s.X] or [Act name, s.X(Y)], matching the SOURCE labels.
-3. Answer whatever the sources DO establish, even partially. "What can I do?" means: explain the rights and entitlements the provided sections give the user in their situation. Only if NOTHING in the sources bears on the question, say: "The retrieved sections do not answer this question." Never guess beyond the sources.
-4. If a source is state law (jurisdiction noted), say which state it applies to.
-5. Users may ask in English or Nigerian Pidgin. Understand both; reply in the language the user used. A Pidgin question about being sacked ("dem sack me") is a question about termination of employment.
+// SystemPrompt is the citation-enforcing system instruction. Week 5 diet
+// trimmed it ~30% without losing any of the six behavioral rules.
+const SystemPrompt = `You are Òfin, a Nigerian legal information assistant.
+1. Answer ONLY from the provided statutory SOURCES. Never use outside knowledge.
+2. Every legal claim must end with a citation in the exact format [Act, s.X] or [Act, s.X(Y)], matching SOURCE labels.
+3. Answer what the sources DO establish. "What can I do?" means: explain rights and remedies the sources give the user in their situation. If NOTHING in the sources bears on the question, say so — do not guess.
+4. If a source is state law (jurisdiction noted in the label), state which state it applies to.
+5. Users may write in English or Nigerian Pidgin. Reply in the language they used.
 6. Be concise and practical. You provide legal information, not legal advice.`
 
-// Per-source cap protects prefill latency. 3000 keeps a full Labour Act
-// s.11 (incl. the payment-in-lieu subsection) intact; Week 5's prompt diet
-// revisits this against target-hardware prefill numbers.
-const maxChunkChars = 3000
+const (
+	fullChunkChars  = 3000 // per-source cap for fused-rank sources
+	hopChunkChars   = 800  // per-source cap for cross-ref hop companions
+)
 
-// BuildUserMessage assembles the SOURCES + QUESTION message.
-func BuildUserMessage(question string, chunks []retrieve.Chunk) string {
+// BuildUserMessage assembles SOURCES + QUESTION. The first topN fused-rank
+// sources get full text; remaining sources (cross-ref hop companions) get
+// summary + truncated text — they are supplementary context, and cutting
+// them protects prefill latency on the 8 GB target.
+func BuildUserMessage(question string, chunks []retrieve.Chunk, topN int) string {
 	var b strings.Builder
 	b.WriteString("SOURCES:\n\n")
-	for _, c := range chunks {
+	for i, c := range chunks {
 		title := ""
 		if c.SectionTitle.Valid && c.SectionTitle.String != "" {
 			title = " — " + c.SectionTitle.String
@@ -37,23 +40,32 @@ func BuildUserMessage(question string, chunks []retrieve.Chunk) string {
 		if c.Jurisdiction != "federal" {
 			jur = fmt.Sprintf(" (jurisdiction: %s)", c.Jurisdiction)
 		}
+		isHop := i >= topN
+		cap := fullChunkChars
+		if isHop {
+			cap = hopChunkChars
+		}
 		text := c.Text
-		if len(text) > maxChunkChars {
-			text = text[:maxChunkChars] + " …"
+		if len(text) > cap {
+			text = text[:cap] + " …"
 		}
 		summary := ""
 		if c.Summary != "" {
 			summary = "Summary: " + c.Summary + "\n"
 		}
-		fmt.Fprintf(&b, "SOURCE %s%s%s (as at %s):\n%s%s\n\n", c.Citation(), title, jur, c.AsAt, summary, text)
+		if isHop {
+			fmt.Fprintf(&b, "SOURCE %s%s%s (as at %s, see also):\n%s%s\n\n",
+				c.Citation(), title, jur, c.AsAt, summary, text)
+		} else {
+			fmt.Fprintf(&b, "SOURCE %s%s%s (as at %s):\n%s%s\n\n",
+				c.Citation(), title, jur, c.AsAt, summary, text)
+		}
 	}
 	fmt.Fprintf(&b, "QUESTION: %s", question)
 	return b.String()
 }
 
-// BuildCorrectionMessage constructs the single-retry regeneration prompt:
-// name each failed claim with the verifier's reason and inject the correct
-// statutory text, then demand a rewrite without the unsupported claims.
+// BuildCorrectionMessage constructs the single-retry regeneration prompt.
 func BuildCorrectionMessage(failed []verify.Result) string {
 	var b strings.Builder
 	b.WriteString("VERIFICATION FAILED for these claims in your answer:\n\n")

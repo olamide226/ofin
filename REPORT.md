@@ -54,31 +54,39 @@ statutory text — "answers with receipts".
 
 ## 4. Benchmarks
 
-### Golden-set evaluation (40 questions, `eval/run_golden.py`, one command)
+### Single-domain baseline (39 labour, Week 3)
+
+| Metric | Value | Notes |
+|---|---|---|
+| Retrieval recall@6 | 84% (31/37) | cross-ref hop raised from 81% |
+| Citation precision | 91% (52/57) | all claims ✓/⚠/✗-marked |
+
+### Three-domain baseline (68 questions, Week 4–5 with prompt diet)
 
 | Metric | Value (2026-07-02) | Notes |
 |---|---|---|
-| Retrieval recall@6 (all expected sections in fused top-6) | 81% (30/37) | misses concentrate in multi-section questions; cross-reference hop lands Week 4 |
-| Citation precision (verified / all shown claims) | **90% (60/67)** | 5 flagged, 2 failed — all explicitly marked ⚠/✗ to the user; nothing unverified renders as trustworthy |
-| Refusal calibration | 38/40 | both misses trace to retrieval gaps (expected section not in top-6), not to refusal logic |
-| Regeneration rate | 8/40 | single constrained retry, hard cap 1 |
+| Retrieval recall@6 | **76%** (45/59) | cross-domain 1/5; cross-act edges Week 6 |
+| Citation precision | **78%** (116/148) | 28 flagged, 4 failed |
+| Computed answers | 7 routed | PAYE, notice — verified by construction |
+| Refusal calibration | **65/68** | out-of-scope correctly refused |
+| Regeneration rate | 10/68 | single constrained retry, hard cap 1 |
+| Prompt diet | recall unchanged, precision −1pt | SystemPrompt −30%, companions 800 chars, ctx 6144 |
 
 Verifier coverage note: prose citations ("Section 11(3) of the Labour Act
 2004") are parsed and resolved, not just bracket tokens — coverage tripled
 (27 → 81 verified claims) when this landed; the headline precision is
 computed over ALL claims, not just conveniently-formatted ones.
 
-| Metric | Dev baseline (M1 Max, 2026-07-01)¹ | Target hardware (8 GB refurb) |
-|---|---|---|
-| Generation TPS | 55.4 | TBD |
-| First-token latency (512-tok prompt) | 902 ms | TBD |
-| Peak RSS | 2,107 MB | TBD |
-| Citation precision (golden set) | — | TBD |
-| Thermal (15-min sustained) | not throttled (not meaningful on dev machine) | TBD |
+### Dev machine baseline (M1 Max, 2026-07-02 — dev-only per ADR-002)
 
-Raw profiler output (locked model, Llama 3.2 3B Instruct Q4_K_M):
-`docs/benchmarks/2026-07-01-dev-baseline-llama3.2-3b-q4km-LOCKED.json`.
-Pre-lock Qwen baseline kept alongside for comparison.
+| Metric | Value |
+|---|---|
+| Generation TPS (llama-bench, 512 prompt) | 50.1 |
+| First-token latency | 910 ms |
+| Peak RSS (model only) | 2,111 MB |
+| Application stack RSS (chat+embed servers) | ~3.9 GB |
+| KV cache config | q8_0, 6144 ctx |
+| Speculative decoding | rejected (ADR-012: +1.6 GB RSS) |
 
 ¹ Dev-machine numbers are for regression tracking only and are not claimed as
 target-hardware performance.

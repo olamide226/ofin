@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Òfin — offline Nigerian legal companion</title>
+<style>
+:root{--bg:#1a1a2e;--surface:#16213e;--border:#0f3460;--text:#e0e0e0;
+       --accent:#e94560;--ok:#2ecc71;--warn:#f39c12;--fail:#e74c3c;
+       --muted:#8892a4;--radius:8px;font-size:16px}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);
+     color:var(--text);line-height:1.6;max-width:820px;margin:0 auto;padding:16px}
+header{border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:20px}
+header h1{font-size:1.4rem;color:var(--accent)}header p{color:var(--muted);font-size:.85rem}
+.input-box{display:flex;gap:8px;margin-bottom:16px}
+.input-box input{flex:1;padding:10px 14px;border-radius:var(--radius);
+  background:var(--surface);border:1px solid var(--border);color:var(--text);
+  font-size:1rem}
+.input-box input:focus{outline:none;border-color:var(--accent)}
+.input-box button{padding:10px 18px;border:none;border-radius:var(--radius);
+  background:var(--accent);color:white;font-weight:600;cursor:pointer}
+#spinner{display:none;margin:8px 0;color:var(--muted);font-size:.85rem}
+/* retrieval preview (appears immediately) */
+#preview{margin-bottom:12px}
+.chip{display:inline-block;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:2px 8px;margin:2px 3px 2px 0;font-size:.8rem}
+.chip .score{color:var(--muted)}
+/* streaming answer */
+#answer{padding:16px;background:var(--surface);border-radius:var(--radius);
+  border:1px solid var(--border);min-height:40px;white-space:pre-wrap;
+  word-wrap:break-word;margin-bottom:12px;font-size:.95rem}
+#answer:empty{display:none}
+/* computation block */
+.computation{margin-bottom:12px;padding:14px;background:var(--surface);
+  border-radius:var(--radius);border:1px solid var(--border)}
+.computation .outcome{font-size:1.05rem;margin-bottom:8px}
+.computation table{width:100%;border-collapse:collapse;font-size:.85rem}
+.computation th,.computation td{padding:6px 10px;text-align:left;border-bottom:1px solid var(--border)}
+.computation .num{text-align:right;font-variant-numeric:tabular-nums}
+.computation .basis,.computation .note{font-size:.8rem;color:var(--muted);margin-top:8px}
+.computation ul{margin:0;padding:0 0 0 18px;font-size:.85rem}
+.computation ul li{margin-bottom:4px}
+/* receipts */
+#receipts{margin-top:8px}
+.receipt{border:1px solid var(--border);border-radius:var(--radius);
+  margin-bottom:8px;padding:10px 14px;background:var(--surface)}
+.receipt .header{display:flex;align-items:center;gap:8px;cursor:pointer}
+.receipt .badge{font-weight:700;min-width:2em}
+.receipt .claim{font-size:.85rem;flex:1}
+.receipt .source{border-top:1px solid var(--border);margin-top:8px;padding-top:8px;
+  display:none;font-size:.8rem;color:var(--muted);white-space:pre-wrap;
+  max-height:200px;overflow-y:auto}
+.receipt.open .source{display:block}
+.receipt .reasons{font-size:.78rem;color:var(--warn);margin-top:4px}
+.receipt .similarity{font-size:.75rem;color:var(--muted)}
+.badge-v{color:var(--ok)}.badge-f{color:var(--warn)}.badge-x{color:var(--fail)}
+.regenerating{font-size:.85rem;color:var(--warn);padding:8px;text-align:center}
+.uncited{padding:8px 14px;font-size:.82rem;color:var(--muted)}
+.err{color:var(--fail);padding:8px}
+/* examples */
+.examples{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.examples button{background:var(--surface);border:1px solid var(--border);
+  color:var(--text);padding:6px 12px;border-radius:4px;cursor:pointer;font-size:.8rem}
+.examples button:hover{border-color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Òfin</h1>
+  <p>Receipt-backed offline legal companion for Nigerian labour, tenancy &amp; tax law.
+  <strong>Every answer comes with receipts.</strong> All processing stays on this machine.</p>
+</header>
+
+<div class="examples" id="examples">
+  <button>I have worked 3 years, how much notice must my employer give me?</button>
+  <button>My oga sack me without notice, I don work there 4 years. Wetin I fit do?</button>
+  <button>I earn 450,000 monthly, how much PAYE tax should I be paying?</button>
+  <button>My landlord in Surulere wants to evict me. What notice must he give?</button>
+</div>
+
+<div class="input-box">
+  <input id="q" type="text" placeholder="Ask a legal question…"
+    autofocus aria-label="Question">
+  <button id="ask">Ask</button>
+</div>
+
+<div id="spinner">⏳ Retrieving…</div>
+<div id="preview"></div>
+<div id="comp-area"></div>
+<div id="answer"></div>
+<div id="receipts"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const q = $('q'), askBtn = $('ask'), spinner = $('spinner'),
+      preview = $('preview'), answer = $('answer'),
+      receipts = $('receipts'), compArea = $('comp-area');
+
+askBtn.onclick = ask;
+q.onkeydown = e => { if (e.key === 'Enter') ask(); };
+
+$('examples').onclick = e => {
+  if (e.target.tagName === 'BUTTON') { q.value = e.target.textContent; ask(); }
+};
+
+let es = null; // active EventSource/abort controller
+
+async function ask() {
+  const question = q.value.trim();
+  if (!question) return;
+  if (es) es.abort();
+  clear();
+  askBtn.disabled = true;
+  spinner.style.display = 'block';
+
+  const ctrl = new AbortController();
+  es = ctrl;
+  try {
+    const resp = await fetch('/api/ask', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({question}), signal: ctrl.signal,
+    });
+    const reader = resp.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '';
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, {stream: true});
+      const parts = buf.split('\n\n');
+      buf = parts.pop();
+      for (const p of parts) {
+        const m = p.match(/^data: (\{.*\})/);
+        if (!m) continue;
+        try { handle(JSON.parse(m[1])); } catch(_) {}
+      }
+    }
+  } catch(e) {
+    if (e.name !== 'AbortError') showErr(e.message);
+  }
+  askBtn.disabled = false;
+  spinner.style.display = 'none';
+}
+
+let retrievalHappened = false;
+
+function handle(ev) {
+  switch (ev.type) {
+  case 'retrieved':
+    retrievalHappened = true;
+    spinner.style.display = 'none';
+    preview.innerHTML = ev.chunks.map(c =>
+      `<span class="chip">${c.act}, ${c.section}` +
+      (c.title ? ` — ${c.title}` : '') +
+      ` <span class="score">${c.score.toFixed(4)}</span></span>`
+    ).join('');
+    break;
+  case 'routed':
+    preview.innerHTML += `<div style="font-size:.8rem;color:var(--accent);margin-top:4px">
+      routed to ${ev.kind} computation</div>`;
+    break;
+  case 'computed':
+    answer.style.display = 'none';
+    compArea.innerHTML = `<div class="computation">${ev.rendered}</div>`;
+    break;
+  case 'token':
+    if (!retrievalHappened) { spinner.style.display = 'none'; retrievalHappened = true; }
+    answer.textContent += ev.text;
+    answer.style.display = 'block';
+    answer.scrollTop = answer.scrollHeight;
+    break;
+  case 'answer_done':
+    break;
+  case 'regenerating':
+    answer.textContent = '';
+    receipts.innerHTML = `<div class="regenerating">Re-checking ${ev.failed_count} claim(s) against the statute…</div>`;
+    break;
+  case 'receipts':
+    renderReceipts(ev.receipts, ev.uncited);
+    break;
+  case 'error':
+    showErr(ev.message);
+    break;
+  case 'done':
+    break;
+  }
+}
+
+function renderReceipts(rcpts, uncited) {
+  const marks = {verified: ['✓','badge-v'], flagged: ['⚠','badge-f'], failed: ['✗','badge-x']};
+  receipts.innerHTML = rcpts.map(r => {
+    const [mark, cls] = marks[r.verdict] || ['?',''];
+    const src = r.source_ref || '';
+    return `<div class="receipt" onclick="this.classList.toggle('open')">
+      <div class="header">
+        <span class="badge ${cls}">${mark}</span>
+        <span class="claim">${esc(r.claim)}</span>
+        ${r.similarity ? `<span class="similarity">${r.similarity.toFixed(3)}</span>` : ''}
+      </div>
+      ${r.source_text ? `<div class="source">${esc(r.source_text)}</div>` : ''}
+      ${r.reasons ? r.reasons.map(rs => `<div class="reasons">${esc(rs)}</div>`).join('') : ''}
+    </div>`;
+  }).join('') + (uncited||[]).map(u =>
+    `<div class="uncited">· uncited (general guidance, not verified against statute): ${esc(u)}</div>`
+  ).join('');
+}
+
+function esc(s) {
+  const el = document.createElement('span');
+  el.textContent = s;
+  return el.innerHTML;
+}
+
+function showErr(msg) {
+  receipts.innerHTML = `<div class="err">Error: ${esc(msg)}</div>`;
+}
+
+function clear() {
+  answer.textContent = '';
+  answer.style.display = 'none';
+  preview.innerHTML = '';
+  receipts.innerHTML = '';
+  compArea.innerHTML = '';
+  retrievalHappened = false;
+}
+</script>
+</body>
+</html>

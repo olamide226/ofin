@@ -6,6 +6,47 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-012 — Speculative decoding off by default; RSS cost too high (2026-07-02)
+
+**Decision:** Not on by default. Available behind `ofin` CLI flag only.
+
+**Evidence:** Measured 2026-07-02 on dev machine (M1 Max 64G): Llama 3.2 1B
+Q4_K_M draft (770 MB) + main model (1.9 GB) + dual KV caches in q8_0 added
+~1.6 GB RSS vs baseline — peak ~5.3 GB vs ~3.7 GB without draft. The plan
+budgeted 0.4 GB for the draft; the underestimation came from KV cache
+doubling (two models' context states) and macOS allocator generosity at 64 GB
+RAM. On a real 8 GB machine the draft would likely push RSS past the
+disqualification ceiling.
+
+**Measured TPS impact on M1 Max:** none measured (computation path is
+instant; lookup path is already 50+ TPS, above the 15-TPS S_perf cap per
+ADR-003). The draft is a net-negative: costs real RSS for a TPS gain the
+scoring formula cannot reward.
+
+**Revisit trigger:** only if VM certification shows the 3B alone overshoots
+3.5 GB and we downsize to a 1B-class model, at which point the 0.5B draft
+(not this 1B) might be re-evaluated.
+
+## ADR-011 — Web UI: vanilla static assets, no build toolchain (2026-07-02)
+
+**Decision:** The local web UI is a single `go:embed`ded HTML file with
+vanilla CSS/JS — no TypeScript, no bundler, no framework, no npm. SSE
+streaming over one `/api/ask` endpoint.
+
+**Why:**
+1. Reproduction simplicity is a judged criterion ("a stranger can clone and
+   run in under 15 minutes"). Nothing defeats that like `npm install`.
+2. Only two dependencies: the browser's `fetch` and `EventSource`-style
+   streaming. Both ship in every modern browser.
+3. The `App.Ask` emitter interface already separates the pipeline from the
+   presentation — CLI and web are symmetrical 1:1 consumers of the same
+   typed event stream.
+
+**What this means for the future:** Tauri or any bundled shell is rejected
+for the submission. If visual polish is needed, it happens inside the single
+HTML file (or at most, a few additional embedded assets). Week-6 localisation
+(Pidgin labels, translated UI strings) stays plain-text in the same file.
+
 ## ADR-010 — Computation answers render deterministically; the LLM never touches figures (2026-07-02)
 
 **Context:** The plan's Pillar 2 said "the LLM narrates the result". Tested
