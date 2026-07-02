@@ -213,9 +213,21 @@ async def enhance_chunk_file(
         except json.JSONDecodeError:
             logger.warning(f"Existing {output_path.name} is malformed; reprocessing all chunks")
 
+    # Align existing enhanced records to current chunks by IDENTITY AND TEXT,
+    # never by position: index-based alignment silently kept stale text after
+    # chunker fixes changed what a chunk contained (ECA + TDA shipped a whole
+    # eval cycle with pre-fix text because the chunk COUNT happened to match).
+    # A chunk whose text changed must be re-enhanced.
     aligned_existing: list[Optional[dict[str, Any]]] = [None] * len(chunks)
-    if not force and len(existing_chunks) == len(chunks):
-        aligned_existing = list(existing_chunks)
+    if not force and existing_chunks:
+        by_key: dict[tuple, dict[str, Any]] = {}
+        for ex in existing_chunks:
+            m = ex.get("metadata", {})
+            by_key[(m.get("act_short"), m.get("section_id"), ex.get("text", ""))] = ex
+        for i, chunk in enumerate(chunks):
+            m = chunk.get("metadata", {})
+            aligned_existing[i] = by_key.get(
+                (m.get("act_short"), m.get("section_id"), chunk.get("text", "")))
 
     done = sum(1 for ex in aligned_existing if ex is not None and _chunk_is_done(ex))
     if done == len(chunks):
