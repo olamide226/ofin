@@ -23,9 +23,14 @@ Prebuilt (fastest):
 
 ```bash
 # pick the latest ubuntu-x64 asset from https://github.com/ggml-org/llama.cpp/releases
-curl -LO https://github.com/ggml-org/llama.cpp/releases/latest/download/llama-bin-ubuntu-x64.zip \
-  || echo "asset name varies by release — check the releases page"
-unzip -o llama-*.zip -d ~/llama.cpp && sudo cp ~/llama.cpp/build/bin/llama-* /usr/local/bin/
+curl -LO https://github.com/ggml-org/llama.cpp/releases/download/b9859/llama-b9859-bin-ubuntu-x64.tar.gz
+
+# extract and add to environment
+tar -xzf llama-b9859-bin-ubuntu-x64.tar.gz
+sudo mv llama-b9859 /opt/llama.cpp
+echo 'export PATH="/opt/llama.cpp:$PATH"' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH="/opt/llama.cpp:$LD_LIBRARY_PATH"' >> ~/.bashrc
+source ~/.bashrc
 llama-bench --help >/dev/null && echo OK
 ```
 
@@ -40,8 +45,17 @@ sudo cp build/bin/llama-{bench,cli,server,embedding} /usr/local/bin/ && cd ..
 ## 3. Clone the repo (private — authenticate first)
 
 ```bash
-# either: install gh and `gh auth login`, or use a fine-grained PAT
-git clone https://github.com/olamide226/ofin && cd ofin
+# install gh if not already present
+sudo apt-get install -y gh
+
+# authenticate (device code flow — works on headless VMs)
+gh auth login --hostname github.com --git-protocol https --web
+# opens https://github.com/login/device — enter the code shown
+
+# clone
+gh repo clone olamide226/ofin && cd ofin
+
+python3 -m venv .venv && source .venv/bin/activate
 ```
 
 ## 4. Tier A — profiler certification (the numbers that matter)

@@ -88,6 +88,18 @@ computed over ALL claims, not just conveniently-formatted ones.
 | KV cache config | q8_0, 6144 ctx |
 | Speculative decoding | rejected (ADR-012: +1.6 GB RSS) |
 
+### VM certification (AMD EPYC 4 vCPU / 7.6 GB, Ubuntu 26.04, 2026-07-02)
+
+| Metric | Value |
+|---|---|
+| Generation TPS (llama-bench, 512 prompt) | **34.29** |
+| First-token latency | 5,977 ms |
+| Peak RSS (model only) | **3,442 MB** |
+| Steady-state RSS | 3,323 MB |
+| Throttled | false |
+| S_perf verdict | ✅ Max (34.29 > 15 TPS cap) |
+| S_eff verdict | ✅ Passing (3,442 < 3,500 MB target) |
+
 ¹ Dev-machine numbers are for regression tracking only and are not claimed as
 target-hardware performance.
 

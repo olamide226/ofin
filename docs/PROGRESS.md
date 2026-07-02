@@ -21,9 +21,21 @@
 Draft rejected for target ship (ADR-012). The diet numbers (recall/precision)
 are the new baseline for Week 6 hardening.
 
+### VM certification (2026-07-02, AMD EPYC 4 vCPU / 7.6 GB, Ubuntu 26.04)
+
+| Metric | Value | vs Dev (M1 Max) |
+|---|---|---|
+| TPS generation | **34.29** | 50.1 (both cap at 15 for S_perf) |
+| First-token latency | 5,977 ms | 910 ms |
+| Peak RSS | **3,442 MB** | 2,110 MB |
+| Steady-state RSS | 3,323 MB | 1,975 MB |
+| Throttled | false | false |
+
+**S_perf: full marks** (34.29 > 15 TPS cap). **S_eff: passing** (3,442 MB < 3.5 GB target). Real-world first-token latency with 3–4k token prompts expected 10–15s on the VM — the UI masks this with instant retrieval preview.
+
 ### Remaining Week 5 items
 
-- [ ] VM certification run — blocked on Ola provisioning (`docs/VM_CERTIFICATION.md` ready)
+- [x] VM certification run — **done** (2026-07-02, `docs/benchmarks/2026-07-02-vm-llama3.2-3b-4vcpu8gb.json`)
 - [ ] `ofin serve` screenshot capture for docs
 - [ ] Prompt budget final: the 148 claims figure suggests further trimming the number of retrieved sources could help (fewer, more targeted chunks → fewer uncited claims → less prefill) — evaluate in Week 6 
 
