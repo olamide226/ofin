@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"regexp"
+	"slices"
 	"sort"
 	"strings"
 
@@ -124,8 +125,12 @@ func collectIDs(rows *sql.Rows) ([]int64, error) {
 	return ids, rows.Err()
 }
 
-// Search runs both legs and fuses them with reciprocal rank fusion:
-// score(chunk) = Σ_legs 1/(rrfK + rank). Returns the top n chunks.
+// Search runs both legs, fuses them with reciprocal rank fusion
+// (score = Σ_legs 1/(rrfK + rank)), then expands one hop across the SAC
+// cross-reference edges: sections cited by the top-3 fused chunks join the
+// candidate pool at a discounted score. Statutes answer through their
+// exemptions and companion provisions (s.3 minimum wage ↔ s.4 exemptions),
+// and the cross_refs edges encode exactly that structure. Returns top n.
 func (s *Store) Search(embedding []float32, question string, n int) ([]Chunk, error) {
 	vecIDs, err := s.vectorLeg(embedding)
 	if err != nil {
@@ -146,17 +151,69 @@ func (s *Store) Search(embedding []float32, question string, n int) ([]Chunk, er
 		id    int64
 		score float64
 	}
-	ranked := make([]scored, 0, len(scores))
-	for id, sc := range scores {
-		ranked = append(ranked, scored{id, sc})
-	}
-	sort.Slice(ranked, func(i, j int) bool { return ranked[i].score > ranked[j].score })
-	if len(ranked) > n {
-		ranked = ranked[:n]
+	rank := func() []scored {
+		ranked := make([]scored, 0, len(scores))
+		for id, sc := range scores {
+			ranked = append(ranked, scored{id, sc})
+		}
+		sort.Slice(ranked, func(i, j int) bool { return ranked[i].score > ranked[j].score })
+		return ranked
 	}
 
-	chunks := make([]Chunk, 0, len(ranked))
-	for _, r := range ranked {
+	// One-hop cross-reference expansion from the top seeds. Hop candidates
+	// get a bounded QUOTA (at most hopSlots of the final n), never score
+	// competition: an earlier score-discount design let hop noise displace
+	// genuine leg hits (recall regressed on the golden set), while a quota
+	// can only ever cost the two weakest fused ranks.
+	const hopSeeds, hopSlots = 3, 2
+	ranked := rank()
+	fusedTop := map[int64]bool{}
+	for i, r := range ranked {
+		if i >= n {
+			break
+		}
+		fusedTop[r.id] = true
+	}
+	var hops []int64
+	addHop := func(id int64) {
+		if !fusedTop[id] && len(hops) < hopSlots && !slices.Contains(hops, id) {
+			hops = append(hops, id)
+		}
+	}
+	for i, r := range ranked {
+		if i >= hopSeeds {
+			break
+		}
+		seed, err := s.chunkByID(r.id)
+		if err != nil {
+			continue
+		}
+		// Reverse edges first — statutes cite backwards (the exemption
+		// section cites the rule, never the other way), so a seed's
+		// exemptions/provisos are the chunks citing it.
+		for _, id := range s.reverseRefIDs(seed.ActShort, seed.SectionID) {
+			addHop(id)
+		}
+		for _, ref := range seed.CrossRefs {
+			for _, id := range s.resolveRefIDs(seed.ActShort, ref) {
+				addHop(id)
+			}
+		}
+	}
+
+	// Hops EXTEND the context rather than competing for it: n fused chunks
+	// plus up to hopSlots companions. Quota-displacement cost a genuine
+	// rank-5 hit on the golden set; the extra prompt tokens are the cheaper
+	// price (revisited in the Week-5 prompt diet).
+	keep := min(n, len(ranked))
+	final := make([]scored, 0, keep+len(hops))
+	final = append(final, ranked[:keep]...)
+	for i, id := range hops {
+		final = append(final, scored{id, ranked[keep-1].score * float64(hopSlots-i) * 0.01})
+	}
+
+	chunks := make([]Chunk, 0, len(final))
+	for _, r := range final {
 		c, err := s.chunkByID(r.id)
 		if err != nil {
 			return nil, err
@@ -165,6 +222,31 @@ func (s *Store) Search(embedding []float32, question string, n int) ([]Chunk, er
 		chunks = append(chunks, *c)
 	}
 	return chunks, nil
+}
+
+var refSectionRe = regexp.MustCompile(`(?i)\bs(?:ections?)?\.?\s*(\d+[A-Za-z]?)`)
+
+// resolveRefIDs maps a SAC cross_ref string ("Labour Act 2004, s.81" or
+// "section 4 of this Act") to chunk row ids. Refs without an act name
+// resolve within the seed chunk's own act.
+func (s *Store) resolveRefIDs(seedAct, ref string) []int64 {
+	m := refSectionRe.FindStringSubmatch(ref)
+	if m == nil {
+		return nil
+	}
+	sectionID := "s." + strings.ToLower(m[1])
+	act := seedAct
+	if resolved, ok := s.ResolveAct(refSectionRe.ReplaceAllString(ref, "")); ok {
+		act = resolved
+	}
+	rows, err := s.db.Query(
+		`SELECT id FROM chunks WHERE act_short = ? AND section_id = ?`, act, sectionID)
+	if err != nil {
+		return nil
+	}
+	defer rows.Close()
+	ids, _ := collectIDs(rows)
+	return ids
 }
 
 func (s *Store) chunkByID(id int64) (*Chunk, error) {
@@ -231,6 +313,27 @@ func (s *Store) ResolveAct(raw string) (string, bool) {
 		}
 	}
 	return "", false
+}
+
+// reverseRefIDs finds same-act chunks whose cross_refs cite the given
+// section. The trailing quote in the LIKE pattern anchors the element end
+// inside the JSON array, so "s.3" cannot match "s.31". Same-act only for
+// now: SAC refs spell act names in prose ("National Minimum Wage Act
+// 2019") that don't LIKE-match act_short; cross-act reverse edges arrive
+// with the tax/tenancy corpora via name resolution.
+func (s *Store) reverseRefIDs(act, sectionID string) []int64 {
+	rows, err := s.db.Query(
+		`SELECT id FROM chunks WHERE act_short = ? AND cross_refs LIKE ?`,
+		act, `%`+sectionID+`"%`)
+	if err != nil {
+		return nil
+	}
+	defer rows.Close()
+	ids, _ := collectIDs(rows)
+	if len(ids) > 4 {
+		ids = ids[:4] // heavily-cited sections (interpretation etc.) would flood
+	}
+	return ids
 }
 
 // SectionText returns the full text of a cited section — the verifier's
