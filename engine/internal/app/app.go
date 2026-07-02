@@ -100,16 +100,18 @@ type Emitter struct {
 // are the pieces the CLI and web server wire up — embedder, retriever,
 // generator, verifier — all connected.
 type App struct {
-	Config Config
-	Embed  *llama.Server
-	Chat   *llama.Server
-	Store  *retrieve.Store
+	Config      Config
+	Embed       *llama.Server
+	Chat        *llama.Server
+	Store       *retrieve.Store
+	verifyCache *verify.Cache // embeddings memo shared across asks
 }
 
 // New creates an App from a Config. Caller must call EnsureReady before Ask.
 func New(cfg Config) *App {
 	return &App{
-		Config: cfg,
+		Config:      cfg,
+		verifyCache: verify.NewCache(),
 		Embed: &llama.Server{
 			Port: cfg.EmbedPort, ModelPath: cfg.EmbedModel,
 			Embedding: true,
@@ -232,7 +234,7 @@ func (a *App) Ask(question string, em Emitter) (*Report, error) {
 		em.AnswerDone(full, time.Since(t1).Seconds())
 	}
 
-	verifier := &verify.Verifier{Corpus: a.Store, Embed: a.Embed, Resolve: a.Store.ResolveAct}
+	verifier := &verify.Verifier{Corpus: a.Store, Embed: a.Embed, Resolve: a.Store.ResolveAct, Cache: a.verifyCache}
 	results, uncited := verifier.VerifyAnswer(question, full)
 
 	// One constrained regeneration pass when any claim failed.

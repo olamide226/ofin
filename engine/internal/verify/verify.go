@@ -3,6 +3,7 @@ package verify
 import (
 	"fmt"
 	"strings"
+	"sync"
 )
 
 // Verdict for one claim.
@@ -50,16 +51,106 @@ type Embedder interface {
 	Embed(text string) ([]float32, error)
 }
 
+// BatchEmbedder is optionally implemented by an Embedder (llama.Server is)
+// to embed several texts in one request.
+type BatchEmbedder interface {
+	EmbedBatch(texts []string) ([][]float32, error)
+}
+
+// Cache memoizes embeddings keyed by exact input text. Statutory sections
+// repeat both within one answer (several claims citing s.11) and across
+// questions, and re-embedding them dominated verification latency on the
+// 4 vCPU audit profile (143 s warm RAG+verify, 2026-07-02 VM run). Vectors
+// are identical to the uncached path — zero effect on verdicts.
+type Cache struct {
+	mu sync.Mutex
+	m  map[string][]float32
+}
+
+func NewCache() *Cache { return &Cache{m: map[string][]float32{}} }
+
+// cacheMax bounds memory: 384-dim float32 ≈ 1.5 KB per entry → ~1.5 MB.
+const cacheMax = 1024
+
+func (c *Cache) get(text string) ([]float32, bool) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	v, ok := c.m[text]
+	return v, ok
+}
+
+func (c *Cache) put(text string, vec []float32) {
+	c.mu.Lock()
+	defer c.mu.Unlock()
+	if len(c.m) >= cacheMax {
+		c.m = map[string][]float32{} // reset; hot sections re-fill within one answer
+	}
+	c.m[text] = vec
+}
+
 // Verifier checks claims against the corpus.
 type Verifier struct {
 	Corpus  CorpusLookup
 	Embed   Embedder
 	Resolve ActResolver // maps prose act names to canonical act_short
+	Cache   *Cache      // optional cross-ask embedding memo (nil = off)
 	// Extra is an additional trusted source for this answer — the rules
 	// engine's computation result JSON. Computed figures (₦63,500/month
 	// PAYE) appear in no statute; without this they would fail the
 	// quantity layer despite being deterministically correct.
 	Extra string
+}
+
+// embed returns the embedding for text, consulting the cache first.
+func (v *Verifier) embed(text string) ([]float32, error) {
+	if v.Cache != nil {
+		if vec, ok := v.Cache.get(text); ok {
+			return vec, nil
+		}
+	}
+	vec, err := v.Embed.Embed(text)
+	if err == nil && v.Cache != nil {
+		v.Cache.put(text, vec)
+	}
+	return vec, err
+}
+
+// prefetch batch-embeds every text VerifyClaim will need that isn't cached
+// yet — one llama-server round-trip instead of one per claim per source.
+func (v *Verifier) prefetch(claims []Claim) {
+	be, ok := v.Embed.(BatchEmbedder)
+	if !ok || v.Cache == nil {
+		return
+	}
+	seen := map[string]bool{}
+	var texts []string
+	add := func(t string) {
+		if t == "" || seen[t] {
+			return
+		}
+		seen[t] = true
+		if _, hit := v.Cache.get(t); !hit {
+			texts = append(texts, t)
+		}
+	}
+	for _, c := range claims {
+		add(StripCitations(c.Text))
+		for _, cit := range c.Citations {
+			if text, err := v.Corpus.SectionText(cit.Act, cit.Section); err == nil {
+				add(truncate(text, 1800))
+			}
+		}
+	}
+	if v.Extra != "" {
+		add(truncate(v.Extra, 1800))
+	}
+	vecs, err := be.EmbedBatch(texts)
+	if err != nil {
+		return // VerifyClaim falls back to per-text embedding
+	}
+	for i, t := range texts {
+		v.Cache.put(t, vecs[i])
+	}
 }
 
 func dot(a, b []float32) float64 {
@@ -115,7 +206,7 @@ func (v *Verifier) VerifyClaim(question string, claim Claim) Result {
 	}
 
 	// Semantic layer: embedding similarity between claim and source.
-	claimVec, err := v.Embed.Embed(assertion)
+	claimVec, err := v.embed(assertion)
 	if err != nil {
 		res.Verdict = Flagged
 		res.Reasons = append(res.Reasons, "similarity check unavailable: "+err.Error())
@@ -126,7 +217,7 @@ func (v *Verifier) VerifyClaim(question string, claim Claim) Result {
 	}
 	best := -1.0
 	for _, src := range sources {
-		srcVec, err := v.Embed.Embed(truncate(src, 1800))
+		srcVec, err := v.embed(truncate(src, 1800))
 		if err != nil {
 			continue
 		}
@@ -154,6 +245,7 @@ func (v *Verifier) VerifyClaim(question string, claim Claim) Result {
 // returned so the renderer can mark them as general guidance.
 func (v *Verifier) VerifyAnswer(question, answer string) ([]Result, []string) {
 	claims, uncited := SegmentClaims(answer, v.Resolve)
+	v.prefetch(claims)
 	results := make([]Result, 0, len(claims))
 	for _, c := range claims {
 		results = append(results, v.VerifyClaim(question, c))

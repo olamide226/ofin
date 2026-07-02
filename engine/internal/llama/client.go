@@ -87,6 +87,41 @@ func Stop(port int) error {
 	return exec.Command("pkill", "-f", fmt.Sprintf("llama-server.*--port %d", port)).Run()
 }
 
+// EmbedBatch embeds several texts in one request — llama-server accepts an
+// array input, saving a round-trip per text. The verifier prefetches every
+// claim and cited source this way (one call instead of ~2 per claim).
+func (s *Server) EmbedBatch(texts []string) ([][]float32, error) {
+	if len(texts) == 0 {
+		return nil, nil
+	}
+	payload, _ := json.Marshal(map[string]any{"input": texts})
+	resp, err := http.Post(s.baseURL()+"/v1/embeddings", "application/json", bytes.NewReader(payload))
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+	var out struct {
+		Data []struct {
+			Index     int       `json:"index"`
+			Embedding []float32 `json:"embedding"`
+		} `json:"data"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
+		return nil, err
+	}
+	if len(out.Data) != len(texts) {
+		return nil, fmt.Errorf("embedding batch: sent %d texts, got %d vectors", len(texts), len(out.Data))
+	}
+	vecs := make([][]float32, len(texts))
+	for _, d := range out.Data {
+		if d.Index < 0 || d.Index >= len(texts) {
+			return nil, fmt.Errorf("embedding batch: index %d out of range", d.Index)
+		}
+		vecs[d.Index] = d.Embedding
+	}
+	return vecs, nil
+}
+
 func (s *Server) Embed(text string) ([]float32, error) {
 	payload, _ := json.Marshal(map[string]any{"input": []string{text}})
 	resp, err := http.Post(s.baseURL()+"/v1/embeddings", "application/json", bytes.NewReader(payload))
