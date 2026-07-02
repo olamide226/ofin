@@ -1,0 +1,438 @@
+{
+  "act": "NMW Act 2019",
+  "source_file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+  "toc_titles_found": 0,
+  "sections_found": 18,
+  "last_section_number": 18,
+  "chunk_count": 22,
+  "chunks": [
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "preamble",
+        "section_number": null,
+        "section_title": "Long title, commencement and arrangement of sections",
+        "chunk_type": "preamble"
+      },
+      "text": "# National Minimum Wage Act, 2019 (as amended 2024) — Consolidated\n\n> **Consolidation note (Òfin corpus):** This is the National Minimum Wage\n> Act, 2019 (Act No. 8 of 2019, commenced 18 April 2019, published in Official\n> Gazette No. 62 Vol. 106 of 23 April 2019), with the amendments made by the\n> National Minimum Wage (Amendment) Act, 2024 (signed 29 July 2024, new wage\n> effective 1 May 2024) applied to section 3. Amendments are marked\n> `[Amended 2024]`. Transcribed from the gazette text; OCR corrected by hand.\n> As-at date: July 2026.\n\n## Arrangement of Sections",
+      "summary": "This Act, as amended in 2024, establishes the national minimum wage and outlines its application and enforcement. It details the various sections of the Act related to minimum wage provisions.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: preamble\nTitle: Long title, commencement and arrangement of sections\nJurisdiction: federal\n\nSummary: This Act, as amended in 2024, establishes the national minimum wage and outlines its application and enforcement. It details the various sections of the Act related to minimum wage provisions.\n\n# National Minimum Wage Act, 2019 (as amended 2024) — Consolidated\n\n> **Consolidation note (Òfin corpus):** This is the National Minimum Wage\n> Act, 2019 (Act No. 8 of 2019, commenced 18 April 2019, published in Official\n> Gazette No. 62 Vol. 106 of 23 April 2019), with the amendments made by the\n> National Minimum Wage (Amendment) Act, 2024 (signed 29 July 2024, new wage\n> effective 1 May 2024) applied to section 3. Amendments are marked\n> `[Amended 2024]`. Transcribed from the gazette text; OCR corrected by hand.\n> As-at date: July 2026.\n\n## Arrangement of Sections"
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.1",
+        "section_number": 1,
+        "section_title": "Objective of this Act",
+        "chunk_type": "section"
+      },
+      "text": "1. Objective of this Act.",
+      "summary": "The National Minimum Wage Act 2019 establishes the objective of setting a national minimum wage applicable to all employees in Nigeria. This ensures a baseline income, aiming to protect low-wage earners and promote economic fairness. The Act's primary goal is to provide a minimum standard of remuneration across the country.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.1\nTitle: Objective of this Act\nJurisdiction: federal\n\nSummary: The National Minimum Wage Act 2019 establishes the objective of setting a national minimum wage applicable to all employees in Nigeria. This ensures a baseline income, aiming to protect low-wage earners and promote economic fairness. The Act's primary goal is to provide a minimum standard of remuneration across the country.\n\n1. Objective of this Act."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.2",
+        "section_number": 2,
+        "section_title": "Application",
+        "chunk_type": "section"
+      },
+      "text": "2. Application.",
+      "summary": "Section 2 of the National Minimum Wage Act, 2019 (as amended 2024) specifies the application of the Act's provisions. It primarily applies to employees in both the public and private sectors. However, certain categories of employees, such as those in the armed forces and police, may be exempted.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.2\nTitle: Application\nJurisdiction: federal\n\nSummary: Section 2 of the National Minimum Wage Act, 2019 (as amended 2024) specifies the application of the Act's provisions. It primarily applies to employees in both the public and private sectors. However, certain categories of employees, such as those in the armed forces and police, may be exempted.\n\n2. Application."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.3",
+        "section_number": 3,
+        "section_title": "Employer to pay minimum wage",
+        "chunk_type": "section"
+      },
+      "text": "3. Employer to pay minimum wage.",
+      "summary": "This section applies to all employers in Nigeria, mandating them to pay their employees the national minimum wage. This applies regardless of the sector or industry, establishing a baseline wage floor for all workers.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.3\nTitle: Employer to pay minimum wage\nJurisdiction: federal\n\nSummary: This section applies to all employers in Nigeria, mandating them to pay their employees the national minimum wage. This applies regardless of the sector or industry, establishing a baseline wage floor for all workers.\n\n3. Employer to pay minimum wage."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.4",
+        "section_number": 4,
+        "section_title": "Exemptions",
+        "chunk_type": "section"
+      },
+      "text": "4. Exemptions.",
+      "summary": "This section of the National Minimum Wage Act outlines specific exemptions from the minimum wage requirements. It specifies categories of employees or types of employment that are not covered by the Act's provisions. Further details regarding these exemptions would typically be elaborated in subsequent subsections or related regulations.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.4\nTitle: Exemptions\nJurisdiction: federal\n\nSummary: This section of the National Minimum Wage Act outlines specific exemptions from the minimum wage requirements. It specifies categories of employees or types of employment that are not covered by the Act's provisions. Further details regarding these exemptions would typically be elaborated in subsequent subsections or related regulations.\n\n4. Exemptions."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.5",
+        "section_number": 5,
+        "section_title": "Establishment of Tripartite Committee on National Minimum Wage",
+        "chunk_type": "section"
+      },
+      "text": "5. Establishment of Tripartite Committee on National Minimum Wage.",
+      "summary": "This provision establishes a Tripartite Committee on National Minimum Wage. The committee's composition and functions are detailed to ensure fair and regular review of the minimum wage.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.5\nTitle: Establishment of Tripartite Committee on National Minimum Wage\nJurisdiction: federal\n\nSummary: This provision establishes a Tripartite Committee on National Minimum Wage. The committee's composition and functions are detailed to ensure fair and regular review of the minimum wage.\n\n5. Establishment of Tripartite Committee on National Minimum Wage."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.6",
+        "section_number": 6,
+        "section_title": "Composition of the Tripartite Committee",
+        "chunk_type": "section"
+      },
+      "text": "6. Composition of the Tripartite Committee.",
+      "summary": "Section 6 of the National Minimum Wage Act 2019 (as amended 2024) outlines the composition of the Tripartite Committee. This committee is responsible for advising the government on minimum wage matters, and its membership typically includes representatives from government, employers, and employees.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.6\nTitle: Composition of the Tripartite Committee\nJurisdiction: federal\n\nSummary: Section 6 of the National Minimum Wage Act 2019 (as amended 2024) outlines the composition of the Tripartite Committee. This committee is responsible for advising the government on minimum wage matters, and its membership typically includes representatives from government, employers, and employees.\n\n6. Composition of the Tripartite Committee."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.7",
+        "section_number": 7,
+        "section_title": "Powers of Tripartite Committee",
+        "chunk_type": "section"
+      },
+      "text": "7. Powers of Tripartite Committee.",
+      "summary": "This section details the powers granted to the Tripartite Committee established under the National Minimum Wage Act. The committee is empowered to review the national minimum wage and advise the President accordingly. Its functions include conducting necessary investigations and making recommendations for wage adjustments.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.7\nTitle: Powers of Tripartite Committee\nJurisdiction: federal\n\nSummary: This section details the powers granted to the Tripartite Committee established under the National Minimum Wage Act. The committee is empowered to review the national minimum wage and advise the President accordingly. Its functions include conducting necessary investigations and making recommendations for wage adjustments.\n\n7. Powers of Tripartite Committee."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.8",
+        "section_number": 8,
+        "section_title": "Meetings of the Tripartite Committee",
+        "chunk_type": "section"
+      },
+      "text": "8. Meetings of the Tripartite Committee.",
+      "summary": "Section 8 outlines the procedures for meetings of the Tripartite Committee, which is responsible for reviewing the national minimum wage. It specifies that the Committee shall meet at least once every two years, or as often as the exigencies of service may require. The quorum for meetings is also established, ensuring effective deliberation.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.8\nTitle: Meetings of the Tripartite Committee\nJurisdiction: federal\n\nSummary: Section 8 outlines the procedures for meetings of the Tripartite Committee, which is responsible for reviewing the national minimum wage. It specifies that the Committee shall meet at least once every two years, or as often as the exigencies of service may require. The quorum for meetings is also established, ensuring effective deliberation.\n\n8. Meetings of the Tripartite Committee."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.9",
+        "section_number": 9,
+        "section_title": "Employer's obligations in respect of minimum wage",
+        "chunk_type": "section"
+      },
+      "text": "9. Employer's obligations in respect of minimum wage.",
+      "summary": "This section outlines the obligations of employers regarding the payment of the national minimum wage. Employers are required to pay their employees the stipulated minimum wage within the prescribed timeframe. Failure to comply may result in penalties as specified by the Act.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.9\nTitle: Employer's obligations in respect of minimum wage\nJurisdiction: federal\n\nSummary: This section outlines the obligations of employers regarding the payment of the national minimum wage. Employers are required to pay their employees the stipulated minimum wage within the prescribed timeframe. Failure to comply may result in penalties as specified by the Act.\n\n9. Employer's obligations in respect of minimum wage."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.10",
+        "section_number": 10,
+        "section_title": "Employers to keep records",
+        "chunk_type": "section"
+      },
+      "text": "10. Employers to keep records.",
+      "summary": "Employers are mandated to keep accurate records of wages paid to their employees. This provision applies to all employers and ensures compliance with minimum wage laws by requiring detailed record-keeping.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.10\nTitle: Employers to keep records\nJurisdiction: federal\n\nSummary: Employers are mandated to keep accurate records of wages paid to their employees. This provision applies to all employers and ensures compliance with minimum wage laws by requiring detailed record-keeping.\n\n10. Employers to keep records."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.11",
+        "section_number": 11,
+        "section_title": "Officers and their powers",
+        "chunk_type": "section"
+      },
+      "text": "11. Officers and their powers.",
+      "summary": "This section grants powers to designated officers to enforce the National Minimum Wage Act. These officers can enter workplaces, inspect records, and question individuals to ensure compliance with minimum wage provisions.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.11\nTitle: Officers and their powers\nJurisdiction: federal\n\nSummary: This section grants powers to designated officers to enforce the National Minimum Wage Act. These officers can enter workplaces, inspect records, and question individuals to ensure compliance with minimum wage provisions.\n\n11. Officers and their powers."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.12",
+        "section_number": 12,
+        "section_title": "Monitoring and compliance",
+        "chunk_type": "section"
+      },
+      "text": "12. Monitoring and compliance.",
+      "summary": "This section outlines the monitoring and compliance mechanisms for the National Minimum Wage Act. It establishes the relevant bodies responsible for ensuring adherence to the minimum wage provisions set forth in the Act.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.12\nTitle: Monitoring and compliance\nJurisdiction: federal\n\nSummary: This section outlines the monitoring and compliance mechanisms for the National Minimum Wage Act. It establishes the relevant bodies responsible for ensuring adherence to the minimum wage provisions set forth in the Act.\n\n12. Monitoring and compliance."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.13",
+        "section_number": 13,
+        "section_title": "Enforcement",
+        "chunk_type": "section"
+      },
+      "text": "13. Enforcement.",
+      "summary": "This section outlines the enforcement powers for the National Minimum Wage Act. It grants authorised officers the authority to inspect workplaces, demand records, and question individuals to ensure compliance with minimum wage provisions. Failure to cooperate or providing false information can lead to penalties.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.13\nTitle: Enforcement\nJurisdiction: federal\n\nSummary: This section outlines the enforcement powers for the National Minimum Wage Act. It grants authorised officers the authority to inspect workplaces, demand records, and question individuals to ensure compliance with minimum wage provisions. Failure to cooperate or providing false information can lead to penalties.\n\n13. Enforcement."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.14",
+        "section_number": 14,
+        "section_title": "Offences by an agent",
+        "chunk_type": "section"
+      },
+      "text": "14. Offences by an agent.",
+      "summary": "This section outlines offenses committed by an agent acting on behalf of another person or entity under the National Minimum Wage Act. It specifies that the employer or principal is liable for the agent's actions if they occur within the scope of the agent's authority or employment. This ensures accountability even when offenses are carried out by representatives.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.14\nTitle: Offences by an agent\nJurisdiction: federal\n\nSummary: This section outlines offenses committed by an agent acting on behalf of another person or entity under the National Minimum Wage Act. It specifies that the employer or principal is liable for the agent's actions if they occur within the scope of the agent's authority or employment. This ensures accountability even when offenses are carried out by representatives.\n\n14. Offences by an agent."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.15",
+        "section_number": 15,
+        "section_title": "Other offences and penalties",
+        "chunk_type": "section"
+      },
+      "text": "15. Other offences and penalties.",
+      "summary": "This section outlines penalties for offenses not covered elsewhere in the Act, specifically concerning individuals or bodies failing to comply with the National Minimum Wage Act. It establishes that such non-compliance constitutes an offense and subjects the offender to penalties as prescribed by the Act, likely involving fines or other sanctions for continued violations.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.15\nTitle: Other offences and penalties\nJurisdiction: federal\n\nSummary: This section outlines penalties for offenses not covered elsewhere in the Act, specifically concerning individuals or bodies failing to comply with the National Minimum Wage Act. It establishes that such non-compliance constitutes an offense and subjects the offender to penalties as prescribed by the Act, likely involving fines or other sanctions for continued violations.\n\n15. Other offences and penalties."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.16",
+        "section_number": 16,
+        "section_title": "Repeal and savings provisions",
+        "chunk_type": "section"
+      },
+      "text": "16. Repeal and savings provisions.",
+      "summary": "Section 16 of the National Minimum Wage Act 2019 (as amended 2024) repeals the National Minimum Wage Act 1990. It also includes savings provisions to ensure that actions taken or rights accrued under the repealed Act remain valid and enforceable.",
+      "cross_refs": [
+        "National Minimum Wage Act 1990"
+      ],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.16\nTitle: Repeal and savings provisions\nJurisdiction: federal\n\nSummary: Section 16 of the National Minimum Wage Act 2019 (as amended 2024) repeals the National Minimum Wage Act 1990. It also includes savings provisions to ensure that actions taken or rights accrued under the repealed Act remain valid and enforceable.\n\n16. Repeal and savings provisions."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.17",
+        "section_number": 17,
+        "section_title": "Interpretation",
+        "chunk_type": "section"
+      },
+      "text": "17. Interpretation.",
+      "summary": "This section provides definitions for terms used throughout the National Minimum Wage Act 2019. It clarifies the meaning of key terms relevant to minimum wage implementation, ensuring consistent application of the Act's provisions.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.17\nTitle: Interpretation\nJurisdiction: federal\n\nSummary: This section provides definitions for terms used throughout the National Minimum Wage Act 2019. It clarifies the meaning of key terms relevant to minimum wage implementation, ensuring consistent application of the Act's provisions.\n\n17. Interpretation."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.18",
+        "section_number": 18,
+        "section_title": "Citation",
+        "chunk_type": "section-part-1-of-4"
+      },
+      "text": "18. Citation.\n\nAn Act to repeal the National Minimum Wage Act, Cap. N61, Laws of the\nFederation of Nigeria, 2004 and enact the National Minimum Wage Act, 2019 to\nprescribe a national minimum wage for workers; and for related matters.\n\n[18th Day of April, 2019] — Commencement.\n\nEnacted by the National Assembly of the Federal Republic of Nigeria—\n\n## 1. Objective of this Act\n\nThis Act is to prescribe the national minimum wage and provide for a legal\nframework for a seamless review of the national minimum wage within the\nperiod specified under this Act.\n\n## 2. Application\n\nThis Act applies throughout the Federal Republic of Nigeria.\n\n## 3. Employer to pay minimum wage\n\n(1) Every employer shall pay a national minimum wage of not less than\nN70,000.00 per month to every worker under his establishment, except as\notherwise provided under this Act. `[Amended 2024: figure raised from\nN30,000.00 to N70,000.00 by the National Minimum Wage (Amendment) Act, 2024,\neffective 1 May 2024.]`\n\n(2) The national minimum wage shall be the minimum total amount of money an\nemployer of labour is required to pay the lowest paid worker or employee\nmonthly in his establishment.\n\n(3) Any agreement for the payment of wages less than the national minimum\nwage is void.\n\n(4) The national minimum wage expires after three years, and it shall be\nreviewed in line with the provisions of this Act. `[Amended 2024: review\nperiod reduced from five years to three years.]`\n\n## 4. Exemptions\n\n(1) Section 3 (1) does not apply to—\n\n(a) an establishment in which workers are employed or paid on—\n(i) part-time basis, and\n(ii) commission or piece-rate;\n\n(b) an establishment employing less than 25 persons;\n\n(c) workers in seasonal employment like agriculture; and\n\n(d) any person employed in a vessel or aircraft to which the laws regulating\nmerchant shipping or civil aviation apply.\n\n(2) The Minister of Labour and Employment shall, through the National Labour\nAdvisory Council and by order published in the Federal Government Gazette,\ngrant other exemptions as he deems necessary in the interest of the national\neconomy, taking into consideration reports from National Salaries, Incomes\nand Wages Commission or such other body that may make representation for\nexemption.\n\n## 5. Establishment of Tripartite Committee on National Minimum Wage\n\n(1) There is established the Tripartite Committee on National Minimum Wage\n(in this Act referred to as \"the Tripartite Committee\") consisting of\nrepresentatives of Government, organised labour and private sector, on equal\nrepresentation.\n\n(2) The Secretariat of the Tripartite Committee shall be domiciled in the\nNational Salaries, Income and Wages Commission.\n\n## 6. Composition of the Tripartite Committee\n\n(1) The Tripartite Committee as constituted shall be appointed by the\nPresident and shall consist of—\n\n(a) a chairman;\n\n(b) a secretary;\n\n(c) a representative each of—\n(i) the Secretary to the Government of the Federation,\n(ii) Head of Civil Service of the Federation,\n(iii) Minister of Labour and Employment,\n(iv) Minister of Finance,\n(v) Minister of Budget and National Planning,\n(vi) the Executive Chairman, National Salaries, Income and Wages Commission;\n\n(d) a Governor from each of the six geo-political zones to be nominated by\nthe Governors from that zone;\n\n(e) a representative each of the organised labour from—\n(i) Nigeria Labour Congress,\n(ii) Trade Union Congress, and\n(iii) any labour centre that may be registered in accordance with the labour\nlaws; and\n\n(f) a representative each from—\n(i) Nigeria Employers' Consultative Association,\n(ii) Manufacturers Association of Nigeria,\n(iii) Nigeria Association of Chambers of Commerce, Industry, Mines and\nAgriculture,\n(iv) Nigeria Association of Small and Medium Enterprises, and\n(v) any such employers group that may be registered in accordance with the\nlabour laws.",
+      "summary": "This Act establishes a national minimum wage of N70,000.00 per month for all workers, with specific exemptions for part-time, commission, piece-rate, and seasonal employment, as well as establishments with fewer than 25 employees. The minimum wage is subject to a triennial review through a Tripartite Committee.",
+      "cross_refs": [
+        "National Minimum Wage Act Cap. N61, Laws of the Federation of Nigeria, 2004",
+        "National Minimum Wage (Amendment) Act, 2024"
+      ],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.18\nTitle: Citation\nJurisdiction: federal\n\nSummary: This Act establishes a national minimum wage of N70,000.00 per month for all workers, with specific exemptions for part-time, commission, piece-rate, and seasonal employment, as well as establishments with fewer than 25 employees. The minimum wage is subject to a triennial review through a Tripartite Committee.\n\n18. Citation.\n\nAn Act to repeal the National Minimum Wage Act, Cap. N61, Laws of the\nFederation of Nigeria, 2004 and enact the National Minimum Wage Act, 2019 to\nprescribe a national minimum wage for workers; and for related matters.\n\n[18th Day of April, 2019] — Commencement.\n\nEnacted by the National Assembly of the Federal Republic of Nigeria—\n\n## 1. Objective of this Act\n\nThis Act is to prescribe the national minimum wage and provide for a legal\nframework for a seamless review of the national minimum wage within the\nperiod specified under this Act.\n\n## 2. Application\n\nThis Act applies throughout the Federal Republic of Nigeria.\n\n## 3. Employer to pay minimum wage\n\n(1) Every employer shall pay a national minimum wage of not less than\nN70,000.00 per month to every worker under his establishment, except as\notherwise provided under this Act. `[Amended 2024: figure raised from\nN30,000.00 to N70,000.00 by the National Minimum Wage (Amendment) Act, 2024,\neffective 1 May 2024.]`\n\n(2) The national minimum wage shall be the minimum total amount of money an\nemployer of labour is required to pay the lowest paid worker or employee\nmonthly in his establishment.\n\n(3) Any agreement for the payment of wages less than the national minimum\nwage is void.\n\n(4) The national minimum wage expires after three years, and it shall be\nreviewed in line with the provisions of this Act. `[Amended 2024: review\nperiod reduced from five years to three years.]`\n\n## 4. Exemptions\n\n(1) Section 3 (1) does not apply to—\n\n(a) an establishment in which workers are employed or paid on—\n(i) part-time basis, and\n(ii) commission or piece-rate;\n\n(b) an establishment employing less than 25 persons;\n\n(c) workers in seasonal employment like agriculture; and\n\n(d) any person employed in a vessel or aircraft to which the laws regulating\nmerchant shipping or civil aviation apply.\n\n(2) The Minister of Labour and Employment shall, through the National Labour\nAdvisory Council and by order published in the Federal Government Gazette,\ngrant other exemptions as he deems necessary in the interest of the national\neconomy, taking into consideration reports from National Salaries, Incomes\nand Wages Commission or such other body that may make representation for\nexemption.\n\n## 5. Establishment of Tripartite Committee on National Minimum Wage\n\n(1) There is established the Tripartite Committee on National Minimum Wage\n(in this Act referred to as \"the Tripartite Committee\") consisting of\nrepresentatives of Government, organised labour and private sector, on equal\nrepresentation.\n\n(2) The Secretariat of the Tripartite Committee shall be domiciled in the\nNational Salaries, Income and Wages Commission.\n\n## 6. Composition of the Tripartite Committee\n\n(1) The Tripartite Committee as constituted shall be appointed by the\nPresident and shall consist of—\n\n(a) a chairman;\n\n(b) a secretary;\n\n(c) a representative each of—\n(i) the Secretary to the Government of the Federation,\n(ii) Head of Civil Service of the Federation,\n(iii) Minister of Labour and Employment,\n(iv) Minister of Finance,\n(v) Minister of Budget and National Planning,\n(vi) the Executive Chairman, National Salaries, Income and Wages Commission;\n\n(d) a Governor from each of the six geo-political zones to be nominated by\nthe Governors from that zone;\n\n(e) a representative each of the organised labour from—\n(i) Nigeria Labour Congress,\n(ii) Trade Union Congress, and\n(iii) any labour centre that may be registered in accordance with the labour\nlaws; and\n\n(f) a representative each from—\n(i) Nigeria Employers' Consultative Association,\n(ii) Manufacturers Association of Nigeria,\n(iii) Nigeria Association of Chambers of Commerce, Industry, Mines and\nAgriculture,\n(iv) Nigeria Association of Small and Medium Enterprises, and\n(v) any such employers group that may be registered in accordance with the\nlabour laws."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.18",
+        "section_number": 18,
+        "section_title": "Citation",
+        "chunk_type": "section-part-2-of-4"
+      },
+      "text": "(2) The membership listed under subsection (1) may be expanded by the\nappointment of additional members, on the recommendation by the Minister of\nLabour and Employment, to the President.\n\n## 7. Powers of Tripartite Committee\n\nThe Tripartite Committee shall have all the powers to make recommendations on\nthe national minimum wage, more especially to exercise the powers of review\ngiven under section 3 (4) of this Act.\n\n## 8. Meetings of the Tripartite Committee\n\nThe meeting of the Tripartite Committee shall be convened by the Chairman, as\nmay be expedient but not later than six months to the expiration of the\nexisting national minimum wage, to consider a new national minimum wage. The\nproceedings and other supplementary provisions relating to the Tripartite\nCommittee shall be decided by its members.\n\n## 9. Employer's obligations in respect of minimum wage\n\n(1) An employer shall pay to the workers a wage not less than the national\nminimum wage, subject to statutory deductions.\n\n(2) Any employer who fails to comply with subsection (1), commits an offence\nand is liable on conviction to pay—\n\n(a) a fine not exceeding 5% of the offender's monthly wage;\n\n(b) all outstanding arrears of the workers' wages; and\n\n(c) an additional penalty of not less than the prevailing Central Bank of\nNigeria lending rate on the wages owed, for each month of continuing\nviolation, provided that the power to order payment on account of wages under\nsubsection (2) shall not derogate from the right of the worker to recover\nwages due to him by any other proceeding in a court of competent jurisdiction.\n\n## 10. Employers to keep records\n\n(1) An employer shall keep such records of wages or conditions of employment\nas are necessary to show that the provisions of this Act are being complied\nwith in respect of workers in his employment and to retain the records for\nthree years after the period to which they refer.\n\n(2) Any employer who fails to comply with subsection (1), commits an offence\nand is liable on conviction to—\n\n(a) a fine not exceeding N75,000.00; and\n\n(b) an additional penalty not exceeding N10,000.00 for each day the offence\ncontinues.\n\n## 11. Officers and their powers\n\n(1) The Minister of Labour and Employment may authorise any officer in the\nCivil Service of the Federation to act for the purpose of this Act, and every\nauthorised labour officer within the meaning of the Labour Act is deemed to\nhave been authorised. [Cap. L1, LFN 2004.]\n\n(2) Every authorised officer shall be furnished with a letter of authority\nand identification when visiting an employer's premises for the purposes of\nthis Act and shall, if so required, produce both documents to the employer or\nother person holding a responsible position of management at the said\npremises.\n\n(3) An authorised officer may—\n\n(a) require the production by an employer of wages sheets, payroll, other\nrecords of wages and records of conditions of employment, inspect and examine\nthem and copy any part;\n\n(b) order any person or body of persons found to have contravened any of the\nprovisions of this Act to take remedial action within a specified period of\ntime; and\n\n(c) make recommendation for the prosecution of any person who contravenes\nthe provisions of this Act.\n\n(4) An officer who is authorised in that behalf by general or special\ndirections of the Minister may, if it appears to him that a sum is due from an\nemployer to a worker to whom this Act applies or to a person who has been a\nworker on account of the payment to him of wages less than the national\nminimum wage, institute, on behalf and in the name of that worker or person,\ncivil proceedings for the recovery of that sum, and in any proceeding, the\ncourt may make an order for the payment of costs by the authorised officer as\nif he were a party to the proceedings.\n\n(5) The power given under subsection (4) for the recovery of a sum due from\nan employer to a worker or former worker shall not derogate from any right to\nrecover that sum by civil proceedings.\n\n## 12. Monitoring and compliance",
+      "summary": "Employers must pay workers at least the national minimum wage and keep wage records for three years. Failure to comply results in fines, back pay, and potential prosecution.",
+      "cross_refs": [
+        "Labour Act, Cap. L1"
+      ],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.18\nTitle: Citation\nJurisdiction: federal\n\nSummary: Employers must pay workers at least the national minimum wage and keep wage records for three years. Failure to comply results in fines, back pay, and potential prosecution.\n\n(2) The membership listed under subsection (1) may be expanded by the\nappointment of additional members, on the recommendation by the Minister of\nLabour and Employment, to the President.\n\n## 7. Powers of Tripartite Committee\n\nThe Tripartite Committee shall have all the powers to make recommendations on\nthe national minimum wage, more especially to exercise the powers of review\ngiven under section 3 (4) of this Act.\n\n## 8. Meetings of the Tripartite Committee\n\nThe meeting of the Tripartite Committee shall be convened by the Chairman, as\nmay be expedient but not later than six months to the expiration of the\nexisting national minimum wage, to consider a new national minimum wage. The\nproceedings and other supplementary provisions relating to the Tripartite\nCommittee shall be decided by its members.\n\n## 9. Employer's obligations in respect of minimum wage\n\n(1) An employer shall pay to the workers a wage not less than the national\nminimum wage, subject to statutory deductions.\n\n(2) Any employer who fails to comply with subsection (1), commits an offence\nand is liable on conviction to pay—\n\n(a) a fine not exceeding 5% of the offender's monthly wage;\n\n(b) all outstanding arrears of the workers' wages; and\n\n(c) an additional penalty of not less than the prevailing Central Bank of\nNigeria lending rate on the wages owed, for each month of continuing\nviolation, provided that the power to order payment on account of wages under\nsubsection (2) shall not derogate from the right of the worker to recover\nwages due to him by any other proceeding in a court of competent jurisdiction.\n\n## 10. Employers to keep records\n\n(1) An employer shall keep such records of wages or conditions of employment\nas are necessary to show that the provisions of this Act are being complied\nwith in respect of workers in his employment and to retain the records for\nthree years after the period to which they refer.\n\n(2) Any employer who fails to comply with subsection (1), commits an offence\nand is liable on conviction to—\n\n(a) a fine not exceeding N75,000.00; and\n\n(b) an additional penalty not exceeding N10,000.00 for each day the offence\ncontinues.\n\n## 11. Officers and their powers\n\n(1) The Minister of Labour and Employment may authorise any officer in the\nCivil Service of the Federation to act for the purpose of this Act, and every\nauthorised labour officer within the meaning of the Labour Act is deemed to\nhave been authorised. [Cap. L1, LFN 2004.]\n\n(2) Every authorised officer shall be furnished with a letter of authority\nand identification when visiting an employer's premises for the purposes of\nthis Act and shall, if so required, produce both documents to the employer or\nother person holding a responsible position of management at the said\npremises.\n\n(3) An authorised officer may—\n\n(a) require the production by an employer of wages sheets, payroll, other\nrecords of wages and records of conditions of employment, inspect and examine\nthem and copy any part;\n\n(b) order any person or body of persons found to have contravened any of the\nprovisions of this Act to take remedial action within a specified period of\ntime; and\n\n(c) make recommendation for the prosecution of any person who contravenes\nthe provisions of this Act.\n\n(4) An officer who is authorised in that behalf by general or special\ndirections of the Minister may, if it appears to him that a sum is due from an\nemployer to a worker to whom this Act applies or to a person who has been a\nworker on account of the payment to him of wages less than the national\nminimum wage, institute, on behalf and in the name of that worker or person,\ncivil proceedings for the recovery of that sum, and in any proceeding, the\ncourt may make an order for the payment of costs by the authorised officer as\nif he were a party to the proceedings.\n\n(5) The power given under subsection (4) for the recovery of a sum due from\nan employer to a worker or former worker shall not derogate from any right to\nrecover that sum by civil proceedings.\n\n## 12. Monitoring and compliance"
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.18",
+        "section_number": 18,
+        "section_title": "Citation",
+        "chunk_type": "section-part-3-of-4"
+      },
+      "text": "(1) The Ministry of Labour and Employment and National Salaries, Incomes and\nWages Commission shall collaborate to monitor the implementation of the\nnational minimum wage in line with the provisions of the Labour Act and\nNational Salaries, Incomes and Wages Commission Act. [Cap. L1, LFN 2004;\nCap. N72, LFN 2004.]\n\n(2) Any report of non-compliance with the provisions of this Act discovered\nby the authorised officer upon routine inspection shall be forwarded to the\nMinister of Labour and Employment and copied to labour centres and employment\nassociations.\n\n(3) The Minister of Labour and Employment shall, upon receipt of such report,\nactivate the machinery for enforcing compliance to redress the breach within\n30 working days.\n\n(4) Monitoring of compliance with this Act shall commence six months after\nthe commencement of this Act.\n\n## 13. Enforcement\n\nThe national minimum wage may be enforced by the aggrieved worker, trade\nunions and Minister of Labour and Employment as follows—\n\n(a) a worker who is paid an amount less than the national minimum wage is\ncontractually entitled to whichever is the higher amount of the difference\nbetween his pay and the amount of the national minimum wage that he should\nhave been paid;\n\n(b) the worker has the right to take his case directly to the National\nIndustrial Court, or may file a formal complaint with the Minister of Labour\nand Employment;\n\n(c) trade unions may demand for compliance with the provisions of this Act,\non behalf of their members and shall not later than 30 days from the receipt\nof the worker's complaint, file the claim to the National Industrial Court;\n\n(d) where an employer fails to pay the national minimum wage to a worker or\na group of workers, an authorised officer shall serve a notice of enforcement\nrequiring the employer to pay the arrears of the wage to the worker named on\nthe notice within 30 days, but the employer is entitled to appeal the notice\nto the Minister of Labour and Employment who shall resolve the matter within\n30 days of the receipt of the appeal;\n\n(e) the notice of enforcement shall state the—\n(i) amount owed to the worker,\n(ii) period to which the payment applies, and\n(iii) time limit for the payment; and\n\n(f) where an employer served with an enforcement notice fails, in whole or in\npart, to comply with the notice, the matter shall be referred to the National\nIndustrial Court.\n\n## 14. Offences by an agent\n\n(1) Where an offence under this Act is committed by an agent of the employer\nor some other person, that agent or other person is liable to be proceeded\nagainst for the offence in the same manner as if he were the employer.\n\n(2) An employer who is charged with an offence under this Act is entitled to\nprove that—\n\n(a) the offence was due to the act or default of another person; or\n\n(b) he has used all due diligence to ensure that this Act is complied with.\n\n(3) Where a defendant seeks to avail himself the defence under subsection\n(2)—\n\n(a) the prosecution and person whom the defendant charges with the offence\nshall have the right to—\n(i) cross-examine the defendant if he gives evidence, and any witness called\nby him in support of his plea, and\n(ii) call rebutting evidence; and\n\n(b) the court may make such order as it deems fit for the payment of the\ncosts by any party to the proceedings, other than the prosecution, or to any\nother party thereto.",
+      "summary": "The Ministry of Labour and Employment and National Salaries, Incomes and Wages Commission monitor minimum wage implementation, forwarding non-compliance reports to the Minister. The Minister must enforce compliance within 30 working days. Monitoring begins six months after the Act's commencement.",
+      "cross_refs": [
+        "Labour Act",
+        "National Salaries, Incomes and Wages Commission Act"
+      ],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.18\nTitle: Citation\nJurisdiction: federal\n\nSummary: The Ministry of Labour and Employment and National Salaries, Incomes and Wages Commission monitor minimum wage implementation, forwarding non-compliance reports to the Minister. The Minister must enforce compliance within 30 working days. Monitoring begins six months after the Act's commencement.\n\n(1) The Ministry of Labour and Employment and National Salaries, Incomes and\nWages Commission shall collaborate to monitor the implementation of the\nnational minimum wage in line with the provisions of the Labour Act and\nNational Salaries, Incomes and Wages Commission Act. [Cap. L1, LFN 2004;\nCap. N72, LFN 2004.]\n\n(2) Any report of non-compliance with the provisions of this Act discovered\nby the authorised officer upon routine inspection shall be forwarded to the\nMinister of Labour and Employment and copied to labour centres and employment\nassociations.\n\n(3) The Minister of Labour and Employment shall, upon receipt of such report,\nactivate the machinery for enforcing compliance to redress the breach within\n30 working days.\n\n(4) Monitoring of compliance with this Act shall commence six months after\nthe commencement of this Act.\n\n## 13. Enforcement\n\nThe national minimum wage may be enforced by the aggrieved worker, trade\nunions and Minister of Labour and Employment as follows—\n\n(a) a worker who is paid an amount less than the national minimum wage is\ncontractually entitled to whichever is the higher amount of the difference\nbetween his pay and the amount of the national minimum wage that he should\nhave been paid;\n\n(b) the worker has the right to take his case directly to the National\nIndustrial Court, or may file a formal complaint with the Minister of Labour\nand Employment;\n\n(c) trade unions may demand for compliance with the provisions of this Act,\non behalf of their members and shall not later than 30 days from the receipt\nof the worker's complaint, file the claim to the National Industrial Court;\n\n(d) where an employer fails to pay the national minimum wage to a worker or\na group of workers, an authorised officer shall serve a notice of enforcement\nrequiring the employer to pay the arrears of the wage to the worker named on\nthe notice within 30 days, but the employer is entitled to appeal the notice\nto the Minister of Labour and Employment who shall resolve the matter within\n30 days of the receipt of the appeal;\n\n(e) the notice of enforcement shall state the—\n(i) amount owed to the worker,\n(ii) period to which the payment applies, and\n(iii) time limit for the payment; and\n\n(f) where an employer served with an enforcement notice fails, in whole or in\npart, to comply with the notice, the matter shall be referred to the National\nIndustrial Court.\n\n## 14. Offences by an agent\n\n(1) Where an offence under this Act is committed by an agent of the employer\nor some other person, that agent or other person is liable to be proceeded\nagainst for the offence in the same manner as if he were the employer.\n\n(2) An employer who is charged with an offence under this Act is entitled to\nprove that—\n\n(a) the offence was due to the act or default of another person; or\n\n(b) he has used all due diligence to ensure that this Act is complied with.\n\n(3) Where a defendant seeks to avail himself the defence under subsection\n(2)—\n\n(a) the prosecution and person whom the defendant charges with the offence\nshall have the right to—\n(i) cross-examine the defendant if he gives evidence, and any witness called\nby him in support of his plea, and\n(ii) call rebutting evidence; and\n\n(b) the court may make such order as it deems fit for the payment of the\ncosts by any party to the proceedings, other than the prosecution, or to any\nother party thereto."
+    },
+    {
+      "metadata": {
+        "source": "National Minimum Wage Act 2019 (as amended 2024)",
+        "act_short": "NMW Act 2019",
+        "citation": "Act No. 8 of 2019, amended 2024",
+        "jurisdiction": "federal",
+        "as_at": "2026-07",
+        "file": "corpus/labour/national-minimum-wage-act-2019-consolidated.md",
+        "part": "",
+        "section_id": "s.18",
+        "section_number": 18,
+        "section_title": "Citation",
+        "chunk_type": "section-part-4-of-4"
+      },
+      "text": "(4) Where it appears to an authorised officer that an offence has been\ncommitted in respect of which proceedings might be taken under this Act\nagainst an employer, and the authorised officer is reasonably satisfied that\nthe offence of which complaint is made was due to an act or default of some\nother person and that the employer could establish a defence under subsection\n(2), the authorised officer may make recommendation for proceedings to be\ntaken against that other person, and in such proceedings, the defendant may\nbe charged with the offence and, on proof that the offence was due to his act\nor default, be convicted for the offence for which the employer might have\nbeen charged.\n\n## 15. Other offences and penalties\n\nA person commits an offence and is liable on conviction to a fine not\nexceeding N250,000.00 or imprisonment for a term not exceeding six months or\nboth, where the person—\n\n(a) refuses or neglects to furnish the means required by an authorised\nofficer as being necessary for any entry in the exercise of his powers under\nthis Act;\n\n(b) hinders any authorised officer in the exercise of his powers under this\nAct;\n\n(c) refuses or neglects to produce any document or give any information which\nan authorised officer, in the exercise of his powers under this Act, requires\nhim to produce or give;\n\n(d) makes or causes to be made, or knowingly allows to be made, any wages\nsheet, record of wages or record of conditions of employment which is false;\n\n(e) produces or causes to be produced, or knowingly allows to be produced,\nany wages sheet or record to an authorised officer, in the exercise of his\npowers under this Act, knowing the wages sheet or record to be false; or\n\n(f) furnishes any information to any authorised officer in the exercise of\nhis powers under this Act, knowing the information to be false.\n\n## 16. Repeal and savings provisions\n\n(1) The National Minimum Wage Act, Cap. N61, Laws of the Federation of\nNigeria, 2004 is repealed.\n\n(2) Without prejudice to section 6 of the Interpretation Act and\nnotwithstanding the repeal of the enactment specified under subsection (1)—\n\n(a) proceedings may be taken on any offence committed under the repealed\nAct, in the same manner as if the offence has been committed under the\ncorresponding provisions of this Act; and\n\n(b) any proceeding or cause of action pending or existing immediately before\nthe commencement of this Act, by or against any person or body arising from\nthe repealed Act in respect of rights, interest, obligations or liabilities\nof that person or body may be continued or commenced, and any determination\nof a court, tribunal or other authority or person may be enforced to the same\nextent that any proceeding, cause of action or determination would have been\ncontinued, commenced or enforced if this Act had not been made.\n\n## 17. Interpretation\n\nIn this Act—\n\n\"authorised officer\" means an officer in the Public Service of the Federation\nauthorised or deemed to have been authorised to act for the purpose of this\nAct;\n\n\"authorised labour officer\" means any public officer serving in a Ministry or\nDepartment for which the Minister of Labour and Employment is responsible,\nand with the consent of the state authority, any officer in the public\nservice of the state, for the purposes of this Act;\n\n\"employer\" means any person who has entered into a contract of employment to\nemploy any other person as a worker either for himself or for the service of\nany other person, and includes the agent, manager or factor of employer and\nthe personal representative of a deceased employer;\n\n\"Minister of Labour and Employment\" means the Minister responsible for labour\nmatters;\n\n\"Minister of Finance\" means the Minister responsible for finance;\n\n\"Minister of Budget and National Planning\" means the Minister responsible for\nbudget;\n\n\"National Minimum Wage\" means the national minimum wage prescribed under\nsection 3 (1) of this Act;\n\n\"part-time work\" means work of a duration shorter than those for comparable\nfull-time work in a sector or occupation;\n\n\"piece-rate\" means any type of employment in which a worker is paid according\nto the quantity produced regardless of time;\n\n\"wage\" means remuneration or earnings (however designated or calculated)\ncapable of being expressed in terms of money fixed by mutual agreement or by\nlaw which is payable by virtue of a contract by an employer for work done or\nto be done for service rendered; and\n\n\"worker\" means any person who has entered into or works under a contract with\nan employer, whether the contract is for manual labour, clerical work, is\nexpressed or implied, oral or written, and whether it is a contract of\nservice or a contract personally to execute any work or labour, but excludes\nthe exemptions contained in this Act.\n\n## 18. Citation\n\nThis Act may be cited as the National Minimum Wage Act, 2019.",
+      "summary": "This section outlines a procedure where an authorized officer, suspecting an employer committed an offense, can recommend prosecution against another person if that person's actions or defaults caused the offense. The defendant can then be charged and convicted for the offense the employer might have faced, provided their culpability is proven.",
+      "cross_refs": [],
+      "augmented_text": "Act: National Minimum Wage Act 2019 (as amended 2024)\nSection: s.18\nTitle: Citation\nJurisdiction: federal\n\nSummary: This section outlines a procedure where an authorized officer, suspecting an employer committed an offense, can recommend prosecution against another person if that person's actions or defaults caused the offense. The defendant can then be charged and convicted for the offense the employer might have faced, provided their culpability is proven.\n\n(4) Where it appears to an authorised officer that an offence has been\ncommitted in respect of which proceedings might be taken under this Act\nagainst an employer, and the authorised officer is reasonably satisfied that\nthe offence of which complaint is made was due to an act or default of some\nother person and that the employer could establish a defence under subsection\n(2), the authorised officer may make recommendation for proceedings to be\ntaken against that other person, and in such proceedings, the defendant may\nbe charged with the offence and, on proof that the offence was due to his act\nor default, be convicted for the offence for which the employer might have\nbeen charged.\n\n## 15. Other offences and penalties\n\nA person commits an offence and is liable on conviction to a fine not\nexceeding N250,000.00 or imprisonment for a term not exceeding six months or\nboth, where the person—\n\n(a) refuses or neglects to furnish the means required by an authorised\nofficer as being necessary for any entry in the exercise of his powers under\nthis Act;\n\n(b) hinders any authorised officer in the exercise of his powers under this\nAct;\n\n(c) refuses or neglects to produce any document or give any information which\nan authorised officer, in the exercise of his powers under this Act, requires\nhim to produce or give;\n\n(d) makes or causes to be made, or knowingly allows to be made, any wages\nsheet, record of wages or record of conditions of employment which is false;\n\n(e) produces or causes to be produced, or knowingly allows to be produced,\nany wages sheet or record to an authorised officer, in the exercise of his\npowers under this Act, knowing the wages sheet or record to be false; or\n\n(f) furnishes any information to any authorised officer in the exercise of\nhis powers under this Act, knowing the information to be false.\n\n## 16. Repeal and savings provisions\n\n(1) The National Minimum Wage Act, Cap. N61, Laws of the Federation of\nNigeria, 2004 is repealed.\n\n(2) Without prejudice to section 6 of the Interpretation Act and\nnotwithstanding the repeal of the enactment specified under subsection (1)—\n\n(a) proceedings may be taken on any offence committed under the repealed\nAct, in the same manner as if the offence has been committed under the\ncorresponding provisions of this Act; and\n\n(b) any proceeding or cause of action pending or existing immediately before\nthe commencement of this Act, by or against any person or body arising from\nthe repealed Act in respect of rights, interest, obligations or liabilities\nof that person or body may be continued or commenced, and any determination\nof a court, tribunal or other authority or person may be enforced to the same\nextent that any proceeding, cause of action or determination would have been\ncontinued, commenced or enforced if this Act had not been made.\n\n## 17. Interpretation\n\nIn this Act—\n\n\"authorised officer\" means an officer in the Public Service of the Federation\nauthorised or deemed to have been authorised to act for the purpose of this\nAct;\n\n\"authorised labour officer\" means any public officer serving in a Ministry or\nDepartment for which the Minister of Labour and Employment is responsible,\nand with the consent of the state authority, any officer in the public\nservice of the state, for the purposes of this Act;\n\n\"employer\" means any person who has entered into a contract of employment to\nemploy any other person as a worker either for himself or for the service of\nany other person, and includes the agent, manager or factor of employer and\nthe personal representative of a deceased employer;\n\n\"Minister of Labour and Employment\" means the Minister responsible for labour\nmatters;\n\n\"Minister of Finance\" means the Minister responsible for finance;\n\n\"Minister of Budget and National Planning\" means the Minister responsible for\nbudget;\n\n\"National Minimum Wage\" means the national minimum wage prescribed under\nsection 3 (1) of this Act;\n\n\"part-time work\" means work of a duration shorter than those for comparable\nfull-time work in a sector or occupation;\n\n\"piece-rate\" means any type of employment in which a worker is paid according\nto the quantity produced regardless of time;\n\n\"wage\" means remuneration or earnings (however designated or calculated)\ncapable of being expressed in terms of money fixed by mutual agreement or by\nlaw which is payable by virtue of a contract by an employer for work done or\nto be done for service rendered; and\n\n\"worker\" means any person who has entered into or works under a contract with\nan employer, whether the contract is for manual labour, clerical work, is\nexpressed or implied, oral or written, and whether it is a contract of\nservice or a contract personally to execute any work or labour, but excludes\nthe exemptions contained in this Act.\n\n## 18. Citation\n\nThis Act may be cited as the National Minimum Wage Act, 2019."
+    }
+  ]
+}

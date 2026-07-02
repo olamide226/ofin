@@ -20,6 +20,15 @@ are only as trustworthy as this table. As-at date: **July 2026**.
 - `nmw-act-2019-natlex.pdf` — ILO NATLEX copy (image-only, no text layer; kept for reference)
 - `nmw-amendment-2024-bill-plac.pdf` + `nmw-2024.txt` — 2024 amendment bill text
 
+## Corpus interventions log (Week 2)
+
+| Date | File | Intervention | Authority |
+|---|---|---|---|
+| 2026-07-01 | `labour-act-…md` | **s.80 (Jurisdiction) restored** — missing from community transcription | Official PLAC PDF `raw/labour-act-L1-plac.pdf` p.~2366 |
+| 2026-07-01 | `trade-disputes-act-…md` | **National Industrial Court Rules split out** to `national-industrial-court-rules.md` (subsidiary legislation; its own rule numbering broke section parsing). Note: TDA ss.20–32 repealed by NIC Act 2006 No. 37 — the numbering gap is correct | PLAC PDF itself marks the repeal |
+| 2026-07-01 | `trade-disputes-essential-services-…md` | **ss.1, 2, 7 section numbers reconstructed** (number lines lost in transcription; bodies were bare "(1)…"). Marked inline with HTML comments | ⚠️ Unverified — PLAC has no T9.pdf (404); verify against LFN 2004 print when found |
+| — | `employees-compensation-act-2010.md` | **s.15 missing** from transcription (numbering jumps 14→16) | ⚠️ Open gap — need official ECA gazette to restore |
+
 ## Known corpus gotchas (learned Week 1)
 
 1. **PLAC `print.php?sn=323` serves the repealed Cap N61 NMW Act (₦5,500).**

@@ -8,7 +8,7 @@ An Act to empower the President to proscribe any trade union or association the 
 
 [21st May, 1976]  [Commencement.]
 
-(1) If the President is satisfied that any trade union or association any of the members of which are employed in any essential service-
+1. (1) If the President is satisfied that any trade union or association any of the members of which are employed in any essential service-  <!-- section number reconstructed; see sources.md -->
 
 (a) is or has been engaged in acts calculated to disrupt the economy or acts calculated to obstruct or disrupt the smooth running of any essential service; or
 
@@ -24,7 +24,7 @@ he may by order published in the Federal Gazette proscribethe trade union or a
 
 (5) Any person who contravenes or fails to comply with any of the provisions of sub-section (4) of this section shall be guilty of an offence and shall on conviction be liable to imprisonment for a term not exceeding five years.
 
-(1) Any employer or any official of an association of employers or any official of a trade union or any person, not being an official of a trade union, who in any way performs or assumes a leadership role in any such trade union or faction thereof and-
+2. (1) Any employer or any official of an association of employers or any official of a trade union or any person, not being an official of a trade union, who in any way performs or assumes a leadership role in any such trade union or faction thereof and-  <!-- section number reconstructed; see sources.md -->
 
 (a) who is or has been engaged in acts calculated to disrupt the economy or acts calculated to obstruct or disrupt the smooth running of any essential service; or
 
@@ -70,7 +70,7 @@ Where any trade dispute exists or is apprehended and it appears to the Minister 
 
 (3) Any person who in intended compliance with this Act, deals with any property affected by this Act or who rectifies any register or other records relating to any such property shall stand indemnified in respect thereof and no suit shall lie at the instance of any person aggrieved for anything done in respect of such compliance or rectification.
 
-(1) In this Act, unless the context otherwise requires-
+7. (1) In this Act, unless the context otherwise requires-  <!-- section number reconstructed; see sources.md -->
 
 "association" means any body of persons, by whatever name called, associated for a common purpose, but does not include a trade union;
 

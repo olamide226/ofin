@@ -1,0 +1,5 @@
+# Build-time pipeline dependencies (SAC enrichment). The runtime app has no
+# Python dependencies — it is a Go binary + llama.cpp + SQLite.
+litellm>=1.60
+pydantic>=2.7
+python-dotenv>=1.0

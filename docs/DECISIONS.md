@@ -6,6 +6,49 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-008 — Embeddings: bge-small-en-v1.5 F16, summary-first embedding (2026-07-02)
+
+**Decision:** `bge-small-en-v1.5` (33M params, 384-dim, 64 MB F16 GGUF, via
+llama.cpp) over `nomic-embed-text` (137M, 768-dim, ~270 MB).
+
+**Why:** 4× smaller RSS (fits the 0.15 GB budget with slack — every MB feeds
+S_eff), ~4× faster on CPU, half the vector storage. Its 512-token context
+would truncate long sections, but the SAC design already makes the summary
+the retrieval surface: we embed `header + summary + leading text` (truncated
+to ~1800 chars), and the FTS5 keyword leg searches the full text. Query
+embedding uses BGE's required prefix ("Represent this sentence for searching
+relevant passages: ..."); document embedding does not.
+
+**Known limitation:** English-only. Pidgin degrades gracefully (shared
+lexicon + FTS5 leg); Yoruba/Hausa/Igbo queries are handled by Week-6 query
+understanding (translate → retrieve), not by the embedder.
+
+**Revisit trigger:** golden-set retrieval recall (Week 3 harness) below
+target with failures attributable to embedding quality → re-evaluate nomic
+at Q8 before touching chunking.
+
+## ADR-007 — Certification on RAM-capped VM, not refurb hardware (2026-07-01)
+
+**Decision (Ola):** No refurb laptop purchase. Performance/thermal
+certification runs happen on an 8 GB RAM-capped VM using adtc-profiler,
+mirroring the audit environment.
+
+**Supporting fact:** the official audit itself runs in cloud VMs
+(profiler README: "secure cloud VMs", Docker `--memory=7.5g`). A capped VM
+is closer to audit conditions than arbitrary refurb hardware; the ±15% RSS /
+±25% TPS participant-vs-audit tolerances favour environment parity.
+
+**Costs accepted:**
+- Thermal evidence is weaker (VMs don't expose real core temps; the -10
+  thermal penalty is judged on the audit side anyway).
+- The Week-6 "budget laptop evidence pack" reframes from photos-of-refurb to
+  VM-profile benchmark runs. `budget_laptop_claim: true` stays (mandatory
+  for all submissions per template).
+
+**Eligibility note resolved:** entry via Ruach Tech's Nigeria-HQ company
+(incorporated Lagos 2025) — satisfies the residency/African-country
+requirement and the <12-months venture rule. DevPost registration done.
+
 ## ADR-006 — Base model locked: Llama 3.2 3B Instruct Q4_K_M (2026-07-01)
 
 **Decision:** Lock **Llama 3.2 3B Instruct (Q4_K_M, bartowski GGUF)** as the
