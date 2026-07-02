@@ -32,12 +32,29 @@ MAX_SECTION_CHARS = 4000
 
 # Section start in body text: "11. (1) Either party…", "54.(1) In any…",
 # "3.—(1) Every employer…", "15. Wages shall become due…"
-BODY_SECTION_RE = re.compile(r"^\s{0,30}(\d{1,3})\s*\.\s*(?:[—–-]\s*)?(\(1\)|[A-Z(\"'])")
+# Optional left-margin title fragment before the number ("Nigerian    6. (1)
+# The profits…" in the NTA 2025 gazette layout): a short word run followed by
+# 2+ spaces. The multi-space gate keeps ordinary prose from matching.
+BODY_SECTION_RE = re.compile(
+    r"^\s{0,30}(?:[A-Z][\w',/()-]*(?:\s[\w',/()-]+){0,4}\s{2,})?(\d{1,3})\s*\.\s*(?:[—–-]\s*)?(\(1\)|[A-Z(\"'])")
 # Part heading: "### Part II", "### PART III COMPENSATION…", "PART V …"
 PART_RE = re.compile(r"^#{0,4}\s*PART\s+([IVXLC\d]+)\b[.\s]*(.*)$", re.IGNORECASE)
 SUBSECTION_RE = re.compile(r"^\(\d{1,2}\)")
-# Schedule heading: "SCHEDULE", "FIRST SCHEDULE", "SCHEDULES", "Schedule"
-SCHEDULE_RE = re.compile(r"^\s*(?:(FIRST|SECOND|THIRD|FOURTH|FIFTH)\s+)?SCHEDULES?\s*$", re.IGNORECASE)
+# Schedule heading: an ordinal ("First Schedule", any case) or ALL-CAPS
+# "SCHEDULE(S)". A bare mixed-case "Schedule" line is NOT a boundary — the
+# NTA gazette's right-margin notes wrap into exactly that (sometimes at
+# column 0), and treating one as a heading swallowed 188 sections.
+SCHEDULE_RE = re.compile(
+    r"^\s*(?:(?:FIRST|SECOND|THIRD|FOURTH|FIFTH|SIXTH|SEVENTH|EIGHTH|NINTH|TENTH|ELEVENTH|TWELFTH|THIRTEENTH|FOURTEENTH)\s+SCHEDULES?|SCHEDULES?)\s*$",
+    re.IGNORECASE)
+
+
+def is_schedule_heading(line: str) -> bool:
+	norm = _normalized(line).strip()
+	if not SCHEDULE_RE.match(norm):
+		return False
+	has_ordinal = len(norm.split()) > 1
+	return has_ordinal or norm.isupper()
 
 
 @dataclass
@@ -83,7 +100,26 @@ LABOUR_ACTS = [
     ),
 ]
 
-DOMAINS = {"labour": LABOUR_ACTS}
+TENANCY_ACTS = [
+    ActConfig(
+        file="corpus/tenancy/tenancy-law-lagos-2011.md",
+        act_short="Lagos Tenancy Law 2011",
+        source="Tenancy Law of Lagos State, Law No. 14 of 2011",
+        citation="Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        jurisdiction="lagos-state",
+    ),
+]
+
+TAX_ACTS = [
+    ActConfig(
+        file="corpus/tax/nigeria-tax-act-2025.md",
+        act_short="Nigeria Tax Act 2025",
+        source="Nigeria Tax Act, 2025 (Act No. 7)",
+        citation="Official Gazette No. 117 Vol. 112, 26 June 2025; in force 1 January 2026",
+    ),
+]
+
+DOMAINS = {"labour": LABOUR_ACTS, "tenancy": TENANCY_ACTS, "tax": TAX_ACTS}
 
 
 def parse_toc_titles(lines: list[str], body_start: int) -> dict[int, str]:
@@ -94,6 +130,14 @@ def parse_toc_titles(lines: list[str], body_start: int) -> dict[int, str]:
     non-empty line). Only text before the body is considered.
     """
     titles: dict[int, str] = {}
+    # Multi-column TOC layouts put a second "N. Title" run mid-line; harvest
+    # those first (line-start entries below can still override via
+    # first-occurrence-wins ordering handled by `num not in titles`).
+    for i in range(body_start):
+        for m in re.finditer(r"(?:^|\s{2,})(\d{1,3})\.\s+([A-Z][\w'()/,\- ]{3,80}?)(?=\s{2,}\d{1,3}\.|\s*$)", lines[i]):
+            num, title = int(m.group(1)), m.group(2).strip().rstrip(".")
+            if num not in titles and title:
+                titles[num] = title
     i = 0
     while i < body_start:
         line = lines[i].strip()
@@ -227,7 +271,7 @@ def parse_sections(lines: list[str], body_start: int) -> tuple[str, list[Section
     for line in lines[body_start:]:
         # Schedules follow the sections; each SCHEDULE heading starts a new
         # block with its own identity (never attributed to the last section).
-        if SCHEDULE_RE.match(_normalized(line).strip()):
+        if is_schedule_heading(line):
             if current is not None and not in_schedules:
                 sections.append(current)
             in_schedules = True
@@ -348,6 +392,12 @@ def chunk_act(cfg: ActConfig, as_at: str) -> dict:
             m = re.match(rf"^{sec.number}\s*\.\s*(.+)$", first)
             if m and len(m.group(1)) < 90 and "(1)" not in m.group(1):
                 title = m.group(1).strip().rstrip(".")
+        if not title and sec.lines:
+            # Gazette layout: marginal title in a right-hand column on the
+            # section's first line ("202. In this Act –        General").
+            m = re.search(r"\S\s{6,}([A-Z][\w'()/,\- ]{3,60})$", sec.lines[0])
+            if m:
+                title = m.group(1).strip().rstrip(".,")
 
         pieces = split_long_section(text)
         for idx, piece in enumerate(pieces):
@@ -389,14 +439,16 @@ def chunk_act(cfg: ActConfig, as_at: str) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Chunk statute markdown into section-level JSON")
-    parser.add_argument("--domain", default="labour", choices=sorted(DOMAINS))
+    parser.add_argument("--domain", default="all", choices=sorted(DOMAINS) + ["all"])
     parser.add_argument("--out", type=Path, default=REPO / "data/chunks")
     args = parser.parse_args()
 
     args.out.mkdir(parents=True, exist_ok=True)
     as_at = date.today().strftime("%Y-%m")
 
-    for cfg in DOMAINS[args.domain]:
+    configs = ([c for acts in DOMAINS.values() for c in acts]
+               if args.domain == "all" else DOMAINS[args.domain])
+    for cfg in configs:
         result = chunk_act(cfg, as_at)
         slug = Path(cfg.file).stem
         out_path = args.out / f"{slug}.json"

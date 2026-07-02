@@ -1,0 +1,2229 @@
+{
+ "rows": [
+  {
+   "id": "L01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 0.8,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "termination_notice",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "With 3.0 years of continuous employment, the statutory minimum notice your employer must give you (or pay in lieu of) is **two weeks** [Labour Act 2004, s.11(2)(c)].\n\n- Notice of one week or more must be given in writing [Labour Act 2004, s.11(3)]\n- Either party may accept payment in lieu of notice [Labour Act 2004, s.11(6)]\n- Payment in lieu is calculated on money wages only, excluding overtime and other allowances [Labour Act 2004, s.11(9)]\n\nBasis: Labour Act, Cap L1 LFN 2004 (as at July 2026). Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "L02",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 0.5,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "termination_notice",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "With 4.0 years of continuous employment, the statutory minimum notice your employer must give you (or pay in lieu of) is **two weeks** [Labour Act 2004, s.11(2)(c)].\n\n- Notice of one week or more must be given in writing [Labour Act 2004, s.11(3)]\n- Either party may accept payment in lieu of notice [Labour Act 2004, s.11(6)]\n- Payment in lieu is calculated on money wages only, excluding overtime and other allowances [Labour Act 2004, s.11(9)]\n\nBasis: Labour Act, Cap L1 LFN 2004 (as at July 2026). Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "L03",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.9,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.1(2)(b)], an employer may provide food, a dwelling place, or any other allowance or privilege as a part of a worker's remuneration if the food, dwelling place, allowance, or privilege is prescribed by law, by a collective agreement, or by an arbitration award because it is customary or desirable in view of the nature of the industry or occupation in which the worker is engaged.\n\nHowever, [Labour Act 2004, s.1(2)(b)] specifically states that \"no case shall an employer give to any worker any intoxicating liquor or noxious drug by way of remuneration.\" This implies that the Act does not allow employers to pay salaries in goods or store vouchers, as these could be considered as intoxicating liquor or noxious drugs.\n\nTherefore, your employer cannot pay your salary in goods or store vouchers instead of money.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.1(2)(b)]",
+     "claim": "According to [Labour Act 2004, s.1(2)(b)], an employer may provide food, a dwelling place, or any other allowance or privilege as a part of a worker's remuneration if the food, dwelling place, allowance, or privilege is prescribed by law, by a collective agreement, or by an arbitration award because it is customary or desirable in view of the nature of the industry or occupation in which the worker is engaged",
+     "similarity": 0.8259033621650419
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.1(2)(b)]",
+     "claim": "However, [Labour Act 2004, s.1(2)(b)] specifically states that \"no case shall an employer give to any worker any intoxicating liquor or noxious drug by way of remuneration.\" This implies that the Act does not allow employers to pay salaries in goods or store vouchers, as these could be considered as intoxicating liquor or noxious drugs",
+     "similarity": 0.802694380722928
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 6.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 5(1) of the Labour Act 2004, an employer shall not make any deduction or agreement for any deduction from the wages to be paid by the employer to the worker, for or in respect of any fines, unless expressly permitted by this Act or any other law.\n\nSince the fine for lateness is not expressly permitted by the Labour Act 2004, your employer is not allowed to deduct it from your salary.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.5(1)]",
+     "claim": "According to Section 5(1) of the Labour Act 2004, an employer shall not make any deduction or agreement for any deduction from the wages to be paid by the employer to the worker, for or in respect of any fines, unless expressly permitted by this Act or any other law",
+     "similarity": 0.8075695646077944
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.9,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.7(7)], the total amount of deductions that may be made from the wages of a worker in any one month shall not exceed one-third of the wages of the worker for that month.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(7)]",
+     "claim": "According to [Labour Act 2004, s.7(7)], the total amount of deductions that may be made from the wages of a worker in any one month shall not exceed one-third of the wages of the worker for that month.",
+     "similarity": 0.7010372137741397
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 6.2,
+   "verified": 6,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 7(1)(a) of the Labour Act 2004, an employer must give to the worker a written statement specifying certain particulars within three months after the beginning of the worker's period of employment. Since you started your job two months ago, your employer should have provided you with a written statement by now.\n\nHowever, Section 7(1)(a) does not explicitly state that a written contract must be provided. But, Section 7(1) requires the employer to give you a written statement detailing employment terms, which includes wages, notice periods, hours, holidays, and sick pay.\n\nTherefore, it is likely that your employer should have provided you with a written statement by now. If you have not received a written statement, you may want to discuss this with your employer and request that they provide you with one.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "According to Section 7(1)(a) of the Labour Act 2004, an employer must give to the worker a written statement specifying certain particulars within three months after the beginning of the worker's period of employment",
+     "similarity": 0.842347668491511
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "Since you started your job two months ago, your employer should have provided you with a written statement by now",
+     "similarity": 0.7582656668532631
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "However, Section 7(1)(a) does not explicitly state that a written contract must be provided",
+     "similarity": 0.6882581524018492
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "But, Section 7(1) requires the employer to give you a written statement detailing employment terms, which includes wages, notice periods, hours, holidays, and sick pay",
+     "similarity": 0.7805635558723155
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "Therefore, it is likely that your employer should have provided you with a written statement by now",
+     "similarity": 0.7400708375950581
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.7(1)(a)]",
+     "claim": "If you have not received a written statement, you may want to discuss this with your employer and request that they provide you with one.",
+     "similarity": 0.6969977261351348
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to SOURCE [Labour Act 2004, s.16], you are entitled to up to twelve days of paid sick leave per year for temporary illnesses, certified by a doctor.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.16]",
+     "claim": "According to SOURCE [Labour Act 2004, s.16], you are entitled to up to twelve days of paid sick leave per year for temporary illnesses, certified by a doctor.",
+     "similarity": 0.8145606084556654
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 5.6,
+   "verified": 4,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 16 of the Labour Act 2004, you are entitled to paid sick leave for temporary illnesses certified by a doctor. However, the employer is not obligated to pay you for the entire week if the contract remains active, you are ready and willing to work despite your illness, and you consent to an employer-nominated medical examination.\n\nSince you've been sick for one week, you should provide your employer with the doctor's paper as proof of your illness. If your employer agrees to pay you for the days you missed, they must do so.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.16]",
+     "claim": "According to Section 16 of the Labour Act 2004, you are entitled to paid sick leave for temporary illnesses certified by a doctor",
+     "similarity": 0.7773162799409338
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.16]",
+     "claim": "However, the employer is not obligated to pay you for the entire week if the contract remains active, you are ready and willing to work despite your illness, and you consent to an employer-nominated medical examination",
+     "similarity": 0.7507572733760217
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.16]",
+     "claim": "Since you've been sick for one week, you should provide your employer with the doctor's paper as proof of your illness",
+     "similarity": 0.736156336396565
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.16]",
+     "claim": "If your employer agrees to pay you for the days you missed, they must do so.",
+     "similarity": 0.6955291881609629
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 5.1,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.18(1)(a)], every worker is entitled to at least six working days of paid holiday after 12 months of continuous service.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.18(1)(a)]",
+     "claim": "According to [Labour Act 2004, s.18(1)(a)], every worker is entitled to at least six working days of paid holiday after 12 months of continuous service.",
+     "similarity": 0.7936309790933321
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.4,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 18(3) of the Labour Act 2004, it is unlawful for an employer to pay wages in lieu of holidays unless the contract has ended.\n\n[Labour Act 2004, s.18(3)]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.18(3)] [Labour Act 2004, s.18(3)]",
+     "claim": "According to Section 18(3) of the Labour Act 2004, it is unlawful for an employer to pay wages in lieu of holidays unless the contract has ended",
+     "similarity": 0.8111388334525946
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 4.7,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to the Labour Act 2004, s.9(1), an employer shall pay to the workers a wage not less than the national minimum wage, subject to statutory deductions. However, this section does not specify the frequency of payment. \n\nThe retrieved sections do not answer this question.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.9(1)]",
+     "claim": "According to the Labour Act 2004, s.9(1), an employer shall pay to the workers a wage not less than the national minimum wage, subject to statutory deductions",
+     "similarity": 0.6827964184818517
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": false,
+   "wall_s": 6.2,
+   "verified": 4,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 4 of the Labour Act 2004, an employer is not allowed to make an advance of wages in excess of one month's wages. The employer must also recover the advance within three months. If the employer fails to do so, the worker is entitled to be paid the advance amount.\n\nHowever, the Labour Act 2004 does not explicitly state the consequences of an employer failing to pay a worker's salary within three months. But, Section 21 of the Labour Act 2004 states that an employer who makes any deduction from the wages of any worker or receives any payment from any worker contrary to this Part is guilty of an offence.\n\nTherefore, the Labour Act 2004 protects you by stating that an employer who fails to pay a worker's salary within three months may be guilty of an offence. However, this does not necessarily entitle you to a specific remedy or compensation.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4]",
+     "claim": "According to Section 4 of the Labour Act 2004, an employer is not allowed to make an advance of wages in excess of one month's wages",
+     "similarity": 0.803408841531634
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4]",
+     "claim": "The employer must also recover the advance within three months",
+     "similarity": 0.8181292016633613
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.4]",
+     "claim": "If the employer fails to do so, the worker is entitled to be paid the advance amount",
+     "similarity": 0.8014225094626632
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.21]",
+     "claim": "However, the Labour Act 2004 does not explicitly state the consequences of an employer failing to pay a worker's salary within three months. But, Section 21 of the Labour Act 2004 states that an employer who makes any deduction from the wages of any worker or receives any payment from any worker contrary to this Part is guilty of an offence",
+     "similarity": 0.7746087316815118
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 7.5,
+   "verified": 7,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 54 of the Labour Act 2004, a pregnant employee is entitled to:\n\n1. Leave work before confinement if medically certified (Section 54(1)(a));\n2. Not be permitted to work during the six weeks following her confinement (Section 54(1)(b));\n3. Be paid at least 50% of her wages for six months prior to her absence, if she is absent from her work in pursuance of paragraph (a) or (b) of this subsection (Section 54(1)(c));\n4. Be allowed half an hour twice a day during her working hours for nursing her child (Section 54(1)(d));\n\nAdditionally, Section 54(4) states that an employer shall not give notice of dismissal during her absence or notice of dismissal expiring during her absence, if she is absent from her work in pursuance of subsection (1)(a) or (b) of this section.\n\nTherefore, a pregnant employee in Nigeria is entitled to six weeks of paid maternity leave, with at least 50% of her wages paid for six months prior to her absence, and is also entitled to nursing breaks.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "According to Section 54 of the Labour Act 2004, a pregnant employee is entitled to:",
+     "similarity": 0.746596476889264
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Leave work before confinement if medically certified (Section 54(1)(a));",
+     "similarity": 0.8219954129232863
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Not be permitted to work during the six weeks following her confinement (Section 54(1)(b));",
+     "similarity": 0.7799435481476188
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Be paid at least 50% of her wages for six months prior to her absence, if she is absent from her work in pursuance of paragraph (a) or (b) of this subsection (Section 54(1)(c));",
+     "similarity": 0.7349352726973291
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Be allowed half an hour twice a day during her working hours for nursing her child (Section 54(1)(d));",
+     "similarity": 0.7039343441915931
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Additionally, Section 54(4) states that an employer shall not give notice of dismissal during her absence or notice of dismissal expiring during her absence, if she is absent from her work in pursuance of subsection (1)(a) or (b) of this section",
+     "similarity": 0.7516831737888517
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Therefore, a pregnant employee in Nigeria is entitled to six weeks of paid maternity leave, with at least 50% of her wages paid for six months prior to her absence, and is also entitled to nursing breaks.",
+     "similarity": 0.766065399245487
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.9,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to Section 54(4) of the Labour Act 2004, an employer shall not give notice of dismissal during the absence of a woman who is on maternity leave or during the period of her absence, unless her absence has exceeded a period prescribed by law.\n\nHowever, the Act does not specify a particular period for this exception. Therefore, the exact duration of the exception is not provided in the Act.\n\nThe retrieved sections do not answer this question.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54(4)]",
+     "claim": "According to Section 54(4) of the Labour Act 2004, an employer shall not give notice of dismissal during the absence of a woman who is on maternity leave or during the period of her absence, unless her absence has exceeded a period prescribed by law",
+     "similarity": 0.7655355066620964
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 5.5,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 54(1)(c) of the Labour Act 2004, you are entitled to at least 50% of your wages for the six months preceding your maternity leave, provided you have been continuously employed by your employer for that period.\n\nSo, you are entitled to 50% of your wages for the six months preceding your maternity leave.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54(1)(c)]",
+     "claim": "According to Section 54(1)(c) of the Labour Act 2004, you are entitled to at least 50% of your wages for the six months preceding your maternity leave, provided you have been continuously employed by your employer for that period",
+     "similarity": 0.732519934756492
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54(1)(c)]",
+     "claim": "So, you are entitled to 50% of your wages for the six months preceding your maternity leave.",
+     "similarity": 0.7170153705094264
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 8.0,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.13(3)], where a worker is at work for six hours or more a day, his work shall be interrupted by allowing one or more suitably spaced rest-intervals of not less than one hour on the aggregate. This implies that employers must provide rest days, but it does not explicitly state that rest days must be given every day of the week.\n\nHowever, [Labour Act 2004, s.13(1)] states that normal hours of work in any undertaking shall be those fixed by mutual agreement, collective bargaining, or industrial wages boards. Since the section does not explicitly state that rest days must be given every day of the week, it is unclear whether your employer is required to provide rest days every day.\n\nBut [Labour Act 2004, s.13(3)] does provide that where a worker is at work for six hours or more a day, his work shall be interrupted by allowing one or more suitably spaced rest-intervals of not less than one hour on the aggregate. This implies that rest days are required for workers who work for six hours or more per day.\n\nTherefore, it is unclear whether your employer is required to provide rest days every day of the week, but rest days are required for workers who work for six hours or more per day.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "According to [Labour Act 2004, s.13(3)], where a worker is at work for six hours or more a day, his work shall be interrupted by allowing one or more suitably spaced rest-intervals of not less than one hour on the aggregate",
+     "similarity": 0.8036256387896004
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(1)]",
+     "claim": "This implies that employers must provide rest days, but it does not explicitly state that rest days must be given every day of the week. However, [Labour Act 2004, s.13(1)] states that normal hours of work in any undertaking shall be those fixed by mutual agreement, collective bargaining, or industrial wages boards",
+     "similarity": 0.8233614445855105
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.13(3)]",
+     "claim": "Since the section does not explicitly state that rest days must be given every day of the week, it is unclear whether your employer is required to provide rest days every day. But [Labour Act 2004, s.13(3)] does provide that where a worker is at work for six hours or more a day, his work shall be interrupted by allowing one or more suitably spaced rest-intervals of not less than one hour on the aggregate",
+     "similarity": 0.8060307055808882
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.10(1)], the transfer of any contract from one employer to another shall be subject to the consent of the worker and the endorsement of the transfer upon the contract by an authorized labour officer.\n\nThis means that your employer cannot transfer you to a job in another city without your consent.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.10(1)]",
+     "claim": "According to [Labour Act 2004, s.10(1)], the transfer of any contract from one employer to another shall be subject to the consent of the worker and the endorsement of the transfer upon the contract by an authorized labour officer",
+     "similarity": 0.904510207416514
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 6.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to the Labour Act 2004, s.73, any person who requires or permits another to perform forced labour contrary to section 31(1)(c) of the Nigerian Constitution is guilty of an offence and liable to a fine not exceeding N1,000 or to imprisonment for a period not exceeding two years, or to both.\n\nAdditionally, section 73(2) states that any public officer who puts a constraint upon the population under his charge or upon any members thereof to work for any private individual, association, or company is guilty of an offence and liable to a fine not exceeding N200 or to imprisonment for a period not exceeding six months, or to both.\n\nThese provisions prohibit forced or compulsory labour in Nigeria, and impose penalties on those who engage in such practices.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.73]",
+     "claim": "According to the Labour Act 2004, s.73, any person who requires or permits another to perform forced labour contrary to section 31(1)(c) of the Nigerian Constitution is guilty of an offence and liable to a fine not exceeding N1,000 or to imprisonment for a period not exceeding two years, or to both",
+     "similarity": 0.9150653950933453
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "category": "remedy",
+   "language": "en",
+   "recall": true,
+   "wall_s": 7.6,
+   "verified": 1,
+   "flagged": 1,
+   "failed": 0,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to section 13 of the National Minimum Wage Act 2019, you can enforce the wage by taking your case directly to the National Industrial Court, filing a formal complaint with the Minister of Labour and Employment, or by trade unions demanding compliance.\n\nHowever, the statute does not specify the court's retention of a percentage of the amount paid to you.\n\nYou can proceed as follows:\n\n1. Take your case directly to the National Industrial Court.\n2. File a formal complaint with the Minister of Labour and Employment.\n3. Trade unions may demand compliance on your behalf.\n\n[Labour Act 2004, s.13]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.13]",
+     "claim": "According to section 13 of the National Minimum Wage Act 2019, you can enforce the wage by taking your case directly to the National Industrial Court, filing a formal complaint with the Minister of Labour and Employment, or by trade unions demanding compliance",
+     "similarity": 0.7849717745132396
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.13]",
+     "claim": "However, the statute does not specify the court's retention of a percentage of the amount paid to you. You can proceed as follows:. Take your case directly to the National Industrial Court. File a formal complaint with the Minister of Labour and Employment. Trade unions may demand compliance on your behalf. [Labour Act 2004, s.13]",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6417632989913667
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 9.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to Section 6 of the Labour Act 2004, an employer must provide a written statement detailing employment terms.\n\nHowever, the Act does not explicitly state what an employer must do when an employee is declared redundant.\n\nThe retrieved sections do not answer this question.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.6]",
+     "claim": "According to Section 6 of the Labour Act 2004, an employer must provide a written statement detailing employment terms",
+     "similarity": 0.6633719103898212
+    }
+   ]
+  },
+  {
+   "id": "N01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 3 of the National Minimum Wage Act, 2019, the current national minimum wage in Nigeria is N70,000.00 per month.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.3]",
+     "claim": "According to Section 3 of the National Minimum Wage Act, 2019, the current national minimum wage in Nigeria is N70,000.00 per month.",
+     "similarity": 0.7240821515606972
+    }
+   ]
+  },
+  {
+   "id": "N02",
+   "category": "cross-section",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.7,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 3(1) of the National Minimum Wage Act, 2019, an employer must pay a national minimum wage of not less than N70,000.00 per month to every worker under their establishment. Since you earn 45,000 naira monthly, your employer is not in compliance with the minimum wage law.\n\nHowever, Section 4(1)(b) of the Act states that the Act does not apply to establishments employing less than 25 persons. Since your shop has 8 staff, this exemption applies to you.\n\nTherefore, the answer is: Yes, your employer is breaking the minimum wage law, but you are exempt from the provisions of the Act due to the number of employees in your establishment.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.3(1)]",
+     "claim": "According to Section 3(1) of the National Minimum Wage Act, 2019, an employer must pay a national minimum wage of not less than N70,000.00 per month to every worker under their establishment",
+     "similarity": 0.8808871805400216
+    }
+   ]
+  },
+  {
+   "id": "N03",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": false,
+   "wall_s": 6.5,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to [NMW Act 2019, s.9(1)], an employer must pay workers at least the national minimum wage, subject to statutory deductions. The Act does not specify any exemptions for workers who earn above the minimum wage.\n\nHowever, [Nigeria Tax Act 2025, s.58] states that the income tax payable on the chargeable income of an individual, excluding those earning the Minimum Wage, shall be as specified in the Fourth Schedule of the Act.\n\nBut, [NMW Act 2019, s.17] defines 'worker' as 'any person who has entered into or works under a contract with an employer, whether the contract is for manual labour, clerical work, is expressed or implied, oral or written, and whether it is a contract of service or a contract personally to execute any work or labour, but excludes the exemptions contained in this Act.'\n\nThis means that the Act does not explicitly state that workers earning above the minimum wage are exempt from the provisions of the Act. However, it does not explicitly state that workers earning above the minimum wage are covered by the Act either.\n\nTherefore, the retrieved sections do not answer this question.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.9(1)]",
+     "claim": "According to [NMW Act 2019, s.9(1)], an employer must pay workers at least the national minimum wage, subject to statutory deductions",
+     "similarity": 0.8249925488119156
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.58]",
+     "claim": "The Act does not specify any exemptions for workers who earn above the minimum wage. However, [Nigeria Tax Act 2025, s.58] states that the income tax payable on the chargeable income of an individual, excluding those earning the Minimum Wage, shall be as specified in the Fourth Schedule of the Act",
+     "similarity": 0.8561067188378088
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.17]",
+     "claim": "But, [NMW Act 2019, s.17] defines 'worker' as 'any person who has entered into or works under a contract with an employer, whether the contract is for manual labour, clerical work, is expressed or implied, oral or written, and whether it is a contract of service or a contract personally to execute any work or labour, but excludes the exemptions contained in this Act.'",
+     "similarity": 0.7841383432708888
+    }
+   ]
+  },
+  {
+   "id": "N04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 9 of the National Minimum Wage Act 2019, an employer who fails to pay workers at least the national minimum wage, minus statutory deductions, is liable on conviction to:\n\n(a) a fine not exceeding 5% of the offender's monthly wage;\n(b) all outstanding arrears of the workers' wages; and\n(c) an additional penalty of not less than the prevailing Central Bank of Nigeria lending rate on the wages owed, for each month of continuing violation.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.9]",
+     "claim": "According to Section 9 of the National Minimum Wage Act 2019, an employer who fails to pay workers at least the national minimum wage, minus statutory deductions, is liable on conviction to:",
+     "similarity": 0.836393852345563
+    }
+   ]
+  },
+  {
+   "id": "N05",
+   "category": "remedy",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.1,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13 of the National Minimum Wage Act 2019, you have the right to take your case directly to the National Industrial Court or file a formal complaint with the Minister of Labour and Employment. \n\nYou can proceed with either of these options to enforce your right to the minimum wage.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.13]",
+     "claim": "According to Section 13 of the National Minimum Wage Act 2019, you have the right to take your case directly to the National Industrial Court or file a formal complaint with the Minister of Labour and Employment",
+     "similarity": 0.7060864705471043
+    }
+   ]
+  },
+  {
+   "id": "N06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 10 of the National Minimum Wage Act 2019, an employer must keep wage records for at least three years after the period to which they refer.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.10]",
+     "claim": "According to Section 10 of the National Minimum Wage Act 2019, an employer must keep wage records for at least three years after the period to which they refer.",
+     "similarity": 0.8720453897957166
+    }
+   ]
+  },
+  {
+   "id": "E01",
+   "category": "remedy",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.9,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 1,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 4 of the Employees' Compensation Act 2010, you are required to notify your employer in writing of any injury sustained in the course of employment within seven days.",
+   "receipts": [
+    {
+     "verdict": "failed",
+     "source_ref": "[Employees' Compensation Act 2010, s.4]",
+     "claim": "According to Section 4 of the Employees' Compensation Act 2010, you are required to notify your employer in writing of any injury sustained in the course of employment within seven days.",
+     "reasons": [
+      "quantity not found in cited source: 7 day"
+     ],
+     "similarity": 0
+    }
+   ]
+  },
+  {
+   "id": "E02",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.8,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to SOURCE [Employees' Compensation Act 2010, s.5] — Employer's obligation to report death, injury, or disease of an employee, your employer must report any employee death, injury, or occupational disease to the Compensation Fund.\n\nSOURCE [Employees' Compensation Act 2010, s.4] — Employee's notification of injury states that an employee must notify their employer in writing of any injury sustained in the course of employment.\n\nThe retrieved sections do not answer the question of whether your employer must report your workplace injury to anyone else.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.5]",
+     "claim": "According to SOURCE [Employees' Compensation Act 2010, s.5] — Employer's obligation to report death, injury, or disease of an employee, your employer must report any employee death, injury, or occupational disease to the Compensation Fund",
+     "similarity": 0.9009726434493919
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.4]",
+     "claim": "SOURCE [Employees' Compensation Act 2010, s.4] — Employee's notification of injury states that an employee must notify their employer in writing of any injury sustained in the course of employment",
+     "similarity": 0.8773140637127075
+    }
+   ]
+  },
+  {
+   "id": "E03",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 2.7,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 6 of the Employees' Compensation Act 2010, you must apply for compensation within a certain time limit. The application is made to the employer or the compensation fund.\n\n[Employees' Compensation Act 2010, s.6]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.6]",
+     "claim": "According to Section 6 of the Employees' Compensation Act 2010, you must apply for compensation within a certain time limit",
+     "similarity": 0.7774886171064722
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.6] [Employees' Compensation Act 2010, s.6]",
+     "claim": "The application is made to the employer or the compensation fund",
+     "similarity": 0.82900333950029
+    }
+   ]
+  },
+  {
+   "id": "E04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Employees' Compensation Act 2010, s.8], you can claim compensation for mental stress caused by your job if it leads to a mental or physical injury. However, the Act states that such stress is not compensable if it is caused by the employee's own actions or omissions.\n\nTherefore, you must prove that the mental stress was not caused by your own negligence or wrongdoing.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.8]",
+     "claim": "According to [Employees' Compensation Act 2010, s.8], you can claim compensation for mental stress caused by your job if it leads to a mental or physical injury",
+     "similarity": 0.8444264043317564
+    }
+   ]
+  },
+  {
+   "id": "E05",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 11.8,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to the Employees' Compensation Act 2010, sch.3, diseases caused by chemical agents are listed in section 1.1 of the First Schedule. Your illness is covered under this section.\n\nSection 1.1.1 specifically mentions \"Diseases caused by beryllium or its toxic compounds\". However, your illness is not specified as being caused by beryllium or its toxic compounds.\n\nSection 1.1.12 mentions \"Diseases caused by benzene or its toxic homologues\". However, your illness is not specified as being caused by benzene or its toxic homologues.\n\nSection 1.1.13 mentions \"Diseases caused by toxic nitro- and amino-derivatives of benzene or its homologues\". However, your illness is not specified as being caused by toxic nitro- and amino-derivatives of benzene or its homologues.\n\nSection 1.1.14 mentions \"Diseases caused by nitroglycerine or other nitric acid esters\". However, your illness is not specified as being caused by nitroglycerine or other nitric acid esters.\n\nSection 1.1.15 mentions \"Diseases caused by asphyxiants: carbon monoxide, hydrogen cyanide or its toxic derivatives, hydrogen sulphide\". However, your illness is not specified as being caused by asphyxiants.\n\nSection 1.1.17 mentions \"Diseases caused by acrylonitrile\". However, your illness is not specified as being caused by acrylonitrile.\n\nSection 1.1.18 mentions \"Diseases caused by oxides of nitrogen\". However, your illness is not specified as being caused by oxides of nitrogen.\n\nSection 1.1.19 mentions \"Diseases caused by vanadium or its toxic compounds\". However, your illness is not specified as being caused by vanadium or its toxic compounds.\n\nSection 1.1.20 mentions \"Diseases caused by antimony or its toxic compounds\". However, your illness is not specified as being caused by antimony or its toxic compounds.\n\nSection 1.1.21 mentions \"Diseases caused by hexane\". However, your illness is not specified as being caused by hexane.\n\nSection 1.1.22 mentions \"Diseases caused of teeth due to mineral acids\". However, your illness is not specified as being caused by mineral acids.\n\nSection 1.1.23 mentions \"Diseases due to pharmaceuticals agents\". However, your illness is not specified as being caused by pharmaceuticals agents.\n\nSection 1.1.24 mentions \"Diseases due to thallium or its compounds\". However, your illness is not specified as being caused by thallium or its compounds.\n\nSection 1.1.25 mentions \"Diseases due to oxmium or its compounds\". However, your illness is not specified as being caused by oxmium or its compounds.\n\nSection 1.1.26 mentions \"Diseases due to selenium or its compounds\". However, your illness is not specified as being caused by selenium or its compounds.\n\nSection 1.1.27 mentions \"Diseases due to copper or its compounds\". However, your illness is not specified as being caused by copper or its compounds.\n\nSection 1.1.28 mentions \"Diseases due to tin or its",
+   "receipts": []
+  },
+  {
+   "id": "E06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.7,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Employees' Compensation Act 2010, s.11], compensation is provided for injuries occurring outside the normal workplace during work-related activities or travel. Since you were injured while travelling for work, away from your usual workplace, you are still covered under this section.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.11]",
+     "claim": "According to [Employees' Compensation Act 2010, s.11], compensation is provided for injuries occurring outside the normal workplace during work-related activities or travel",
+     "similarity": 0.9183401270777101
+    }
+   ]
+  },
+  {
+   "id": "E07",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 4.0,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Employees' Compensation Act 2010, s.4], an employee must notify their employer in writing of any injury sustained in the course of employment.\n\nHowever, [Employees' Compensation Act 2010, s.14] prohibits employers from requiring or permitting employees to contribute to any compensation fund.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.4]",
+     "claim": "According to [Employees' Compensation Act 2010, s.4], an employee must notify their employer in writing of any injury sustained in the course of employment",
+     "similarity": 0.8589000321914343
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.14]",
+     "claim": "However, [Employees' Compensation Act 2010, s.14] prohibits employers from requiring or permitting employees to contribute to any compensation fund.",
+     "similarity": 0.7903441172347728
+    }
+   ]
+  },
+  {
+   "id": "E08",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 4.6,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Employees' Compensation Act 2010, s.17], compensation is payable to the dependants of the deceased employee. \n\nThe section states that \"compensation in fatal cases\" is payable to the dependants of the deceased employee.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Employees' Compensation Act 2010, s.17]",
+     "claim": "According to [Employees' Compensation Act 2010, s.17], compensation is payable to the dependants of the deceased employee",
+     "similarity": 0.7821097502971188
+    }
+   ]
+  },
+  {
+   "id": "T01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 5.1,
+   "verified": 5,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 18 of the Trade Disputes Act 2004, it is prohibited for employers to initiate lock-outs and for employees to engage in strikes before the National Industrial Court issues an award concerning the dispute. However, this prohibition does not explicitly state what happens to the strike after the National Industrial Court issues an award.\n\nBut, Section 15 of the Trade Disputes Act 2004 allows the Minister or parties to a collective agreement to apply to the National Industrial Court for a decision on the interpretation of an award. Section 16 allows the Minister or parties to a collective agreement to apply to the National Industrial Court for a decision on the interpretation of any term or provision of a collective agreement.\n\nTherefore, it can be inferred that workers can go on strike while their dispute is before the National Industrial Court, but the strike must be lifted once the National Industrial Court issues an award concerning the dispute.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.18]",
+     "claim": "According to Section 18 of the Trade Disputes Act 2004, it is prohibited for employers to initiate lock-outs and for employees to engage in strikes before the National Industrial Court issues an award concerning the dispute",
+     "similarity": 0.8355359053626762
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.18]",
+     "claim": "However, this prohibition does not explicitly state what happens to the strike after the National Industrial Court issues an award",
+     "similarity": 0.7713529680351755
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.15]",
+     "claim": "But, Section 15 of the Trade Disputes Act 2004 allows the Minister or parties to a collective agreement to apply to the National Industrial Court for a decision on the interpretation of an award",
+     "similarity": 0.7141199180316925
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.15]",
+     "claim": "Section 16 allows the Minister or parties to a collective agreement to apply to the National Industrial Court for a decision on the interpretation of any term or provision of a collective agreement",
+     "similarity": 0.6947641672051862
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.15]",
+     "claim": "Therefore, it can be inferred that workers can go on strike while their dispute is before the National Industrial Court, but the strike must be lifted once the National Industrial Court issues an award concerning the dispute.",
+     "similarity": 0.6872018375586912
+    }
+   ]
+  },
+  {
+   "id": "T02",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.1,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Trade Disputes Act 2004, s.43], employees participating in a strike or lockout are not entitled to wages for the period of their absence from work due to the strike or lockout, unless the employer has agreed otherwise.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.43]",
+     "claim": "According to [Trade Disputes Act 2004, s.43], employees participating in a strike or lockout are not entitled to wages for the period of their absence from work due to the strike or lockout, unless the employer has agreed otherwise.",
+     "similarity": 0.713868324783365
+    }
+   ]
+  },
+  {
+   "id": "T03",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.5,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to section 4 of the Trade Disputes Act 2004, before reporting a dispute to the government, you must first exhaust your internal resolution mechanisms. This means you must try to resolve the dispute amicably within your workplace before seeking external assistance.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Trade Disputes Act 2004, s.4]",
+     "claim": "According to section 4 of the Trade Disputes Act 2004, before reporting a dispute to the government, you must first exhaust your internal resolution mechanisms",
+     "similarity": 0.7540184618531613
+    }
+   ]
+  },
+  {
+   "id": "X01",
+   "category": "remedy",
+   "language": "en",
+   "recall": false,
+   "wall_s": 7.8,
+   "verified": 5,
+   "flagged": 1,
+   "failed": 0,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 16 of the Lagos Tenancy Law 2011, a landlord must serve a written notice as in Form TL4, signed by the Landlord or his agent, of the landlord's intention to proceed to recover possession, stating the grounds and particulars of the claim, on a date not less than seven (7) days from the date of the notice.\n\nYou have the right to receive this notice and to respond to it. If your landlord fails to serve this notice, you may be able to prevent the eviction proceedings from proceeding.\n\nHowever, if your landlord has already served the notice, you must respond to it by paying the rent and rates due, or by vacating the premises within the specified time frame. If you refuse to vacate, your landlord may proceed with the eviction proceedings.\n\nIt is also worth noting that you have the right to seek a court order to prevent the eviction, if you believe that your landlord has not served the notice properly or that the notice is invalid.\n\n[Act name, s.16]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.16]",
+     "claim": "According to Section 16 of the Lagos Tenancy Law 2011, a landlord must serve a written notice as in Form TL4, signed by the Landlord or his agent, of the landlord's intention to proceed to recover possession, stating the grounds and particulars of the claim, on a date not less than seven (7) days from the date of the notice",
+     "similarity": 0.8373585381387224
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.16]",
+     "claim": "You have the right to receive this notice and to respond to it",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6419863647903715
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.16]",
+     "claim": "If your landlord fails to serve this notice, you may be able to prevent the eviction proceedings from proceeding",
+     "similarity": 0.7147447612041239
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.16]",
+     "claim": "However, if your landlord has already served the notice, you must respond to it by paying the rent and rates due, or by vacating the premises within the specified time frame",
+     "similarity": 0.725995298538429
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.16]",
+     "claim": "If you refuse to vacate, your landlord may proceed with the eviction proceedings",
+     "similarity": 0.6879919000712718
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.16]",
+     "claim": "It is also worth noting that you have the right to seek a court order to prevent the eviction, if you believe that your landlord has not served the notice properly or that the notice is invalid",
+     "reasons": [
+      "citation does not resolve: [Act name, s.16]"
+     ],
+     "similarity": 0.7233934752447362
+    }
+   ]
+  },
+  {
+   "id": "X03",
+   "category": "negative",
+   "language": "en",
+   "recall": null,
+   "wall_s": 5.3,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": true,
+   "answer": "The retrieved sections do not answer this question.",
+   "receipts": []
+  },
+  {
+   "id": "TN01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 5.5,
+   "verified": 1,
+   "flagged": 1,
+   "failed": 1,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13(1)(b) of the Lagos Tenancy Law 2011, a monthly tenant should be given one month's notice to quit. Your landlord only gave you one week's notice, which is less than the required notice period. Therefore, this notice is not valid.",
+   "receipts": [
+    {
+     "verdict": "failed",
+     "source_ref": "[Lagos Tenancy Law 2011, s.13(1)(b)]",
+     "claim": "According to Section 13(1)(b) of the Lagos Tenancy Law 2011, a monthly tenant should be given one month's notice to quit",
+     "reasons": [
+      "quantity not found in cited source: 1 month"
+     ],
+     "similarity": 0
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.13(1)(b)]",
+     "claim": "Your landlord only gave you one week's notice, which is less than the required notice period",
+     "similarity": 0.7072184758285626
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.13(1)(b)]",
+     "claim": "Therefore, this notice is not valid.",
+     "reasons": [
+      "weak semantic support (0.63)"
+     ],
+     "similarity": 0.6318683969594738
+    }
+   ]
+  },
+  {
+   "id": "TN02",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.2,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 13(1)(e) of the Lagos Tenancy Law 2011, a landlord must give a six months notice to a yearly tenant in Lagos to end the tenancy.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.13(1)(e)]",
+     "claim": "According to Section 13(1)(e) of the Lagos Tenancy Law 2011, a landlord must give a six months notice to a yearly tenant in Lagos to end the tenancy.",
+     "similarity": 0.7559757437067798
+    }
+   ]
+  },
+  {
+   "id": "TN03",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.1,
+   "verified": 2,
+   "flagged": 2,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Lagos Tenancy Law 2011, s.3], a tenancy agreement exists when premises are granted by the landlord to a person for value. However, [Lagos Tenancy Law 2011, s.3] does not explicitly state that the law applies to all types of premises, including flats.\n\nBut, [Lagos Tenancy Law 2011, s.3] does not exclude flats from its application. Therefore, we must look at [Lagos Tenancy Law 2011, s.3] to determine if the law applies to flats.\n\nSince flats are a type of premises, the law applies to flats.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.3]",
+     "claim": "According to [Lagos Tenancy Law 2011, s.3], a tenancy agreement exists when premises are granted by the landlord to a person for value",
+     "similarity": 0.8774284399753144
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.3]",
+     "claim": "However, [Lagos Tenancy Law 2011, s.3] does not explicitly state that the law applies to all types of premises, including flats",
+     "similarity": 0.6663772193334667
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.3]",
+     "claim": "But, [Lagos Tenancy Law 2011, s.3] does not exclude flats from its application",
+     "reasons": [
+      "weak semantic support (0.58)"
+     ],
+     "similarity": 0.583868838102067
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.3]",
+     "claim": "Therefore, we must look at [Lagos Tenancy Law 2011, s.3] to determine if the law applies to flats",
+     "reasons": [
+      "weak semantic support (0.63)"
+     ],
+     "similarity": 0.6296511789698771
+    }
+   ]
+  },
+  {
+   "id": "TN04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.9,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Lagos Tenancy Law 2011, s.4(3)], it is unlawful for a landlord or his agent to demand or receive rent in excess of one (1) year from a yearly tenant. Therefore, your landlord cannot demand two years' rent in advance from you.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.4(3)]",
+     "claim": "According to [Lagos Tenancy Law 2011, s.4(3)], it is unlawful for a landlord or his agent to demand or receive rent in excess of one (1) year from a yearly tenant",
+     "similarity": 0.859724244904708
+    }
+   ]
+  },
+  {
+   "id": "TN05",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Lagos Tenancy Law 2011, s.5(1)], all landlords in Lagos State must issue a rent payment receipt to tenants immediately after receiving rent.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.5(1)]",
+     "claim": "According to [Lagos Tenancy Law 2011, s.5(1)], all landlords in Lagos State must issue a rent payment receipt to tenants immediately after receiving rent.",
+     "similarity": 0.7893920309570048
+    }
+   ]
+  },
+  {
+   "id": "TN06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 4.6,
+   "verified": 5,
+   "flagged": 1,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 25 of the Lagos Tenancy Law 2011, a landlord can recover possession of his premises from a tenant on the following grounds:\n\n(a) arrears of rent;\n(b) breach of any covenant or agreement;\n(c) where the premises is required by the landlord for personal use; or\n\nAdditionally, Section 2 of the same section overrides agreements for certain severe violations.\n\nHowever, Section 39 of the same law states that the court may issue a warrant for possession, even if the tenant has an undetermined or unsatisfied counterclaim.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.25]",
+     "claim": "According to Section 25 of the Lagos Tenancy Law 2011, a landlord can recover possession of his premises from a tenant on the following grounds:",
+     "similarity": 0.7669992950948938
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.25]",
+     "claim": "(a) arrears of rent;",
+     "similarity": 0.6773649747806796
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.25]",
+     "claim": "(b) breach of any covenant or agreement;",
+     "similarity": 0.7127765844201839
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.25]",
+     "claim": "(c) where the premises is required by the landlord for personal use; or",
+     "similarity": 0.7878789738156278
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.25]",
+     "claim": "Additionally, Section 2 of the same section overrides agreements for certain severe violations",
+     "reasons": [
+      "weak semantic support (0.60)"
+     ],
+     "similarity": 0.5998330279179712
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.25]",
+     "claim": "However, Section 39 of the same law states that the court may issue a warrant for possession, even if the tenant has an undetermined or unsatisfied counterclaim.",
+     "similarity": 0.7277160658182646
+    }
+   ]
+  },
+  {
+   "id": "TN07",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 10.5,
+   "verified": 7,
+   "flagged": 1,
+   "failed": 2,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 37 of the Lagos Tenancy Law 2011, an existing tenant can apply to the Court if they believe a rent increase is unreasonable.\n\nThe Court will consider the following grounds when determining whether the rent increase is unreasonable:\n\n*   The general level of rents in the locality or a similar locality for comparative analysis;\n*   Evidence of witnesses of the parties; and\n*   Any special circumstances relating to the premises in question or any other relevant matter.\n\nIf the Court is satisfied that the rent increase is unreasonable, it may order that the increase in rent be changed to a specific amount.\n\nAdditionally, Section 4 of the Lagos Tenancy Law 2011 states that landlords must issue a rent payment receipt to tenants immediately after receiving rent.\n\nHowever, Section 5 of the Lagos Tenancy Law 2011 states that landlords must not demand or receive rent in excess of one year for yearly tenancies. Since your landlord increased your rent by 100%, which is more than the maximum allowed, this provision may be applicable.\n\nYou can apply to the Court for an Order declaring that the rent increase is unreasonable and seek a reduction in rent.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.37]",
+     "claim": "According to Section 37 of the Lagos Tenancy Law 2011, an existing tenant can apply to the Court if they believe a rent increase is unreasonable",
+     "similarity": 0.8323541714350253
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.37]",
+     "claim": "The Court will consider the following grounds when determining whether the rent increase is unreasonable:",
+     "similarity": 0.8508850009756892
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.37]",
+     "claim": "*   The general level of rents in the locality or a similar locality for comparative analysis;",
+     "reasons": [
+      "weak semantic support (0.61)"
+     ],
+     "similarity": 0.6063469840956364
+    },
+    {
+     "verdict": "failed",
+     "source_ref": "[Lagos Tenancy Law 2011, s.37]",
+     "claim": "*   Evidence of witnesses of the parties; and",
+     "reasons": [
+      "claim not supported by cited text (0.53)"
+     ],
+     "similarity": 0.534144342905668
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.37]",
+     "claim": "*   Any special circumstances relating to the premises in question or any other relevant matter",
+     "similarity": 0.6825015625042233
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.37]",
+     "claim": "If the Court is satisfied that the rent increase is unreasonable, it may order that the increase in rent be changed to a specific amount",
+     "similarity": 0.8385668371603017
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.4]",
+     "claim": "Additionally, Section 4 of the Lagos Tenancy Law 2011 states that landlords must issue a rent payment receipt to tenants immediately after receiving rent",
+     "similarity": 0.6922320208412772
+    },
+    {
+     "verdict": "failed",
+     "source_ref": "[Lagos Tenancy Law 2011, s.5]",
+     "claim": "However, Section 5 of the Lagos Tenancy Law 2011 states that landlords must not demand or receive rent in excess of one year for yearly tenancies",
+     "reasons": [
+      "quantity not found in cited source: 1 year"
+     ],
+     "similarity": 0
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.5]",
+     "claim": "Since your landlord increased your rent by 100%, which is more than the maximum allowed, this provision may be applicable",
+     "similarity": 0.6611419822394421
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.5]",
+     "claim": "You can apply to the Court for an Order declaring that the rent increase is unreasonable and seek a reduction in rent.",
+     "similarity": 0.6648425449693657
+    }
+   ]
+  },
+  {
+   "id": "TN08",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 5.5,
+   "verified": 3,
+   "flagged": 2,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 44(1)(a) of the Lagos Tenancy Law 2011, any person who demolishes, alters or modifies a building to which this law applies with a view to ejecting a tenant and without the approval of the Court is guilty of an offence.\n\nIn this case, your landlord locked you out and threw your things outside without any court order. This action can be considered as demolition, alteration or modification of the building with a view to ejecting you, which is prohibited under Section 44(1)(a) of the Lagos Tenancy Law 2011.\n\nTherefore, your landlord's actions are not legal. You have the right to seek redress for this action.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.44(1)(a)]",
+     "claim": "According to Section 44(1)(a) of the Lagos Tenancy Law 2011, any person who demolishes, alters or modifies a building to which this law applies with a view to ejecting a tenant and without the approval of the Court is guilty of an offence",
+     "similarity": 0.8066058992204752
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.44(1)(a)]",
+     "claim": "In this case, your landlord locked you out and threw your things outside without any court order",
+     "reasons": [
+      "weak semantic support (0.65)"
+     ],
+     "similarity": 0.6507756410759202
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.44(1)(a)]",
+     "claim": "This action can be considered as demolition, alteration or modification of the building with a view to ejecting you, which is prohibited under Section 44(1)(a) of the Lagos Tenancy Law 2011",
+     "similarity": 0.7166253843143586
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.44(1)(a)]",
+     "claim": "Therefore, your landlord's actions are not legal",
+     "similarity": 0.6807880012361389
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Lagos Tenancy Law 2011, s.44(1)(a)]",
+     "claim": "You have the right to seek redress for this action.",
+     "reasons": [
+      "weak semantic support (0.60)"
+     ],
+     "similarity": 0.5999612310638996
+    }
+   ]
+  },
+  {
+   "id": "TX01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 3.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 148 of the Nigeria Tax Act 2025, the current VAT rate in Nigeria is 7.5%.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.148]",
+     "claim": "According to Section 148 of the Nigeria Tax Act 2025, the current VAT rate in Nigeria is 7.5%.",
+     "similarity": 0.697091061676856
+    }
+   ]
+  },
+  {
+   "id": "TX02",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 12.0,
+   "verified": 6,
+   "flagged": 14,
+   "failed": 1,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 187 of the Nigeria Tax Act 2025, the following taxable supplies are charged to VAT at the rate of 0%:\n\n(a) basic food items;\n(b) all medical and pharmaceutical products including medicinal herbal products;\n(c) educational books and materials;\n(d) fertilisers;\n(e) locally produced agricultural chemicals;\n(f) locally produced veterinary medicine;\n(g) locally produced animal feeds;\n(h) live cattle, goats, sheep and poultry;\n(i) agricultural seeds and seedlings;\n(j) electricity generated by generation companies (GENCOs) and supplied to National Grid or Nigeria Bulk Electricity Trading Company (NBET);\n(k) electricity transmitted by Transmission Company of Nigeria (TCN) to Electricity Distribution Companies (DISCOs);\n(l) medical services;\n(m) tuition relating to nursery, primary, secondary or tertiary education;\n(n) exported goods excluding oil and gas;\n(o) exported services;\n(p) exported incorporeal property;\n(q) medical equipment;\n(r) electric vehicles; and\n(s) parts, semi-knock-down units for the assembly of Electric Vehicles.\n\n[Act name, s.X]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "According to Section 187 of the Nigeria Tax Act 2025, the following taxable supplies are charged to VAT at the rate of 0%:",
+     "similarity": 0.819210657777649
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(a) basic food items;",
+     "reasons": [
+      "weak semantic support (0.62)"
+     ],
+     "similarity": 0.6172105974449376
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(b) all medical and pharmaceutical products including medicinal herbal products;",
+     "reasons": [
+      "weak semantic support (0.60)"
+     ],
+     "similarity": 0.5955637719889186
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(c) educational books and materials;",
+     "reasons": [
+      "weak semantic support (0.60)"
+     ],
+     "similarity": 0.5982671444590867
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(d) fertilisers;",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6438811859744931
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(e) locally produced agricultural chemicals;",
+     "similarity": 0.6706628611144138
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(f) locally produced veterinary medicine;",
+     "reasons": [
+      "weak semantic support (0.65)"
+     ],
+     "similarity": 0.6462131053880557
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(g) locally produced animal feeds;",
+     "similarity": 0.6601641374056793
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(h) live cattle, goats, sheep and poultry;",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6391662858735082
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(i) agricultural seeds and seedlings;",
+     "reasons": [
+      "weak semantic support (0.62)"
+     ],
+     "similarity": 0.6240833917589501
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(j) electricity generated by generation companies (GENCOs) and supplied to National Grid or Nigeria Bulk Electricity Trading Company (NBET);",
+     "similarity": 0.7116152009597642
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(k) electricity transmitted by Transmission Company of Nigeria (TCN) to Electricity Distribution Companies (DISCOs);",
+     "similarity": 0.6956233301929137
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(l) medical services;",
+     "reasons": [
+      "weak semantic support (0.58)"
+     ],
+     "similarity": 0.5753753501209503
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(m) tuition relating to nursery, primary, secondary or tertiary education;",
+     "reasons": [
+      "weak semantic support (0.65)"
+     ],
+     "similarity": 0.64936790475751
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(n) exported goods excluding oil and gas;",
+     "similarity": 0.6981710361749465
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(o) exported services;",
+     "reasons": [
+      "weak semantic support (0.63)"
+     ],
+     "similarity": 0.6297314953460411
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(p) exported incorporeal property;",
+     "reasons": [
+      "weak semantic support (0.60)"
+     ],
+     "similarity": 0.6015269375603098
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(q) medical equipment;",
+     "reasons": [
+      "weak semantic support (0.62)"
+     ],
+     "similarity": 0.618422965208379
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(r) electric vehicles; and",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6374803657195269
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "(s) parts, semi-knock-down units for the assembly of Electric Vehicles",
+     "reasons": [
+      "weak semantic support (0.61)"
+     ],
+     "similarity": 0.6126597795845088
+    },
+    {
+     "verdict": "failed",
+     "source_ref": "[Nigeria Tax Act 2025, s.187]",
+     "claim": "[Act name, s.X]",
+     "reasons": [
+      "claim not supported by cited text (0.53)"
+     ],
+     "similarity": 0.5258712141224522
+    }
+   ]
+  },
+  {
+   "id": "TX03",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 5.5,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "The retrieved sections do not answer this question.",
+   "receipts": []
+  },
+  {
+   "id": "TX04",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 9.1,
+   "verified": 3,
+   "flagged": 1,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 14 of the Nigeria Tax Act 2025, where an employer incurs an expense in the provision of any benefit or perquisite, other than the provision of living accommodation to which Section 14 relates, the following provisions shall apply.\n\nSection 14(1)(a) states that where any asset belonging to the employer is used wholly or partly in the making of such provisions, the employee is deemed to have earned annual benefit of an amount equal to 5% of the amount expended by the employer in acquiring the asset, but if that amount cannot be so ascertained, 5% of the market value of the asset at the time of the acquisition, as may be determined by the relevant tax authority.\n\nSince the question is about an \"official car\", we can assume that the employer-provided asset is an official car. \n\nTherefore, according to Section 14(1)(a), the employee is deemed to have earned annual benefit of an amount equal to 5% of the amount expended by the employer in acquiring the official car.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.14]",
+     "claim": "According to Section 14 of the Nigeria Tax Act 2025, where an employer incurs an expense in the provision of any benefit or perquisite, other than the provision of living accommodation to which Section 14 relates, the following provisions shall apply",
+     "similarity": 0.7831566885074397
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.14]",
+     "claim": "Section 14(1)(a) states that where any asset belonging to the employer is used wholly or partly in the making of such provisions, the employee is deemed to have earned annual benefit of an amount equal to 5% of the amount expended by the employer in acquiring the asset, but if that amount cannot be so ascertained, 5% of the market value of the asset at the time of the acquisition, as may be determined by the relevant tax authority",
+     "similarity": 0.8401174257690235
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.14]",
+     "claim": "Since the question is about an \"official car\", we can assume that the employer-provided asset is an official car",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.639271895080239
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.14]",
+     "claim": "Therefore, according to Section 14(1)(a), the employee is deemed to have earned annual benefit of an amount equal to 5% of the amount expended by the employer in acquiring the official car.",
+     "similarity": 0.7595138794096956
+    }
+   ]
+  },
+  {
+   "id": "TX05",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 13.1,
+   "verified": 2,
+   "flagged": 4,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 20 of the Nigeria Tax Act 2025, you are allowed to claim the following deductions against your business profits for tax in Nigeria:\n\n- Interest on debt employed in generating the income of the trade, business, profession or vocation (s.20(3)(a))\n- Rent and premiums, incurred during that period, in respect of land or building occupied for the purposes of generating the income (s.20(3)(b))\n- Salary, wages or other remuneration paid to employees, and cost to the company of any benefit or allowance provided to its employees (s.20(3)(c)(i) and (ii))\n- Expenses incurred for repair of premises, plant, machinery or fixtures employed in acquiring the income, or for the renewals, repair or alteration of any implement, utensil or articles so employed (s.20(3)(d))\n- Expenses incurred for establishing, preserving or defending title to or rights over an asset (s.20(3)(e))\n- Contributions to any staff pension, provident or other retirement benefits fund, society or scheme approved under the Pension Reform Act or any similar enactment in Nigeria (s.20(3)(f))\n- Expenses proven to the satisfaction of the relevant tax authority to have been incurred, being damage to, or loss of stock or inventory of the trade, business, profession or vocation (s.20(3)(g))\n- Bad or doubtful debts incurred in the course of a trade or business, notwithstanding that the debts were due and payable before the commencement of the basis period (s.20(3)(h)(i) and (ii))\n- Expenses incurred by the trade, business, profession or vocation on research and development for the period (s.20(3)(h)(j))\n- Other expenses incurred during any previous period for the purpose of such trade or business, or specifically for the period which the profits are being ascertained, provided that any expenditure incurred within six years prior to the commencement of the basis period (s.20(3)(h)(j))\n\nPlease note that these deductions are subject to the conditions and limitations outlined in various subsections and schedules of the Nigeria Tax Act 2025.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.20]",
+     "claim": "According to Section 20 of the Nigeria Tax Act 2025, you are allowed to claim the following deductions against your business profits for tax in Nigeria:",
+     "similarity": 0.7878867622307832
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.20]",
+     "claim": "- Interest on debt employed in generating the income of the trade, business, profession or vocation (s.20(3)(a))",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6361215156025213
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.20]",
+     "claim": "- Rent and premiums, incurred during that period, in respect of land or building occupied for the purposes of generating the income (s.20(3)(b))",
+     "reasons": [
+      "weak semantic support (0.65)"
+     ],
+     "similarity": 0.6520200322973081
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.20]",
+     "claim": "- Salary, wages or other remuneration paid to employees, and cost to the company of any benefit or allowance provided to its employees (s.20(3)(c)(i) and (ii))",
+     "reasons": [
+      "weak semantic support (0.64)"
+     ],
+     "similarity": 0.6442633395076124
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.20]",
+     "claim": "- Expenses incurred for repair of premises, plant, machinery or fixtures employed in acquiring the income, or for the renewals, repair or alteration of any implement, utensil or articles so employed (s.20(3)(d))",
+     "similarity": 0.666036765810217
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Nigeria Tax Act 2025, s.20]",
+     "claim": "- Expenses incurred for establishing, preserving or defending title to or rights over an asset (s.20(3)(e))",
+     "reasons": [
+      "weak semantic support (0.66)"
+     ],
+     "similarity": 0.6580057734908071
+    }
+   ]
+  },
+  {
+   "id": "TX06",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 12.4,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 1,
+   "regenerated": true,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 15(6) of the Nigeria Tax Act 2025, an individual is deemed to be resident for a year of assessment in Nigeria if they hold a Nigerian employment on 1 January in a year of assessment, or if they first become liable to income tax in Nigeria for that year by reason of their entering that employment during that year.\n\n[Act name, s.15(6)]",
+   "receipts": [
+    {
+     "verdict": "failed",
+     "source_ref": "[Nigeria Tax Act 2025, s.15(6)]",
+     "claim": "According to Section 15(6) of the Nigeria Tax Act 2025, an individual is deemed to be resident for a year of assessment in Nigeria if they hold a Nigerian employment on 1 January in a year of assessment, or if they first become liable to income tax in Nigeria for that year by reason of their entering that employment during that year",
+     "reasons": [
+      "citation does not resolve: [Act name, s.15(6)]",
+      "quantity not found in cited source: 1 naira"
+     ],
+     "similarity": 0
+    }
+   ]
+  },
+  {
+   "id": "TX07",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": false,
+   "wall_s": 8.8,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Labour Act 2004, s.5(1)] and [Nigeria Tax Act 2025, s.30(2)(a)(i)], an employer is allowed to deduct certain amounts from a worker's wages, including contributions to the National Housing Fund, National Health Insurance Scheme, and Pension Reform Act.\n\nHowever, [Nigeria Tax Act 2025, s.30(2)(a)(i)] specifically states that \"eligible deductions\" include payments made by the individual in a year of assessment in respect of their contributions under the National Housing Fund, National Health Insurance Scheme, and Pension Reform Act.\n\nThis implies that the deductions made from your salary are likely related to your contributions to these funds, rather than a tax deduction.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.5(1)] [Nigeria Tax Act 2025, s.30(2)(a)(i)]",
+     "claim": "According to [Labour Act 2004, s.5(1)] and [Nigeria Tax Act 2025, s.30(2)(a)(i)], an employer is allowed to deduct certain amounts from a worker's wages, including contributions to the National Housing Fund, National Health Insurance Scheme, and Pension Reform Act",
+     "similarity": 0.7748687032469058
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.30(2)(a)(i)]",
+     "claim": "However, [Nigeria Tax Act 2025, s.30(2)(a)(i)] specifically states that \"eligible deductions\" include payments made by the individual in a year of assessment in respect of their contributions under the National Housing Fund, National Health Insurance Scheme, and Pension Reform Act",
+     "similarity": 0.7878429248363683
+    }
+   ]
+  },
+  {
+   "id": "TX08",
+   "category": "lookup",
+   "language": "en",
+   "recall": false,
+   "wall_s": 11.3,
+   "verified": 5,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Nigeria Tax Act 2025, s.34], all forms of property, including shares and property, are chargeable assets for capital gains tax purposes. However, [Nigeria Tax Act 2025, s.8(2)] states that dividends received by a Nigerian company by way of shares of the paying company shall not be included in its profits chargeable to tax under this Act.\n\nThis means that if you are selling shares or property in Nigeria, you may not pay tax on the profit from the sale, as long as the shares or property are being sold by a Nigerian company and the dividend is being received by the company. However, if you are an individual selling shares or property, you would need to consider [Nigeria Tax Act 2025, s.47], which states that gains accruing to any person in respect of a disposal of shares by a non-resident shall be a chargeable gain under this Act where the disposal results into a change in the ownership structure or group membership of a Nigerian company.\n\nBut [Nigeria Tax Act 2025, s.47] does not apply to individuals selling shares or property, it only applies to non-residents. Therefore, you would need to consider [Nigeria Tax Act 2025, s.34] and [Nigeria Tax Act 2025, s.8(1)], which states that all forms of property, including shares and property, are chargeable assets for capital gains tax purposes, and that dividend income must be included in the company's taxable profits, irrespective of any tax already paid at source.\n\nSo, to answer your question, you may not pay tax on the profit from selling your shares or property in Nigeria, as long as the shares or property are being sold by a Nigerian company and the dividend is being received by the company.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.34]",
+     "claim": "According to [Nigeria Tax Act 2025, s.34], all forms of property, including shares and property, are chargeable assets for capital gains tax purposes",
+     "similarity": 0.7620353984005628
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.8(2)]",
+     "claim": "However, [Nigeria Tax Act 2025, s.8(2)] states that dividends received by a Nigerian company by way of shares of the paying company shall not be included in its profits chargeable to tax under this Act",
+     "similarity": 0.8707704498407001
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.47]",
+     "claim": "This means that if you are selling shares or property in Nigeria, you may not pay tax on the profit from the sale, as long as the shares or property are being sold by a Nigerian company and the dividend is being received by the company. However, if you are an individual selling shares or property, you would need to consider [Nigeria Tax Act 2025, s.47], which states that gains accruing to any person in respect of a disposal of shares by a non-resident shall be a chargeable gain under this Act where the disposal results into a change in the ownership structure or group membership of a Nigerian company",
+     "similarity": 0.9016471999530323
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.47]",
+     "claim": "But [Nigeria Tax Act 2025, s.47] does not apply to individuals selling shares or property, it only applies to non-residents",
+     "similarity": 0.6731948556645873
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.34] [Nigeria Tax Act 2025, s.8(1)]",
+     "claim": "Therefore, you would need to consider [Nigeria Tax Act 2025, s.34] and [Nigeria Tax Act 2025, s.8(1)], which states that all forms of property, including shares and property, are chargeable assets for capital gains tax purposes, and that dividend income must be included in the company's taxable profits, irrespective of any tax already paid at source",
+     "similarity": 0.7766608415819004
+    }
+   ]
+  },
+  {
+   "id": "XD01",
+   "category": "cross-domain",
+   "language": "en",
+   "recall": false,
+   "wall_s": 6.5,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "The Labour Act does not explicitly address redundancy payments. However, Section 1 of the Labour Act states that wages must be paid in legal tender, and Section 2 states that wages can be paid by cheque or postal order with the worker's written consent. \n\nSection 1(a) of the Labour Act also states that if in any contract the whole or any part of the wages of a worker is made payable in any other manner, the contract shall be illegal, null and void.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.1]",
+     "claim": "The Labour Act does not explicitly address redundancy payments. However, Section 1 of the Labour Act states that wages must be paid in legal tender, and Section 2 states that wages can be paid by cheque or postal order with the worker's written consent",
+     "similarity": 0.7977412831558968
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.1(a)]",
+     "claim": "Section 1(a) of the Labour Act also states that if in any contract the whole or any part of the wages of a worker is made payable in any other manner, the contract shall be illegal, null and void.",
+     "similarity": 0.8422756377925112
+    }
+   ]
+  },
+  {
+   "id": "XD02",
+   "category": "cross-domain",
+   "language": "en",
+   "recall": false,
+   "wall_s": 13.3,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": false,
+   "answer": "According to [Nigeria Tax Act 2025, s.14(1)(b)], where an employer incurs an expense in the provision of any benefit or perquisite, other than the provision of living accommodation to which section 14 relates, the following provisions shall apply.\n\nIn this case, the company is providing you with a flat, which is considered a living accommodation. Therefore, the provisions of section 14(1)(b) do not apply.\n\nHowever, [Nigeria Tax Act 2025, s.14(1)(a)] states that where any asset belonging to the employer is used wholly or partly in the making of such provisions, the employee is deemed to have earned annual benefit of an amount equal to 5% of the amount expended by the employer in acquiring the asset, but if that amount cannot be so ascertained, 5% of the market value of the asset at the time of the acquisition, as may be determined by the relevant tax authority.\n\nSince the company is providing you with a flat, it is likely that the employer has acquired the flat using company funds. Therefore, the provisions of section 14(1)(a) may apply.\n\nHowever, [Nigeria Tax Act 2025, s.14(1)(c)] states that in any other case, the employee is deemed to have earned annual benefits equal to the annual amount expended by the employer in connection with the benefit thereon.\n\nIn this case, the annual amount expended by the employer in connection with the flat is the rent. Therefore, the rent benefit is taxable.\n\nHowever, the deduction of the rent from your salary is not explicitly prohibited by the Act. But, since the rent benefit is taxable, your employer should not deduct the rent from your salary. Instead, they should pay the tax on the rent benefit and remit it to the tax authority.\n\nThe retrieved sections do not answer this question fully, but they provide some guidance on the tax implications of the flat benefit.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.14(1)(b)]",
+     "claim": "According to [Nigeria Tax Act 2025, s.14(1)(b)], where an employer incurs an expense in the provision of any benefit or perquisite, other than the provision of living accommodation to which section 14 relates, the following provisions shall apply",
+     "similarity": 0.8283679897753555
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.14(1)(a)]",
+     "claim": "In this case, the company is providing you with a flat, which is considered a living accommodation. Therefore, the provisions of section 14(1)(b) do not apply. However, [Nigeria Tax Act 2025, s.14(1)(a)] states that where any asset belonging to the employer is used wholly or partly in the making of such provisions, the employee is deemed to have earned annual benefit of an amount equal to 5% of the amount expended by the employer in acquiring the asset, but if that amount cannot be so ascertained, 5% of the market value of the asset at the time of the acquisition, as may be determined by the relevant tax authority",
+     "similarity": 0.8767878401305007
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.14(1)(c)]",
+     "claim": "Since the company is providing you with a flat, it is likely that the employer has acquired the flat using company funds. Therefore, the provisions of section 14(1)(a) may apply. However, [Nigeria Tax Act 2025, s.14(1)(c)] states that in any other case, the employee is deemed to have earned annual benefits equal to the annual amount expended by the employer in connection with the benefit thereon",
+     "similarity": 0.8415081742325113
+    }
+   ]
+  },
+  {
+   "id": "XD03",
+   "category": "cross-domain",
+   "language": "en",
+   "recall": true,
+   "wall_s": 7.4,
+   "verified": 3,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Nigeria Tax Act 2025, s.20(1)(b)], rent and premiums, incurred during that period, in respect of land or building occupied for the purposes of generating the income, are allowed as a deduction.\n\nAlso, [Lagos Tenancy Law 2011, s.5(1)] mandates that all landlords in Lagos State must issue a rent payment receipt to tenants immediately after receiving rent.\n\nTherefore, as a shop owner in Lagos, you can deduct your shop's rent as a business expense for tax purposes. Your landlord must give you a receipt for the rent paid, as required by [Lagos Tenancy Law 2011, s.5(1)].",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.20(1)(b)]",
+     "claim": "According to [Nigeria Tax Act 2025, s.20(1)(b)], rent and premiums, incurred during that period, in respect of land or building occupied for the purposes of generating the income, are allowed as a deduction",
+     "similarity": 0.7389140729765943
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.5(1)]",
+     "claim": "Also, [Lagos Tenancy Law 2011, s.5(1)] mandates that all landlords in Lagos State must issue a rent payment receipt to tenants immediately after receiving rent",
+     "similarity": 0.7854897261838434
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Lagos Tenancy Law 2011, s.5(1)]",
+     "claim": "Therefore, as a shop owner in Lagos, you can deduct your shop's rent as a business expense for tax purposes. Your landlord must give you a receipt for the rent paid, as required by [Lagos Tenancy Law 2011, s.5(1)].",
+     "similarity": 0.7305666633646679
+    }
+   ]
+  },
+  {
+   "id": "XD04",
+   "category": "cross-domain",
+   "language": "en",
+   "recall": false,
+   "wall_s": 6.9,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [NMW Act 2019, s.9(1)], an employer must pay workers at least the national minimum wage, subject to statutory deductions. This means that your oga must have paid you at least the minimum wage, minus any statutory deductions.\n\nHowever, the Act does not specify what the minimum wage should have been for your employment period. It only requires that the employer pay the minimum wage, subject to deductions.\n\nRegarding the final payment, [Nigeria Tax Act 2025, s.58] states that income tax rates for individuals, excluding those earning the Minimum Wage, are specified in the Fourth Schedule of the Act. This implies that the final payment you received is not subject to income tax, as it is not considered taxable income.\n\nTherefore, the minimum wage law does not directly affect what your last salary should have been, but it does require that your oga pay you at least the minimum wage. The final payment you received is not subject to income tax.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.9(1)]",
+     "claim": "According to [NMW Act 2019, s.9(1)], an employer must pay workers at least the national minimum wage, subject to statutory deductions",
+     "similarity": 0.8249925488119156
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.58]",
+     "claim": "This means that your oga must have paid you at least the minimum wage, minus any statutory deductions. However, the Act does not specify what the minimum wage should have been for your employment period. It only requires that the employer pay the minimum wage, subject to deductions. Regarding the final payment, [Nigeria Tax Act 2025, s.58] states that income tax rates for individuals, excluding those earning the Minimum Wage, are specified in the Fourth Schedule of the Act",
+     "similarity": 0.7813467852047393
+    }
+   ]
+  },
+  {
+   "id": "XD05",
+   "category": "cross-domain",
+   "language": "en",
+   "recall": false,
+   "wall_s": 5.3,
+   "verified": 2,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to [Nigeria Tax Act 2025, s.58], the income tax payable on the chargeable income of an individual, other than an individual earning the Minimum Wage, shall be as specified in the Fourth Schedule to this Act.\n\nSince you earn exactly the minimum wage, you are not excluded from paying income tax on it. However, the applicable tax rate is specified in the Fourth Schedule to this Act, not in [Nigeria Tax Act 2025, s.58] itself.\n\nTherefore, to determine the tax rate, you would need to refer to the Fourth Schedule to this Act.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.58]",
+     "claim": "According to [Nigeria Tax Act 2025, s.58], the income tax payable on the chargeable income of an individual, other than an individual earning the Minimum Wage, shall be as specified in the Fourth Schedule to this Act",
+     "similarity": 0.8672055675215585
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Nigeria Tax Act 2025, s.58]",
+     "claim": "Since you earn exactly the minimum wage, you are not excluded from paying income tax on it. However, the applicable tax rate is specified in the Fourth Schedule to this Act, not in [Nigeria Tax Act 2025, s.58] itself",
+     "similarity": 0.8304464866930362
+    }
+   ]
+  },
+  {
+   "id": "CP01",
+   "category": "computation",
+   "language": "en",
+   "recall": null,
+   "wall_s": 0.6,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "paye",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "Your PAYE is **₦63,500 per month** (₦762,000 per year, effective rate 14.1%).\n\nBreakdown (annual):\n- Gross income: ₦5,400,000\n- Taxable income: ₦5,400,000\n- ₦800,000 at 0% = ₦0 [Nigeria Tax Act 2025, Fourth Schedule]\n- ₦2,200,000 at 15% = ₦330,000 [Nigeria Tax Act 2025, Fourth Schedule]\n- ₦2,400,000 at 18% = ₦432,000 [Nigeria Tax Act 2025, Fourth Schedule]\n\nBasis: Nigeria Tax Act 2025 (in force from 2026-01-01), rates verified 2026-07-02. Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "CP02",
+   "category": "computation",
+   "language": "en",
+   "recall": null,
+   "wall_s": 0.6,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "paye",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "Your PAYE is **₦24,500 per month** (₦294,000 per year, effective rate 9.8%).\n\nBreakdown (annual):\n- Gross income: ₦3,000,000\n- Rent relief (20% of rent, capped ₦500,000): −₦240,000 [Nigeria Tax Act 2025]\n- Taxable income: ₦2,760,000\n- ₦800,000 at 0% = ₦0 [Nigeria Tax Act 2025, Fourth Schedule]\n- ₦1,960,000 at 15% = ₦294,000 [Nigeria Tax Act 2025, Fourth Schedule]\n\nBasis: Nigeria Tax Act 2025 (in force from 2026-01-01), rates verified 2026-07-02. Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "CP03",
+   "category": "computation",
+   "language": "en",
+   "recall": null,
+   "wall_s": 0.5,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "paye",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "You are **exempt from PAYE**: gross income does not exceed the national minimum wage (₦70,000/month), which the Nigeria Tax Act 2025 exempts from PAYE.\n\nBasis: Nigeria Tax Act 2025 (in force from 2026-01-01), rates verified 2026-07-02.",
+   "receipts": []
+  },
+  {
+   "id": "CP04",
+   "category": "computation",
+   "language": "pcm",
+   "recall": null,
+   "wall_s": 0.6,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "termination_notice",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "With 5.1 years of continuous employment, the statutory minimum notice your employer must give you (or pay in lieu of) is **one month** [Labour Act 2004, s.11(2)(d)].\n\n- Notice of one week or more must be given in writing [Labour Act 2004, s.11(3)]\n- Either party may accept payment in lieu of notice [Labour Act 2004, s.11(6)]\n- Payment in lieu is calculated on money wages only, excluding overtime and other allowances [Labour Act 2004, s.11(9)]\n\nBasis: Labour Act, Cap L1 LFN 2004 (as at July 2026). Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "CP05",
+   "category": "computation",
+   "language": "en",
+   "recall": null,
+   "wall_s": 8.0,
+   "verified": 8,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 11 of the Labour Act 2004, the notice period for a contract of employment is as follows:\n\n- One day for contracts of three months or less\n- One week for contracts of more than three months but less than two years\n- Two weeks for contracts of two years but less than five years\n- One month for contracts of five years or more\n\nSince you have been employed for 18 months, which is more than two years, the notice period is two weeks.\n\nAccording to Section 11(3) of the Labour Act 2004, any notice for a period of one week or more shall be in writing.\n\nTherefore, you are owed two weeks' notice, and your employer cannot pay you instead of notice.",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "According to Section 11 of the Labour Act 2004, the notice period for a contract of employment is as follows:",
+     "similarity": 0.810562531297923
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "- One day for contracts of three months or less",
+     "similarity": 0.7282678736024946
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "- One week for contracts of more than three months but less than two years",
+     "similarity": 0.7506380781427122
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "- Two weeks for contracts of two years but less than five years",
+     "similarity": 0.7402842420862769
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "- One month for contracts of five years or more",
+     "similarity": 0.7117907467294015
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11]",
+     "claim": "Since you have been employed for 18 months, which is more than two years, the notice period is two weeks",
+     "similarity": 0.7372428728467113
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11(3)]",
+     "claim": "According to Section 11(3) of the Labour Act 2004, any notice for a period of one week or more shall be in writing",
+     "similarity": 0.749981578120914
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.11(3)]",
+     "claim": "Therefore, you are owed two weeks' notice, and your employer cannot pay you instead of notice.",
+     "similarity": 0.6936113318883376
+    }
+   ]
+  },
+  {
+   "id": "CP06",
+   "category": "computation",
+   "language": "en",
+   "recall": null,
+   "wall_s": 0.7,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "paye",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "Your PAYE is **₦485,833 per month** (₦5,830,000 per year, effective rate 19.4%).\n\nBreakdown (annual):\n- Gross income: ₦30,000,000\n- Taxable income: ₦30,000,000\n- ₦800,000 at 0% = ₦0 [Nigeria Tax Act 2025, Fourth Schedule]\n- ₦2,200,000 at 15% = ₦330,000 [Nigeria Tax Act 2025, Fourth Schedule]\n- ₦9,000,000 at 18% = ₦1,620,000 [Nigeria Tax Act 2025, Fourth Schedule]\n- ₦13,000,000 at 21% = ₦2,730,000 [Nigeria Tax Act 2025, Fourth Schedule]\n- ₦5,000,000 at 23% = ₦1,150,000 [Nigeria Tax Act 2025, Fourth Schedule]\n\nBasis: Nigeria Tax Act 2025 (in force from 2026-01-01), rates verified 2026-07-02. Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "XN01",
+   "category": "negative",
+   "language": "en",
+   "recall": null,
+   "wall_s": 6.6,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": true,
+   "answer": "The retrieved sections do not answer this question.",
+   "receipts": []
+  },
+  {
+   "id": "XN02",
+   "category": "negative",
+   "language": "en",
+   "recall": null,
+   "wall_s": 2.8,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": true,
+   "refusal_correct": true,
+   "answer": "The retrieved sections do not answer this question.",
+   "receipts": []
+  }
+ ],
+ "mode": "full",
+ "timestamp": "2026-07-02T12:44:09",
+ "summary": "Retrieval recall@6: 45/59 = 76%\n  cross-domain: 1/5\n  cross-section: 1/1\n  lookup: 37/45\n  remedy: 6/8\nClaims: 162 — verified 128 (79%), flagged 28, failed-after-regen 6\nCitation precision (verified / all shown): 79%\nRegeneration rate: 10/68\nRouted to rules engine (verified by construction): 7 (L01, L02, CP01, CP02, CP03, CP04, CP06)\nRefusal calibration: 61/68 (wrong: L11, L14, L20, N03, E02, TX03, XD02)"
+}

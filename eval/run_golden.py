@@ -23,7 +23,7 @@ from pathlib import Path
 
 REPO = Path(__file__).parent.parent
 OFIN = REPO / "engine/bin/ofin"
-GOLDEN = REPO / "eval/golden/labour.jsonl"
+GOLDEN_FILES = sorted((REPO / "eval/golden").glob("*.jsonl"))
 RESULTS_DIR = REPO / "eval/golden/results"
 
 REFUSAL_MARKER = "do not answer"
@@ -121,7 +121,7 @@ def main() -> None:
     args = parser.parse_args()
     full = not args.retrieval_only
 
-    questions = [json.loads(l) for l in GOLDEN.open() if l.strip()]
+    questions = [json.loads(l) for f in GOLDEN_FILES for l in f.open() if l.strip()]
     if args.only:
         wanted = set(args.only.split(","))
         questions = [q for q in questions if q["id"] in wanted]

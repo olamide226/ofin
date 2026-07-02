@@ -1,0 +1,965 @@
+{
+  "act": "Lagos Tenancy Law 2011",
+  "source_file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+  "toc_titles_found": 45,
+  "sections_found": 48,
+  "last_section_number": 49,
+  "chunk_count": 49,
+  "chunks": [
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "preamble",
+        "section_number": null,
+        "section_title": "Long title, commencement and arrangement of sections",
+        "chunk_type": "preamble"
+      },
+      "text": "# Tenancy Law of Lagos State, No. 14 of 2011\n\nNo 37                          Ikeja – 26th August 2011                        Vol. 44\n\n                          Lagos State Government Notice No 77\n\n                 The following is published as supplement to this Gazette\n\n                                                                              page\n\nLaw No 14   A Law to Regulate Rights and Obligations under Tenancy          A463 – 494\n            Agreements and the Relationship between the Landlord and the\n            Tenant including the Procedure for the Recovery of Premises\n            and for Connected Purposes.\n\n                                                 Arrangement of Sections\n\n1.    Application of the Law             2.    Jurisdiction of the Courts           3.    Tenancy Agreement\n4.    Advance Rent.                      5.    Rent Payment Receipt.                6.    Rights of a Tenant.\n\n7.    Obligations of the Tenant          8.    Obligations of the Landlord          9.    Obligations of the Landlord\n                                                                                          regarding business premises.\n10.   Service Charge, Facility and       11.   Payment of Professional fees         12.   Provision for Re-entry\n      Security Deposits.\n13.   Length of Notice                   14.   Notice of Licenses                   15.   Notice required for abandoned\n                                                                                          premises\n16.   Tenant refusing or neglecting to   17.   Service of Notice                    18.   Service of Notice for Residential\n      give up possession.                                                                 Premises\n19.   Service of Notice for Business     20.   Duty to notify other persons in      21.   Persons in unlawful occupation\n      Premises                                 occupation\n22.   Service of Process                 23.   Use of Forms                         24.   Institution of Proceedings to\n                                                                                          recover possession\n25.   Grounds for Possession             26.   Recovery of premises for a fixed     27.   Trial.\n                                               term certain\n28.   Payment of arrears of rent.        29.   Court as Receiver of refused rent.   30.   Arbitration\n31.   Landlord may claim for mense       32.   Mediation                            33.   Claims against persons          in\n      profits or for use and                                                              unlawful occupation\n      occupation of premises.\n34.   Defence supported by written       35.   Service on persons in unlawful       36.   Defendant not defending claim\n      depositions                              occupation\n37.   Unreasonable increase of Rent      38.   Application to set aside or vary     39.   Warrant for possession may be\n                                               Judgment of Court                          used be issued at any time.\n40.   Form and purpose of warrant        41.   Duration of warrant                  42.   Warrant of possession justifies\n      for possession                                                                      entry on premises\n43.   Enforcement of Order of Court      44.   Offences and Penalties               45.   Appeals\n46.   Regulations and procedure          47.   Interpretation                       48.   Repeal\n49.   Citation and Commencement\n                    Supplement to Lagos State of Nigeria Official Gazette Extraordinary No 37, Vol 44 0f 26th August 2011 – Part A\n\n                                                Assented to at Ikeja this 24th day of August 2011\n\n                                                       Mr Babatunde Raji Fashola (SAN)\n                                                               Governor of Lagos State\n\n                                                                  No 14 of 2011\n\nLaw to Regulate rights and obligations under tenancy agreements and their relationship between the landlord and the Tenant\nincluding the procedure for the recovery of premises and for connected purposes.\n\n                                                                                                                                24th August, 2011\n\nThe Lagos State House of Assembly enacts as follows:",
+      "summary": "This law regulates the rights and obligations of landlords and tenants within Lagos State. It establishes procedures for tenancy agreements, rent payments, and crucially, the recovery of premises. The law aims to govern the landlord-tenant relationship comprehensively.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: preamble\nTitle: Long title, commencement and arrangement of sections\nJurisdiction: lagos-state\n\nSummary: This law regulates the rights and obligations of landlords and tenants within Lagos State. It establishes procedures for tenancy agreements, rent payments, and crucially, the recovery of premises. The law aims to govern the landlord-tenant relationship comprehensively.\n\n# Tenancy Law of Lagos State, No. 14 of 2011\n\nNo 37                          Ikeja – 26th August 2011                        Vol. 44\n\n                          Lagos State Government Notice No 77\n\n                 The following is published as supplement to this Gazette\n\n                                                                              page\n\nLaw No 14   A Law to Regulate Rights and Obligations under Tenancy          A463 – 494\n            Agreements and the Relationship between the Landlord and the\n            Tenant including the Procedure for the Recovery of Premises\n            and for Connected Purposes.\n\n                                                 Arrangement of Sections\n\n1.    Application of the Law             2.    Jurisdiction of the Courts           3.    Tenancy Agreement\n4.    Advance Rent.                      5.    Rent Payment Receipt.                6.    Rights of a Tenant.\n\n7.    Obligations of the Tenant          8.    Obligations of the Landlord          9.    Obligations of the Landlord\n                                                                                          regarding business premises.\n10.   Service Charge, Facility and       11.   Payment of Professional fees         12.   Provision for Re-entry\n      Security Deposits.\n13.   Length of Notice                   14.   Notice of Licenses                   15.   Notice required for abandoned\n                                                                                          premises\n16.   Tenant refusing or neglecting to   17.   Service of Notice                    18.   Service of Notice for Residential\n      give up possession.                                                                 Premises\n19.   Service of Notice for Business     20.   Duty to notify other persons in      21.   Persons in unlawful occupation\n      Premises                                 occupation\n22.   Service of Process                 23.   Use of Forms                         24.   Institution of Proceedings to\n                                                                                          recover possession\n25.   Grounds for Possession             26.   Recovery of premises for a fixed     27.   Trial.\n                                               term certain\n28.   Payment of arrears of rent.        29.   Court as Receiver of refused rent.   30.   Arbitration\n31.   Landlord may claim for mense       32.   Mediation                            33.   Claims against persons          in\n      profits or for use and                                                              unlawful occupation\n      occupation of premises.\n34.   Defence supported by written       35.   Service on persons in unlawful       36.   Defendant not defending claim\n      depositions                              occupation\n37.   Unreasonable increase of Rent      38.   Application to set aside or vary     39.   Warrant for possession may be\n                                               Judgment of Court                          used be issued at any time.\n40.   Form and purpose of warrant        41.   Duration of warrant                  42.   Warrant of possession justifies\n      for possession                                                                      entry on premises\n43.   Enforcement of Order of Court      44.   Offences and Penalties               45.   Appeals\n46.   Regulations and procedure          47.   Interpretation                       48.   Repeal\n49.   Citation and Commencement\n                    Supplement to Lagos State of Nigeria Official Gazette Extraordinary No 37, Vol 44 0f 26th August 2011 – Part A\n\n                                                Assented to at Ikeja this 24th day of August 2011\n\n                                                       Mr Babatunde Raji Fashola (SAN)\n                                                               Governor of Lagos State\n\n                                                                  No 14 of 2011\n\nLaw to Regulate rights and obligations under tenancy agreements and their relationship between the landlord and the Tenant\nincluding the procedure for the recovery of premises and for connected purposes.\n\n                                                                                                                                24th August, 2011\n\nThe Lagos State House of Assembly enacts as follows:"
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.1",
+        "section_number": 1,
+        "section_title": "Application of the Law",
+        "chunk_type": "section"
+      },
+      "text": "1.-(1) This Law shall apply to all premises within Lagos State, including business and residential premises unless otherwise\nspecified.\n\n       (2)    This Law shall not apply to-\n\n              (a)        Residential premises owned or operated by an educational institution for its staff and students;\n\n              (b)        Residential premises provided for emergency shelter;\n\n              (c)        Residential premises-\n\n                         (i)     In a care or hospice facility;\n\n                         (ii)    In a public or private hospital or a mental health facility: and\n\n              (d)        that is made available in the course of providing rehabilitative or therapeutic treatment.\n\n       (3)    The following areas:\n\n              (i)        Apapa:\n\n              (ii)       Ikeja GRA.;\n\n              (iii)      Ikoyi; and\n\n              (iv)       Victoria Island\n\nare exempted from the application of this Law, however, the Governor may from time to time by Order published in the\n       State Official Gazette exempt the application of this Law to any other area or premises in the State,",
+      "summary": "This law applies to all business and residential premises in Lagos State, with specific exemptions. These exemptions include premises owned by educational institutions, emergency shelters, care facilities, hospitals, and mental health facilities. Additionally, certain areas like Apapa, Ikeja GRA, Ikoyi, and Victoria Island are exempted, with the Governor having the power to grant further exemptions.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.1\nTitle: Application of the Law\nJurisdiction: lagos-state\n\nSummary: This law applies to all business and residential premises in Lagos State, with specific exemptions. These exemptions include premises owned by educational institutions, emergency shelters, care facilities, hospitals, and mental health facilities. Additionally, certain areas like Apapa, Ikeja GRA, Ikoyi, and Victoria Island are exempted, with the Governor having the power to grant further exemptions.\n\n1.-(1) This Law shall apply to all premises within Lagos State, including business and residential premises unless otherwise\nspecified.\n\n       (2)    This Law shall not apply to-\n\n              (a)        Residential premises owned or operated by an educational institution for its staff and students;\n\n              (b)        Residential premises provided for emergency shelter;\n\n              (c)        Residential premises-\n\n                         (i)     In a care or hospice facility;\n\n                         (ii)    In a public or private hospital or a mental health facility: and\n\n              (d)        that is made available in the course of providing rehabilitative or therapeutic treatment.\n\n       (3)    The following areas:\n\n              (i)        Apapa:\n\n              (ii)       Ikeja GRA.;\n\n              (iii)      Ikoyi; and\n\n              (iv)       Victoria Island\n\nare exempted from the application of this Law, however, the Governor may from time to time by Order published in the\n       State Official Gazette exempt the application of this Law to any other area or premises in the State,"
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.2",
+        "section_number": 2,
+        "section_title": "Jurisdiction of the Courts",
+        "chunk_type": "section"
+      },
+      "text": "2.-(1) A Court shall have jurisdiction to determine matters in respect of the tenancy of any premises let before or after\nthe commencement this Law.\n       (2)    The jurisdiction of a court shall not be ousted by the defendant or respondent setting up the title of any other party.\n       (3)    The parties’ agreement to resort to Court connected Alternative Dispute Resolution (ADR) or other faci1ities such as the\n              Lagos Multi-Door Court House or to the Citizens Mediation Centre for amicable dispute resolution shall not\n              however be construed as an ouster of Court's jurisdiction.\n\n       (4)    Proceedings shall be brought under this Law at the High Court where the rental value of the premises exceeds\n              the jurisdiction of the Magistrate Court as provided by the Magistrates' Courts Law.\n\n       (5)    Subject to the provisions of this Law, a Court shall be bound by the practice and procedure in civil matters in\n              the Magistrates' Court or the High Court of Lagos State.",
+      "summary": "This section grants courts jurisdiction over tenancy matters, regardless of the defendant claiming another's title. It specifies that proceedings should be brought in the High Court if the rental value exceeds the Magistrate Court's jurisdiction, and that parties' agreements for Alternative Dispute Resolution do not oust court jurisdiction. Courts must follow existing civil procedure rules.",
+      "cross_refs": [
+        "Magistrates' Courts Law"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.2\nTitle: Jurisdiction of the Courts\nJurisdiction: lagos-state\n\nSummary: This section grants courts jurisdiction over tenancy matters, regardless of the defendant claiming another's title. It specifies that proceedings should be brought in the High Court if the rental value exceeds the Magistrate Court's jurisdiction, and that parties' agreements for Alternative Dispute Resolution do not oust court jurisdiction. Courts must follow existing civil procedure rules.\n\n2.-(1) A Court shall have jurisdiction to determine matters in respect of the tenancy of any premises let before or after\nthe commencement this Law.\n       (2)    The jurisdiction of a court shall not be ousted by the defendant or respondent setting up the title of any other party.\n       (3)    The parties’ agreement to resort to Court connected Alternative Dispute Resolution (ADR) or other faci1ities such as the\n              Lagos Multi-Door Court House or to the Citizens Mediation Centre for amicable dispute resolution shall not\n              however be construed as an ouster of Court's jurisdiction.\n\n       (4)    Proceedings shall be brought under this Law at the High Court where the rental value of the premises exceeds\n              the jurisdiction of the Magistrate Court as provided by the Magistrates' Courts Law.\n\n       (5)    Subject to the provisions of this Law, a Court shall be bound by the practice and procedure in civil matters in\n              the Magistrates' Court or the High Court of Lagos State."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.3",
+        "section_number": 3,
+        "section_title": "Tenancy Agreement",
+        "chunk_type": "section"
+      },
+      "text": "3.     A tenancy agreement shall for the purposes of this Law, be deemed to exist where premises are granted by the\n       landlord to a person for value whether or not it is –\n\n       (a)    Express or implied;\n\n       (b)    Oral or written or partly oral or partly written; or\n\n       (c)    For a fixed period.",
+      "summary": "This section defines what constitutes a tenancy agreement for the purposes of the Tenancy Law of Lagos State. It establishes that a tenancy exists when premises are granted for value, regardless of whether the agreement is express or implied, oral or written, or for a fixed period.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.3\nTitle: Tenancy Agreement\nJurisdiction: lagos-state\n\nSummary: This section defines what constitutes a tenancy agreement for the purposes of the Tenancy Law of Lagos State. It establishes that a tenancy exists when premises are granted for value, regardless of whether the agreement is express or implied, oral or written, or for a fixed period.\n\n3.     A tenancy agreement shall for the purposes of this Law, be deemed to exist where premises are granted by the\n       landlord to a person for value whether or not it is –\n\n       (a)    Express or implied;\n\n       (b)    Oral or written or partly oral or partly written; or\n\n       (c)    For a fixed period."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.4",
+        "section_number": 4,
+        "section_title": "Advance Rent.                      5.    Rent Payment Receipt.                6.    Rights of a Tenant",
+        "chunk_type": "section"
+      },
+      "text": "4.-(1) It shall be unlawful for a landlord or his agent to demand or receive from a sitting tenant rent in excess of six (6)\nmonths from a monthly tenant and one (1) year from a yearly tenant in respect of any premises without prejudice to the\nnature of tenancy held at the commencement of the tenancy.\n\n       (2)    It shall be unlawful for a sitting tenant to offer or pay rent in excess of one (1) year for a yearly tenant and six\n              (6) months for a monthly tenant in respect of any premises.\n\n       (3)    It shall be unlawful for a landlord or his agent to demand or receive from a new or would be tenant rent in\n              excess of one (1) year in respect of any premises.\n\n       (4)    It shall be unlawful for a new or would be tenant to offer or pay rent in excess of one (1) year in respect of\n              any premises.\n\n       (5)    Any person who receives or pays rent in excess of what is prescribed in this Section shall be guilty of an\n              offence and shall be liable on conviction to a fine of One Hundred Thousand Naira (N100,000.00) or to three\n              (3) months imprisonment",
+      "summary": "This section prohibits landlords, agents, and tenants from demanding, receiving, or paying rent in excess of six months for monthly tenancies or one year for yearly tenancies. This applies to both sitting and new tenants. Violators face a fine of N100,000 or three months imprisonment.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.4\nTitle: Advance Rent.                      5.    Rent Payment Receipt.                6.    Rights of a Tenant\nJurisdiction: lagos-state\n\nSummary: This section prohibits landlords, agents, and tenants from demanding, receiving, or paying rent in excess of six months for monthly tenancies or one year for yearly tenancies. This applies to both sitting and new tenants. Violators face a fine of N100,000 or three months imprisonment.\n\n4.-(1) It shall be unlawful for a landlord or his agent to demand or receive from a sitting tenant rent in excess of six (6)\nmonths from a monthly tenant and one (1) year from a yearly tenant in respect of any premises without prejudice to the\nnature of tenancy held at the commencement of the tenancy.\n\n       (2)    It shall be unlawful for a sitting tenant to offer or pay rent in excess of one (1) year for a yearly tenant and six\n              (6) months for a monthly tenant in respect of any premises.\n\n       (3)    It shall be unlawful for a landlord or his agent to demand or receive from a new or would be tenant rent in\n              excess of one (1) year in respect of any premises.\n\n       (4)    It shall be unlawful for a new or would be tenant to offer or pay rent in excess of one (1) year in respect of\n              any premises.\n\n       (5)    Any person who receives or pays rent in excess of what is prescribed in this Section shall be guilty of an\n              offence and shall be liable on conviction to a fine of One Hundred Thousand Naira (N100,000.00) or to three\n              (3) months imprisonment"
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.5",
+        "section_number": 5,
+        "section_title": null,
+        "chunk_type": "section"
+      },
+      "text": "5.-(1) As from the commencement of this Law, all landlords shall upon payment of rent by the tenants, be obliged to issue\na rent payment receipt to their tenants in respect of such payments.\n\n       (2)    The receipt shall state the –\n\n              (a)    date on which rent was received;\n\n              (b)    Names and addresses of the landlord and the tenant;\n\n              (c)    description and location of premises in respect of which the rent is paid;\n\n              (d)    Amount of rent paid; and\n\n              (e)    Period to which the payment relates.\n\n       (3)    Any landlord who fails to issue a rent payment receipt to his tenant as prescribed under this Section shall be\n              liable on conviction to a fine of One Hundred Thousand Naira (N100, 000. 00",
+      "summary": "This provision mandates that all landlords in Lagos State must issue a rent payment receipt to tenants immediately after receiving rent. The receipt must detail the payment date, parties involved, property description, amount paid, and the period covered. Failure to comply results in a fine of N100,000 for the landlord.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.5\nJurisdiction: lagos-state\n\nSummary: This provision mandates that all landlords in Lagos State must issue a rent payment receipt to tenants immediately after receiving rent. The receipt must detail the payment date, parties involved, property description, amount paid, and the period covered. Failure to comply results in a fine of N100,000 for the landlord.\n\n5.-(1) As from the commencement of this Law, all landlords shall upon payment of rent by the tenants, be obliged to issue\na rent payment receipt to their tenants in respect of such payments.\n\n       (2)    The receipt shall state the –\n\n              (a)    date on which rent was received;\n\n              (b)    Names and addresses of the landlord and the tenant;\n\n              (c)    description and location of premises in respect of which the rent is paid;\n\n              (d)    Amount of rent paid; and\n\n              (e)    Period to which the payment relates.\n\n       (3)    Any landlord who fails to issue a rent payment receipt to his tenant as prescribed under this Section shall be\n              liable on conviction to a fine of One Hundred Thousand Naira (N100, 000. 00"
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.6",
+        "section_number": 6,
+        "section_title": "liable on conviction to a fine of One Hundred Thousand Naira (N100, 000. 00",
+        "chunk_type": "section"
+      },
+      "text": "6.-(1) the tenant's entitlement to quiet and peaceable enjoyment of the Premises includes the right to –\n\n              (a)    privacy;\n\n              (b)    Freedom from unreasonable disturbance;\n\n              (c)    exclusive possession of the premises, subject to the landlord's restricted right of inspection; and\n              (d)    the use of common areas for reasonable and lawful purpose.\n\n      (2)     Where a tenant with the previous consent in writing of the landlord, effects improvements on the premises\n              and the landlord determines the tenancy, such a tenant shall be entitled to claim compensation for the effected\n              improvements on quitting the premises.",
+      "summary": "This provision applies to all tenants, granting them the right to quiet enjoyment, including privacy, freedom from disturbance, exclusive possession, and use of common areas. It also stipulates that tenants who make improvements with the landlord's written consent are entitled to compensation upon quitting.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.6\nTitle: liable on conviction to a fine of One Hundred Thousand Naira (N100, 000. 00\nJurisdiction: lagos-state\n\nSummary: This provision applies to all tenants, granting them the right to quiet enjoyment, including privacy, freedom from disturbance, exclusive possession, and use of common areas. It also stipulates that tenants who make improvements with the landlord's written consent are entitled to compensation upon quitting.\n\n6.-(1) the tenant's entitlement to quiet and peaceable enjoyment of the Premises includes the right to –\n\n              (a)    privacy;\n\n              (b)    Freedom from unreasonable disturbance;\n\n              (c)    exclusive possession of the premises, subject to the landlord's restricted right of inspection; and\n              (d)    the use of common areas for reasonable and lawful purpose.\n\n      (2)     Where a tenant with the previous consent in writing of the landlord, effects improvements on the premises\n              and the landlord determines the tenancy, such a tenant shall be entitled to claim compensation for the effected\n              improvements on quitting the premises."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.7",
+        "section_number": 7,
+        "section_title": "Obligations of the Tenant",
+        "chunk_type": "section"
+      },
+      "text": "7.    Subject to any provision to the contrary in the tenancy agreement the tenant shall:\n\n      (1)     Pay the rents at the times and in the manner stated;\n\n      (2)     pay all existing and future rates and charges not payable by the landlord by law;\n\n      (3)     keep the premises in good and tenantable repair, reasonable wear and tear excepted;\n\n      (4)     permit the landlord and his agents during the tenancy at all reasonable hours in the daytime after previous\n              written notice, to view the condition of the premises and to effect, repairs in necessary parts of the building;\n\n      (5)     Not make any alterations or additions to the premises without the written consent of the landlord;\n\n      (6)     Not assign or sublet any part of the premises without the written consent of the landlord; and\n\n      (7)     Notify the landlord where structural or substantial damage has occurred to any part of the premises as soon as\n              practicable.",
+      "summary": "This section outlines the core obligations of a tenant under a tenancy agreement in Lagos State. Tenants must pay rent and rates on time, maintain the property in good repair (excluding reasonable wear and tear), and not alter or sublet the premises without the landlord's written consent. They are also required to permit landlord inspections and notify them of substantial damage.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.7\nTitle: Obligations of the Tenant\nJurisdiction: lagos-state\n\nSummary: This section outlines the core obligations of a tenant under a tenancy agreement in Lagos State. Tenants must pay rent and rates on time, maintain the property in good repair (excluding reasonable wear and tear), and not alter or sublet the premises without the landlord's written consent. They are also required to permit landlord inspections and notify them of substantial damage.\n\n7.    Subject to any provision to the contrary in the tenancy agreement the tenant shall:\n\n      (1)     Pay the rents at the times and in the manner stated;\n\n      (2)     pay all existing and future rates and charges not payable by the landlord by law;\n\n      (3)     keep the premises in good and tenantable repair, reasonable wear and tear excepted;\n\n      (4)     permit the landlord and his agents during the tenancy at all reasonable hours in the daytime after previous\n              written notice, to view the condition of the premises and to effect, repairs in necessary parts of the building;\n\n      (5)     Not make any alterations or additions to the premises without the written consent of the landlord;\n\n      (6)     Not assign or sublet any part of the premises without the written consent of the landlord; and\n\n      (7)     Notify the landlord where structural or substantial damage has occurred to any part of the premises as soon as\n              practicable."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.8",
+        "section_number": 8,
+        "section_title": "Obligations of the Landlord",
+        "chunk_type": "section"
+      },
+      "text": "8.    Subject to any provision to the contrary in a tenancy agreement, the landlord shall;\n\n      (i)     Not disturb the tenant's quiet and peaceable enjoyment of the premises.\n\n      (ii)    Pay all rates and charges as stipulated by law.\n\n      (iii)   Keep the premises insured against loss or damage.\n\n      (iv)    Not terminate or restrict the use of a common facility or service for the use of the premises.\n\n      (v)     Not seize any item or property of the tenant or interfere with the tenant's access to his personal property.\n\n      (vi)    Effect repairs and maintain the external and common parts of the premises.",
+      "summary": "This section outlines the obligations of a landlord under a tenancy agreement in Lagos State. Landlords must ensure the tenant's quiet enjoyment, pay rates, maintain insurance and premises, and not interfere with common facilities or the tenant's property. These obligations are subject to any contrary provisions within the tenancy agreement.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.8\nTitle: Obligations of the Landlord\nJurisdiction: lagos-state\n\nSummary: This section outlines the obligations of a landlord under a tenancy agreement in Lagos State. Landlords must ensure the tenant's quiet enjoyment, pay rates, maintain insurance and premises, and not interfere with common facilities or the tenant's property. These obligations are subject to any contrary provisions within the tenancy agreement.\n\n8.    Subject to any provision to the contrary in a tenancy agreement, the landlord shall;\n\n      (i)     Not disturb the tenant's quiet and peaceable enjoyment of the premises.\n\n      (ii)    Pay all rates and charges as stipulated by law.\n\n      (iii)   Keep the premises insured against loss or damage.\n\n      (iv)    Not terminate or restrict the use of a common facility or service for the use of the premises.\n\n      (v)     Not seize any item or property of the tenant or interfere with the tenant's access to his personal property.\n\n      (vi)    Effect repairs and maintain the external and common parts of the premises."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.9",
+        "section_number": 9,
+        "section_title": "Obligations of the Landlord",
+        "chunk_type": "section"
+      },
+      "text": "9.    A tenancy agreement in respect of business premises, shall be deemed to provide that where the landlord –\n\n      (a)     inhibits the access of the tenant to the premises in any substantial manner;\n\n      (b)     Takes any action that may substantially alter or inhibit the flow of the customers, clients or other persons\n              using the tenant's business premises;\n\n      (c)     Causes or fails to make reasonable efforts to prevent or remove any disruption to trading or use within the\n              business premises which results in loss of profits to the tenant;\n\n      (d)     Fails to rectify as soon as practicable, any breakdown of plant or equipment under his care and\n              maintenance which results in loss of profits to the tenant; or\n\n      (e)     fails to maintain or repair the exterior or the common parts of the building or buildings of which the premises\n              is comprised, and after being given notice in writing by the tenant requiring him to rectify the matter, does not\n              do so within such time as is reasonably practicable, the landlord is liable to pay to the tenant such reasonable\n              compensation as shall be determined by the Court, where the tenant effects the repairs or maintenance.",
+      "summary": "This section applies to landlords of business premises under a tenancy agreement in Lagos State. It outlines landlord obligations, including ensuring tenant access, customer flow, and maintaining business operations. Failure to meet these obligations, such as by inhibiting access or failing to repair, can result in the landlord being liable for compensation to the tenant as determined by the Court.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.9\nTitle: Obligations of the Landlord\nJurisdiction: lagos-state\n\nSummary: This section applies to landlords of business premises under a tenancy agreement in Lagos State. It outlines landlord obligations, including ensuring tenant access, customer flow, and maintaining business operations. Failure to meet these obligations, such as by inhibiting access or failing to repair, can result in the landlord being liable for compensation to the tenant as determined by the Court.\n\n9.    A tenancy agreement in respect of business premises, shall be deemed to provide that where the landlord –\n\n      (a)     inhibits the access of the tenant to the premises in any substantial manner;\n\n      (b)     Takes any action that may substantially alter or inhibit the flow of the customers, clients or other persons\n              using the tenant's business premises;\n\n      (c)     Causes or fails to make reasonable efforts to prevent or remove any disruption to trading or use within the\n              business premises which results in loss of profits to the tenant;\n\n      (d)     Fails to rectify as soon as practicable, any breakdown of plant or equipment under his care and\n              maintenance which results in loss of profits to the tenant; or\n\n      (e)     fails to maintain or repair the exterior or the common parts of the building or buildings of which the premises\n              is comprised, and after being given notice in writing by the tenant requiring him to rectify the matter, does not\n              do so within such time as is reasonably practicable, the landlord is liable to pay to the tenant such reasonable\n              compensation as shall be determined by the Court, where the tenant effects the repairs or maintenance."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.10",
+        "section_number": 10,
+        "section_title": "Service Charge, Facility and",
+        "chunk_type": "section"
+      },
+      "text": "10.   In any case where the landlord or his agent in addition to rent requires the tenant or licensee to pay –\n\n      (a)     A security deposit to cover damage and repairs to the premises;\n\n      (b)     For services and facilities for the premises; or\n       (c)    Service charges in flats or units that retain common parts on the premises,\n\n       The landlord or his agent shall issue a separate receipt to the tenant for payments received and such tenant shall be\n       entitled to a written account at least every six (6) months from the Landlord of how monies paid were disbursed.",
+      "summary": "This section applies to landlords or their agents requiring tenants or licensees to pay security deposits, service fees, or service charges. Landlords must issue separate receipts for these payments and provide tenants with a written account of how the money was disbursed at least every six months.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.10\nTitle: Service Charge, Facility and\nJurisdiction: lagos-state\n\nSummary: This section applies to landlords or their agents requiring tenants or licensees to pay security deposits, service fees, or service charges. Landlords must issue separate receipts for these payments and provide tenants with a written account of how the money was disbursed at least every six months.\n\n10.   In any case where the landlord or his agent in addition to rent requires the tenant or licensee to pay –\n\n      (a)     A security deposit to cover damage and repairs to the premises;\n\n      (b)     For services and facilities for the premises; or\n       (c)    Service charges in flats or units that retain common parts on the premises,\n\n       The landlord or his agent shall issue a separate receipt to the tenant for payments received and such tenant shall be\n       entitled to a written account at least every six (6) months from the Landlord of how monies paid were disbursed."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.11",
+        "section_number": 11,
+        "section_title": "Payment of Professional fees",
+        "chunk_type": "section"
+      },
+      "text": "11.    From the commencement of a tenancy it shall be the duty of the party who engages the services of a professional in\n       respect of the tenancy agreement to pay the fees for such professional services.",
+      "summary": "This provision applies to the parties involved in a tenancy agreement from its commencement. It establishes the duty of the party who engages a professional (like an estate agent or lawyer) to pay the fees for those professional services.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.11\nTitle: Payment of Professional fees\nJurisdiction: lagos-state\n\nSummary: This provision applies to the parties involved in a tenancy agreement from its commencement. It establishes the duty of the party who engages a professional (like an estate agent or lawyer) to pay the fees for those professional services.\n\n11.    From the commencement of a tenancy it shall be the duty of the party who engages the services of a professional in\n       respect of the tenancy agreement to pay the fees for such professional services."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.12",
+        "section_number": 12,
+        "section_title": "Provision for Re-entry",
+        "chunk_type": "section"
+      },
+      "text": "12.    Where there is a breach or non-observance of any of the conditions or covenants in respect of the premises, the\n       landlord shall subject to –\n\n       (a)    Any provision to the contrary in the agreement between the parties; and\n\n       (b)    The service of process in accordance with the relevant provisions of the Law,\n\n       have the right to institute proceedings for an order to re-enter and determine the tenancy.",
+      "summary": "This section grants landlords the right to seek an order to re-enter and end a tenancy if a tenant breaches or fails to observe any conditions or covenants of the tenancy agreement. This right is subject to any contrary agreement between the parties and the proper service of legal process.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.12\nTitle: Provision for Re-entry\nJurisdiction: lagos-state\n\nSummary: This section grants landlords the right to seek an order to re-enter and end a tenancy if a tenant breaches or fails to observe any conditions or covenants of the tenancy agreement. This right is subject to any contrary agreement between the parties and the proper service of legal process.\n\n12.    Where there is a breach or non-observance of any of the conditions or covenants in respect of the premises, the\n       landlord shall subject to –\n\n       (a)    Any provision to the contrary in the agreement between the parties; and\n\n       (b)    The service of process in accordance with the relevant provisions of the Law,\n\n       have the right to institute proceedings for an order to re-enter and determine the tenancy."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.13",
+        "section_number": 13,
+        "section_title": "Length of Notice",
+        "chunk_type": "section"
+      },
+      "text": "13.-(1) where there is no stipulation as to the notice to be given by either party to determine the tenancy, the following shall\n       apply-\n\n              (a)    a week’s notice for a tenant at will;\n\n              (b)    one (1) month’s notice for a monthly tenant;\n\n              (c)    three (3) months notice for a quarterly tenant;\n\n              (d)    three (3) months notice for a half-yearly tenant; and\n\n              (e)    six months notice for a yearly tenant\n\n       (2)    In the case of a monthly tenancy, where the tenant is in arrears of rent for six (6) months, the tenancy shall\n              lapse and the Court shall make an order for possession and arrears of rent upon proof of the arrears by the\n              landlord.\n\n       (3)    In the case of a quarterly or half-yearly tenancy, where the tenant is in arrears of one (1) year rent, the tenancy\n              shall lapse and the Court shall make an order for possession and arrears of rent upon proof of the arrears by\n              the landlord.\n\n       (4)    Notice for tenants under subsection (1) (c), (d) and (e) of this Section need not terminate on the anniversary of\n              the tenancy but may terminate on or after the date of expiration of the tenancy.\n\n       (5)    In the case of a tenancy for a fixed term, no notice to quit shall be required once the tenancy has been\n              determined by efflux ion of time and where the landlord intends to proceed to Court to recover possession, he\n              shall serve a seven (7) days written notice of his intention to apply to recover possession as in Form TL5 in\n              the Schedule to this Law.\n\n       (6)    The nature of a tenancy shall, in the absence of any evidence to the contrary, be determined by reference to\n              the time when the rent is paid or demanded.",
+      "summary": "This section outlines the required notice periods for determining tenancies in Lagos State when no specific term is agreed upon. It specifies notice lengths based on tenancy type (weekly, monthly, quarterly, half-yearly, yearly). Additionally, it details conditions under which tenancies can lapse due to rent arrears (six months for monthly, one year for quarterly/half-yearly) and procedures for recovery of possession.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.13\nTitle: Length of Notice\nJurisdiction: lagos-state\n\nSummary: This section outlines the required notice periods for determining tenancies in Lagos State when no specific term is agreed upon. It specifies notice lengths based on tenancy type (weekly, monthly, quarterly, half-yearly, yearly). Additionally, it details conditions under which tenancies can lapse due to rent arrears (six months for monthly, one year for quarterly/half-yearly) and procedures for recovery of possession.\n\n13.-(1) where there is no stipulation as to the notice to be given by either party to determine the tenancy, the following shall\n       apply-\n\n              (a)    a week’s notice for a tenant at will;\n\n              (b)    one (1) month’s notice for a monthly tenant;\n\n              (c)    three (3) months notice for a quarterly tenant;\n\n              (d)    three (3) months notice for a half-yearly tenant; and\n\n              (e)    six months notice for a yearly tenant\n\n       (2)    In the case of a monthly tenancy, where the tenant is in arrears of rent for six (6) months, the tenancy shall\n              lapse and the Court shall make an order for possession and arrears of rent upon proof of the arrears by the\n              landlord.\n\n       (3)    In the case of a quarterly or half-yearly tenancy, where the tenant is in arrears of one (1) year rent, the tenancy\n              shall lapse and the Court shall make an order for possession and arrears of rent upon proof of the arrears by\n              the landlord.\n\n       (4)    Notice for tenants under subsection (1) (c), (d) and (e) of this Section need not terminate on the anniversary of\n              the tenancy but may terminate on or after the date of expiration of the tenancy.\n\n       (5)    In the case of a tenancy for a fixed term, no notice to quit shall be required once the tenancy has been\n              determined by efflux ion of time and where the landlord intends to proceed to Court to recover possession, he\n              shall serve a seven (7) days written notice of his intention to apply to recover possession as in Form TL5 in\n              the Schedule to this Law.\n\n       (6)    The nature of a tenancy shall, in the absence of any evidence to the contrary, be determined by reference to\n              the time when the rent is paid or demanded."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.14",
+        "section_number": 14,
+        "section_title": "Notice of Licenses",
+        "chunk_type": "section"
+      },
+      "text": "14.    Where a person is a licensee and upon the expiration or withdrawal of his licence, he refuses or neglects to give up\n       possession, he shall be entitled to service of a seven (7) days notice of the owner's intention to apply to recover\n       possession as in Form TL4 in the Schedule to this Law.\n\n15-(1) A premises will be deemed to be abandoned where the-\n\n              (a)    tenancy has expired ;and\n\n              (b)    tenant has not occupied the premises since the tenancy expired and has not given up lawful possession\n                     of the premises.\n\n       (2)    Following subsection (1) above ,the landlord shall-\n               (a)    issue a seven (7) days notice of the landlord's intention to recover possession as prescribed in\n                      Form TLA, which shall be served by pasting the notice on the abandoned premises; and\n\n               (b)    apply to the Court for an order for possession and an order to force open the premises.",
+      "summary": "This section applies to a licensee who refuses to vacate after their license expires or is withdrawn. The owner must serve a seven-day notice of intent to recover possession. The notice is a prerequisite to applying to the court for repossession.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.14\nTitle: Notice of Licenses\nJurisdiction: lagos-state\n\nSummary: This section applies to a licensee who refuses to vacate after their license expires or is withdrawn. The owner must serve a seven-day notice of intent to recover possession. The notice is a prerequisite to applying to the court for repossession.\n\n14.    Where a person is a licensee and upon the expiration or withdrawal of his licence, he refuses or neglects to give up\n       possession, he shall be entitled to service of a seven (7) days notice of the owner's intention to apply to recover\n       possession as in Form TL4 in the Schedule to this Law.\n\n15-(1) A premises will be deemed to be abandoned where the-\n\n              (a)    tenancy has expired ;and\n\n              (b)    tenant has not occupied the premises since the tenancy expired and has not given up lawful possession\n                     of the premises.\n\n       (2)    Following subsection (1) above ,the landlord shall-\n               (a)    issue a seven (7) days notice of the landlord's intention to recover possession as prescribed in\n                      Form TLA, which shall be served by pasting the notice on the abandoned premises; and\n\n               (b)    apply to the Court for an order for possession and an order to force open the premises."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.16",
+        "section_number": 16,
+        "section_title": "Tenant refusing or neglecting to",
+        "chunk_type": "section"
+      },
+      "text": "16.     As soon as the term or interest on any premises has been determined by a written notice to quit as in Form TL2 or\n       TL3, in the Schedule to this Law and the tenant neglects or refuses to quit and deliver up possession of the premises\n       or any part of it, the Landlord or his agent may cause the tenant to As soon as the term or interest on any premises\n       has been determined by a be served with a written notice as in Form TL4, signed by the Landlord or his agent, of the\n       landlord's intention to proceed to recover possession, stating the grounds and particulars of the claim, on a date not\n       less than seven (7) days from the date of the notice.",
+      "summary": "This provision applies to tenants who refuse to vacate premises after their tenancy term has been legally determined by a written notice to quit. The landlord must then serve a notice of intention to recover possession, specifying grounds and particulars, at least seven days before legal proceedings commence.",
+      "cross_refs": [
+        "Tenancy Law of Lagos State, Law No. 14 of 2011, Schedule Form TL2",
+        "Tenancy Law of Lagos State, Law No. 14 of 2011, Schedule Form TL3",
+        "Tenancy Law of Lagos State, Law No. 14 of 2011, Schedule Form TL4"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.16\nTitle: Tenant refusing or neglecting to\nJurisdiction: lagos-state\n\nSummary: This provision applies to tenants who refuse to vacate premises after their tenancy term has been legally determined by a written notice to quit. The landlord must then serve a notice of intention to recover possession, specifying grounds and particulars, at least seven days before legal proceedings commence.\n\n16.     As soon as the term or interest on any premises has been determined by a written notice to quit as in Form TL2 or\n       TL3, in the Schedule to this Law and the tenant neglects or refuses to quit and deliver up possession of the premises\n       or any part of it, the Landlord or his agent may cause the tenant to As soon as the term or interest on any premises\n       has been determined by a be served with a written notice as in Form TL4, signed by the Landlord or his agent, of the\n       landlord's intention to proceed to recover possession, stating the grounds and particulars of the claim, on a date not\n       less than seven (7) days from the date of the notice."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.17",
+        "section_number": 17,
+        "section_title": "Service of Notice",
+        "chunk_type": "section"
+      },
+      "text": "17.(1)Notices referred to under Sections 13-16 of this Law shall be by proper service a\" prescribed under Sections 18 and\n       19.\n\n       (2)     Proper service shall be service in such a manner that it can be established to the satisfaction of the Court that\n               the person to be served will have knowledge of any of the notices.",
+      "summary": "This section outlines the requirements for serving notices under Sections 13-16 of the Tenancy Law of Lagos State. Proper service must be established to the Court's satisfaction, ensuring the recipient is likely to gain knowledge of the notice. The methods for such service are further detailed in Sections 18 and 19.",
+      "cross_refs": [
+        "Tenancy Law of Lagos State, s.13",
+        "Tenancy Law of Lagos State, s.14",
+        "Tenancy Law of Lagos State, s.15",
+        "Tenancy Law of Lagos State, s.16",
+        "Tenancy Law of Lagos State, s.18",
+        "Tenancy Law of Lagos State, s.19"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.17\nTitle: Service of Notice\nJurisdiction: lagos-state\n\nSummary: This section outlines the requirements for serving notices under Sections 13-16 of the Tenancy Law of Lagos State. Proper service must be established to the Court's satisfaction, ensuring the recipient is likely to gain knowledge of the notice. The methods for such service are further detailed in Sections 18 and 19.\n\n17.(1)Notices referred to under Sections 13-16 of this Law shall be by proper service a\" prescribed under Sections 18 and\n       19.\n\n       (2)     Proper service shall be service in such a manner that it can be established to the satisfaction of the Court that\n               the person to be served will have knowledge of any of the notices."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.18",
+        "section_number": 18,
+        "section_title": "Service of Notice for Residential",
+        "chunk_type": "section"
+      },
+      "text": "18.    Proper service on a tenant of residential premises shall be personal service, for residential premises which includes\n       but is not limited to the following:\n\n       (a)     service on the in person;\n\n       (b)     delivery to any adult residing at the premises to be recovered;\n\n       (c)     by courier where the tenant cannot be found ,by delivering same at the premises sought to be recovered and\n               the courier shall provide proof of delivery; or\n\n       (d)     affixing the notice on a prominent part of the premises to be recovered and providing corroborative\n               proof of service.",
+      "summary": "This section outlines the proper methods for serving notice on a tenant of residential premises in Lagos State. It mandates personal service, which can be achieved through direct delivery to the tenant, an adult resident, a courier with proof of delivery, or by affixing the notice to the premises with corroborative proof.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.18\nTitle: Service of Notice for Residential\nJurisdiction: lagos-state\n\nSummary: This section outlines the proper methods for serving notice on a tenant of residential premises in Lagos State. It mandates personal service, which can be achieved through direct delivery to the tenant, an adult resident, a courier with proof of delivery, or by affixing the notice to the premises with corroborative proof.\n\n18.    Proper service on a tenant of residential premises shall be personal service, for residential premises which includes\n       but is not limited to the following:\n\n       (a)     service on the in person;\n\n       (b)     delivery to any adult residing at the premises to be recovered;\n\n       (c)     by courier where the tenant cannot be found ,by delivering same at the premises sought to be recovered and\n               the courier shall provide proof of delivery; or\n\n       (d)     affixing the notice on a prominent part of the premises to be recovered and providing corroborative\n               proof of service."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.19",
+        "section_number": 19,
+        "section_title": "Service of Notice for Business",
+        "chunk_type": "section"
+      },
+      "text": "19.    Proper service on a tenant of a business premises shall by-\n\n       (a)     delivery to a person at the business premises sought to be recovered: or\n\n       (b)     affixing the notice on a prominent part of the premises to be recovered and providing corroborative proof of\n               service.",
+      "summary": "This section details the proper methods for serving notice on a tenant of a business premises in Lagos State. Service can be completed by direct delivery to a person at the premises or by affixing the notice prominently on the premises, provided there is corroborating proof of service.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.19\nTitle: Service of Notice for Business\nJurisdiction: lagos-state\n\nSummary: This section details the proper methods for serving notice on a tenant of a business premises in Lagos State. Service can be completed by direct delivery to a person at the premises or by affixing the notice prominently on the premises, provided there is corroborating proof of service.\n\n19.    Proper service on a tenant of a business premises shall by-\n\n       (a)     delivery to a person at the business premises sought to be recovered: or\n\n       (b)     affixing the notice on a prominent part of the premises to be recovered and providing corroborative proof of\n               service."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.20",
+        "section_number": 20,
+        "section_title": "Duty to notify other persons in",
+        "chunk_type": "section"
+      },
+      "text": "20.    Where the tenant is a person other than an individual (including corporate entity), the landlord shall ensure proper\n       service of all notices required under this Law on the tenant:\n\n       Provided that the failure of the tenant to notify any other person in occupation shall not affect the proceedings to\n       recover possession.",
+      "summary": "This section applies to landlords serving notices on tenant entities (not individuals), such as corporations. It mandates proper service of notices on these corporate tenants. However, a tenant's failure to inform other occupants will not invalidate possession recovery proceedings.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.20\nTitle: Duty to notify other persons in\nJurisdiction: lagos-state\n\nSummary: This section applies to landlords serving notices on tenant entities (not individuals), such as corporations. It mandates proper service of notices on these corporate tenants. However, a tenant's failure to inform other occupants will not invalidate possession recovery proceedings.\n\n20.    Where the tenant is a person other than an individual (including corporate entity), the landlord shall ensure proper\n       service of all notices required under this Law on the tenant:\n\n       Provided that the failure of the tenant to notify any other person in occupation shall not affect the proceedings to\n       recover possession."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.21",
+        "section_number": 21,
+        "section_title": "Persons in unlawful occupation",
+        "chunk_type": "section"
+      },
+      "text": "21.    Where a person claims possession of premises which he alleges is occupied solely by a person in unlawful occupation, the\n       proceedings for recovery of the premises shall be by the summary procedure contained in the Civil Procedure Rules of the\n       relevant Court without prejudice to the necessary need to serve upon the unlawful occupant Form TL4.",
+      "summary": "This section applies to individuals claiming possession of premises occupied solely by an unlawful occupant. It mandates that proceedings for recovery must follow the summary procedure outlined in the relevant Court's Civil Procedure Rules. This is without prejudice to the requirement to serve Form TL4 upon the unlawful occupant.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.21\nTitle: Persons in unlawful occupation\nJurisdiction: lagos-state\n\nSummary: This section applies to individuals claiming possession of premises occupied solely by an unlawful occupant. It mandates that proceedings for recovery must follow the summary procedure outlined in the relevant Court's Civil Procedure Rules. This is without prejudice to the requirement to serve Form TL4 upon the unlawful occupant.\n\n21.    Where a person claims possession of premises which he alleges is occupied solely by a person in unlawful occupation, the\n       proceedings for recovery of the premises shall be by the summary procedure contained in the Civil Procedure Rules of the\n       relevant Court without prejudice to the necessary need to serve upon the unlawful occupant Form TL4."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.22",
+        "section_number": 22,
+        "section_title": "Service of Process",
+        "chunk_type": "section"
+      },
+      "text": "22.    Service of any summons, warrant or other process shall be effected in accordance with the provisions of the law for the time\n       being in force relating to the' service of the civil process of Magistrates' Court or the High Court of Lagos State.",
+      "summary": "Section 22 dictates that any summons, warrant, or other legal process related to tenancy matters in Lagos State must be served following the rules for serving civil process in the Magistrates' Court or High Court of Lagos State. This ensures a standardized and legally sound method for delivering official documents.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.22\nTitle: Service of Process\nJurisdiction: lagos-state\n\nSummary: Section 22 dictates that any summons, warrant, or other legal process related to tenancy matters in Lagos State must be served following the rules for serving civil process in the Magistrates' Court or High Court of Lagos State. This ensures a standardized and legally sound method for delivering official documents.\n\n22.    Service of any summons, warrant or other process shall be effected in accordance with the provisions of the law for the time\n       being in force relating to the' service of the civil process of Magistrates' Court or the High Court of Lagos State."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.23",
+        "section_number": 23,
+        "section_title": "Use of Forms",
+        "chunk_type": "section"
+      },
+      "text": "23.    Subject to the provisions of this Law, the forms contained in the Schedule to this Law, may be used in the cases to which they\n       apply and when so used, shall be sufficient in Law with such adaptation and modification as may be necessary.",
+      "summary": "This provision applies to all cases governed by the Tenancy Law of Lagos State. It states that the forms provided in the Law's schedule are sufficient for their intended use, provided they are adapted or modified as needed. This ensures the legal validity of using these standardized forms.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.23\nTitle: Use of Forms\nJurisdiction: lagos-state\n\nSummary: This provision applies to all cases governed by the Tenancy Law of Lagos State. It states that the forms provided in the Law's schedule are sufficient for their intended use, provided they are adapted or modified as needed. This ensures the legal validity of using these standardized forms.\n\n23.    Subject to the provisions of this Law, the forms contained in the Schedule to this Law, may be used in the cases to which they\n       apply and when so used, shall be sufficient in Law with such adaptation and modification as may be necessary."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.24",
+        "section_number": 24,
+        "section_title": "Institution of Proceedings to",
+        "chunk_type": "section"
+      },
+      "text": "24.    Upon the expiration of the time stated in the notice as in Form TL4, if the tenant neglects or refuses to quit and deliver up\n       possession, the landlord may file a claim by way of summons as in Form TL6A and B for recovery of possession, either against\n       the tenant or against such person so neglecting or refusing, in the Magisterial District or High Court Division where the premises\n       is situated.",
+      "summary": "This section applies to landlords seeking to recover possession of premises after a tenant has failed to vacate upon the expiration of a notice. The landlord can file a claim in the appropriate Magisterial District or High Court Division against the tenant or any other person refusing to vacate.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.24\nTitle: Institution of Proceedings to\nJurisdiction: lagos-state\n\nSummary: This section applies to landlords seeking to recover possession of premises after a tenant has failed to vacate upon the expiration of a notice. The landlord can file a claim in the appropriate Magisterial District or High Court Division against the tenant or any other person refusing to vacate.\n\n24.    Upon the expiration of the time stated in the notice as in Form TL4, if the tenant neglects or refuses to quit and deliver up\n       possession, the landlord may file a claim by way of summons as in Form TL6A and B for recovery of possession, either against\n       the tenant or against such person so neglecting or refusing, in the Magisterial District or High Court Division where the premises\n       is situated."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.25",
+        "section_number": 25,
+        "section_title": "Grounds for Possession",
+        "chunk_type": "section"
+      },
+      "text": "25.-(1) unless the agreement expressly stipulates otherwise, the Court shall have power to make an .order for possession upon proof of\nany of the following grounds –\n\n               (a)   arrears of rent;\n              (b)    breach of any covenant or agreement;\n\n              (c)    where the premises is required by the landlord for personal use; or\n\n       (2)    Notwithstanding any agreement between the parties, the Court shall have power to make an Order for possession upon\n              proof of any of the following grounds where-\n\n              (a)     the premises is being used for immoral or illegal purposes;\n\n              (b)      the premises has been abandoned;\n\n              (c)      the premises is unsafe and unsound as to constitute a danger to human life or property; or\n\n              (d)     the tenant or any person residing or lodging with him or being his sub-tenant constitutes by conduct, an\n                      act of intolerable nuisance or induces a breach of a tenancy agreement.",
+      "summary": "This section grants courts the power to order possession of premises in Lagos State. It applies to landlords seeking possession based on grounds like rent arrears, breach of covenant, landlord's personal use, illegal use, abandonment, unsafe conditions, or tenant nuisance. Some grounds require specific proof, and subsection (2) overrides agreements for certain severe violations.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.25\nTitle: Grounds for Possession\nJurisdiction: lagos-state\n\nSummary: This section grants courts the power to order possession of premises in Lagos State. It applies to landlords seeking possession based on grounds like rent arrears, breach of covenant, landlord's personal use, illegal use, abandonment, unsafe conditions, or tenant nuisance. Some grounds require specific proof, and subsection (2) overrides agreements for certain severe violations.\n\n25.-(1) unless the agreement expressly stipulates otherwise, the Court shall have power to make an .order for possession upon proof of\nany of the following grounds –\n\n               (a)   arrears of rent;\n              (b)    breach of any covenant or agreement;\n\n              (c)    where the premises is required by the landlord for personal use; or\n\n       (2)    Notwithstanding any agreement between the parties, the Court shall have power to make an Order for possession upon\n              proof of any of the following grounds where-\n\n              (a)     the premises is being used for immoral or illegal purposes;\n\n              (b)      the premises has been abandoned;\n\n              (c)      the premises is unsafe and unsound as to constitute a danger to human life or property; or\n\n              (d)     the tenant or any person residing or lodging with him or being his sub-tenant constitutes by conduct, an\n                      act of intolerable nuisance or induces a breach of a tenancy agreement."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.26",
+        "section_number": 26,
+        "section_title": "Recovery of premises for a fixed",
+        "chunk_type": "section"
+      },
+      "text": "26.    The landlord shall be entitled to recovery of the premises where-\n\n       (a)    a tenancy is proved to be for a fixed term certain ;\n\n       (b)    the period of the tenancy has expired by effluxion of time; and\n\n       (c)    form \"TL5\" has been served in accordance with Section 13(5) of this Law.",
+      "summary": "This provision applies to landlords seeking to recover premises. It outlines the conditions for recovery when a tenancy is for a fixed term, the term has expired, and the landlord has served the required notice using Form TL5 as per Section 13(5).",
+      "cross_refs": [
+        "Tenancy Law of Lagos State, s.13"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.26\nTitle: Recovery of premises for a fixed\nJurisdiction: lagos-state\n\nSummary: This provision applies to landlords seeking to recover premises. It outlines the conditions for recovery when a tenancy is for a fixed term, the term has expired, and the landlord has served the required notice using Form TL5 as per Section 13(5).\n\n26.    The landlord shall be entitled to recovery of the premises where-\n\n       (a)    a tenancy is proved to be for a fixed term certain ;\n\n       (b)    the period of the tenancy has expired by effluxion of time; and\n\n       (c)    form \"TL5\" has been served in accordance with Section 13(5) of this Law."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.27",
+        "section_number": 27,
+        "section_title": null,
+        "chunk_type": "section"
+      },
+      "text": "27.-(1) In any matter under this Law, relating to any ‘fact required to be proved at the trial of any action, evidence shall be\nby written deposition or oral examination of witnesses in open Court or a combination of both.\n\n       (2)    All agreed documents or other exhibits shall be tendered from the bar or by the party where he is not\n              represented by a legal practitioner.\n\n       (3)    The oral examination of a witness during his evidence- in-chief shall be limited to confirming his written\n              deposition and tendering in evidence all disputed documents or other exhibits.\n\n       (4)    Where the tenant does not enter any defense and the landlord can prove –\n\n              (a)    that the defendant is still neglecting or refusing to deliver up the premises;\n\n              (b)    the annual rental value of the premises;\n\n              (c)    the nature of the tenancy or holding;\n\n              (d)   the expiration or other determination of the tenancy within the time and manner stipulated by law;\n\n              (e)    his title, if such has accrued since the letting of the premises; and\n\n              (f)    the service of the summons or writ if the defendant does not appear.\n\n              the Court may make an order as in Form TL 7 for possession of the premises mentioned either immediately or\n              on or before such date (within six (6) months from the date of the Order) as the Court may direct\n\n       (5)    Subject to the provisions of Section 13 (2) and (3), the Court shall, in making an order for possession of premises, have\n              regard to all circumstances of the case including where appropriate, the question as to whether other premises are\n              available for the landlord or the tenant.\n\n       (6)    If the claimant named in the summons or writ fails to obtain an Order under subsection (1) of this Section, the\n              defendant may be awarded such costs as the Court may direct.",
+      "summary": "This section governs evidence in tenancy disputes under the Tenancy Law of Lagos State. It outlines procedures for witness testimony, document tendering, and the conditions under which a court may order possession, considering factors like proof of premises neglect and tenancy determination. It also specifies limitations on oral examination during evidence-in-chief.",
+      "cross_refs": [
+        "Tenancy Law of Lagos State, s.13"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.27\nJurisdiction: lagos-state\n\nSummary: This section governs evidence in tenancy disputes under the Tenancy Law of Lagos State. It outlines procedures for witness testimony, document tendering, and the conditions under which a court may order possession, considering factors like proof of premises neglect and tenancy determination. It also specifies limitations on oral examination during evidence-in-chief.\n\n27.-(1) In any matter under this Law, relating to any ‘fact required to be proved at the trial of any action, evidence shall be\nby written deposition or oral examination of witnesses in open Court or a combination of both.\n\n       (2)    All agreed documents or other exhibits shall be tendered from the bar or by the party where he is not\n              represented by a legal practitioner.\n\n       (3)    The oral examination of a witness during his evidence- in-chief shall be limited to confirming his written\n              deposition and tendering in evidence all disputed documents or other exhibits.\n\n       (4)    Where the tenant does not enter any defense and the landlord can prove –\n\n              (a)    that the defendant is still neglecting or refusing to deliver up the premises;\n\n              (b)    the annual rental value of the premises;\n\n              (c)    the nature of the tenancy or holding;\n\n              (d)   the expiration or other determination of the tenancy within the time and manner stipulated by law;\n\n              (e)    his title, if such has accrued since the letting of the premises; and\n\n              (f)    the service of the summons or writ if the defendant does not appear.\n\n              the Court may make an order as in Form TL 7 for possession of the premises mentioned either immediately or\n              on or before such date (within six (6) months from the date of the Order) as the Court may direct\n\n       (5)    Subject to the provisions of Section 13 (2) and (3), the Court shall, in making an order for possession of premises, have\n              regard to all circumstances of the case including where appropriate, the question as to whether other premises are\n              available for the landlord or the tenant.\n\n       (6)    If the claimant named in the summons or writ fails to obtain an Order under subsection (1) of this Section, the\n              defendant may be awarded such costs as the Court may direct."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.28",
+        "section_number": 28,
+        "section_title": "Payment of arrears of rent.        29.   Court as Receiver of refused rent.   30.   Arbitration",
+        "chunk_type": "section"
+      },
+      "text": "28.-(1) Where there is any matter for determination before a Court under this Law, and the tenant admits the arrears of rent\nor a portion of the rent, the Court may order the tenant to pay such arrears of rent while the Court proceeds with the matter.\n\n        (2)   Where arrears of rent are claimed for the use and occupation of the premises, the claim shall show the rate at which such\n              sum is claimed, and where it is proved, judgment shall be entered for the amount so proved.",
+      "summary": "This section applies to tenants who admit to owing rent arrears during a court case under the Tenancy Law. The court can order the tenant to pay admitted arrears while the case proceeds. If arrears are claimed for use and occupation, the rate must be stated, and judgment entered for the proved amount.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.28\nTitle: Payment of arrears of rent.        29.   Court as Receiver of refused rent.   30.   Arbitration\nJurisdiction: lagos-state\n\nSummary: This section applies to tenants who admit to owing rent arrears during a court case under the Tenancy Law. The court can order the tenant to pay admitted arrears while the case proceeds. If arrears are claimed for use and occupation, the rate must be stated, and judgment entered for the proved amount.\n\n28.-(1) Where there is any matter for determination before a Court under this Law, and the tenant admits the arrears of rent\nor a portion of the rent, the Court may order the tenant to pay such arrears of rent while the Court proceeds with the matter.\n\n        (2)   Where arrears of rent are claimed for the use and occupation of the premises, the claim shall show the rate at which such\n              sum is claimed, and where it is proved, judgment shall be entered for the amount so proved."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.29",
+        "section_number": 29,
+        "section_title": null,
+        "chunk_type": "section"
+      },
+      "text": "29.-(1) In any proceedings under this Law, where a landlord refuses to accept the current rent from a tenant, the tenant may, upon\napplication to the Court pay such rent to the Court's Registry.\n\n       (2)     The Landlord in such case shall be entitled to collect the rent from the Court, less ten percent (10%) to be retained by\n               the Court.",
+      "summary": "A tenant can pay rent to the Court's Registry if the landlord refuses to accept it. The landlord can then collect the rent from the court, but the court will retain 10% of the amount.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.29\nJurisdiction: lagos-state\n\nSummary: A tenant can pay rent to the Court's Registry if the landlord refuses to accept it. The landlord can then collect the rent from the court, but the court will retain 10% of the amount.\n\n29.-(1) In any proceedings under this Law, where a landlord refuses to accept the current rent from a tenant, the tenant may, upon\napplication to the Court pay such rent to the Court's Registry.\n\n       (2)     The Landlord in such case shall be entitled to collect the rent from the Court, less ten percent (10%) to be retained by\n               the Court."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.30",
+        "section_number": 30,
+        "section_title": "Arbitration",
+        "chunk_type": "section"
+      },
+      "text": "30.-(1) A valid agreement to arbitrate shall be upheld and be enforceable in the Court while an arbitration clause or agreement in a\ntenancy or lease agreement shall not be construed as an ouster of the Court's jurisdiction.\n\n       (2)     In the absence of any agreement to the contrary or where the parties cannot agree on the appointment of an arbitrator or\n               tribunal, the Court on receipt of a written application by any of the parties, shall act as the appointing authority, upon\n               payment of the prescribed fees.\n\n       (3)     An arbitration award shall be enforceable as a Judgment or Order of the Court upon registration.\n\n       (5)     An Arbitration Award in any matter covered by this Law must be registered within three (3) months of the date of the\n               Award.",
+      "summary": "This section applies to tenancy and lease agreements in Lagos State. It upholds arbitration agreements, designates the Court as the appointing authority for arbitrators if parties disagree, and requires arbitration awards to be registered within three months to be enforceable as a court judgment.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.30\nTitle: Arbitration\nJurisdiction: lagos-state\n\nSummary: This section applies to tenancy and lease agreements in Lagos State. It upholds arbitration agreements, designates the Court as the appointing authority for arbitrators if parties disagree, and requires arbitration awards to be registered within three months to be enforceable as a court judgment.\n\n30.-(1) A valid agreement to arbitrate shall be upheld and be enforceable in the Court while an arbitration clause or agreement in a\ntenancy or lease agreement shall not be construed as an ouster of the Court's jurisdiction.\n\n       (2)     In the absence of any agreement to the contrary or where the parties cannot agree on the appointment of an arbitrator or\n               tribunal, the Court on receipt of a written application by any of the parties, shall act as the appointing authority, upon\n               payment of the prescribed fees.\n\n       (3)     An arbitration award shall be enforceable as a Judgment or Order of the Court upon registration.\n\n       (5)     An Arbitration Award in any matter covered by this Law must be registered within three (3) months of the date of the\n               Award."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.31",
+        "section_number": 31,
+        "section_title": "Landlord may claim for mense",
+        "chunk_type": "section"
+      },
+      "text": "31.    Where mesne profits or a sum for the use and occupation of the premises are claimed, the claim shall show the rate at which\n       such sum is claimed, and where it is proved, judgment shall be entered for the amount so proved.",
+      "summary": "This section applies to claims for mesne profits or sums for the use and occupation of premises. It mandates that such claims must specify the rate of charges. If proven, judgment will be entered for the established amount.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.31\nTitle: Landlord may claim for mense\nJurisdiction: lagos-state\n\nSummary: This section applies to claims for mesne profits or sums for the use and occupation of premises. It mandates that such claims must specify the rate of charges. If proven, judgment will be entered for the established amount.\n\n31.    Where mesne profits or a sum for the use and occupation of the premises are claimed, the claim shall show the rate at which\n       such sum is claimed, and where it is proved, judgment shall be entered for the amount so proved."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.32",
+        "section_number": 32,
+        "section_title": "Mediation",
+        "chunk_type": "section"
+      },
+      "text": "32.-(1) In proceedings under this Law, the Court shall promote reconciliation, mediation and amicable settlement between\n       the parties.\n\n       (2)     A Court may refer tenancy proceedings or any part of it to mediation at a Citizen Mediation Centre or to\n               Lagos Multi-Door Court House.\n\n       (3)     Referrals to mediation under the provisions of subsection (2) of this Section shall not require the consent of\n               the parties to the proceedings.\n\n       (4)     The mediator shall submit the Mediation Agreement to the Court for endorsement and enforcement within\n               three (3) days after execution by the parties.",
+      "summary": "This section applies to all court proceedings under the Tenancy Law of Lagos State. The Court is mandated to promote mediation and can refer parties to a Citizen Mediation Centre or Lagos Multi-Door Court House without their consent. Mediation agreements must be submitted to the Court for endorsement and enforcement within three days of execution.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.32\nTitle: Mediation\nJurisdiction: lagos-state\n\nSummary: This section applies to all court proceedings under the Tenancy Law of Lagos State. The Court is mandated to promote mediation and can refer parties to a Citizen Mediation Centre or Lagos Multi-Door Court House without their consent. Mediation agreements must be submitted to the Court for endorsement and enforcement within three days of execution.\n\n32.-(1) In proceedings under this Law, the Court shall promote reconciliation, mediation and amicable settlement between\n       the parties.\n\n       (2)     A Court may refer tenancy proceedings or any part of it to mediation at a Citizen Mediation Centre or to\n               Lagos Multi-Door Court House.\n\n       (3)     Referrals to mediation under the provisions of subsection (2) of this Section shall not require the consent of\n               the parties to the proceedings.\n\n       (4)     The mediator shall submit the Mediation Agreement to the Court for endorsement and enforcement within\n               three (3) days after execution by the parties."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.33",
+        "section_number": 33,
+        "section_title": "Claims against persons          in",
+        "chunk_type": "section"
+      },
+      "text": "33.    Where, in a possession claim against persons in unlawful occupation, the Claimant does not know the name of a\n       person in occupation of the premises, the claim shall be brought against \"persons unknown\" in addition to any other\n       description available.",
+      "summary": "This provision allows a claimant in an unlawful occupation possession claim to sue 'persons unknown' if the names of the occupiers are not known. The claim must include this designation in addition to any other identifying descriptions available.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.33\nTitle: Claims against persons          in\nJurisdiction: lagos-state\n\nSummary: This provision allows a claimant in an unlawful occupation possession claim to sue 'persons unknown' if the names of the occupiers are not known. The claim must include this designation in addition to any other identifying descriptions available.\n\n33.    Where, in a possession claim against persons in unlawful occupation, the Claimant does not know the name of a\n       person in occupation of the premises, the claim shall be brought against \"persons unknown\" in addition to any other\n       description available."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.34",
+        "section_number": 34,
+        "section_title": "Defence supported by written",
+        "chunk_type": "section"
+      },
+      "text": "34.    Where in accordance with Section 27 of this Law, the defendant intends to rely on a written deposition, he may at the\n       time of filing the defense but not later than five (5) days thereafter, file witness statements, exhibits and other\n       relevant documents to be tendered.",
+      "summary": "This section applies to defendants in tenancy cases who intend to use written depositions. Such defendants must file witness statements, exhibits, and other relevant documents within five days of filing their defense to support their case.",
+      "cross_refs": [
+        "Tenancy Law of Lagos State, s.27"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.34\nTitle: Defence supported by written\nJurisdiction: lagos-state\n\nSummary: This section applies to defendants in tenancy cases who intend to use written depositions. Such defendants must file witness statements, exhibits, and other relevant documents within five days of filing their defense to support their case.\n\n34.    Where in accordance with Section 27 of this Law, the defendant intends to rely on a written deposition, he may at the\n       time of filing the defense but not later than five (5) days thereafter, file witness statements, exhibits and other\n       relevant documents to be tendered."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.35",
+        "section_number": 35,
+        "section_title": "Service on persons in unlawful",
+        "chunk_type": "section"
+      },
+      "text": "35.    Where in a possession claim against trespassers, the claim has been issued against \"persons unknown\", the claim,\n       particulars of claim, any witness statements, exhibits and any other relevant document shall be deemed served on\n       those persons by –\n\n       (a)     Attaching copies of the claim form, particulars of claim and any other relevant document to the main\n               door or some other part of the premises so that they are clearly visible;\n\n       (b)     if practicable, inserting copies of those documents in a sealed transparent envelope addressed to \"the\n               occupiers\" through the door or gate of the premises or letter box if there is one; or\n\n       (c)     Placing stakes in the land in places where they are clearly visible and attaching to each stake copies of the\n               claim form, particulars of claim and any other relevant document in a sealed transparent envelope addressed\n               to \"the occupiers\".",
+      "summary": "This section details the deemed service procedure for \"persons unknown\" in possession claims against trespassers in Lagos State. Service is achieved by attaching documents to the premises' main door, inserting them through the door/letter box, or placing them on stakes in the land. These methods ensure visibility to the occupiers.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.35\nTitle: Service on persons in unlawful\nJurisdiction: lagos-state\n\nSummary: This section details the deemed service procedure for \"persons unknown\" in possession claims against trespassers in Lagos State. Service is achieved by attaching documents to the premises' main door, inserting them through the door/letter box, or placing them on stakes in the land. These methods ensure visibility to the occupiers.\n\n35.    Where in a possession claim against trespassers, the claim has been issued against \"persons unknown\", the claim,\n       particulars of claim, any witness statements, exhibits and any other relevant document shall be deemed served on\n       those persons by –\n\n       (a)     Attaching copies of the claim form, particulars of claim and any other relevant document to the main\n               door or some other part of the premises so that they are clearly visible;\n\n       (b)     if practicable, inserting copies of those documents in a sealed transparent envelope addressed to \"the\n               occupiers\" through the door or gate of the premises or letter box if there is one; or\n\n       (c)     Placing stakes in the land in places where they are clearly visible and attaching to each stake copies of the\n               claim form, particulars of claim and any other relevant document in a sealed transparent envelope addressed\n               to \"the occupiers\"."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.36",
+        "section_number": 36,
+        "section_title": "Defendant not defending claim",
+        "chunk_type": "section"
+      },
+      "text": "36.    Where the claim is based on documentary evidence and the defendant does not file a defence or appear at the trial\n       and does not defend the claim, the Magistrate shall be entitled to adjudicate upon the claim in Chambers but shall\n       give judgment in open Court.",
+      "summary": "This provision applies where a defendant in a claim based on documentary evidence fails to file a defence or appear at trial. In such cases, the Magistrate may hear the case in chambers but must deliver the judgment in open court.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.36\nTitle: Defendant not defending claim\nJurisdiction: lagos-state\n\nSummary: This provision applies where a defendant in a claim based on documentary evidence fails to file a defence or appear at trial. In such cases, the Magistrate may hear the case in chambers but must deliver the judgment in open court.\n\n36.    Where the claim is based on documentary evidence and the defendant does not file a defence or appear at the trial\n       and does not defend the claim, the Magistrate shall be entitled to adjudicate upon the claim in Chambers but shall\n       give judgment in open Court."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.37",
+        "section_number": 37,
+        "section_title": "Unreasonable increase of Rent",
+        "chunk_type": "section"
+      },
+      "text": "37.-(1)Subject to any agreement to the contrary, an existing tenant may apply as in form TL 11 to the Court for an\nOrder declaring that the increase in rent payable under a tenancy agreement is unreasonable.\n       (2)   In determining whether an increase in the rent is unreasonable, the Court shall issue hearing notice as in form\n             TL 12 to the Landlord and shall consider the application on the following grounds –\n\n             (a)    the general level of rents in the locality or a similar locality for comparative analysis;\n\n             (b)    evidence of witnesses of the parties ;and\n\n             (c)    any special circumstances relating to the premises in question or any other relevant matter.\n\n      (3)     If satisfied that the increase in the rent is unreasonable, the Court may order as in form TL13 that the increase\n             in the rent be changed to a specific amount.\n\n      (4)    Notwithstanding the provisions of any Law, it shall be unlawful for a landlord to eject a tenant from\n             any premises pending the determination of the action.",
+      "summary": "An existing tenant can apply to the Court if they believe a rent increase is unreasonable. The Court will consider local rent levels, witness evidence, and special circumstances. If deemed unreasonable, the Court can order a change to the rent amount and prohibit the landlord from ejecting the tenant during the proceedings.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.37\nTitle: Unreasonable increase of Rent\nJurisdiction: lagos-state\n\nSummary: An existing tenant can apply to the Court if they believe a rent increase is unreasonable. The Court will consider local rent levels, witness evidence, and special circumstances. If deemed unreasonable, the Court can order a change to the rent amount and prohibit the landlord from ejecting the tenant during the proceedings.\n\n37.-(1)Subject to any agreement to the contrary, an existing tenant may apply as in form TL 11 to the Court for an\nOrder declaring that the increase in rent payable under a tenancy agreement is unreasonable.\n       (2)   In determining whether an increase in the rent is unreasonable, the Court shall issue hearing notice as in form\n             TL 12 to the Landlord and shall consider the application on the following grounds –\n\n             (a)    the general level of rents in the locality or a similar locality for comparative analysis;\n\n             (b)    evidence of witnesses of the parties ;and\n\n             (c)    any special circumstances relating to the premises in question or any other relevant matter.\n\n      (3)     If satisfied that the increase in the rent is unreasonable, the Court may order as in form TL13 that the increase\n             in the rent be changed to a specific amount.\n\n      (4)    Notwithstanding the provisions of any Law, it shall be unlawful for a landlord to eject a tenant from\n             any premises pending the determination of the action."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.38",
+        "section_number": 38,
+        "section_title": "Application to set aside or vary",
+        "chunk_type": "section"
+      },
+      "text": "38.   Any judgment by default under this Law shall be final and remain valid and may only be set aside upon application\n      to the Magistrate on grounds of fraud, non-service, lack of jurisdiction or upon such terms as the Court may deem fit.",
+      "summary": "This provision applies to default judgments issued under the Tenancy Law of Lagos State. Such judgments are final and can only be set aside by the Magistrate's Court based on fraud, non-service, lack of jurisdiction, or other conditions the court deems appropriate.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.38\nTitle: Application to set aside or vary\nJurisdiction: lagos-state\n\nSummary: This provision applies to default judgments issued under the Tenancy Law of Lagos State. Such judgments are final and can only be set aside by the Magistrate's Court based on fraud, non-service, lack of jurisdiction, or other conditions the court deems appropriate.\n\n38.   Any judgment by default under this Law shall be final and remain valid and may only be set aside upon application\n      to the Magistrate on grounds of fraud, non-service, lack of jurisdiction or upon such terms as the Court may deem fit."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.39",
+        "section_number": 39,
+        "section_title": "Warrant for possession may be",
+        "chunk_type": "section"
+      },
+      "text": "39.   Where a landlord is entitled to possession of any premises, the Court may issue a warrant for possession,\n      notwithstanding that the counterclaim is undetermined or unsatisfied.",
+      "summary": "This section applies to landlords seeking possession of premises in Lagos State. It allows the court to issue a warrant for possession even if the tenant has an undetermined or unsatisfied counterclaim.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.39\nTitle: Warrant for possession may be\nJurisdiction: lagos-state\n\nSummary: This section applies to landlords seeking possession of premises in Lagos State. It allows the court to issue a warrant for possession even if the tenant has an undetermined or unsatisfied counterclaim.\n\n39.   Where a landlord is entitled to possession of any premises, the Court may issue a warrant for possession,\n      notwithstanding that the counterclaim is undetermined or unsatisfied."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.40",
+        "section_number": 40,
+        "section_title": "Form and purpose of warrant",
+        "chunk_type": "section"
+      },
+      "text": "40.   A warrant for possession shall entitle the landlord to be put in possession of the premises to which the warrant relates\n      and the certificate of warrant execution shall be as in Form TL 10.",
+      "summary": "This section outlines that a warrant for possession allows a landlord to reclaim the premises. It specifies that the execution of the warrant should follow the format provided in Form TL 10. This provision applies to landlords seeking possession of premises under a warrant.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.40\nTitle: Form and purpose of warrant\nJurisdiction: lagos-state\n\nSummary: This section outlines that a warrant for possession allows a landlord to reclaim the premises. It specifies that the execution of the warrant should follow the format provided in Form TL 10. This provision applies to landlords seeking possession of premises under a warrant.\n\n40.   A warrant for possession shall entitle the landlord to be put in possession of the premises to which the warrant relates\n      and the certificate of warrant execution shall be as in Form TL 10."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.41",
+        "section_number": 41,
+        "section_title": "Duration of warrant",
+        "chunk_type": "section"
+      },
+      "text": "41.   Notwithstanding any provision in any other Law, every warrant for possession shall bear the date after the day\n      mentioned in the Order for possession of the premises in question and shall be in force for three (3) months from\n      such date:\n\n       Provided that a Warrant may be renewed every three months but shall not exceed three (3) renewals.",
+      "summary": "This section applies to every warrant for possession of premises in Lagos State. It mandates that the warrant must be dated after the possession order date and remain valid for three months. Renewals are permitted for up to three additional three-month periods.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.41\nTitle: Duration of warrant\nJurisdiction: lagos-state\n\nSummary: This section applies to every warrant for possession of premises in Lagos State. It mandates that the warrant must be dated after the possession order date and remain valid for three months. Renewals are permitted for up to three additional three-month periods.\n\n41.   Notwithstanding any provision in any other Law, every warrant for possession shall bear the date after the day\n      mentioned in the Order for possession of the premises in question and shall be in force for three (3) months from\n      such date:\n\n       Provided that a Warrant may be renewed every three months but shall not exceed three (3) renewals."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.42",
+        "section_number": 42,
+        "section_title": "Warrant of possession justifies",
+        "chunk_type": "section"
+      },
+      "text": "42.   Any warrant to give possession of the premises to the person named in the warrant or to whom it may be directed,\n      shall justify entry to him with such assistance as he deems necessary and be given possession of the premises.\n\n      Provided that no entry upon such warrant shall be made on a Sunday or public holiday.",
+      "summary": "This provision outlines the authority granted by a warrant of possession. It allows the named individual or their representative to forcibly enter the premises and take possession, using necessary assistance. However, entry via this warrant is prohibited on Sundays and public holidays.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.42\nTitle: Warrant of possession justifies\nJurisdiction: lagos-state\n\nSummary: This provision outlines the authority granted by a warrant of possession. It allows the named individual or their representative to forcibly enter the premises and take possession, using necessary assistance. However, entry via this warrant is prohibited on Sundays and public holidays.\n\n42.   Any warrant to give possession of the premises to the person named in the warrant or to whom it may be directed,\n      shall justify entry to him with such assistance as he deems necessary and be given possession of the premises.\n\n      Provided that no entry upon such warrant shall be made on a Sunday or public holiday."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.43",
+        "section_number": 43,
+        "section_title": "Enforcement of Order of Court",
+        "chunk_type": "section"
+      },
+      "text": "43.   At the expiration of the time ordered by the Court, if an Order of possession of the Court is not obeyed, the Court at\n      the instance of the landlord shall where such Order can be proved to have been served on the tenant, issue a warrant\n      for possession, and if the Order is that possession of the premises be given up by the tenant to the landlord, the Court\n      shall immediately at the instance and at the cost of the landlord, issue a warrant for possession to the landlord.",
+      "summary": "This section applies to tenants who fail to obey a court order for possession after the ordered time has expired. The court shall issue a warrant for possession at the landlord's instance and cost, provided the order was properly served on the tenant.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.43\nTitle: Enforcement of Order of Court\nJurisdiction: lagos-state\n\nSummary: This section applies to tenants who fail to obey a court order for possession after the ordered time has expired. The court shall issue a warrant for possession at the landlord's instance and cost, provided the order was properly served on the tenant.\n\n43.   At the expiration of the time ordered by the Court, if an Order of possession of the Court is not obeyed, the Court at\n      the instance of the landlord shall where such Order can be proved to have been served on the tenant, issue a warrant\n      for possession, and if the Order is that possession of the premises be given up by the tenant to the landlord, the Court\n      shall immediately at the instance and at the cost of the landlord, issue a warrant for possession to the landlord."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.44",
+        "section_number": 44,
+        "section_title": "Offences and Penalties",
+        "chunk_type": "section"
+      },
+      "text": "44.-(1) Subject to the provisions of any Law-\n\n             (a)    Any person who demolishes, alters or modifies a b4i1ding to which this law applies with a view to\n                    ejecting a tenant and without the approval of the Court; or\n\n             (b)    any person who in respect of any premises-\n\n                    (i)     attempts to forcibly eject or forcibly ejects a tenant;\n\n                    (ii)    threatens or molests a tenant by action or words, with a view to ejecting such tenant;\n                            or\n\n                    (iii)   willfully damages any premises,\n\n      shall be guilty of an offence and is liable to a fine not exceeding Two Hundred and Fifty Thousand Naira\n      (N250,000.00) or a maximum of six (6) months imprisonment and any other non-custodial disposition.\n\n      (2)    A Court shall have power to punish for contempt in the face of the Court but may in other cases Order the\n             arrest and bring before it, any person suspected of having committed contempt of Court and such a person\n             shall as soon as practicable be brought to trial before a Court of Law.\n\n      (3)    Following subsection (2) of this section, any person who-\n              (a)     resists, molests, assaults, or in any way obstructs any officer of the Court or any other person from\n                     carrying out an Order of the Court to serve any process or execute a warrant for possession; Or\n\n             (b)     has been put out of possession, by virtue of a warrant for possession, and unlawfully retakes\n                     possession of the premises after possession has been given to the landlord shall be charged with\n                     contempt and is liable on conviction to a fine not exceeding Two Hundred and Fifty Thousand Naira\n                     (N250,000.00) or a maximum of six (6) months imprisonment and any other non-custodial disposition.\n\n      (4)(a)Any landlord who obtains an Order for possession of any premises under this Law by intentionally providing\n      false information shall be guilty of an offence and liable under the Criminal Code.\n\n      (b)    Any tenant who deprives the landlord of any premises under this Law by intentionally providing false\n             information shall be guilty of an offence and liable under the Criminal Code.\n\n      (c)    Without prejudice to any criminal proceeding, where-\n\n             (i)     any landlord has obtained an Order of possession of premises under this Law and upon an application\n                     made by summons by the tenant, the Court is satisfied that such Order was obtained by intentionally\n                     providing false information; the Court shall order the landlord to pay reasonable compensation to such\n                     tenant; and\n\n             (ii)    the tenant has deprived the landlord of possession of premises under this Law and upon an application\n                     made by summons by the landlord, the Court is satisfied that the landlord was so deprived by the\n                     tenant intentionally providing false information; the court shall order the tenant to pay reasonable\n                     compensation to such landlord.",
+      "summary": "This section applies to any person who unlawfully ejects, threatens, or damages premises occupied by a tenant, or obstructs court orders. Conviction carries a fine of up to N250,000 or six months imprisonment. Landlords or tenants providing false information to obtain possession orders are also guilty and liable under the Criminal Code, with potential compensation orders.",
+      "cross_refs": [
+        "Criminal Code"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.44\nTitle: Offences and Penalties\nJurisdiction: lagos-state\n\nSummary: This section applies to any person who unlawfully ejects, threatens, or damages premises occupied by a tenant, or obstructs court orders. Conviction carries a fine of up to N250,000 or six months imprisonment. Landlords or tenants providing false information to obtain possession orders are also guilty and liable under the Criminal Code, with potential compensation orders.\n\n44.-(1) Subject to the provisions of any Law-\n\n             (a)    Any person who demolishes, alters or modifies a b4i1ding to which this law applies with a view to\n                    ejecting a tenant and without the approval of the Court; or\n\n             (b)    any person who in respect of any premises-\n\n                    (i)     attempts to forcibly eject or forcibly ejects a tenant;\n\n                    (ii)    threatens or molests a tenant by action or words, with a view to ejecting such tenant;\n                            or\n\n                    (iii)   willfully damages any premises,\n\n      shall be guilty of an offence and is liable to a fine not exceeding Two Hundred and Fifty Thousand Naira\n      (N250,000.00) or a maximum of six (6) months imprisonment and any other non-custodial disposition.\n\n      (2)    A Court shall have power to punish for contempt in the face of the Court but may in other cases Order the\n             arrest and bring before it, any person suspected of having committed contempt of Court and such a person\n             shall as soon as practicable be brought to trial before a Court of Law.\n\n      (3)    Following subsection (2) of this section, any person who-\n              (a)     resists, molests, assaults, or in any way obstructs any officer of the Court or any other person from\n                     carrying out an Order of the Court to serve any process or execute a warrant for possession; Or\n\n             (b)     has been put out of possession, by virtue of a warrant for possession, and unlawfully retakes\n                     possession of the premises after possession has been given to the landlord shall be charged with\n                     contempt and is liable on conviction to a fine not exceeding Two Hundred and Fifty Thousand Naira\n                     (N250,000.00) or a maximum of six (6) months imprisonment and any other non-custodial disposition.\n\n      (4)(a)Any landlord who obtains an Order for possession of any premises under this Law by intentionally providing\n      false information shall be guilty of an offence and liable under the Criminal Code.\n\n      (b)    Any tenant who deprives the landlord of any premises under this Law by intentionally providing false\n             information shall be guilty of an offence and liable under the Criminal Code.\n\n      (c)    Without prejudice to any criminal proceeding, where-\n\n             (i)     any landlord has obtained an Order of possession of premises under this Law and upon an application\n                     made by summons by the tenant, the Court is satisfied that such Order was obtained by intentionally\n                     providing false information; the Court shall order the landlord to pay reasonable compensation to such\n                     tenant; and\n\n             (ii)    the tenant has deprived the landlord of possession of premises under this Law and upon an application\n                     made by summons by the landlord, the Court is satisfied that the landlord was so deprived by the\n                     tenant intentionally providing false information; the court shall order the tenant to pay reasonable\n                     compensation to such landlord."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.45",
+        "section_number": 45,
+        "section_title": "Appeals",
+        "chunk_type": "section"
+      },
+      "text": "45.-(1) A party to any proceedings in the Magistrates' Court may appeal from the decisions of the Magistrates' Court to the\nHigh Court in accordance with the provisions of the Magistrates' Court Law.\n\n      (2)    A party to any proceedings in the High Court may appeal in accordance with the provisions of the\n             Constitution.",
+      "summary": "Parties in proceedings before the Magistrates' Court or High Court can appeal decisions. Appeals from the Magistrates' Court go to the High Court under the Magistrates' Court Law, while appeals from the High Court follow the provisions of the Constitution.",
+      "cross_refs": [
+        "Magistrates' Court Law",
+        "Constitution"
+      ],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.45\nTitle: Appeals\nJurisdiction: lagos-state\n\nSummary: Parties in proceedings before the Magistrates' Court or High Court can appeal decisions. Appeals from the Magistrates' Court go to the High Court under the Magistrates' Court Law, while appeals from the High Court follow the provisions of the Constitution.\n\n45.-(1) A party to any proceedings in the Magistrates' Court may appeal from the decisions of the Magistrates' Court to the\nHigh Court in accordance with the provisions of the Magistrates' Court Law.\n\n      (2)    A party to any proceedings in the High Court may appeal in accordance with the provisions of the\n             Constitution."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.46",
+        "section_number": 46,
+        "section_title": "Regulations and procedure",
+        "chunk_type": "section"
+      },
+      "text": "46.   The Chief Judge may, as required, make regulations for the procedure through which matters relating to the conduct\n      of proceedings shall be carried out.",
+      "summary": "This section empowers the Chief Judge of Lagos State to establish procedural regulations for handling tenancy-related legal matters. These regulations will govern the conduct of proceedings, ensuring a standardized and efficient judicial process for tenancy disputes within the state.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.46\nTitle: Regulations and procedure\nJurisdiction: lagos-state\n\nSummary: This section empowers the Chief Judge of Lagos State to establish procedural regulations for handling tenancy-related legal matters. These regulations will govern the conduct of proceedings, ensuring a standardized and efficient judicial process for tenancy disputes within the state.\n\n46.   The Chief Judge may, as required, make regulations for the procedure through which matters relating to the conduct\n      of proceedings shall be carried out."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.47",
+        "section_number": 47,
+        "section_title": "Interpretation",
+        "chunk_type": "section"
+      },
+      "text": "47.   In this Law, unless the context otherwise requires-\n\n      \"Agent\" means any person usually employed by the landlord in the letting or leasing of the premises or in the\n      collecting of the rents, or a person Specially authorised to act in a particular manner by writing under the hand of the\n      landlord;\n\n      \"Business Premises\" except where it is expressly stated otherwise by this Law, includes premises used wholly or in part for\n      non-residential purposes, such as, places let out for business, shops, offices, shopping malls, sporting facilities, events centres,\n      lodgings. gaming houses, clubs and club houses, religious worship, institutions and voluntary services structures amongst\n      others;\n\n      “Commissioner” means commissioner for justice, Lagos state;\n\n      \"Common Area\" means any part of the premises the use of which is jointly shared by tenants or by a landlord and one or more\n      tenants;\n\n      \"Court\" means the High Court and Magistrates' Court of Lagos State but specifically excludes the Customary Court;\n      “Current Rent” means the subsisting rent;\n\n      “ Functions” includes powers and duties;\n\n      \"Interested Person\" includes any person claiming through the landlord or the tenant or who has an interest in the proceedings;\n\n      \"Landlord\" in relation to any premises means the person entitled to the immediate reversion of the premises or if the property is\n      held injoint tenancy or tenancy in common, any of the persons entitled to the immediate reversion and includes –\n\n             (a)     the attorney, solicitor, agent or caretaker of any such landlord;\n             (b)      any person receiving (whether in his own right or as an attorney or agent) any rent from any person for the\n                     occupation of any premises in respect of which he claims a right to receive the same; or\n\n             (c)     a former landlord where the context so requires;\n\n      \"Licensee\" means a person who comes into occupation by mere permission, without the creation of a landlord and tenant\n      relationship and has no estate or legal interest in the premises;\n\n      \"Mesne Profit” mean the rents and profits which a tenant holds over during his occupation of the premises and which he is\n      liable to pay as compensation to the person entitled to possession;\n\n      \"Persons in unlawful occupation\" means any person or corporate body who:\n\n             (a)     enters into occupation through the tenant or remains in any residential or business premises without the\n                     consent of the landlord; or\n\n             (b)     enters into or remains in occupation of the premises after an order for possession against a tenant\n                     without the consent of the landlord;\n\n      \"Premises\" except where it is expressly stated otherwise by this Law, includes premises used for business, residential\n      and non-residential purposes;\n\n      \"Prescribed\" means prescribed by this Law or Schedule or tules or regulations or orders;\n\n      \"Proceedings\" includes any proceedings instituted in court in respect of this law;\n\n      \"Rents\" includes any consideration or money paid or agreed to be paid or value or a right given or agreed to be given\n      or part of any crop rendered or any equivalent given in kind or in labour, in consideration of which a landlord has\n      permitted any person to use and occupy any land, premises, or other corporeal hereditament, and the use of common\n      areas but does not include any charge for services or facilities provided in addition for the occupation of the\n      premises:\n\n      \"Rules\" means the rules for the time being in force relating to the practice and procedure of the Courts in the exercise\n      of their respective civil jurisdiction made under the law by which such Courts were established or any law amending\n      same;\n\n      \"Services or Facilities\" include any of the following that are provided or agreed to be provided by the landlord to the\n      tenant of premises: appliances and furnishings, cleaning and maintenance services, parking spaces, cable, television\n      and dish services, laundry services, storage facilities, elevator services, common recreational facilities, intercom\n      systems and security surveillance, housekeeping facilities, security services and waste removal services;\n\n      \"Sitting Tenant\" means a tenant in lawful occupation after the expiration of the first tenancy term according to the\n      provisions of this Law and includes a tenant renewing an existing tenancy following an expired term of years;\n\n      “State” means Lagos state.\n\n      \"Substantial Repair\" means any work required to remedy anything which threatens the structure or renders the\n      premises inhabitable, creates an intolerable nuisance or could be construed as a breach of the landlord's covenant in\n      the head- lease;\n\n      \"Sub-tenant\" means a person who occupies a premises or a portion of the premises previously occupied by a tenant which has\n      been sublet to the sub-tenant by virtue of the written consent of the landlord;\n\n      \"Tenant\" includes a sub-tenant or any person occupying any premises whether by payment of rent howsoever or by operation\n      of law and not persons unlawfully occupying any premises under a bona fide claim to be the owner;\n\n      \"Tenancy\" means holding of interest in land or property by a tenant under a tenancy agreement:\n\n      \"Tenancy agreement\" means an agreement whether written or oral, express or implied between a landlord and a tenant\n      regarding possession of premises and use of common areas and includes leases and sub-leases.",
+      "summary": "This section provides definitions for terms used in the Tenancy Law of Lagos State, such as \"Landlord,\" \"Tenant,\" \"Premises,\" and \"Business Premises.\" It clarifies the scope of these terms and specifies conditions for their application within the context of tenancy agreements and property law in Lagos State.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.47\nTitle: Interpretation\nJurisdiction: lagos-state\n\nSummary: This section provides definitions for terms used in the Tenancy Law of Lagos State, such as \"Landlord,\" \"Tenant,\" \"Premises,\" and \"Business Premises.\" It clarifies the scope of these terms and specifies conditions for their application within the context of tenancy agreements and property law in Lagos State.\n\n47.   In this Law, unless the context otherwise requires-\n\n      \"Agent\" means any person usually employed by the landlord in the letting or leasing of the premises or in the\n      collecting of the rents, or a person Specially authorised to act in a particular manner by writing under the hand of the\n      landlord;\n\n      \"Business Premises\" except where it is expressly stated otherwise by this Law, includes premises used wholly or in part for\n      non-residential purposes, such as, places let out for business, shops, offices, shopping malls, sporting facilities, events centres,\n      lodgings. gaming houses, clubs and club houses, religious worship, institutions and voluntary services structures amongst\n      others;\n\n      “Commissioner” means commissioner for justice, Lagos state;\n\n      \"Common Area\" means any part of the premises the use of which is jointly shared by tenants or by a landlord and one or more\n      tenants;\n\n      \"Court\" means the High Court and Magistrates' Court of Lagos State but specifically excludes the Customary Court;\n      “Current Rent” means the subsisting rent;\n\n      “ Functions” includes powers and duties;\n\n      \"Interested Person\" includes any person claiming through the landlord or the tenant or who has an interest in the proceedings;\n\n      \"Landlord\" in relation to any premises means the person entitled to the immediate reversion of the premises or if the property is\n      held injoint tenancy or tenancy in common, any of the persons entitled to the immediate reversion and includes –\n\n             (a)     the attorney, solicitor, agent or caretaker of any such landlord;\n             (b)      any person receiving (whether in his own right or as an attorney or agent) any rent from any person for the\n                     occupation of any premises in respect of which he claims a right to receive the same; or\n\n             (c)     a former landlord where the context so requires;\n\n      \"Licensee\" means a person who comes into occupation by mere permission, without the creation of a landlord and tenant\n      relationship and has no estate or legal interest in the premises;\n\n      \"Mesne Profit” mean the rents and profits which a tenant holds over during his occupation of the premises and which he is\n      liable to pay as compensation to the person entitled to possession;\n\n      \"Persons in unlawful occupation\" means any person or corporate body who:\n\n             (a)     enters into occupation through the tenant or remains in any residential or business premises without the\n                     consent of the landlord; or\n\n             (b)     enters into or remains in occupation of the premises after an order for possession against a tenant\n                     without the consent of the landlord;\n\n      \"Premises\" except where it is expressly stated otherwise by this Law, includes premises used for business, residential\n      and non-residential purposes;\n\n      \"Prescribed\" means prescribed by this Law or Schedule or tules or regulations or orders;\n\n      \"Proceedings\" includes any proceedings instituted in court in respect of this law;\n\n      \"Rents\" includes any consideration or money paid or agreed to be paid or value or a right given or agreed to be given\n      or part of any crop rendered or any equivalent given in kind or in labour, in consideration of which a landlord has\n      permitted any person to use and occupy any land, premises, or other corporeal hereditament, and the use of common\n      areas but does not include any charge for services or facilities provided in addition for the occupation of the\n      premises:\n\n      \"Rules\" means the rules for the time being in force relating to the practice and procedure of the Courts in the exercise\n      of their respective civil jurisdiction made under the law by which such Courts were established or any law amending\n      same;\n\n      \"Services or Facilities\" include any of the following that are provided or agreed to be provided by the landlord to the\n      tenant of premises: appliances and furnishings, cleaning and maintenance services, parking spaces, cable, television\n      and dish services, laundry services, storage facilities, elevator services, common recreational facilities, intercom\n      systems and security surveillance, housekeeping facilities, security services and waste removal services;\n\n      \"Sitting Tenant\" means a tenant in lawful occupation after the expiration of the first tenancy term according to the\n      provisions of this Law and includes a tenant renewing an existing tenancy following an expired term of years;\n\n      “State” means Lagos state.\n\n      \"Substantial Repair\" means any work required to remedy anything which threatens the structure or renders the\n      premises inhabitable, creates an intolerable nuisance or could be construed as a breach of the landlord's covenant in\n      the head- lease;\n\n      \"Sub-tenant\" means a person who occupies a premises or a portion of the premises previously occupied by a tenant which has\n      been sublet to the sub-tenant by virtue of the written consent of the landlord;\n\n      \"Tenant\" includes a sub-tenant or any person occupying any premises whether by payment of rent howsoever or by operation\n      of law and not persons unlawfully occupying any premises under a bona fide claim to be the owner;\n\n      \"Tenancy\" means holding of interest in land or property by a tenant under a tenancy agreement:\n\n      \"Tenancy agreement\" means an agreement whether written or oral, express or implied between a landlord and a tenant\n      regarding possession of premises and use of common areas and includes leases and sub-leases."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.48",
+        "section_number": 48,
+        "section_title": "Repeal",
+        "chunk_type": "section"
+      },
+      "text": "48.   The Rent Tribunals (Abolition and Transfer of Functions) Law 2007 is repealed.",
+      "summary": "This section repeals the Rent Tribunals (Abolition and Transfer of Functions) Law 2007. It effectively removes the previously existing law concerning rent tribunals.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.48\nTitle: Repeal\nJurisdiction: lagos-state\n\nSummary: This section repeals the Rent Tribunals (Abolition and Transfer of Functions) Law 2007. It effectively removes the previously existing law concerning rent tribunals.\n\n48.   The Rent Tribunals (Abolition and Transfer of Functions) Law 2007 is repealed."
+    },
+    {
+      "metadata": {
+        "source": "Tenancy Law of Lagos State, Law No. 14 of 2011",
+        "act_short": "Lagos Tenancy Law 2011",
+        "citation": "Lagos State Official Gazette No. 37 Vol. 44, 26 August 2011",
+        "jurisdiction": "lagos-state",
+        "as_at": "2026-07",
+        "file": "corpus/tenancy/tenancy-law-lagos-2011.md",
+        "part": "",
+        "section_id": "s.49",
+        "section_number": 49,
+        "section_title": "Citation and Commencement",
+        "chunk_type": "section"
+      },
+      "text": "49.   This Law may be cited as the Tenancy Law and shall come into force on 24 th day of August 20",
+      "summary": "This provision cites the Tenancy Law of Lagos State, Law No. 14 of 2011 as its official name. It establishes the commencement date for the law as August 24, 2011. This section primarily deals with the identification and effective date of the statute.",
+      "cross_refs": [],
+      "augmented_text": "Act: Tenancy Law of Lagos State, Law No. 14 of 2011\nSection: s.49\nTitle: Citation and Commencement\nJurisdiction: lagos-state\n\nSummary: This provision cites the Tenancy Law of Lagos State, Law No. 14 of 2011 as its official name. It establishes the commencement date for the law as August 24, 2011. This section primarily deals with the identification and effective date of the statute.\n\n49.   This Law may be cited as the Tenancy Law and shall come into force on 24 th day of August 20"
+    }
+  ]
+}

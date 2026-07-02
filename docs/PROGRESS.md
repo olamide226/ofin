@@ -10,8 +10,20 @@
 | Intent router | done | extraction (bake-off X-format) → rules engine → **deterministic rendering** (ADR-010: model never touches figures) |
 | Week-4 exit criterion | **met** | "how much PAYE on 450k monthly" returns the exact statutory computation with band breakdown (₦63,500/mo, 3 bands) |
 | Integrated golden run (2026-07-02T113658 + gated spot-run) | recall@k **84%** · citation precision **91%** (52/57) · refusal calibration **39/40** · notice/PAYE routed to rules engine, rendered deterministically (ADR-010) | intent gates added after two presence-of-numbers misroutes (L15, N02) — now regression-tested |
-| Tenancy + tax corpora | next session | Lagos Tenancy Law 2011, NTA 2025 text, VAT/CITA key provisions |
-| Golden set → 90 questions | next session | +tenancy/tax/cross-domain/computation questions |
+| Tenancy + tax corpora | **done** | Lagos Tenancy Law 2011 (official MOJ gazette, 48/49 sections) + Nigeria Tax Act 2025 (official gazette via GRS mirror — the NTA consolidated PITA/CITA/VAT/CGT, so one act covers the domain; 202/203 sections). Corpus now **523 chunks, 7 acts, 3 domains** |
+| PAYE bands vs gazette | **✅ verified** | Fourth Schedule text (under s.58(1)) matches the rules engine exactly |
+| Golden set | 68 questions (39 labour + 29 tenancy/tax incl. 5 cross-domain, 6 computation, 5 negatives) | → 90 during Week-6 hardening, driven by observed failures |
+
+### Three-domain baseline (2026-07-02T124409) — the Week-6 worklist
+
+recall@k **76%** · citation precision **79%** (128/162) · refusal 61/68 ·
+7 questions computed deterministically. Expected regression from the corpus
+tripling; failures concentrate in: (1) **cross-domain recall 1/5** — the
+cross-ref hop is same-act-only; cross-act edges need act-name resolution in
+`reverseRefIDs`; (2) tax-prose claims flag more often (28); (3) extraction
+misses "18 months" tenure (CP05 gracefully fell back to a correct cited
+lookup). XD03 proves the pipeline end-to-end: both acts retrieved, rent
+deductibility answered with [NTA 2025, s.20(1)(b)].
 
 ## Week 3 (July 15–21, started early July 2) — Verified Citation Engine
 
