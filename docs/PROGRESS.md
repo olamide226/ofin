@@ -39,17 +39,38 @@ are the new baseline for Week 6 hardening.
 
 | Metric | Value | vs Dev (M1 Max) |
 |---|---|---|
-| TPS generation | **34.29** | 50.1 (both cap at 15 for S_perf) |
+| TPS generation (llama-bench, sustained 3×) | **34.29** (34.0 / 34.5 / 34.0) | 50.1 (both cap at 15 for S_perf) |
 | First-token latency | 5,977 ms | 910 ms |
-| Peak RSS | **3,442 MB** | 2,110 MB |
-| Steady-state RSS | 3,323 MB | 1,975 MB |
+| Peak RSS — model only (llama-bench) | 3,442 MB | 2,110 MB |
+| **Peak RSS — full app stack (integrated, draft off)** | **~3.9 GB idle / ~4.2 GB peak** | — |
 | Throttled | false | false |
 
-**S_perf: full marks** (34.29 > 15 TPS cap). **S_eff: passing** (3,442 MB < 3.5 GB target). Real-world first-token latency with 3–4k token prompts expected 10–15s on the VM — the UI masks this with instant retrieval preview.
+**S_perf: full marks** (34.29 > 15 TPS cap, no throttle decay across 3 runs).
+**S_eff: corrected — see ADR-013.** The model-only 3,442 MB previously logged as
+"passing" was measured with llama-bench, which never launches the app. The real
+shipped stack (embed + chat @ 6144-ctx q8 KV + Go engine + SQLite) is ~3.9 GB
+idle / ~4.2 GB peak — **over** the 3.5 GB self-target, but within the 8 GB hard
+cap (no swap/OOM). **Offline** (zero non-loopback calls) and **functional**
+(cited answers, both routes) verified end-to-end.
+
+✅ **Ship-blocker found on VM, fixed and verified (commit `ff9e776`):** `ofin ask`
+/ `serve` were dead out-of-the-box — `DefaultConfig` shipped the 1B draft on but
+only the 3B is downloaded, so the chat server crashed; and the escape-hatch flag
+was ignored after the subcommand. Both violated ADR-012. Fix landed: draft off by
+default (`app.go:42`), opt-in `--draft` with post-subcommand flags re-parsed
+(`main.go`), and a missing draft GGUF made non-fatal (`client.go`). Re-verified on
+the dev machine — default `ofin ask` returns cited answers on both routes, chat
+server launches with no `--model-draft`. See ADR-013.
 
 ### Remaining Week 5 items
 
-- [x] VM certification run — **done** (2026-07-02, `docs/benchmarks/2026-07-02-vm-llama3.2-3b-4vcpu8gb.json`)
+- [x] VM certification run — **done** (2026-07-02; integrated:
+  `docs/benchmarks/2026-07-02-vm-integrated-fullstack.json`, llama-bench:
+  `2026-07-02-vm-llama3.2-3b-4vcpu8gb.json`)
+- [x] **ADR-012 draft-off fix landed** (commit `ff9e776`) — draft off by default,
+  opt-in `--draft`, post-subcommand flags parsed, missing draft non-fatal;
+  re-verified on dev machine — see ADR-013
+- [x] Corrected S_eff figures in REPORT.md to the integrated stack numbers
 - [ ] `ofin serve` screenshot capture for docs
 - [ ] Prompt budget final: the 148 claims figure suggests further trimming the number of retrieved sources could help (fewer, more targeted chunks → fewer uncited claims → less prefill) — evaluate in Week 6 
 

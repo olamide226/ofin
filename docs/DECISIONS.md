@@ -6,6 +6,60 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-013 — VM integrated certification: full-stack RSS is the S_eff figure of record; ADR-012 was not implemented in code (2026-07-02)
+
+**Decision:** The S_eff certification figure is the **integrated full-stack peak
+RSS** from running the actual `ofin` app on the target VM — not the model-only
+`llama-bench` number. Figure of record: **~3.9 GB steady / ~4.2 GB peak** (draft
+off), superseding the 3,442 MB model-only value previously logged as "S_eff
+passing."
+
+**Context:** First real VM run — Hetzner 4 vCPU / 7.6 GB, Ubuntu 26.04,
+2026-07-02. Prior certification profiled only the raw GGUF via llama-bench and
+never launched the application.
+
+**Findings:**
+- **The app was non-functional out-of-the-box.** `ofin ask` / `ofin serve` chat
+  server died ("llama-server on port 8092 not healthy after 90s"). Two bugs that
+  together violate ADR-012:
+  1. `DefaultConfig` ships the 1B draft model **on** (`app.go:39`), but
+     `download_model.sh` fetches only the 3B — so `--model-draft <missing-file>`
+     crashes the chat server. ADR-012 says draft is **off** by default; the code
+     did the opposite.
+  2. The escape hatch is a broken opt-out: `ofin ask --no-draft` is silently
+     ignored because Go's `flag` package stops at the first positional
+     (`main.go:41-52`) — only `ofin --no-draft ask` works. ADR-012 specifies
+     draft behind a flag (opt-**in**), not opt-out.
+- **Fix — landed in commit `ff9e776` and re-verified on the dev machine.**
+  Three parts: (1) `DefaultConfig.DraftModel = ""` (draft off by default,
+  `app.go:42`); (2) flag flipped to opt-in `--draft` plus a re-parse of the
+  post-subcommand args so flags after `ask`/`serve` are honored
+  (`main.go:42,54-61`); (3) a missing draft GGUF is now non-fatal — `client.go`
+  `os.Stat`-guards `--model-draft` and continues without it
+  (`client.go:57-65`). Verified: default `ofin ask "…"` returns cited answers
+  on both the rules-engine and RAG-generation paths (exit 0), and the chat
+  server launches with **no** `--model-draft` in its args.
+- **S_eff reality:** model-only 3.44 GB is under the 3.5 GB self-target, but the
+  shipped stack (embed + chat @ 6144-ctx q8_0 KV + Go engine + SQLite) is
+  ~3.9 GB idle / ~4.2 GB peak — over the 3.5 GB self-target, within the 8 GB hard
+  cap (no swap, no OOM). RSS ≈ PSS (little sharing) → the figure is honest.
+- **S_perf:** 34 TPS, sustained across 3 back-to-back runs, no throttle decay.
+- **Offline:** zero non-loopback connections during real generation.
+- **Functional:** correct cited answers on both RAG and deterministic-computation
+  routes; verifier receipts working.
+
+**Why this matters:** llama-bench certification is necessary but not sufficient —
+it cannot catch a broken application. Certification must run the app end-to-end
+on target hardware.
+
+**Data:** `docs/benchmarks/2026-07-02-vm-integrated-fullstack.json` (integrated)
+and `2026-07-02-vm-llama3.2-3b-4vcpu8gb.json` (llama-bench).
+
+**Note on ADR-012's revisit trigger:** its trigger ("only if VM cert shows the
+3B alone overshoots 3.5 GB") is **not** hit — the 3B alone is 3.44 GB. But the
+full stack overshoots the 3.5 GB self-target; if S_eff scoring pressure grows,
+revisit KV ctx (6144→lower) or embedding-model size before re-adding the draft.
+
 ## ADR-012 — Speculative decoding off by default; RSS cost too high (2026-07-02)
 
 **Decision:** Not on by default. Available behind `ofin` CLI flag only.
