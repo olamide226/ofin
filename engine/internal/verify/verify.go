@@ -55,6 +55,11 @@ type Verifier struct {
 	Corpus  CorpusLookup
 	Embed   Embedder
 	Resolve ActResolver // maps prose act names to canonical act_short
+	// Extra is an additional trusted source for this answer — the rules
+	// engine's computation result JSON. Computed figures (₦63,500/month
+	// PAYE) appear in no statute; without this they would fail the
+	// quantity layer despite being deterministically correct.
+	Extra string
 }
 
 func dot(a, b []float32) float64 {
@@ -96,7 +101,7 @@ func (v *Verifier) VerifyClaim(question string, claim Claim) Result {
 	assertion := StripCitations(claim.Text)
 
 	// Deterministic layer: numeric assertions must exist in the source.
-	if missing := UnsupportedQuantities(assertion, combined, question); len(missing) > 0 {
+	if missing := UnsupportedQuantities(assertion, combined+"\n"+v.Extra, question); len(missing) > 0 {
 		for _, q := range missing {
 			unit := q.Unit
 			if unit == "" {
@@ -115,6 +120,9 @@ func (v *Verifier) VerifyClaim(question string, claim Claim) Result {
 		res.Verdict = Flagged
 		res.Reasons = append(res.Reasons, "similarity check unavailable: "+err.Error())
 		return res
+	}
+	if v.Extra != "" {
+		sources = append(sources, v.Extra)
 	}
 	best := -1.0
 	for _, src := range sources {

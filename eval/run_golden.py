@@ -67,6 +67,7 @@ def evaluate(questions: list[dict], full: bool) -> dict:
                 "verified": verdicts["verified"], "flagged": verdicts["flagged"],
                 "failed": verdicts["failed"],
                 "regenerated": report.get("regenerated", False),
+                "computed": report.get("computation"),
                 "refused": refused,
                 "refusal_correct": refused == expected_refusal,
                 "answer": answer,
@@ -102,6 +103,9 @@ def summarize(result: dict, full: bool) -> str:
         lines.append(f"Citation precision (verified / all shown): {v/total:.0%}")
         regen = sum(1 for r in rows if r.get("regenerated"))
         lines.append(f"Regeneration rate: {regen}/{len(rows)}")
+        computed = [r["id"] for r in rows if r.get("computed")]
+        lines.append(f"Routed to rules engine (verified by construction): "
+                     f"{len(computed)}" + (f" ({', '.join(computed)})" if computed else ""))
         cal = [r for r in rows if "refusal_correct" in r]
         ok = sum(1 for r in cal if r["refusal_correct"])
         wrong = [r["id"] for r in cal if not r["refusal_correct"]]

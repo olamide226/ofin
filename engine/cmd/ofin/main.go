@@ -18,6 +18,7 @@ import (
 	"ofin/internal/answer"
 	"ofin/internal/llama"
 	"ofin/internal/retrieve"
+	"ofin/internal/router"
 	"ofin/internal/verify"
 )
 
@@ -116,6 +117,35 @@ func main() {
 		fatal(err)
 	}
 
+	// Intent router: one silent extraction call decides lookup vs
+	// computation. Computation answers render DETERMINISTICALLY — no LLM
+	// ever touches the figures (a 3B model recomputes numbers it was told
+	// to transcribe: observed live inventing ₦35,000 against a computed
+	// ₦63,500). Model-polished phrasing around the numbers is a Week-6
+	// layer; the numbers themselves never pass through the model.
+	if extRaw, err := chat.ChatStream([]llama.ChatMessage{
+		{Role: "system", Content: router.ExtractionPrompt},
+		{Role: "user", Content: question},
+	}, 250, 0, nil); err == nil {
+		if p, err := router.ParseParams(extRaw); err == nil {
+			if outcome, ok := router.Computation(p, question, time.Now()); ok {
+				fmt.Fprintf(os.Stderr, "— routed to computation engine (%s): %s\n",
+					outcome.Kind, outcome.Summary)
+				if *jsonOut {
+					emitJSON(jsonReport{Question: question, RetrievalMs: retrievalMs,
+						Answer: outcome.Rendered, Computation: outcome.Kind,
+						ComputationJSON: json.RawMessage(outcome.JSON),
+						Retrieved:       jsonChunks(chunks)})
+					return
+				}
+				fmt.Println(outcome.Rendered)
+				fmt.Println("\nRECEIPTS")
+				fmt.Println("  ✓ computed deterministically by the rules engine — citations shown inline")
+				return
+			}
+		}
+	}
+
 	messages := []llama.ChatMessage{
 		{Role: "system", Content: answer.SystemPrompt},
 		{Role: "user", Content: answer.BuildUserMessage(question, chunks)},
@@ -188,13 +218,15 @@ type jsonReceipt struct {
 }
 
 type jsonReport struct {
-	Question    string        `json:"question"`
-	Answer      string        `json:"answer,omitempty"`
-	RetrievalMs int64         `json:"retrieval_ms"`
-	Regenerated bool          `json:"regenerated,omitempty"`
-	Retrieved   []jsonChunk   `json:"retrieved"`
-	Receipts    []jsonReceipt `json:"receipts,omitempty"`
-	Uncited     []string      `json:"uncited,omitempty"`
+	Question        string          `json:"question"`
+	Answer          string          `json:"answer,omitempty"`
+	RetrievalMs     int64           `json:"retrieval_ms"`
+	Regenerated     bool            `json:"regenerated,omitempty"`
+	Computation     string          `json:"computation,omitempty"`
+	ComputationJSON json.RawMessage `json:"computation_result,omitempty"`
+	Retrieved       []jsonChunk     `json:"retrieved"`
+	Receipts        []jsonReceipt   `json:"receipts,omitempty"`
+	Uncited         []string        `json:"uncited,omitempty"`
 }
 
 func jsonChunks(chunks []retrieve.Chunk) []jsonChunk {

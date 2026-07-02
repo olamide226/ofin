@@ -1,5 +1,17 @@
 # Progress Log
 
+## Week 4 (July 22–28, started early July 2) — Rules engine + router
+
+| Task | Status | Notes |
+|---|---|---|
+| Cross-reference retrieval hop | done | recall@k 81% → **84%**; bidirectional (statutes cite backwards); hops extend context (6 fused + ≤2 companions) |
+| Verify current tax rates | done | Nigeria Tax Act 2025 in force since 2026-01-01: 0% ≤₦800k → 15/18/21/23/25% at 3M/12M/25M/50M; rent relief 20% capped ₦500k; CRA gone; minimum-wage earners exempt. Sources: PwC WWTS (rev. 2026-05-29), KPMG FA 2025-168. Encode-vs-gazette check pending tax corpus |
+| Rules engine: notice + PAYE | done | `engine/internal/rules`, table-driven tests with hand-computed values; version-stamped |
+| Intent router | done | extraction (bake-off X-format) → rules engine → **deterministic rendering** (ADR-010: model never touches figures) |
+| Week-4 exit criterion | **met** | "how much PAYE on 450k monthly" returns the exact statutory computation with band breakdown (₦63,500/mo, 3 bands) |
+| Tenancy + tax corpora | next session | Lagos Tenancy Law 2011, NTA 2025 text, VAT/CITA key provisions |
+| Golden set → 90 questions | next session | +tenancy/tax/cross-domain/computation questions |
+
 ## Week 3 (July 15–21, started early July 2) — Verified Citation Engine
 
 | Task | Status | Notes |

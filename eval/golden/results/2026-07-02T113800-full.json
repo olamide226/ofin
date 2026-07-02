@@ -1,0 +1,100 @@
+{
+ "rows": [
+  {
+   "id": "L01",
+   "category": "lookup",
+   "language": "en",
+   "recall": true,
+   "wall_s": 1.0,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "termination_notice",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "With 3.0 years of continuous employment, the statutory minimum notice your employer must give you (or pay in lieu of) is **two weeks** [Labour Act 2004, s.11(2)(c)].\n\n- Notice of one week or more must be given in writing [Labour Act 2004, s.11(3)]\n- Either party may accept payment in lieu of notice [Labour Act 2004, s.11(6)]\n- Payment in lieu is calculated on money wages only, excluding overtime and other allowances [Labour Act 2004, s.11(9)]\n\nBasis: Labour Act, Cap L1 LFN 2004 (as at July 2026). Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "L02",
+   "category": "remedy",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 0.6,
+   "verified": 0,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": "termination_notice",
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "With 4.0 years of continuous employment, the statutory minimum notice your employer must give you (or pay in lieu of) is **two weeks** [Labour Act 2004, s.11(2)(c)].\n\n- Notice of one week or more must be given in writing [Labour Act 2004, s.11(3)]\n- Either party may accept payment in lieu of notice [Labour Act 2004, s.11(6)]\n- Payment in lieu is calculated on money wages only, excluding overtime and other allowances [Labour Act 2004, s.11(9)]\n\nBasis: Labour Act, Cap L1 LFN 2004 (as at July 2026). Computed deterministically by Òfin's rules engine.",
+   "receipts": []
+  },
+  {
+   "id": "L15",
+   "category": "lookup",
+   "language": "pcm",
+   "recall": true,
+   "wall_s": 7.9,
+   "verified": 2,
+   "flagged": 1,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to section 54 of the Labour Act 2004, a woman who has been continuously employed by her employer for a period of six months or more immediately prior to her absence due to pregnancy or confinement is entitled to at least 50% pay for the period of her absence.\n\nSince you've been working for your company for two years, you are eligible for this provision. Therefore, you are entitled to at least 50% of your wages for the six weeks following your confinement.\n\n[Labour Act 2004, s.54(1)(c)]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "According to section 54 of the Labour Act 2004, a woman who has been continuously employed by her employer for a period of six months or more immediately prior to her absence due to pregnancy or confinement is entitled to at least 50% pay for the period of her absence",
+     "similarity": 0.7947381352738107
+    },
+    {
+     "verdict": "flagged",
+     "source_ref": "[Labour Act 2004, s.54]",
+     "claim": "Since you've been working for your company for two years, you are eligible for this provision",
+     "reasons": [
+      "weak semantic support (0.63)"
+     ],
+     "similarity": 0.6344462292607339
+    },
+    {
+     "verdict": "verified",
+     "source_ref": "[Labour Act 2004, s.54] [Labour Act 2004, s.54(1)(c)]",
+     "claim": "Therefore, you are entitled to at least 50% of your wages for the six weeks following your confinement",
+     "similarity": 0.7110226942690452
+    }
+   ]
+  },
+  {
+   "id": "N02",
+   "category": "cross-section",
+   "language": "en",
+   "recall": true,
+   "wall_s": 6.0,
+   "verified": 1,
+   "flagged": 0,
+   "failed": 0,
+   "regenerated": false,
+   "computed": null,
+   "refused": false,
+   "refusal_correct": true,
+   "answer": "According to Section 3(1) of the National Minimum Wage Act, 2019, an employer must pay a worker a wage not less than the national minimum wage. In this case, the national minimum wage is N70,000.00 per month.\n\nSince you earn 45,000 naira monthly, which is less than the national minimum wage, your employer is not in compliance with the minimum wage law.\n\n[Act name, s.X]",
+   "receipts": [
+    {
+     "verdict": "verified",
+     "source_ref": "[NMW Act 2019, s.3(1)]",
+     "claim": "According to Section 3(1) of the National Minimum Wage Act, 2019, an employer must pay a worker a wage not less than the national minimum wage",
+     "similarity": 0.8408764815594271
+    }
+   ]
+  }
+ ],
+ "mode": "full",
+ "timestamp": "2026-07-02T11:38:00",
+ "summary": "Retrieval recall@6: 4/4 = 100%\n  cross-section: 1/1\n  lookup: 2/2\n  remedy: 1/1\nClaims: 4 — verified 3 (75%), flagged 1, failed-after-regen 0\nCitation precision (verified / all shown): 75%\nRegeneration rate: 0/4\nRouted to rules engine (verified by construction): 2 (L01, L02)\nRefusal calibration: 4/4"
+}

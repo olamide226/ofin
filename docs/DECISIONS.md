@@ -6,6 +6,31 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-010 — Computation answers render deterministically; the LLM never touches figures (2026-07-02)
+
+**Context:** The plan's Pillar 2 said "the LLM narrates the result". Tested
+live, Llama 3.2 3B **recomputed numbers it was explicitly told to
+transcribe**: handed a computed PAYE of ₦63,500/month in JSON with "use
+EXACTLY these numbers", it invented a 7.78% rate and answered ₦35,000 —
+twice, including once with a fabricated citation. The verifier caught the
+invention (quantity layer), but catch-and-retry cannot converge on a model
+that keeps doing arithmetic.
+
+**Decision:** The rules engine's numeric core renders **deterministically
+in Go** (`rules.NoticeResult.Render` / `PAYEResult.Render`): outcome, band
+breakdown, citations, statutory version stamp. The model's only future
+role on this path is optional phrasing AROUND the rendered block (e.g.
+Pidgin restatement, Week 6) — never producing text containing the figures.
+Receipts for computed answers are verified by construction.
+
+**Bonus effects:** computation answers are instant (no generation pass),
+identical every run, and immune to prompt-injection via retrieved chunks.
+
+**Also decided:** deterministic date arithmetic outranks model-extracted
+durations — the extractor invented `employment_years: 3` for "since March
+2020" (truth: 6.3 years). When both a start date and a duration are
+extracted, the start date wins and Go computes the tenure.
+
 ## ADR-009 — Verifier architecture: deterministic layers first (2026-07-02)
 
 **Decision:** The Verified Citation Engine checks each cited claim in three
