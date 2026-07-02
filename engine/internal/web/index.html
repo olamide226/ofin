@@ -8,7 +8,7 @@
 <style>
 /* ---------- design tokens ---------- */
 :root{
-  --bg:#faf9f5; --surface:#ffffff; --surface-2:#f2f1ec; --surface-3:#eceae3;
+  --bg:#faf9f5; --surface:#ffffff; --surface-2:#f2f1ec; --surface-3:#e9e7df;
   --border:#e3e1d9; --border-strong:#d1cfc5;
   --text:#1f1e1a; --text-2:#57554d; --muted:#8a877c;
   --accent:#0d7a54; --accent-soft:#e3f2ec; --accent-text:#0a5f42;
@@ -23,7 +23,7 @@
   --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
 }
 html[data-theme=dark]{
-  --bg:#101114; --surface:#191b1f; --surface-2:#202329; --surface-3:#272b32;
+  --bg:#101114; --surface:#191b1f; --surface-2:#15161a; --surface-3:#22252b;
   --border:#2b2f36; --border-strong:#3a3f48;
   --text:#e9eaec; --text-2:#b3b6bc; --muted:#7d828b;
   --accent:#2fb185; --accent-soft:#12281f; --accent-text:#4cc79c;
@@ -38,38 +38,70 @@ html[data-theme=dark]{
 html,body{height:100%}
 body{
   font-family:var(--sans);background:var(--bg);color:var(--text);
-  font-size:15px;line-height:1.65;display:flex;flex-direction:column;
+  font-size:15px;line-height:1.65;display:flex;
   -webkit-font-smoothing:antialiased;
 }
 button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
-/* ---------- header ---------- */
-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 20px;border-bottom:1px solid var(--border);
-  background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:blur(8px);position:sticky;top:0;z-index:10;
+.icon-btn{
+  width:32px;height:32px;border-radius:8px;display:grid;place-items:center;
+  color:var(--muted);border:1px solid transparent;
 }
+.icon-btn:hover{background:var(--surface-2);border-color:var(--border)}
+.icon-btn svg{width:15px;height:15px}
 .brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.01em}
 .brand .dot{color:var(--accent)}
-.header-right{display:flex;align-items:center;gap:12px}
+
+/* ---------- sidebar ---------- */
+#sidebar{
+  width:256px;flex:none;display:flex;flex-direction:column;height:100%;
+  background:var(--surface-2);border-right:1px solid var(--border);
+}
+.side-head{padding:16px 16px 8px}
+.new-chat{
+  margin:6px 12px 10px;padding:9px 12px;border-radius:10px;
+  border:1px solid var(--border-strong);background:var(--surface);
+  font-size:.86rem;font-weight:500;display:flex;align-items:center;gap:8px;
+  transition:border-color .15s,color .15s;
+}
+.new-chat:hover{border-color:var(--accent);color:var(--accent-text)}
+.new-chat svg{width:13px;height:13px}
+.side-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:6px 20px 4px}
+#convo-list{flex:1;overflow-y:auto;padding:0 8px 8px}
+.convo{position:relative;padding:7px 28px 7px 10px;border-radius:9px;cursor:pointer;margin-bottom:1px}
+.convo:hover,.convo.active{background:var(--surface-3)}
+.convo-title{font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.convo-time{font-size:.69rem;color:var(--muted)}
+.convo-del{
+  position:absolute;right:5px;top:7px;color:var(--muted);font-size:.72rem;
+  display:none;padding:2px 5px;border-radius:5px;
+}
+.convo:hover .convo-del{display:block}
+.convo-del:hover{color:var(--fail);background:var(--surface)}
+.side-empty{font-size:.78rem;color:var(--muted);padding:8px 20px}
+.side-foot{padding:12px 16px;border-top:1px solid var(--border)}
 .offline-badge{
-  display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text-2);
-  background:var(--surface-2);border:1px solid var(--border);
-  padding:4px 10px;border-radius:99px;
+  display:inline-flex;align-items:center;gap:6px;font-size:.75rem;color:var(--text-2);
 }
 .offline-badge .pulse{
-  width:7px;height:7px;border-radius:50%;background:var(--ok);
+  width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none;
   box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 45%,transparent);
   animation:pulse 2.4s infinite;
 }
 @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 45%,transparent)}70%{box-shadow:0 0 0 6px transparent}100%{box-shadow:0 0 0 0 transparent}}
-#theme-btn{
-  width:32px;height:32px;border-radius:8px;display:grid;place-items:center;
-  color:var(--muted);border:1px solid transparent;
+#backdrop{display:none}
+
+/* ---------- app column ---------- */
+.app{flex:1;min-width:0;height:100%;display:flex;flex-direction:column}
+header{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 16px;border-bottom:1px solid var(--border);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);z-index:10;
 }
-#theme-btn:hover{background:var(--surface-2);border-color:var(--border)}
+#menu-btn{display:none}
+.header-brand{display:none;font-size:1.1rem}
+.header-spacer{flex:1}
 
 /* ---------- thread ---------- */
 main{flex:1;overflow-y:auto;scroll-behavior:smooth}
@@ -121,8 +153,7 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
 .pipeline.working .pipeline-steps{display:block;border-top:1px solid var(--border)}
 .step{display:flex;align-items:center;gap:9px;padding:4px 0;color:var(--muted)}
 .step .ind{width:16px;height:16px;display:grid;place-items:center;flex:none}
-.step.active{color:var(--text-2)}
-.step.done{color:var(--text-2)}
+.step.active,.step.done{color:var(--text-2)}
 .step .spin{
   width:11px;height:11px;border-radius:50%;
   border:2px solid var(--border-strong);border-top-color:var(--accent);
@@ -256,8 +287,7 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
 }
 .uncited-note .lbl{font-weight:600;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;display:block;margin-bottom:2px}
 
-/* status + error */
-.statusline{display:flex;align-items:center;gap:8px;font-size:.83rem;color:var(--warn)}
+/* error */
 .errcard{
   background:var(--fail-soft);border:1px solid color-mix(in srgb,var(--fail) 30%,transparent);
   color:var(--fail);border-radius:var(--radius-sm);padding:10px 14px;font-size:.86rem;
@@ -294,57 +324,87 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
   display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);
   padding:6px 8px 0 0;
 }
+
+/* ---------- mobile ---------- */
+@media(max-width:860px){
+  #sidebar{
+    position:fixed;left:0;top:0;bottom:0;z-index:40;
+    transform:translateX(-100%);transition:transform .22s ease;
+  }
+  body.side-open #sidebar{transform:none;box-shadow:0 0 44px rgba(0,0,0,.3)}
+  #backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:30}
+  body.side-open #backdrop{display:block}
+  #menu-btn{display:grid}
+  .header-brand{display:block}
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="brand">Òfin<span class="dot">.</span></div>
-  <div class="header-right">
+<aside id="sidebar">
+  <div class="side-head"><div class="brand">Òfin<span class="dot">.</span></div></div>
+  <button id="new-btn" class="new-chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    New chat
+  </button>
+  <div class="side-label">Chats</div>
+  <nav id="convo-list"></nav>
+  <div class="side-foot">
     <div class="offline-badge"><span class="pulse"></span>On-device · fully offline</div>
-    <button id="theme-btn" title="Toggle theme" aria-label="Toggle theme">◐</button>
   </div>
-</header>
+</aside>
+<div id="backdrop"></div>
 
-<main id="scroller">
-  <div class="thread" id="thread">
-    <div id="empty">
-      <h1>Òfin<span class="dot">.</span></h1>
-      <p class="tagline">Legal answers with receipts — Nigerian labour, tenancy &amp; tax law, verified against the statute before you see them.</p>
-      <p class="subtag">Everything runs on this machine. Nothing leaves it. Legal information, not legal advice.</p>
-      <div class="examples">
-        <button class="example" data-q="I have worked 3 years, how much notice must my employer give me?">
-          <span class="cat">Labour</span>
-          <span class="q">I have worked 3 years, how much notice must my employer give me?</span>
-        </button>
-        <button class="example" data-q="My oga sack me without notice, I don work there 4 years. Wetin I fit do?">
-          <span class="cat">Pidgin</span>
-          <span class="q">My oga sack me without notice, I don work there 4 years. Wetin I fit do?</span>
-        </button>
-        <button class="example" data-q="I earn 450,000 monthly, how much PAYE tax should I be paying?">
-          <span class="cat">Tax</span>
-          <span class="q">I earn ₦450,000 monthly, how much PAYE tax should I be paying?</span>
-        </button>
-        <button class="example" data-q="My landlord in Surulere wants to evict me. What notice must he give?">
-          <span class="cat">Tenancy</span>
-          <span class="q">My landlord in Surulere wants to evict me. What notice must he give?</span>
-        </button>
+<div class="app">
+  <header>
+    <button id="menu-btn" class="icon-btn" title="Chats" aria-label="Toggle chat list">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <div class="brand header-brand">Òfin<span class="dot">.</span></div>
+    <div class="header-spacer"></div>
+    <button id="theme-btn" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <main id="scroller">
+    <div class="thread" id="thread">
+      <div id="empty">
+        <h1>Òfin<span class="dot">.</span></h1>
+        <p class="tagline">Legal answers with receipts — Nigerian labour, tenancy &amp; tax law, verified against the statute before you see them.</p>
+        <p class="subtag">Everything runs on this machine. Nothing leaves it. Legal information, not legal advice.</p>
+        <div class="examples">
+          <button class="example" data-q="I have worked 3 years, how much notice must my employer give me?">
+            <span class="cat">Labour</span>
+            <span class="q">I have worked 3 years, how much notice must my employer give me?</span>
+          </button>
+          <button class="example" data-q="My oga sack me without notice, I don work there 4 years. Wetin I fit do?">
+            <span class="cat">Pidgin</span>
+            <span class="q">My oga sack me without notice, I don work there 4 years. Wetin I fit do?</span>
+          </button>
+          <button class="example" data-q="I earn 450,000 monthly, how much PAYE tax should I be paying?">
+            <span class="cat">Tax</span>
+            <span class="q">I earn ₦450,000 monthly, how much PAYE tax should I be paying?</span>
+          </button>
+          <button class="example" data-q="My landlord in Surulere wants to evict me. What notice must he give?">
+            <span class="cat">Tenancy</span>
+            <span class="q">My landlord in Surulere wants to evict me. What notice must he give?</span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<div class="composer-wrap">
-  <div class="composer">
-    <div class="composer-row">
-      <textarea id="q" rows="1" placeholder="Ask about labour, tenancy or tax law — English or Pidgin…" aria-label="Your question"></textarea>
-      <button id="send" aria-label="Send" disabled>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-      </button>
-    </div>
-    <div class="composer-hint">
-      <span>Òfin provides legal information, not legal advice.</span>
-      <span>Enter ↵ to send</span>
+  <div class="composer-wrap">
+    <div class="composer">
+      <div class="composer-row">
+        <textarea id="q" rows="1" placeholder="Ask about labour, tenancy or tax law — English or Pidgin…" aria-label="Your question"></textarea>
+        <button id="send" aria-label="Send" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </div>
+      <div class="composer-hint">
+        <span>Òfin provides legal information, not legal advice.</span>
+        <span>Enter ↵ to send</span>
+      </div>
     </div>
   </div>
 </div>
@@ -353,12 +413,16 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
 'use strict';
 const $=s=>document.querySelector(s);
 const scroller=$('#scroller'),thread=$('#thread'),qEl=$('#q'),sendBtn=$('#send');
+const emptyEl=$('#empty');
 
 /* ---------- theme ---------- */
-const themeBtn=$('#theme-btn');
 function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('ofin-theme',t)}
 setTheme(localStorage.getItem('ofin-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-themeBtn.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+$('#theme-btn').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+
+/* ---------- mobile sidebar ---------- */
+$('#menu-btn').onclick=()=>document.body.classList.toggle('side-open');
+$('#backdrop').onclick=()=>document.body.classList.remove('side-open');
 
 /* ---------- composer ---------- */
 qEl.addEventListener('input',()=>{
@@ -381,9 +445,14 @@ scroller.addEventListener('scroll',()=>{
   stick=scroller.scrollHeight-scroller.scrollTop-scroller.clientHeight<80;
 });
 function autoscroll(){if(stick)scroller.scrollTop=scroller.scrollHeight}
+function jumpToBottom(){
+  scroller.style.scrollBehavior='auto';
+  scroller.scrollTop=scroller.scrollHeight;
+  scroller.style.scrollBehavior='';
+}
 
 /* ---------- helpers ---------- */
-function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function el(tag,cls,html){const n=document.createElement(tag);if(cls)n.className=cls;if(html!=null)n.innerHTML=html;return n}
 
 const CITE_RE=/\[([^\[\]\n]{2,90}?(?:s\.|sch\.)[^\[\]\n]{0,40}?)\]/g;
@@ -391,7 +460,7 @@ const CITE_RE=/\[([^\[\]\n]{2,90}?(?:s\.|sch\.)[^\[\]\n]{0,40}?)\]/g;
 /* tiny markdown: paragraphs, -/• and 1. lists, **bold**, citation chips */
 function renderMD(raw){
   const lines=esc(raw).split('\n');
-  let html='',list=null; /* 'ul'|'ol'|null */
+  let html='',list=null;
   const closeList=()=>{if(list){html+=`</${list}>`;list=null}};
   for(const line of lines){
     const t=line.trim();
@@ -437,8 +506,10 @@ function makePipeline(container){
     finish(summary){
       root.classList.remove('working');
       const secs=((performance.now()-t0)/1000).toFixed(1);
-      head.querySelector('.head-label').textContent=summary?`${summary} · ${secs}s`:`Done in ${secs}s`;
+      const label=summary?`${summary} · ${secs}s`:`Done in ${secs}s`;
+      head.querySelector('.head-label').textContent=label;
       for(const id in map)if(map[id].classList.contains('active'))this.set(id,map[id].querySelector('.lbl').textContent,'done');
+      return label;
     }
   };
 }
@@ -449,7 +520,7 @@ function renderSources(container,chunks){
   wrap.innerHTML=`<div class="sources-label">Sources — ${chunks.length} statutory section${chunks.length===1?'':'s'}</div>`;
   const chipRow=el('div','chips');
   const panel=el('div','source-panel');
-  chunks.forEach((c,i)=>{
+  chunks.forEach(c=>{
     const chip=el('button','chip',
       `<span class="sec">${esc(c.act)}, ${esc(c.section)}</span>`+
       (c.title?`<span class="ttl">${esc(c.title)}</span>`:''));
@@ -524,6 +595,112 @@ document.addEventListener('click',e=>{
   setTimeout(()=>hit.classList.remove('flash'),1600);
 });
 
+/* ---------- message shells ---------- */
+function userBubble(q){
+  const user=el('div','msg user');
+  user.appendChild(el('div','bubble',esc(q)));
+  thread.appendChild(user);
+}
+function assistantShell(){
+  const msg=el('div','msg assistant');
+  msg.append(el('div','pipeline-slot'),el('div','sources'),el('div','comp'),
+             el('div','answer'),el('div','verify'),el('div','extra'));
+  thread.appendChild(msg);
+  return msg;
+}
+
+/* ---------- conversation store (localStorage, stays on this machine) ----------
+   ofin-convos-v1: [{id, title, ts, turns:[{q, summary, chunks, comp, answer,
+   receipts, uncited}]}] — newest first. On quota pressure, evict oldest
+   conversations, then oldest turns. */
+const STORE='ofin-convos-v1',ACTIVE='ofin-active-convo';
+let convos=(()=>{try{return JSON.parse(localStorage.getItem(STORE))||[]}catch{return[]}})();
+let activeId=localStorage.getItem(ACTIVE);
+
+function persist(){
+  let arr=convos.slice();
+  for(;;){
+    try{localStorage.setItem(STORE,JSON.stringify(arr));convos=arr;return}
+    catch{
+      if(arr.length>1)arr=arr.slice(0,-1);
+      else if(arr[0]&&arr[0].turns.length>3)arr[0]={...arr[0],turns:arr[0].turns.slice(-3)};
+      else return;
+    }
+  }
+}
+function getActive(){return convos.find(c=>c.id===activeId)}
+function uid(){return crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2)}
+
+function relTime(ts){
+  const d=Date.now()-ts,m=6e4,h=36e5,day=864e5;
+  if(d<m)return 'just now';
+  if(d<h)return Math.floor(d/m)+'m ago';
+  if(d<day)return Math.floor(d/h)+'h ago';
+  if(d<2*day)return 'yesterday';
+  if(d<7*day)return Math.floor(d/day)+' days ago';
+  return new Date(ts).toLocaleDateString();
+}
+
+function renderSidebar(){
+  const list=$('#convo-list');
+  list.innerHTML='';
+  if(!convos.length){
+    list.appendChild(el('div','side-empty','Your chats stay on this device.'));
+    return;
+  }
+  for(const c of convos){
+    const item=el('div','convo'+(c.id===activeId?' active':''),
+      `<div class="convo-title">${esc(c.title)}</div>
+       <div class="convo-time">${relTime(c.ts)}</div>
+       <button class="convo-del" title="Delete chat" aria-label="Delete chat">✕</button>`);
+    item.onclick=()=>switchTo(c.id);
+    item.querySelector('.convo-del').onclick=e=>{e.stopPropagation();deleteConvo(c.id)};
+    list.appendChild(item);
+  }
+}
+
+function renderThread(){
+  if(streaming)abortCtrl?.abort();
+  thread.innerHTML='';
+  const convo=getActive();
+  if(!convo||!convo.turns.length){
+    thread.appendChild(emptyEl);
+    return;
+  }
+  for(const t of convo.turns){
+    userBubble(t.q);
+    const msg=assistantShell();
+    msg.querySelector('.pipeline-slot').innerHTML=
+      `<div class="pipeline"><div class="pipeline-head" style="cursor:default">
+        <span class="head-label">${esc(t.summary||'Answered')}</span></div></div>`;
+    if(t.chunks?.length)renderSources(msg,t.chunks);
+    if(t.comp){const c=msg.querySelector('.comp');c.innerHTML=t.comp;c.classList.add('show')}
+    if(t.answer){const a=msg.querySelector('.answer');a.innerHTML=renderMD(t.answer);a.classList.add('show')}
+    if(t.receipts?.length||t.uncited?.length)renderVerify(msg,t.receipts||[],t.uncited||[]);
+  }
+  jumpToBottom();
+}
+
+function switchTo(id){
+  if(id===activeId)return;
+  activeId=id;localStorage.setItem(ACTIVE,id);
+  renderThread();renderSidebar();
+  document.body.classList.remove('side-open');
+}
+function newChat(){
+  activeId=null;localStorage.removeItem(ACTIVE);
+  renderThread();renderSidebar();
+  document.body.classList.remove('side-open');
+  qEl.focus();
+}
+function deleteConvo(id){
+  convos=convos.filter(c=>c.id!==id);
+  persist();
+  if(id===activeId){activeId=null;localStorage.removeItem(ACTIVE);renderThread()}
+  renderSidebar();
+}
+$('#new-btn').onclick=newChat;
+
 /* ---------- ask flow ---------- */
 let streaming=false,abortCtrl=null;
 
@@ -539,25 +716,30 @@ function setStreaming(on){
 async function submit(){
   const question=qEl.value.trim();
   if(!question||streaming)return;
-  $('#empty')?.remove();
+  if(emptyEl.parentNode)emptyEl.remove();
   qEl.value='';qEl.style.height='auto';
   stick=true;
 
-  const user=el('div','msg user');
-  user.appendChild(el('div','bubble',esc(question)));
-  thread.appendChild(user);
+  /* create the conversation on first turn */
+  let convo=getActive();
+  if(!convo){
+    convo={id:uid(),title:question.length>64?question.slice(0,64)+'…':question,ts:Date.now(),turns:[]};
+    convos.unshift(convo);
+    activeId=convo.id;localStorage.setItem(ACTIVE,activeId);
+    persist();renderSidebar();
+  }
 
-  const msg=el('div','msg assistant');
-  msg.append(el('div','pipeline-slot'),el('div','sources'),el('div','comp'),
-             el('div','answer'),el('div','verify'),el('div','extra'));
-  thread.appendChild(msg);
+  userBubble(question);
+  const msg=assistantShell();
   autoscroll();
 
   const pipe=makePipeline(msg.querySelector('.pipeline-slot'));
   pipe.set('search','Searching the statutes','active');
 
   const answerEl=msg.querySelector('.answer');
-  let raw='',renderQueued=false,gotFirstToken=false,regens=0,srcCount=0,finalSummary='Answered';
+  const rec={q:question,summary:'',chunks:null,comp:null,answer:'',receipts:null,uncited:null};
+  let raw='',renderQueued=false,gotFirstToken=false,regens=0,srcCount=0,
+      finalSummary='Answered',hadError=false;
 
   function paint(final){
     if(renderQueued&&!final)return;
@@ -593,10 +775,20 @@ async function submit(){
     }
   }catch(e){
     if(e.name==='AbortError'){finalSummary='Stopped'}
-    else msg.querySelector('.extra').appendChild(el('div','errcard','Something went wrong: '+esc(e.message)));
+    else{
+      hadError=true;
+      msg.querySelector('.extra').appendChild(el('div','errcard','Something went wrong: '+esc(e.message)));
+    }
   }
-  pipe.finish(finalSummary);
+  rec.summary=pipe.finish(finalSummary);
   if(raw)paint(true);
+  if(!rec.answer&&raw)rec.answer=raw;
+  if(!hadError&&(rec.answer||rec.comp)){
+    convo.turns=[...convo.turns,rec].slice(-30);
+    convo.ts=Date.now();
+    convos=[convo,...convos.filter(c=>c.id!==convo.id)];
+    persist();renderSidebar();
+  }
   setStreaming(false);
   abortCtrl=null;
   qEl.focus();
@@ -605,6 +797,7 @@ async function submit(){
     switch(ev.type){
     case 'retrieved':
       srcCount=ev.chunks.length;
+      rec.chunks=ev.chunks;
       pipe.set('search','Searched the statutes','done',`${srcCount} sections · ${ev.ms} ms`);
       pipe.set('understand','Understanding your question','active');
       renderSources(msg,ev.chunks);
@@ -621,6 +814,7 @@ async function submit(){
         <span class="comp-badge">⚙ Computed deterministically — never by the model</span>
         ${ev.html||`<div class="computation"><p class="outcome">${esc(ev.rendered)}</p></div>`}</div>`;
       comp.classList.add('show');
+      rec.comp=comp.innerHTML;
       autoscroll();
       break;}
     case 'token':
@@ -633,7 +827,7 @@ async function submit(){
       raw+=ev.text;paint(false);
       break;
     case 'answer_done':
-      raw=ev.text;paint(true);
+      raw=ev.text;rec.answer=ev.text;paint(true);
       pipe.set('write','Wrote the answer','done',`${ev.wall_sec.toFixed(1)} s`);
       pipe.set('verify','Verifying every claim against the statute','active');
       break;
@@ -641,7 +835,7 @@ async function submit(){
       regens++;
       pipe.set('verify',`Caught ${ev.failed_count} unsupported claim${ev.failed_count===1?'':'s'}`,'done');
       pipe.set('rewrite','Re-writing with the correct statutory text','active');
-      raw='';gotFirstToken=false;
+      raw='';rec.answer='';gotFirstToken=false;
       answerEl.innerHTML='';
       break;
     case 'receipts':{
@@ -649,15 +843,21 @@ async function submit(){
       const ok=ev.receipts.filter(r=>r.verdict==='verified').length;
       pipe.set('verify',`Verified ${ok} of ${ev.receipts.length} claims against statute`,'done');
       finalSummary=`${srcCount} sources · ${ok}/${ev.receipts.length} claims verified`;
+      rec.receipts=ev.receipts;rec.uncited=ev.uncited||null;
       renderVerify(msg,ev.receipts,ev.uncited);
       break;}
     case 'error':
+      hadError=true;
       msg.querySelector('.extra').appendChild(el('div','errcard',esc(ev.message)));
       finalSummary='Error';
       break;
     }
   }
 }
+
+/* ---------- init ---------- */
+renderSidebar();
+renderThread();
 qEl.focus();
 </script>
 </body>

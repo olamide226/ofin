@@ -1,0 +1,57 @@
+{
+  "record_type": "supplementary_integrated_measurement",
+  "note": "NOT the official profiler schema. This captures the FULL APPLICATION STACK RSS (embed server + chat server @ 6144-ctx q8_0 KV + Go engine + SQLite) under real queries — the number llama-bench (model-only) does not measure. Companion to 2026-07-02-vm-llama3.2-3b-4vcpu8gb.json.",
+  "measured_on": "2026-07-02",
+  "environment": {
+    "provider": "Hetzner (AMD EPYC-Genoa)",
+    "vcpu": 4,
+    "ram_gb": 7.6,
+    "swap": "none",
+    "os": "Ubuntu 26.04 LTS",
+    "llama_cpp": "b9859 ubuntu-x64 prebuilt (/opt/llama.cpp)",
+    "git_commit": "36f7e54 (VM clone)"
+  },
+  "config": {
+    "draft_model": "OFF (ADR-012 intended shipped config)",
+    "chat_ctx": 6144,
+    "kv_cache": "q8_0",
+    "embed_model": "bge-small-en-v1.5-f16",
+    "db_chunks": 523
+  },
+  "memory_mb": {
+    "model_only_llama_bench_512prompt": 3442,
+    "fullstack_steady_state_idle": 3894,
+    "fullstack_peak_cold_rag_generation_rss": 3911,
+    "fullstack_peak_cold_rag_generation_pss": 3888,
+    "fullstack_peak_under_load_warm": 4196,
+    "comment": "Chat server pre-allocates full q8 KV at load, so ~3.9 GB resident even idle. RSS approx equals PSS -> little shared memory, figure is honest not double-counted. Exceeds 3.5 GB self-target by ~0.4-0.7 GB but runs within 8 GB hard cap (no swap, no OOM)."
+  },
+  "throughput": {
+    "llama_bench_tps_sustained_3x": [33.99, 34.47, 34.0],
+    "throttled": false,
+    "comment": "3 back-to-back runs, no decay -> throttle proxy passes"
+  },
+  "latency_seconds": {
+    "warm_computation_route": 1.4,
+    "warm_rag_generation_plus_verification": 143,
+    "cold_rag_generation": 300,
+    "cold_computation_after_fix": 7.0,
+    "comment": "RAG path dominated by 700-token gen + per-claim re-embedding verification, not first-token."
+  },
+  "offline_verification": {
+    "method": "ss -tunp state established, filtered for non-loopback/non-ssh, sampled during real generation",
+    "non_loopback_connections": 0,
+    "result": "PASS - zero external network calls during generation"
+  },
+  "functional": {
+    "rag_explanatory": "PASS - cited answer, verifier receipts working (verified / flagged / weak-support-0.59)",
+    "deterministic_computation": "PASS - notice-period s.11(2)(c) correct"
+  },
+  "ship_blocker_found": {
+    "summary": "App non-functional out-of-the-box on audit VM: chat server dies, 'not healthy after 90s'.",
+    "bug_a_draft_default": "app.go:38-39 DefaultConfig sets DraftModel to 1B GGUF; client.go:56-58 passes --model-draft; download_model.sh ships only the 3B, so the file is absent -> chat server crashes. Contradicts ADR-012 (speculative decoding rejected).",
+    "bug_b_flag_ordering": "main.go:41-43,52 - Go flag package stops at first positional, so 'ofin ask --no-draft' silently ignores the flag; only 'ofin --no-draft ask' works.",
+    "fix_verified_on_vm": "Set DefaultConfig DraftModel to \"\" (draft off by default). Rebuilt. Natural-form 'ofin ask \"...\"' (no flag) then works: exit 0, chat server healthy, cited answer in 7s cold.",
+    "still_recommended": "Also make a missing draft GGUF non-fatal in client.go, and/or fix flag parsing so post-subcommand flags are honored (defense in depth)."
+  }
+}
