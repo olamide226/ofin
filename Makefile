@@ -20,8 +20,9 @@ sac:              ## data/chunks/ -> data/chunks-sac/ (needs GOOGLE_API_KEY, bui
 ingest:           ## data/chunks-sac/ -> data/ofin.db
 	$(PY) pipeline/ingest.py
 
-test:             ## run pipeline unit tests + Go tests
+test:             ## run pipeline unit tests + corpus QA gate + Go tests
 	$(PY) -m pytest pipeline/tests -q
+	$(PY) pipeline/qa_corpus.py --strict
 	cd engine && go test -tags sqlite_fts5 ./...
 
 ask:              ## e.g. make ask Q="How much notice after 3 years?"

@@ -32,7 +32,7 @@ MAX_SECTION_CHARS = 4000
 
 # Section start in body text: "11. (1) Either party…", "54.(1) In any…",
 # "3.—(1) Every employer…", "15. Wages shall become due…"
-BODY_SECTION_RE = re.compile(r"^\s{0,8}(\d{1,3})\s*\.\s*(?:[—–-]\s*)?(\(1\)|[A-Z(\"'])")
+BODY_SECTION_RE = re.compile(r"^\s{0,30}(\d{1,3})\s*\.\s*(?:[—–-]\s*)?(\(1\)|[A-Z(\"'])")
 # Part heading: "### Part II", "### PART III COMPENSATION…", "PART V …"
 PART_RE = re.compile(r"^#{0,4}\s*PART\s+([IVXLC\d]+)\b[.\s]*(.*)$", re.IGNORECASE)
 SUBSECTION_RE = re.compile(r"^\(\d{1,2}\)")
@@ -108,6 +108,17 @@ def parse_toc_titles(lines: list[str], body_start: int) -> dict[int, str]:
                 if j < body_start and not re.match(r"^\d{1,3}\s*\.", lines[j].strip()):
                     title = lines[j].strip().rstrip(".")
                     i = j
+            # TOC entries wrap in the PLAC print layout: join continuation
+            # lines (indented, unnumbered, lowercase-ish start) onto the title.
+            j = i + 1
+            while (title and j < body_start and lines[j].strip()
+                   and not re.match(r"^\d{1,3}\s*\.", lines[j].strip())
+                   and (title.endswith(",") or not title.endswith("."))
+                   and lines[j].strip()[0].islower()):
+                title = title + " " + lines[j].strip().rstrip(".")
+                i = j
+                j += 1
+            title = title.rstrip(".,")
             # First occurrence wins; sane titles only.
             if num not in titles and title and len(title) < 150:
                 titles[num] = title
@@ -131,52 +142,63 @@ def _section_candidates(lines: list[str]) -> list[tuple[int, int]]:
     return out
 
 
+def _walk_run(lines: list[str], candidates: list[tuple[int, int]], start: int) -> tuple[int, list[int]]:
+    """Walk an ascending run from candidates[start]; returns (length, line
+    indexes of accepted candidates). Tolerates +1 dropouts, skips stray
+    lower numbers, and bridges larger jumps when the intervening text
+    mentions a repeal (e.g. TDA ss.20-32)."""
+    accepted = [candidates[start][0]]
+    expected = candidates[start][1] + 1
+    j = start + 1
+    while j < len(candidates):
+        line_idx, n = candidates[j]
+        if n in (expected, expected + 1):
+            accepted.append(line_idx)
+            expected = n + 1
+        elif n < expected:
+            pass  # stray lower number inside a section body
+        elif n > expected + 1:
+            between = "\n".join(lines[accepted[-1]:line_idx]).lower()
+            if "repealed" in between:
+                accepted.append(line_idx)
+                expected = n + 1
+            else:
+                break
+        j += 1
+    return len(accepted), accepted
+
+
 def find_body_start(lines: list[str]) -> int:
     """Locate where the enacted body begins.
 
     Both the Arrangement of Sections and the body contain an ascending run
-    of section numbers starting at 1, and the TOC always comes first — so
-    walk every maximal ascending run (±1 tolerance for transcription
-    dropouts) among candidate lines and take the start of the LAST longest
-    run. Falls back to 0 for files with no TOC.
+    of section numbers starting at 1. Length alone cannot separate them
+    (they list the same sections), but density can: TOC entries sit on
+    consecutive lines, while body sections are separated by prose. Among
+    runs of competitive length, pick the one with the largest median gap
+    between consecutive candidate lines.
     """
     candidates = _section_candidates(lines)
     if not candidates:
         return 0
-    runs: list[tuple[int, int]] = []  # (start_line, run_length)
-    i = 0
-    while i < len(candidates):
-        line_idx, num = candidates[i]
+    runs: list[tuple[int, int, float]] = []  # (start_line, length, median_gap)
+    for i, (line_idx, num) in enumerate(candidates):
         if num != 1:
-            i += 1
             continue
-        length = 1
-        expected = 2
-        j = i + 1
-        while j < len(candidates):
-            _, n = candidates[j]
-            if n in (expected, expected + 1):
-                length += 1
-                expected = n + 1
-                j += 1
-            elif n < expected:
-                j += 1  # stray lower number inside a section body
-            else:
-                break
-        runs.append((line_idx, length))
-        # Advance by ONE, not to the walk's end: a completed walk consumes
-        # later lower-numbered candidates as strays, which would hide a
-        # subsequent legitimate run (e.g. NMW body headings after its TOC).
-        i += 1
+        length, accepted = _walk_run(lines, candidates, i)
+        if length >= 2:
+            gaps = sorted(b - a for a, b in zip(accepted, accepted[1:]))
+            median_gap = gaps[len(gaps) // 2]
+        else:
+            median_gap = 0.0
+        runs.append((line_idx, length, median_gap))
     if not runs:
         return candidates[0][0]
-    best_len = max(length for _, length in runs)
-    # Last run with (near-)best length wins: TOC and body runs are similar
-    # length, and the body is always the later one.
-    for start, length in reversed(runs):
-        if length >= best_len - 2:
-            return start
-    return runs[-1][0]
+    best_len = max(length for _, length, _ in runs)
+    competitive = [r for r in runs if r[1] >= max(3, int(best_len * 0.6))]
+    # Widest median gap = body; tie broken by later start (body follows TOC).
+    competitive.sort(key=lambda r: (r[2], r[0]))
+    return competitive[-1][0]
 
 
 @dataclass
@@ -275,7 +297,11 @@ def split_long_section(text: str) -> list[str]:
     buf: list[str] = []
     size = 0
     for para in paragraphs:
-        if buf and size + len(para) > MAX_SECTION_CHARS and SUBSECTION_RE.match(para.strip()):
+        over = buf and size + len(para) > MAX_SECTION_CHARS
+        # Prefer subsection boundaries; but definition-list sections (e.g.
+        # Interpretation) have no "(N)" markers, so past 1.5× the cap any
+        # paragraph boundary will do.
+        if over and (SUBSECTION_RE.match(para.strip()) or size + len(para) > MAX_SECTION_CHARS * 1.5):
             parts.append("\n\n".join(buf))
             buf, size = [], 0
         buf.append(para)

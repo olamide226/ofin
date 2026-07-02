@@ -53,6 +53,27 @@ def test_tda_repeal_gap_preserved():
     nums = sections("Trade Disputes Act 2004")
     assert 19 in nums and 33 in nums and 52 in nums
     assert not nums & set(range(20, 33)), "ss.20-32 were repealed by NIC Act 2006"
+    assert {5, 6, 7, 8} <= nums, "deep-indented body headings must be found"
+
+
+def test_tda_chunks_are_body_not_toc():
+    """Regression: the TOC run once outscored the fragmented body run and
+    every 'section' chunk was a one-line TOC entry."""
+    chunks = {c["metadata"]["section_id"]: c["text"]
+              for c in RESULTS["Trade Disputes Act 2004"]["chunks"]
+              if c["metadata"]["chunk_type"].startswith("section")}
+    assert "strike" in chunks["s.18"] and len(chunks["s.18"]) > 400
+    assert "(1)" in chunks["s.4"], "body sections carry subsection prose"
+
+
+@pytest.mark.parametrize("act", list(RESULTS))
+def test_mean_section_length_is_body_scale(act):
+    """A TOC-chunked act averages ~60 chars/section; real bodies are far
+    longer. Guards every act against wholesale mis-detection."""
+    texts = [c["text"] for c in RESULTS[act]["chunks"]
+             if c["metadata"]["chunk_type"].startswith("section")]
+    mean = sum(map(len, texts)) / len(texts)
+    assert mean > 300, f"{act}: mean section text {mean:.0f} chars — TOC-chunked?"
 
 
 def test_t9_reconstructed_sections_present():
