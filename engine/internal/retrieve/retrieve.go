@@ -48,6 +48,18 @@ func (c *Chunk) Citation() string {
 type Store struct {
 	db       *sql.DB
 	actNames map[string]string // normalized name -> act_short, lazily built
+
+	// Resolved cross-reference index, built lazily from every chunk's SAC
+	// cross_refs. Keys carry canonical act_short, so lookups work across
+	// acts even though the refs spell act names in prose.
+	revBySection map[string][]revEdge // "act|s.N" -> chunks citing that section
+	revByAct     map[string][]revEdge // act -> cross-act chunks citing the whole act
+}
+
+// revEdge is one citing chunk in the reverse-reference index.
+type revEdge struct {
+	id  int64
+	act string // the citing chunk's act
 }
 
 func Open(path string) (*Store, error) {
@@ -226,19 +238,107 @@ func (s *Store) Search(embedding []float32, question string, n int) ([]Chunk, er
 
 var refSectionRe = regexp.MustCompile(`(?i)\bs(?:ections?)?\.?\s*(\d+[A-Za-z]?)`)
 
+// refStopwords are words that appear in self-references ("section 4 of this
+// Act") — a ref whose act-name part is nothing but these points back at the
+// seed chunk's own act.
+var refStopwords = map[string]bool{
+	"act": true, "law": true, "this": true, "of": true, "under": true,
+	"to": true, "pursuant": true, "section": true, "sections": true,
+	"and": true, "or": true, "see": true, "cap": true, "cf": true,
+	"chapter": true, "part": true, "schedule": true, "subsection": true,
+}
+
+var digitsRe = regexp.MustCompile(`^\d+$`)
+
+// refTargetAct resolves which act a cross_ref points at, given the ref text
+// with the section pattern stripped. Three outcomes: the seed act for
+// self-references, a canonical act_short for prose names that resolve, and
+// "" for refs naming an act outside the corpus — those edges must be
+// SKIPPED, not defaulted to the seed act (a "Pension Reform Act 2014, s.4"
+// ref must never mint a bogus edge to the seed act's own s.4).
+func (s *Store) refTargetAct(seedAct, rest string) string {
+	norm := normalizeActName(rest)
+	substantive := false
+	for _, w := range strings.Fields(norm) {
+		if !refStopwords[w] && !digitsRe.MatchString(w) {
+			substantive = true
+			break
+		}
+	}
+	if !substantive {
+		return seedAct
+	}
+	if resolved, ok := s.ResolveAct(norm); ok {
+		return resolved
+	}
+	return ""
+}
+
+// buildRefIndex resolves every chunk's cross_refs into the reverse index.
+// One pass over the corpus (678 chunks) at first hop use; act names resolve
+// through the same refTargetAct semantics as the forward direction.
+func (s *Store) buildRefIndex() {
+	s.revBySection = map[string][]revEdge{}
+	s.revByAct = map[string][]revEdge{}
+	rows, err := s.db.Query(`SELECT id, act_short, cross_refs FROM chunks`)
+	if err != nil {
+		return
+	}
+	// Collect before resolving: refTargetAct queries the DB (ResolveAct),
+	// and nested queries inside an open result set are pool-dependent.
+	type chunkRefs struct {
+		id       int64
+		act      string
+		refsJSON string
+	}
+	var all []chunkRefs
+	for rows.Next() {
+		var c chunkRefs
+		if rows.Scan(&c.id, &c.act, &c.refsJSON) == nil {
+			all = append(all, c)
+		}
+	}
+	rows.Close()
+	for _, c := range all {
+		id, act := c.id, c.act
+		var refs []string
+		_ = json.Unmarshal([]byte(c.refsJSON), &refs)
+		for _, ref := range refs {
+			m := refSectionRe.FindStringSubmatch(ref)
+			rest := ref
+			if m != nil {
+				rest = refSectionRe.ReplaceAllString(ref, "")
+			}
+			target := s.refTargetAct(act, rest)
+			if target == "" {
+				continue // names an act outside the corpus
+			}
+			edge := revEdge{id: id, act: act}
+			if m != nil {
+				key := target + "|s." + strings.ToLower(m[1])
+				s.revBySection[key] = append(s.revBySection[key], edge)
+			} else if target != act {
+				// Act-level citation of another act (e.g. NTA s.58 ->
+				// "Minimum Wage Act"). Same-act bare refs carry no signal.
+				s.revByAct[target] = append(s.revByAct[target], edge)
+			}
+		}
+	}
+}
+
 // resolveRefIDs maps a SAC cross_ref string ("Labour Act 2004, s.81" or
-// "section 4 of this Act") to chunk row ids. Refs without an act name
-// resolve within the seed chunk's own act.
+// "section 4 of this Act") to chunk row ids. Prose act names resolve to
+// canonical act_short; refs to acts outside the corpus resolve to nothing.
 func (s *Store) resolveRefIDs(seedAct, ref string) []int64 {
 	m := refSectionRe.FindStringSubmatch(ref)
 	if m == nil {
 		return nil
 	}
-	sectionID := "s." + strings.ToLower(m[1])
-	act := seedAct
-	if resolved, ok := s.ResolveAct(refSectionRe.ReplaceAllString(ref, "")); ok {
-		act = resolved
+	act := s.refTargetAct(seedAct, refSectionRe.ReplaceAllString(ref, ""))
+	if act == "" {
+		return nil
 	}
+	sectionID := "s." + strings.ToLower(m[1])
 	rows, err := s.db.Query(
 		`SELECT id FROM chunks WHERE act_short = ? AND section_id = ?`, act, sectionID)
 	if err != nil {
@@ -315,23 +415,30 @@ func (s *Store) ResolveAct(raw string) (string, bool) {
 	return "", false
 }
 
-// reverseRefIDs finds same-act chunks whose cross_refs cite the given
-// section. The trailing quote in the LIKE pattern anchors the element end
-// inside the JSON array, so "s.3" cannot match "s.31". Same-act only for
-// now: SAC refs spell act names in prose ("National Minimum Wage Act
-// 2019") that don't LIKE-match act_short; cross-act reverse edges arrive
-// with the tax/tenancy corpora via name resolution.
+// reverseRefIDs finds chunks whose cross_refs cite the given section — in
+// ANY act. Ranked: same-act sectioned edges first (a section's own
+// exemptions and provisos), then cross-act sectioned edges, then act-level
+// cross-act edges (a statute citing the whole act, e.g. NTA s.58 citing the
+// "Minimum Wage Act" — the edge cross-domain questions travel). Capped:
+// heavily-cited sections (interpretation etc.) would flood.
 func (s *Store) reverseRefIDs(act, sectionID string) []int64 {
-	rows, err := s.db.Query(
-		`SELECT id FROM chunks WHERE act_short = ? AND cross_refs LIKE ?`,
-		act, `%`+sectionID+`"%`)
-	if err != nil {
-		return nil
+	if s.revBySection == nil {
+		s.buildRefIndex()
 	}
-	defer rows.Close()
-	ids, _ := collectIDs(rows)
+	var same, cross []int64
+	for _, e := range s.revBySection[act+"|"+sectionID] {
+		if e.act == act {
+			same = append(same, e.id)
+		} else {
+			cross = append(cross, e.id)
+		}
+	}
+	ids := append(same, cross...)
+	for _, e := range s.revByAct[act] {
+		ids = append(ids, e.id)
+	}
 	if len(ids) > 4 {
-		ids = ids[:4] // heavily-cited sections (interpretation etc.) would flood
+		ids = ids[:4]
 	}
 	return ids
 }
