@@ -6,6 +6,51 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-014 — Chat server runs f16 KV + flash attention, not q8_0 KV; the real latency lever is prompt-prefill size (2026-07-03)
+
+**Decision:** The app's chat `llama-server` runs with **`-fa on`** (flash
+attention, f16 KV cache), replacing the shipped `-ctk q8_0 -ctv q8_0`.
+
+**Context:** Second VM run (Hetzner 4 vCPU / 7.6 GB, llama.cpp b9864,
+2026-07-03) — the first to actually measure *app* latency on target hardware.
+Warm lookup answers took 90–190s, barely better than the pre-cache 143s. A/B/C/D
+benchmark over four fixed questions, first-generation wall time:
+
+| Config | Q1 | Q2 | Q3 | chat RSS |
+|---|---|---|---|---|
+| **B — f16 + fa (chosen)** | **65.5s** | **108.9s** | **75.0s** | 3974 MB |
+| C — f16, no fa | 78.8s | 131.1s | 77.7s | 3973 MB |
+| D — q8_0 + fa | 94.0s | 180.8s | 109.7s | 3659 MB |
+| A — q8_0, no fa (was shipped) | 112.1s | 192.9s | 119.4s | 3659 MB |
+
+**Findings:**
+- **f16 KV is ~40% faster than q8_0 on CPU** (B/C beat D/A). Dequantizing the
+  cache on every attention step has no hardware acceleration on the CPU-only
+  audit box — the opposite of the M1 dev machine, where Metal made it free. This
+  is why q8_0 (added for memory, ADR-002-era) looked fine in dev and is
+  pathological on target. Flash attention adds a smaller gain on top.
+- **Cost of the switch is +315 MB** (3974 vs 3659), well inside the 8 GB cap, and
+  **zero score impact** — the audit profiles the raw GGUF, not our server
+  (ADR-003). f16 KV is also *higher* fidelity than q8_0, so no accuracy risk.
+- **The KV format is not the root cause.** Answers are ~100–160 tokens (~5s to
+  decode at 34 TPS), yet first-gen is 65–190s. The gap is **prefill** of the
+  ~4,000-token prompt (8 statutory sources). Latency is prompt-size-bound; the
+  recall tuning that grew us to 8 sources / 4 full-text (2026-07-03) is the
+  direct cause. This is the accuracy↔latency tension, and on CPU it dominates.
+
+**Consequences / next:** f16+fa is a free ~40% win, taken. The larger lever —
+**prompt prefill size** — is the next latency investigation: test 2-full +
+N-summary source packing (SAC summaries are far shorter than full text) against
+the recall baseline, on the VM. Streaming does NOT mask this: the retrieval
+preview shows at 28ms but the user then waits through the full prefill before the
+first answer token. Documented honestly; this is the open demo-UX risk.
+
+**Alternatives considered:** keep q8_0 for memory (rejected — memory isn't the
+constraint, latency is, and the memory doesn't score); q8_0+fa to keep the saving
+(rejected — config D still 40% slower than B). A base-model swap to a
+sliding-window-attention model (Gemma 4 E4B) would attack prefill architecturally
+but reopens the ADR-006 Pidgin decision — parked as a separate bake-off spike.
+
 ## ADR-013 — VM integrated certification: full-stack RSS is the S_eff figure of record; ADR-012 was not implemented in code (2026-07-02)
 
 **Decision:** The S_eff certification figure is the **integrated full-stack peak

@@ -125,11 +125,14 @@ func New(cfg Config) *App {
 		Chat: &llama.Server{
 			Port: cfg.ChatPort, ModelPath: cfg.ChatModel,
 			DraftModel: cfg.DraftModel,
-			// KV-cache quantization reduces memory; flash attention and
-			// thread tuning improve throughput. All are dev-UX only per
-			// ADR-003 (the audit profiles the raw GGUF).
-			ExtraArgs: []string{"-c", fmt.Sprint(cfg.ChatCtxSize),
-				"-ctk", "q8_0", "-ctv", "q8_0"},
+			// f16 KV + flash attention (ADR-014). q8_0 KV saved ~315 MB but
+			// cost ~40% generation latency on the CPU-only audit box, where
+			// dequantizing the cache on every attention step has no hardware
+			// acceleration. Server config is dev-UX only per ADR-003 (the
+			// audit profiles the raw GGUF), so the memory cost is free of
+			// score impact. NB: the real latency bottleneck is prompt-prefill
+			// size, not KV format — see ADR-014.
+			ExtraArgs: []string{"-c", fmt.Sprint(cfg.ChatCtxSize), "-fa", "on"},
 		},
 	}
 }
