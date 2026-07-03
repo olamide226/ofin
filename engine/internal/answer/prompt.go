@@ -82,8 +82,11 @@ func BuildCorrectionMessage(failed []verify.Result) string {
 		}
 		if r.SourceText != "" {
 			text := r.SourceText
-			if len(text) > 2500 {
-				text = text[:2500] + " …"
+			// 1200: the regeneration prompt rides on top of the full
+			// SOURCES block and must fit the context window (observed
+			// 6383 tokens vs 6144 ctx on tax questions at 2500).
+			if len(text) > 1200 {
+				text = text[:1200] + " …"
 			}
 			fmt.Fprintf(&b, "   ACTUAL TEXT OF %s:\n   %s\n", r.SourceRef, text)
 		}

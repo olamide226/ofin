@@ -48,7 +48,17 @@ def evaluate(questions: list[dict], full: bool) -> dict:
     rows = []
     for q in questions:
         t0 = time.time()
-        report = run_ofin("ask" if full else "retrieve", q["question"])
+        # One bad question must not kill the run (a context-overflow 400
+        # once destroyed 35 minutes of results): record it as a miss and
+        # keep going.
+        try:
+            report = run_ofin("ask" if full else "retrieve", q["question"])
+        except (RuntimeError, subprocess.TimeoutExpired, json.JSONDecodeError) as e:
+            rows.append({"id": q["id"], "category": q["category"],
+                         "language": q["language"], "recall": False,
+                         "error": str(e)[-300:], "wall_s": round(time.time() - t0, 1)})
+            print(f"  ✗ {q['id']} ERROR: {str(e)[-120:]}", flush=True)
+            continue
         row = {
             "id": q["id"], "category": q["category"], "language": q["language"],
             "recall": expected_hit(q["expected_sections"], report["retrieved"])
@@ -94,9 +104,9 @@ def summarize(result: dict, full: bool) -> str:
         lines.append(f"  {cat}: {h}/{n}")
 
     if full:
-        v = sum(r["verified"] for r in rows)
-        f = sum(r["flagged"] for r in rows)
-        x = sum(r["failed"] for r in rows)
+        v = sum(r.get("verified", 0) for r in rows)
+        f = sum(r.get("flagged", 0) for r in rows)
+        x = sum(r.get("failed", 0) for r in rows)
         total = v + f + x
         lines.append(f"Claims: {total} — verified {v} ({v/total:.0%}), "
                      f"flagged {f}, failed-after-regen {x}")

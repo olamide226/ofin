@@ -252,11 +252,20 @@ func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 		if em.Regenerating != nil {
 			em.Regenerating(len(failed))
 		}
-		messages = append(messages,
+		correction := answer.BuildCorrectionMessage(failed)
+		regen := append(messages,
 			llama.ChatMessage{Role: "assistant", Content: full},
-			llama.ChatMessage{Role: "user", Content: answer.BuildCorrectionMessage(failed)},
+			llama.ChatMessage{Role: "user", Content: correction},
 		)
-		full, err = a.Chat.ChatStream(messages, a.Config.MaxTokens, a.Config.Temp, onToken)
+		// The regeneration prompt rides on top of the full SOURCES block
+		// and must fit the context window (observed: 6383 tokens vs 6144
+		// ctx on a tax question). Under pressure, drop the failed draft —
+		// the correction quotes every failed claim verbatim.
+		if promptBudgetExceeded(regen, a.Config.ChatCtxSize-a.Config.MaxTokens) {
+			regen = append(messages[:len(messages):len(messages)],
+				llama.ChatMessage{Role: "user", Content: correction})
+		}
+		full, err = a.Chat.ChatStream(regen, a.Config.MaxTokens, a.Config.Temp, onToken)
 		if err != nil {
 			return nil, fmt.Errorf("regeneration: %w", err)
 		}
@@ -270,6 +279,18 @@ func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 		em.Receipts(results, uncited)
 	}
 	return report, nil
+}
+
+// promptBudgetExceeded estimates whether a chat request will overflow the
+// token budget. 3.5 chars/token is deliberately pessimistic for statutory
+// English (~4) — a false positive only costs the draft echo, a false
+// negative kills the request with a 400.
+func promptBudgetExceeded(msgs []llama.ChatMessage, budget int) bool {
+	chars := 0
+	for _, m := range msgs {
+		chars += len(m.Content) + 16 // per-message template overhead
+	}
+	return float64(chars)/3.5 > float64(budget)
 }
 
 func failedResults(results []verify.Result) []verify.Result {
