@@ -39,8 +39,33 @@ trigger + partial-answer duty, shape-based refusal detection in the harness.
 4. L19 (s.80) / N02 (s.4) — hop-quota lottery; principled fix is a reranker
 5. N03 — Pidgin phrasing retrieves poorly against statutory English (Pidgin query normalization, Week 7 candidate)
 
-Remaining Week 6 worklist: NTA margin-note cleanup (promoted — see TX03),
-context 6144→4096 + VM re-measure, test_prompts selection, evidence pack.
+### NTA margin-note cleanup — scoped, deferred to Week 7 (2026-07-03)
+
+Investigated the artifact that makes TX03 ("current tax bands") refuse: NTA
+s.58's text is polluted by `pdftotext -layout` interleaving right-margin
+shoulder-notes ("Rates of tax / Act No. 8, 2019 / Fourth Schedule") into the
+body, wrecking its embedding. A conservative right-margin de-margin cleans it
+(s.58 701→255 chars, clean) — but the gazette layout is **bimodal**: other
+sections carry LEFT-margin notes (s.163 "Thirteenth Schedule", s.57 "Effective
+Tax Rate") a right-margin rule can't touch. A complete, safe fix is a converter
+pass over ~388 tax chunks with over-stripping risk — a Week-7 corpus-polish job,
+not worth grinding for one question mid-hardening. Working right-margin
+function saved for the restart:
+`re.compile(r'^(.{55,}?)\s{6,}(\S.{0,45})$')` → keep group(1). Left-margin needs
+a column-detection companion.
+
+### Week 6 close-out
+
+Landed: web UI + chat history, verifier latency cache, cross-act + schedule
+hop edges, extractor fallbacks, Pidgin toggle, NTAA (8th act), SAC alignment
+fix, 90-Q golden set + 3 calibration rounds (old-68 recall 78% / precision 84%),
+routing evidence guards, VM certification (f16+fa ADR-014), configurable packing
+(ADR-015), Gemma-4 spike rejected on memory (ADR-016).
+
+Deferred to Week 7 (submission packaging): NTA margin cleanup (above),
+test_prompts selection, evidence pack, Pidgin eval set (unlock for the
+fine-tuning differentiation thread). Dropped: ctx 6144→4096 (would worsen the
+regeneration overflow — see ADR-014 prefill note).
 
 ## Week 5 (July 29–Aug 4, started early July 2) — Performance + UX
 
