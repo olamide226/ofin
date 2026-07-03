@@ -52,8 +52,18 @@ type Store struct {
 	// Resolved cross-reference index, built lazily from every chunk's SAC
 	// cross_refs. Keys carry canonical act_short, so lookups work across
 	// acts even though the refs spell act names in prose.
-	revBySection map[string][]revEdge // "act|s.N" -> chunks citing that section
-	revByAct     map[string][]revEdge // act -> cross-act chunks citing the whole act
+	revBySection map[string][]revEdge      // "act|s.N" -> chunks citing that section
+	revByAct     map[string][]revEdge      // act -> cross-act chunks citing the whole act
+	schedByOrd   map[string][]schedTarget  // "act|fourth" -> that act's Fourth Schedule chunks
+}
+
+// schedTarget is a schedule chunk locatable by its statutory ordinal.
+// Chunker schedule ids are DOCUMENT-order (NTA's Fourth Schedule is sch.7),
+// so refs like "Fourth Schedule" resolve through the ordinal in the chunk's
+// own text head, never through the id.
+type schedTarget struct {
+	id        int64
+	sectionID string
 }
 
 // revEdge is one citing chunk in the reverse-reference index.
@@ -277,6 +287,15 @@ var refStopwords = map[string]bool{
 
 var digitsRe = regexp.MustCompile(`^\d+$`)
 
+// schedOrdRe matches ordinal schedule references ("Fourth Schedule").
+var schedOrdRe = regexp.MustCompile(
+	`(?i)\b(first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth)\s+schedule\b`)
+
+// schedRestRe strips the stray "s." fragment SAC leaves when it writes a
+// schedule ref in section format ("Nigeria Tax Act, s.Fourth Schedule" —
+// after removing the schedule phrase, ", s." would break act resolution).
+var schedRestRe = regexp.MustCompile(`(?i)\bs\.?\s*$`)
+
 // refTargetAct resolves which act a cross_ref points at, given the ref text
 // with the section pattern stripped. Three outcomes: the seed act for
 // self-references, a canonical act_short for prose names that resolve, and
@@ -301,50 +320,81 @@ func (s *Store) refTargetAct(seedAct, rest string) string {
 	return ""
 }
 
+func (s *Store) ensureRefIndex() {
+	if s.revBySection == nil {
+		s.buildRefIndex()
+	}
+}
+
 // buildRefIndex resolves every chunk's cross_refs into the reverse index.
 // One pass over the corpus (678 chunks) at first hop use; act names resolve
 // through the same refTargetAct semantics as the forward direction.
 func (s *Store) buildRefIndex() {
 	s.revBySection = map[string][]revEdge{}
 	s.revByAct = map[string][]revEdge{}
-	rows, err := s.db.Query(`SELECT id, act_short, cross_refs FROM chunks`)
+	s.schedByOrd = map[string][]schedTarget{}
+	rows, err := s.db.Query(
+		`SELECT id, act_short, section_id, substr(text, 1, 60), cross_refs FROM chunks`)
 	if err != nil {
 		return
 	}
 	// Collect before resolving: refTargetAct queries the DB (ResolveAct),
 	// and nested queries inside an open result set are pool-dependent.
 	type chunkRefs struct {
-		id       int64
-		act      string
-		refsJSON string
+		id                          int64
+		act, section, head, refsJSON string
 	}
 	var all []chunkRefs
 	for rows.Next() {
 		var c chunkRefs
-		if rows.Scan(&c.id, &c.act, &c.refsJSON) == nil {
+		if rows.Scan(&c.id, &c.act, &c.section, &c.head, &c.refsJSON) == nil {
 			all = append(all, c)
 		}
 	}
 	rows.Close()
+
+	// Pass 1: schedules by statutory ordinal (read from the text head —
+	// chunker schedule ids are document-order, not statutory ordinals).
+	for _, c := range all {
+		if !strings.HasPrefix(c.section, "sch.") {
+			continue
+		}
+		if m := schedOrdRe.FindStringSubmatch(c.head); m != nil {
+			key := c.act + "|" + strings.ToLower(m[1])
+			s.schedByOrd[key] = append(s.schedByOrd[key], schedTarget{id: c.id, sectionID: c.section})
+		}
+	}
+
+	// Pass 2: resolve every ref into edges.
 	for _, c := range all {
 		id, act := c.id, c.act
 		var refs []string
 		_ = json.Unmarshal([]byte(c.refsJSON), &refs)
 		for _, ref := range refs {
-			m := refSectionRe.FindStringSubmatch(ref)
-			rest := ref
-			if m != nil {
-				rest = refSectionRe.ReplaceAllString(ref, "")
-			}
-			target := s.refTargetAct(act, rest)
-			if target == "" {
-				continue // names an act outside the corpus
-			}
 			edge := revEdge{id: id, act: act}
-			if m != nil {
+			if m := refSectionRe.FindStringSubmatch(ref); m != nil {
+				target := s.refTargetAct(act, refSectionRe.ReplaceAllString(ref, ""))
+				if target == "" {
+					continue // names an act outside the corpus
+				}
 				key := target + "|s." + strings.ToLower(m[1])
 				s.revBySection[key] = append(s.revBySection[key], edge)
-			} else if target != act {
+				continue
+			}
+			if m := schedOrdRe.FindStringSubmatch(ref); m != nil {
+				rest := schedRestRe.ReplaceAllString(schedOrdRe.ReplaceAllString(ref, ""), "")
+				target := s.refTargetAct(act, rest)
+				if target == "" {
+					continue
+				}
+				for _, st := range s.schedByOrd[target+"|"+strings.ToLower(m[1])] {
+					s.revBySection[target+"|"+st.sectionID] =
+						append(s.revBySection[target+"|"+st.sectionID], edge)
+				}
+				continue
+			}
+			target := s.refTargetAct(act, ref)
+			if target != "" && target != act {
 				// Act-level citation of another act (e.g. NTA s.58 ->
 				// "Minimum Wage Act"). Same-act bare refs carry no signal.
 				s.revByAct[target] = append(s.revByAct[target], edge)
@@ -353,12 +403,26 @@ func (s *Store) buildRefIndex() {
 	}
 }
 
-// resolveRefIDs maps a SAC cross_ref string ("Labour Act 2004, s.81" or
-// "section 4 of this Act") to chunk row ids. Prose act names resolve to
-// canonical act_short; refs to acts outside the corpus resolve to nothing.
+// resolveRefIDs maps a SAC cross_ref string ("Labour Act 2004, s.81",
+// "section 4 of this Act", "Nigeria Tax Act, s.Fourth Schedule") to chunk
+// row ids. Prose act names resolve to canonical act_short; ordinal schedule
+// refs resolve through the schedule's text head (eval TX03: s.58 points at
+// the Fourth Schedule for the actual tax bands — chunked as sch.7); refs to
+// acts outside the corpus resolve to nothing.
 func (s *Store) resolveRefIDs(seedAct, ref string) []int64 {
 	m := refSectionRe.FindStringSubmatch(ref)
 	if m == nil {
+		if sm := schedOrdRe.FindStringSubmatch(ref); sm != nil {
+			s.ensureRefIndex()
+			rest := schedRestRe.ReplaceAllString(schedOrdRe.ReplaceAllString(ref, ""), "")
+			if act := s.refTargetAct(seedAct, rest); act != "" {
+				var ids []int64
+				for _, st := range s.schedByOrd[act+"|"+strings.ToLower(sm[1])] {
+					ids = append(ids, st.id)
+				}
+				return ids
+			}
+		}
 		return nil
 	}
 	act := s.refTargetAct(seedAct, refSectionRe.ReplaceAllString(ref, ""))
@@ -449,9 +513,7 @@ func (s *Store) ResolveAct(raw string) (string, bool) {
 // "Minimum Wage Act" — the edge cross-domain questions travel). Capped:
 // heavily-cited sections (interpretation etc.) would flood.
 func (s *Store) reverseRefIDs(act, sectionID string) []int64 {
-	if s.revBySection == nil {
-		s.buildRefIndex()
-	}
+	s.ensureRefIndex()
 	var same, cross []int64
 	for _, e := range s.revBySection[act+"|"+sectionID] {
 		if e.act == act {
