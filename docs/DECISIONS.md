@@ -6,6 +6,46 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-015 — Prompt packing kept configurable but NOT enabled by default; app latency is not scored, accuracy is (2026-07-03)
+
+**Decision:** Source packing is now tunable (`answer.Pack`, CLI `-full-n /
+-full-chars / -tail-chars`, harness `OFIN_ARGS`), but the shipped **default
+stays the full 4-source pack**. Aggressive packing is available for the demo
+video, not the scored default.
+
+**Context:** ADR-014 identified prompt-prefill (~4,600 tokens) as the real
+latency bottleneck on the CPU box. Summary-only packing cuts the prompt hard —
+measured on one lookup: 4,631 → 2,220 tokens (2-full, −52%), → 2,718 (3-full
+2500, −41%). Question: does shrinking it cost accuracy?
+
+**Findings (90-Q golden eval, one run per config):**
+
+| Pack | Prompt | Recall | Precision | Claims | Refusals |
+|---|---|---|---|---|---|
+| 4-full 3000 / 800 tail (default) | ~4,631 tok | 70% | 84% | 207 | 88/90 |
+| 3-full 2500 / summaries | ~2,718 tok | 70% | 78% | 190 | 89/90 |
+| 2-full 3000 / summaries | ~2,220 tok | 70% | 81% | 162 | 86/90 |
+
+- **Recall is provably unchanged** — packing touches only the prompt, not
+  retrieval.
+- **Precision (84/78/81) is NOT ordered by prompt size** — 3-full sits *below*
+  2-full, which can't be a real packing effect. It's single-run noise (temp
+  0.2 is non-deterministic; ~90 questions × ~2 claims is a modest sample).
+  Claim *count* (207/190/162) IS monotonic: less source text → less verbosity.
+  Net read: packing reduces verbosity, does not measurably move accuracy.
+- **App latency is not in the automated score.** S_perf profiles the raw GGUF
+  via llama-bench (already 34 TPS, capped at 15). Running-server latency only
+  affects the demo video and real UX. Accuracy is 50% of the score.
+
+**Rationale:** Trading a *possibly-real* accuracy cost for a latency win that
+(a) doesn't score and (b) still leaves ~45s prefill is a bad deal for the
+shipped default. Keep the default at max accuracy; keep packing on tap for the
+demo video, or to flip later if a multi-run study proves it accuracy-neutral.
+
+**Alternatives:** ship 2-full by default (rejected — unproven accuracy risk on
+the 50%-weighted metric for an unscored benefit); drop packing entirely
+(rejected — the machinery is cheap and the demo video wants it).
+
 ## ADR-014 — Chat server runs f16 KV + flash attention, not q8_0 KV; the real latency lever is prompt-prefill size (2026-07-03)
 
 **Decision:** The app's chat `llama-server` runs with **`-fa on`** (flash

@@ -5,6 +5,7 @@ package app
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 	"strings"
 	"time"
 
@@ -24,8 +25,8 @@ type Config struct {
 	DraftModel  string // optional: speculative decoding draft GGUF
 	EmbedPort   int
 	ChatPort    int
-	TopN        int // fused sources retrieved per question
-	PromptFullN int // of those, how many get full text in the prompt (rest are summarized)
+	TopN        int         // fused sources retrieved per question
+	Pack        answer.Pack // how those sources are packed into the prompt (prefill lever)
 	MaxTokens   int
 	Temp        float64
 	ChatCtxSize int
@@ -48,7 +49,7 @@ func DefaultConfig(root string) Config {
 		// corpus grew to 678 chunks. Widening the window while narrowing the
 		// full-text tier costs LESS prefill than the old 6-full layout.
 		TopN:        8,
-		PromptFullN: 4,
+		Pack:        answer.DefaultPack,
 		MaxTokens:   700,
 		Temp:        0.2,
 		ChatCtxSize: 6144, // trimmed from 8192 after prompt diet
@@ -235,7 +236,12 @@ func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 	}
 	messages := []llama.ChatMessage{
 		{Role: "system", Content: system},
-		{Role: "user", Content: answer.BuildUserMessage(question, chunks, a.Config.PromptFullN)},
+		{Role: "user", Content: answer.BuildUserMessage(question, chunks, a.Config.Pack)},
+	}
+	if os.Getenv("OFIN_DEBUG_PROMPT") != "" {
+		n := len(messages[0].Content) + len(messages[1].Content)
+		fmt.Fprintf(os.Stderr, "[prompt] %d chars (~%d tokens) — pack full-n=%d full-chars=%d tail-chars=%d\n",
+			n, n/4, a.Config.Pack.FullN, a.Config.Pack.FullChars, a.Config.Pack.TailChars)
 	}
 	var full string
 	onToken := em.Token

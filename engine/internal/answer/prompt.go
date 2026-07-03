@@ -26,16 +26,23 @@ const SystemPrompt = `You are Òfin, a Nigerian legal information assistant.
 const PidginDirective = `
 IMPORTANT OVERRIDE of rule 6: reply ONLY in Nigerian Pidgin, whatever language the question used. Keep citations exactly in the [Act, s.X] format.`
 
-const (
-	fullChunkChars  = 3000 // per-source cap for fused-rank sources
-	hopChunkChars   = 800  // per-source cap for cross-ref hop companions
-)
+// Pack controls how retrieved sources are rendered into the prompt — the
+// prefill-latency lever (ADR-014: on the CPU audit box, prompt size, not KV
+// format, dominates latency). FullN sources get full text (capped at
+// FullChars); the rest get their SAC summary plus at most TailChars of raw
+// text (TailChars = 0 → summary only, the aggressive packing).
+type Pack struct {
+	FullN     int
+	FullChars int
+	TailChars int
+}
 
-// BuildUserMessage assembles SOURCES + QUESTION. The first topN fused-rank
-// sources get full text; remaining sources (cross-ref hop companions) get
-// summary + truncated text — they are supplementary context, and cutting
-// them protects prefill latency on the 8 GB target.
-func BuildUserMessage(question string, chunks []retrieve.Chunk, topN int) string {
+// DefaultPack is the pre-experiment behavior: 4 full sources at 3000 chars,
+// tail sources at summary + 800 chars.
+var DefaultPack = Pack{FullN: 4, FullChars: 3000, TailChars: 800}
+
+// BuildUserMessage assembles SOURCES + QUESTION under the given Pack.
+func BuildUserMessage(question string, chunks []retrieve.Chunk, pack Pack) string {
 	var b strings.Builder
 	b.WriteString("SOURCES:\n\n")
 	for i, c := range chunks {
@@ -47,10 +54,10 @@ func BuildUserMessage(question string, chunks []retrieve.Chunk, topN int) string
 		if c.Jurisdiction != "federal" {
 			jur = fmt.Sprintf(" (jurisdiction: %s)", c.Jurisdiction)
 		}
-		isHop := i >= topN
-		cap := fullChunkChars
-		if isHop {
-			cap = hopChunkChars
+		isTail := i >= pack.FullN
+		cap := pack.FullChars
+		if isTail {
+			cap = pack.TailChars
 		}
 		text := c.Text
 		if len(text) > cap {
@@ -60,13 +67,17 @@ func BuildUserMessage(question string, chunks []retrieve.Chunk, topN int) string
 		if c.Summary != "" {
 			summary = "Summary: " + c.Summary + "\n"
 		}
-		if isHop {
-			fmt.Fprintf(&b, "SOURCE %s%s%s (as at %s, see also):\n%s%s\n\n",
-				c.Citation(), title, jur, c.AsAt, summary, text)
-		} else {
-			fmt.Fprintf(&b, "SOURCE %s%s%s (as at %s):\n%s%s\n\n",
-				c.Citation(), title, jur, c.AsAt, summary, text)
+		label := ""
+		if isTail {
+			label = ", see also"
+			// Summary-only tail: the summary already carries the point;
+			// dropping the raw text is the prefill win under test.
+			if pack.TailChars == 0 {
+				text = ""
+			}
 		}
+		fmt.Fprintf(&b, "SOURCE %s%s%s (as at %s%s):\n%s%s\n\n",
+			c.Citation(), title, jur, c.AsAt, label, summary, text)
 	}
 	fmt.Fprintf(&b, "QUESTION: %s", question)
 	return b.String()

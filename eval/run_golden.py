@@ -41,9 +41,15 @@ REFUSAL_RES = (
 )
 
 
+# OFIN_ARGS lets an experiment pass global ofin flags (e.g. packing config)
+# without editing this harness: OFIN_ARGS="-full-n 2 -tail-chars 0"
+import os
+OFIN_ARGS = os.environ.get("OFIN_ARGS", "").split()
+
+
 def run_ofin(cmd: str, question: str) -> dict:
     proc = subprocess.run(
-        [str(OFIN), "-json", cmd, question],
+        [str(OFIN), "-json", *OFIN_ARGS, cmd, question],
         capture_output=True, text=True, timeout=600, cwd=REPO,
     )
     if proc.returncode != 0:
