@@ -321,8 +321,18 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
 #send svg{width:16px;height:16px}
 #send.stop{background:var(--fail)}
 .composer-hint{
-  display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted);
-  padding:6px 8px 0 0;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.7rem;color:var(--muted);padding:6px 8px 0 0;
+}
+.hint-left{display:flex;align-items:center;gap:10px}
+.pidgin-toggle{
+  font-size:.7rem;font-weight:600;padding:2px 10px;border-radius:99px;
+  border:1px solid var(--border-strong);color:var(--muted);
+  transition:all .15s;
+}
+.pidgin-toggle:hover{border-color:var(--accent)}
+.pidgin-toggle.on{
+  background:var(--accent);border-color:var(--accent);color:#fff;
 }
 
 /* ---------- mobile ---------- */
@@ -402,7 +412,10 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
         </button>
       </div>
       <div class="composer-hint">
-        <span>Òfin provides legal information, not legal advice.</span>
+        <span class="hint-left">
+          <button id="pidgin-btn" class="pidgin-toggle" title="Answer in Nigerian Pidgin, whatever language you ask in" aria-pressed="false">Pidgin</button>
+          <span>Òfin provides legal information, not legal advice.</span>
+        </span>
         <span>Enter ↵ to send</span>
       </div>
     </div>
@@ -423,6 +436,21 @@ $('#theme-btn').onclick=()=>setTheme(document.documentElement.dataset.theme==='d
 /* ---------- mobile sidebar ---------- */
 $('#menu-btn').onclick=()=>document.body.classList.toggle('side-open');
 $('#backdrop').onclick=()=>document.body.classList.remove('side-open');
+
+/* ---------- pidgin toggle ---------- */
+const pidginBtn=$('#pidgin-btn');
+let pidgin=localStorage.getItem('ofin-pidgin')==='1';
+function paintPidgin(){
+  pidginBtn.classList.toggle('on',pidgin);
+  pidginBtn.setAttribute('aria-pressed',pidgin);
+}
+paintPidgin();
+pidginBtn.onclick=()=>{
+  pidgin=!pidgin;
+  localStorage.setItem('ofin-pidgin',pidgin?'1':'0');
+  paintPidgin();
+  qEl.focus();
+};
 
 /* ---------- composer ---------- */
 qEl.addEventListener('input',()=>{
@@ -756,7 +784,7 @@ async function submit(){
   try{
     const resp=await fetch('/api/ask',{
       method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({question}),signal:abortCtrl.signal,
+      body:JSON.stringify({question,pidgin}),signal:abortCtrl.signal,
     });
     if(!resp.ok)throw new Error(`server returned ${resp.status}`);
     const reader=resp.body.getReader(),dec=new TextDecoder();

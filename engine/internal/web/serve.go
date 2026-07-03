@@ -34,12 +34,15 @@ func Handler(a *app.App) http.Handler {
 			http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 			return
 		}
-		var body struct{ Question string }
+		var body struct {
+			Question string
+			Pidgin   bool
+		}
 		if err := json.NewDecoder(r.Body).Decode(&body); err != nil || body.Question == "" {
 			http.Error(w, "invalid request body", http.StatusBadRequest)
 			return
 		}
-		handleAsk(w, a, body.Question)
+		handleAsk(w, a, body.Question, app.Options{Pidgin: body.Pidgin})
 	})
 
 	return mux
@@ -50,7 +53,7 @@ type sseWriter interface {
 	http.Flusher
 }
 
-func handleAsk(w http.ResponseWriter, a *app.App, question string) {
+func handleAsk(w http.ResponseWriter, a *app.App, question string, opts app.Options) {
 	f, ok := w.(sseWriter)
 	if !ok {
 		http.Error(w, "streaming not supported", http.StatusInternalServerError)
@@ -113,7 +116,7 @@ func handleAsk(w http.ResponseWriter, a *app.App, question string) {
 		},
 	}
 
-	report, err := a.Ask(question, em)
+	report, err := a.Ask(question, opts, em)
 	if err != nil {
 		send(map[string]any{"type": "error", "message": err.Error()})
 		return

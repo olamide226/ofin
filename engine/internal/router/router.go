@@ -21,7 +21,7 @@ const ExtractionPrompt = `You are the parameter extractor for a legal computatio
  "gross_income": number|null, "income_period": "monthly"|"annual"|null,
  "employment_years": number|null, "employment_start": string|null,
  "annual_rent": number|null}
-Rules: "computation" is "paye" for tax questions with an income figure, "termination_notice" for how-much-notice questions with a tenure, otherwise "none". Numbers must be plain digits. Do not guess values not present in the message.`
+Rules: "computation" is "paye" for tax questions with an income figure, "termination_notice" for how-much-notice questions with a tenure, otherwise "none". Numbers must be plain digits. Durations stated in months convert to years ("18 months" -> "employment_years": 1.5). Do not guess values not present in the message.`
 
 // Params is what the LLM extracts.
 type Params struct {
@@ -76,7 +76,7 @@ func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
 	}
 	switch p.Computation {
 	case "termination_notice":
-		months, ok := tenureMonths(p, now)
+		months, ok := tenureMonths(p, question, now)
 		if !ok {
 			return Outcome{}, false
 		}
@@ -116,7 +116,7 @@ var monthNames = map[string]time.Month{
 
 var yearRe = regexp.MustCompile(`\b(19|20)\d{2}\b`)
 
-func tenureMonths(p *Params, now time.Time) (float64, bool) {
+func tenureMonths(p *Params, question string, now time.Time) (float64, bool) {
 	// A start date outranks a model-supplied duration: the extractor was
 	// observed inventing employment_years=3 for "since March 2020" (6.3
 	// years). Date arithmetic is ours, never the model's.
@@ -128,7 +128,45 @@ func tenureMonths(p *Params, now time.Time) (float64, bool) {
 	if p.EmploymentYears != nil && *p.EmploymentYears > 0 {
 		return *p.EmploymentYears * 12, true
 	}
-	return 0, false
+	// Fallback: the extractor was observed missing month-denominated
+	// tenures entirely ("18 months", eval CP05). When it extracted nothing,
+	// parse the first explicit duration from the question deterministically.
+	return durationFromText(question)
+}
+
+var wordNumbers = map[string]float64{
+	"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+	"seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11,
+	"twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+	"sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19,
+	"twenty": 20, "a": 1, "an": 1,
+}
+
+var durationRe = regexp.MustCompile(
+	`(?i)\b(\d+(?:\.\d+)?|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|an?)[\s-]+(years?|months?)\b`)
+
+// durationFromText parses the first explicit duration in a question into
+// months. Digits or number words, years or months ("18 months", "three
+// years", "a year"). First match only — summing multiple mentions would
+// conflate tenure with an unrelated duration in the same sentence.
+func durationFromText(text string) (float64, bool) {
+	m := durationRe.FindStringSubmatch(text)
+	if m == nil {
+		return 0, false
+	}
+	var n float64
+	if v, ok := wordNumbers[strings.ToLower(m[1])]; ok {
+		n = v
+	} else if _, err := fmt.Sscanf(m[1], "%g", &n); err != nil {
+		return 0, false
+	}
+	if n <= 0 {
+		return 0, false
+	}
+	if strings.HasPrefix(strings.ToLower(m[2]), "year") {
+		n *= 12
+	}
+	return n, true
 }
 
 func tenureFromStart(startRaw string, now time.Time) (float64, bool) {

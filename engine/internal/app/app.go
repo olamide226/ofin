@@ -158,10 +158,15 @@ func (a *App) StopServers() {
 	_ = llama.Stop(a.Config.ChatPort)
 }
 
+// Options tunes one Ask.
+type Options struct {
+	Pidgin bool // force Pidgin-first answers regardless of question language
+}
+
 // Ask runs the full retrieval → route → compute/generate → verify pipeline.
 // Every stage calls the matching Emitter callback so the CLI can log to
 // stderr and the web UI can push SSE events.
-func (a *App) Ask(question string, em Emitter) (*Report, error) {
+func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 	report := &Report{Question: question}
 
 	t0 := time.Now()
@@ -215,8 +220,12 @@ func (a *App) Ask(question string, em Emitter) (*Report, error) {
 	}
 
 	// Lookup path: generate a cited answer, then verify.
+	system := answer.SystemPrompt
+	if opts.Pidgin {
+		system += answer.PidginDirective
+	}
 	messages := []llama.ChatMessage{
-		{Role: "system", Content: answer.SystemPrompt},
+		{Role: "system", Content: system},
 		{Role: "user", Content: answer.BuildUserMessage(question, chunks, a.Config.TopN)},
 	}
 	var full string

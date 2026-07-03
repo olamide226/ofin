@@ -10,9 +10,12 @@
 | Full-stack VM measurement (Ola) | recorded | Whole stack on 4 vCPU/7.6 GB: ~3.9 GB idle (q8 KV pre-allocated), 4.2 GB peak warm under load — over the 3.5 GB self-target by ~0.4–0.7 GB but well inside the 8 GB hard cap, no swap/OOM. Sustained TPS 34.0/34.5/34.0 (no throttle decay). Offline check PASS (zero non-loopback connections during generation). Warm computation 1.4s; warm RAG+verification 143s — verification re-embedding latency is a Week 6 optimisation candidate |
 | Chat history + sidebar | done | Conversations persist in `localStorage` (privacy-preserving: never leaves the device, matches the offline pitch). Sidebar with New chat / switch / delete, relative timestamps, quota-aware eviction (oldest conversations dropped first, then oldest turns; 30-turn cap per conversation). Mobile: slide-over sidebar with backdrop. Restored turns re-render sources, computation cards, answers, and receipts from the stored record — no re-generation. Conversational *memory* (model seeing prior turns) deliberately excluded pre-freeze: it would eat the 6144 prompt budget, need query rewriting, and break verifier claim-independence — parked post-challenge. |
 
-Remaining Week 6 worklist: cross-act hop edges, "18 months" extractor,
-top-N tuning, Pidgin answer toggle, golden set → 90, test_prompts selection,
-evidence pack capture.
+| Cross-act reverse-reference edges | done | `retrieve.buildRefIndex` — every chunk's SAC cross_refs resolved once into an in-memory index (prose act names → canonical act_short via the same `refTargetAct` semantics both directions). Reverse lookup now crosses acts: same-act sectioned edges first, then cross-act sectioned, then act-level (NTA s.58 → "Minimum Wage Act", the edge cross-domain questions travel). Fixed latent bug both directions: refs naming acts OUTSIDE the corpus ("Pension Reform Act 2014, s.4") used to default to the seed act, minting bogus edges — now skipped. Spot-check: XD05 now retrieves NTA s.58 rank 3; XD03 both expected sections ranks 1–2 |
+| "18 months" extractor (CP05) | done | Two layers: extraction-prompt hint (months → fractional years) + deterministic fallback — when the model extracts no tenure, the question's first explicit duration ("18 months", "three years", digits or words) is parsed in Go. Precedence: start date > model years > question regex. Table-driven tests incl. Pidgin phrasing |
+| Pidgin answer toggle | done | `ofin -pidgin` flag + web UI pill toggle (persisted): appends `answer.PidginDirective` to the system prompt — answers in Pidgin whatever language the question used, citations stay bracket-format for the verifier. Targets +15% African Alpha / Best Localisation |
+
+Remaining Week 6 worklist: 90-question eval baseline (running), top-N tuning,
+context 6144→4096 + VM re-measure, test_prompts selection, evidence pack.
 
 ## Week 5 (July 29–Aug 4, started early July 2) — Performance + UX
 

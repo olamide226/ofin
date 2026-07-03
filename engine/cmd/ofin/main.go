@@ -40,6 +40,7 @@ func main() {
 	flag.StringVar(&cfg.EmbedModel, "embed-model", cfg.EmbedModel, "embedding GGUF")
 	flag.StringVar(&cfg.ChatModel, "chat-model", cfg.ChatModel, "chat GGUF")
 	draft := flag.Bool("draft", false, "enable speculative decoding (demo machines only, ADR-012; needs the 1B draft GGUF in models-dev/)")
+	pidgin := flag.Bool("pidgin", false, "answer in Nigerian Pidgin regardless of question language")
 	jsonOut := flag.Bool("json", false, "machine-readable JSON output")
 	port := flag.Int("port", 8090, "web UI port (serve)")
 	flag.Parse()
@@ -173,7 +174,7 @@ func main() {
 		},
 	}
 
-	report, err := a.Ask(question, em)
+	report, err := a.Ask(question, app.Options{Pidgin: *pidgin}, em)
 	if err != nil {
 		fatal(err)
 	}

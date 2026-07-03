@@ -19,6 +19,12 @@ const SystemPrompt = `You are Òfin, a Nigerian legal information assistant.
 5. Users may write in English or Nigerian Pidgin. Reply in the language they used.
 6. Be concise and practical. You provide legal information, not legal advice.`
 
+// PidginDirective overrides rule 5 when the user turns on Pidgin-first
+// answers: reply in Pidgin no matter what language the question used.
+// Citations stay in the exact bracket format — the verifier depends on it.
+const PidginDirective = `
+IMPORTANT OVERRIDE of rule 5: reply ONLY in Nigerian Pidgin, whatever language the question used. Keep citations exactly in the [Act, s.X] format.`
+
 const (
 	fullChunkChars  = 3000 // per-source cap for fused-rank sources
 	hopChunkChars   = 800  // per-source cap for cross-ref hop companions

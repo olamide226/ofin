@@ -64,3 +64,63 @@ func TestNoComputationFallsThrough(t *testing.T) {
 		t.Error("'none' must fall through to lookup")
 	}
 }
+
+// Captured failure (eval CP05): the extractor missed an "18 months" tenure
+// entirely. When it extracts nothing, the question's own explicit duration
+// must be parsed deterministically.
+func TestQuestionDurationFallback(t *testing.T) {
+	cases := []struct {
+		question string
+		want     string // substring of the rendered notice band
+	}{
+		{"I have worked there for 18 months, how much notice before they sack me?", "one week"},
+		{"I don work there for three years, how much notice dem go give me?", "two weeks"},
+		{"After eight years of service, what notice am I entitled to before dismissal?", "one month"},
+		{"I resumed just 2 months ago — what notice applies if they fire me?", "one day"},
+	}
+	for _, c := range cases {
+		p := &Params{Computation: "termination_notice"} // extractor got nothing
+		out, ok := Computation(p, c.question, now)
+		if !ok {
+			t.Errorf("%q: expected computation via question-duration fallback", c.question)
+			continue
+		}
+		if !strings.Contains(out.Rendered, c.want) {
+			t.Errorf("%q: want %q in rendered, got: %s", c.question, c.want, out.Summary)
+		}
+	}
+}
+
+func TestDurationFromText(t *testing.T) {
+	cases := []struct {
+		text   string
+		months float64
+		ok     bool
+	}{
+		{"18 months", 18, true},
+		{"three years", 36, true},
+		{"a year", 12, true},
+		{"2.5 years", 30, true},
+		{"worked there since forever", 0, false},
+		{"eighteen-months", 18, true},
+	}
+	for _, c := range cases {
+		got, ok := durationFromText(c.text)
+		if ok != c.ok || (ok && got != c.months) {
+			t.Errorf("durationFromText(%q) = %v,%v want %v,%v", c.text, got, ok, c.months, c.ok)
+		}
+	}
+}
+
+// The fallback must not override values the model DID extract — model years
+// still outrank a stray question duration.
+func TestModelYearsOutrankQuestionDuration(t *testing.T) {
+	p := &Params{Computation: "termination_notice", EmploymentYears: f(6)}
+	out, ok := Computation(p, "I got 2 months salary owed; they want to sack me after my 6 years, what notice?", now)
+	if !ok {
+		t.Fatal("expected computation")
+	}
+	if !strings.Contains(out.Rendered, "one month") {
+		t.Errorf("6 years must yield one month notice, got: %s", out.Summary)
+	}
+}
