@@ -830,10 +830,12 @@ async function submit(){
       pipe.set('understand','Understanding your question','active');
       renderSources(msg,ev.chunks);
       break;
-    case 'routed':
+    case 'routed':{
       pipe.set('understand','Understood — this needs a calculation','done');
-      pipe.set('compute',`Computing from statute (${ev.kind==='paye'?'PAYE':'notice period'})`,'active');
-      break;
+      const kinds={paye:'PAYE',termination_notice:'notice period',
+                   tenancy_notice:'tenancy notice',redundancy:'redundancy entitlements'};
+      pipe.set('compute',`Computing from statute (${kinds[ev.kind]||ev.kind})`,'active');
+      break;}
     case 'computed':{
       pipe.set('compute','Computed deterministically from statute','done');
       finalSummary='Computed from statute';

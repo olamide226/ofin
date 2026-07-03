@@ -17,11 +17,12 @@ import (
 // ExtractionPrompt mirrors the bake-off X-format both finalist models
 // handled well: bare JSON, fixed schema, no prose.
 const ExtractionPrompt = `You are the parameter extractor for a legal computation engine. Read the user's message and output ONLY a JSON object matching this schema, with no other text:
-{"computation": "paye"|"termination_notice"|"none",
+{"computation": "paye"|"termination_notice"|"tenancy_notice"|"redundancy"|"none",
  "gross_income": number|null, "income_period": "monthly"|"annual"|null,
  "employment_years": number|null, "employment_start": string|null,
- "annual_rent": number|null}
-Rules: "computation" is "paye" for tax questions with an income figure, "termination_notice" for how-much-notice questions with a tenure, otherwise "none". Numbers must be plain digits. Durations stated in months convert to years ("18 months" -> "employment_years": 1.5). Do not guess values not present in the message.`
+ "annual_rent": number|null,
+ "tenancy_type": "at_will"|"monthly"|"quarterly"|"half_yearly"|"yearly"|"fixed_term"|null}
+Rules: "computation" is "paye" for tax questions with an income figure, "termination_notice" for how-much-notice questions about a JOB with a tenure, "tenancy_notice" for landlord/tenant notice-to-quit questions, "redundancy" for redundancy/retrenchment/layoff entitlement questions, otherwise "none". Numbers must be plain digits. Durations stated in months convert to years ("18 months" -> "employment_years": 1.5). Do not guess values not present in the message.`
 
 // Params is what the LLM extracts.
 type Params struct {
@@ -31,6 +32,7 @@ type Params struct {
 	EmploymentYears *float64 `json:"employment_years"`
 	EmploymentStart *string  `json:"employment_start"`
 	AnnualRent      *float64 `json:"annual_rent"`
+	TenancyType     *string  `json:"tenancy_type"`
 }
 
 var jsonBlockRe = regexp.MustCompile(`\{[\s\S]*\}`)
@@ -65,7 +67,9 @@ type Outcome struct {
 // words ask for it.
 var intentGates = map[string]*regexp.Regexp{
 	"paye":               regexp.MustCompile(`(?i)\b(tax|paye)\b`),
-	"termination_notice": regexp.MustCompile(`(?i)notice|sack|dismiss|terminat|fire|lay.?off|redundan|resign`),
+	"termination_notice": regexp.MustCompile(`(?i)notice|sack|dismiss|terminat|fire|lay.?off|resign`),
+	"tenancy_notice":     regexp.MustCompile(`(?i)notice|quit|evict|eject|pack out|leave|end.{0,12}tenanc`),
+	"redundancy":         regexp.MustCompile(`(?i)redundan|retrench|downsiz|excess of manpower|lay.?off|laid off`),
 }
 
 // tenancyVeto blocks the LABOUR notice computation for landlord/tenant
@@ -79,14 +83,23 @@ var digitRe = regexp.MustCompile(`\d`)
 // Computation runs the rules engine for the extracted parameters.
 // ok=false means the question falls through to the normal lookup path.
 func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
-	if gate, known := intentGates[p.Computation]; !known || !gate.MatchString(question) {
+	kind := p.Computation
+	// Kind normalization: the extractor sees "notice" and says
+	// termination_notice even for landlord/tenant questions (eval TN02) and
+	// redundancy questions (notice is only half that answer). The question's
+	// own domain words win.
+	if kind == "termination_notice" {
+		if tenancyVeto.MatchString(question) {
+			kind = "tenancy_notice"
+		} else if intentGates["redundancy"].MatchString(question) {
+			kind = "redundancy"
+		}
+	}
+	if gate, known := intentGates[kind]; !known || !gate.MatchString(question) {
 		return Outcome{}, false
 	}
-	switch p.Computation {
+	switch kind {
 	case "termination_notice":
-		if tenancyVeto.MatchString(question) {
-			return Outcome{}, false // tenancy notice is Lagos law, not s.11
-		}
 		months, ok := tenureMonths(p, question, now)
 		if !ok {
 			return Outcome{}, false
@@ -95,6 +108,28 @@ func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
 		out, _ := json.MarshalIndent(res, "", " ")
 		return Outcome{JSON: string(out), Rendered: res.Render(),
 			Summary: res.Summary(), Kind: "termination_notice"}, true
+
+	case "tenancy_notice":
+		// Tenancy type must be traceable to the question text (ADR-010
+		// applies to inputs): deterministic parse, no model value accepted.
+		t, ok := tenancyTypeFromText(question)
+		if !ok {
+			return Outcome{}, false
+		}
+		res, ok := rules.TenancyNotice(t)
+		if !ok {
+			return Outcome{}, false
+		}
+		out, _ := json.MarshalIndent(res, "", " ")
+		return Outcome{JSON: string(out), Rendered: res.Render(),
+			Summary: res.Summary(), Kind: "tenancy_notice"}, true
+
+	case "redundancy":
+		months, _ := tenureMonths(p, question, now) // tenure optional: rights render without it
+		res := rules.Redundancy(months)
+		out, _ := json.MarshalIndent(res, "", " ")
+		return Outcome{JSON: string(out), Rendered: res.Render(),
+			Summary: res.Summary(), Kind: "redundancy"}, true
 
 	case "paye":
 		if p.GrossIncome == nil || *p.GrossIncome <= 0 {
@@ -202,6 +237,32 @@ func durationFromText(text string) (float64, bool) {
 // naira") is evidence for a model-extracted income even without digits
 // (eval H15 — the guard must not block spelled-out figures).
 var moneyEvidenceRe = regexp.MustCompile(`(?i)\b(thousand|million|billion)\b`)
+
+// tenancyTypePatterns, in match order: half-yearly MUST precede yearly
+// ("half-yearly" contains a word-boundary "yearly"), and specific forms
+// precede generic ones.
+var tenancyTypePatterns = []struct {
+	t  rules.TenancyType
+	re *regexp.Regexp
+}{
+	{rules.TenancyFixedTerm, regexp.MustCompile(`(?i)fixed[\s-]?term|term (has )?(expired|ended)|efflux`)},
+	{rules.TenancyAtWill, regexp.MustCompile(`(?i)\bat[\s-]?will\b`)},
+	{rules.TenancyHalfYearly, regexp.MustCompile(`(?i)half[\s-]?year|every six months|six[\s-]?monthly|bi[\s-]?annual`)},
+	{rules.TenancyQuarterly, regexp.MustCompile(`(?i)\bquarter`)},
+	{rules.TenancyYearly, regexp.MustCompile(`(?i)\byearly\b|\bannual|\bper year\b|\bevery year\b`)},
+	{rules.TenancyMonthly, regexp.MustCompile(`(?i)\bmonthly\b|\bper month\b|\bevery month\b|\bmonth to month\b`)},
+}
+
+// tenancyTypeFromText classifies the tenancy deterministically from the
+// question's own words (s.13(6): rent frequency determines tenancy nature).
+func tenancyTypeFromText(question string) (rules.TenancyType, bool) {
+	for _, p := range tenancyTypePatterns {
+		if p.re.MatchString(question) {
+			return p.t, true
+		}
+	}
+	return "", false
+}
 
 func tenureFromStart(startRaw string, now time.Time) (float64, bool) {
 	raw := strings.ToLower(startRaw)

@@ -338,8 +338,51 @@ func ComputationHTML(outcome router.Outcome) string {
 		return renderPAYETable(outcome)
 	case "termination_notice":
 		return renderNoticeCard(outcome)
+	case "tenancy_notice":
+		return renderTenancyCard(outcome)
+	case "redundancy":
+		return renderRedundancyCard(outcome)
 	}
 	return ""
+}
+
+func renderTenancyCard(outcome router.Outcome) string {
+	var res rules.TenancyNoticeResult
+	_ = json.Unmarshal([]byte(outcome.JSON), &res)
+	var b strings.Builder
+	b.WriteString(`<div class="computation tenancy">`)
+	fmt.Fprintf(&b, `<p class="outcome">Default notice: <strong>%s</strong> %s</p>`,
+		res.Notice, res.Citation)
+	b.WriteString(`<ul>`)
+	for _, n := range res.Notes {
+		fmt.Fprintf(&b, `<li>%s %s</li>`, n.Label, n.Citation)
+	}
+	b.WriteString(`</ul>`)
+	fmt.Fprintf(&b, `<p class="note">Jurisdiction: Lagos State only — other states have their own tenancy laws.</p>`)
+	fmt.Fprintf(&b, `<p class="basis">%s. Computed deterministically.</p>`, res.AsAt)
+	b.WriteString(`</div>`)
+	return b.String()
+}
+
+func renderRedundancyCard(outcome router.Outcome) string {
+	var res rules.RedundancyResult
+	_ = json.Unmarshal([]byte(outcome.JSON), &res)
+	var b strings.Builder
+	b.WriteString(`<div class="computation redundancy">`)
+	b.WriteString(`<p class="outcome">Redundancy entitlements [Labour Act 2004, s.20]</p>`)
+	b.WriteString(`<ul>`)
+	for _, r := range res.Rights {
+		fmt.Fprintf(&b, `<li>%s %s</li>`, r.Label, r.Citation)
+	}
+	if res.Notice != nil {
+		fmt.Fprintf(&b, `<li>Plus <strong>%s</strong> notice of termination (or payment in lieu) %s</li>`,
+			res.Notice.Notice, res.Notice.Citation)
+	}
+	b.WriteString(`</ul>`)
+	b.WriteString(`<p class="note">The Labour Act sets a duty to negotiate redundancy pay — not a fixed amount [s.20(1)(c)].</p>`)
+	fmt.Fprintf(&b, `<p class="basis">%s. Computed deterministically.</p>`, res.AsAt)
+	b.WriteString(`</div>`)
+	return b.String()
 }
 
 func renderPAYETable(outcome router.Outcome) string {

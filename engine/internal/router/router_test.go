@@ -4,6 +4,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"ofin/internal/rules"
 )
 
 var now = time.Date(2026, 7, 2, 0, 0, 0, 0, time.UTC)
@@ -113,17 +115,65 @@ func TestDurationFromText(t *testing.T) {
 	}
 }
 
-// Captured misroute (eval 2026-07-03 TN02): "how much notice must a
-// landlord give a yearly tenant" passed the notice gate and computed
-// LABOUR Act bands for a TENANCY question — a wrong-law answer invisible
-// to recall metrics. Tenancy contexts must veto the notice computation.
-func TestTenancyVetoBlocksNoticeComputation(t *testing.T) {
+// Evolution of the TN02 misroute fix: tenancy questions that reach the
+// notice computation now REDIRECT to the Lagos tenancy calculator instead
+// of falling to lookup — the right law, deterministically.
+func TestTenancyQuestionsRouteToTenancyCalculator(t *testing.T) {
 	p := &Params{Computation: "termination_notice", EmploymentYears: f(1)}
-	if _, ok := Computation(p, "How much notice must a landlord give a yearly tenant in Lagos?", now); ok {
-		t.Error("landlord/tenant notice must not route to the Labour Act computation")
+	out, ok := Computation(p, "How much notice must a landlord give a yearly tenant in Lagos?", now)
+	if !ok || out.Kind != "tenancy_notice" {
+		t.Fatalf("yearly-tenant question: got kind=%q ok=%v, want tenancy_notice", out.Kind, ok)
 	}
-	if _, ok := Computation(p, "My landlord served me a notice to quit after 1 year. Is it valid?", now); ok {
-		t.Error("notice-to-quit must not route to the Labour Act computation")
+	if !strings.Contains(out.Rendered, "six months") || !strings.Contains(out.Rendered, "s.13(1)(e)") {
+		t.Errorf("yearly tenant must get six months [s.13(1)(e)], got: %s", out.Summary)
+	}
+	// No parseable tenancy type -> falls through to lookup, never guesses.
+	p2 := &Params{Computation: "tenancy_notice"}
+	if _, ok := Computation(p2, "My landlord wants to evict me. What notice must he give?", now); ok {
+		t.Error("no tenancy type in question: must fall through, not guess a band")
+	}
+}
+
+func TestTenancyTypeFromText(t *testing.T) {
+	cases := []struct {
+		q    string
+		want rules.TenancyType
+		ok   bool
+	}{
+		{"I pay my rent monthly, how much notice to quit?", rules.TenancyMonthly, true},
+		{"I am a yearly tenant in Surulere", rules.TenancyYearly, true},
+		{"we pay rent half-yearly", rules.TenancyHalfYearly, true}, // must NOT match yearly
+		{"my quarterly tenancy", rules.TenancyQuarterly, true},
+		{"my fixed-term lease has expired", rules.TenancyFixedTerm, true},
+		{"my landlord wants me out", "", false},
+	}
+	for _, c := range cases {
+		got, ok := tenancyTypeFromText(c.q)
+		if ok != c.ok || got != c.want {
+			t.Errorf("tenancyTypeFromText(%q) = %q,%v want %q,%v", c.q, got, ok, c.want, c.ok)
+		}
+	}
+}
+
+// Redundancy questions get the full s.20 entitlement breakdown — including
+// when the extractor classified them as plain termination_notice.
+func TestRedundancyRouting(t *testing.T) {
+	p := &Params{Computation: "termination_notice", EmploymentYears: f(6)}
+	out, ok := Computation(p, "I was made redundant after 6 years. What am I entitled to?", now)
+	if !ok || out.Kind != "redundancy" {
+		t.Fatalf("redundancy question: got kind=%q ok=%v, want redundancy", out.Kind, ok)
+	}
+	if !strings.Contains(out.Rendered, "s.20(1)(c)") || !strings.Contains(out.Rendered, "one month") {
+		t.Errorf("must render s.20 rights + 6-year notice band, got: %s", out.Summary)
+	}
+	// Without tenure the rights still compute (tenure is optional here).
+	p2 := &Params{Computation: "redundancy"}
+	out2, ok := Computation(p2, "Dem retrench me for work, wetin be my entitlement?", now)
+	if !ok || out2.Kind != "redundancy" {
+		t.Fatalf("tenure-less redundancy must still compute, got ok=%v", ok)
+	}
+	if strings.Contains(out2.Rendered, "notice of termination (or payment in lieu)") {
+		t.Error("without tenure, no notice band should render")
 	}
 }
 
