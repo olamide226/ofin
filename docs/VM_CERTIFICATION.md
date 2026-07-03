@@ -14,8 +14,18 @@ the RAM cap is the test.
 ## 1. Base tooling
 
 ```bash
-sudo apt-get update && sudo apt-get install -y git curl unzip python3-venv python3-pip build-essential cmake
+sudo apt-get update && sudo apt-get install -y git curl unzip python3-venv python3-pip build-essential cmake libsqlite3-dev
 ```
+
+`libsqlite3-dev` is required — the Go engine links SQLite via CGo
+(`mattn/go-sqlite3` + `sqlite-vec`), and the build fails with
+`fatal error: sqlite3.h: No such file or directory` without it. (Verified on
+a fresh Hetzner box 2026-07-03.) Ubuntu's system Python loads SQLite
+extensions out of the box, so the ingest step needs no special interpreter
+(unlike the Mac dev setup, which needs Homebrew Python). Likewise the
+`EMBED_MAX_CHARS=1700` cap in `pipeline/ingest.py` is a Homebrew-llama.cpp
+workaround only — the Linux prebuilt (b9864) embeds full 1800-char texts
+without crashing.
 
 ## 2. llama.cpp (the profiler needs `llama-bench` on PATH)
 
