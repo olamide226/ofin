@@ -17,14 +17,16 @@ architecturally. Spike run on the target VM (Hetzner 4 vCPU / 7.6 GB,
 llama.cpp b9864, which does support `gemma4`).
 
 **Findings:**
-- **`gemma-4-E4B-it-Q4_K_M.gguf` is 4.7 GB on disk (vs Llama 3.2 3B at 1.9 GB)
-  and loads to 7.15 GB RSS at only ctx=2048.** Our production context is 6144
-  (bigger KV), and the shipped stack also runs an embedding server + Go engine
-  + SQLite alongside it. 7.15 GB + the rest breaches the 8 GB hard-DQ ceiling.
-- The "E4B = effective 4B" naming is misleading for our purposes: the nested
-  MatFormer / Per-Layer-Embedding design that makes it *behave* like 4B still
-  loads full weights in llama.cpp b9864 — no active-memory offload. We can't
-  ship on a hypothetical future PLE-streaming implementation.
+- **It is a 7.5-billion-parameter model, not 4B.** Verified from the GGUF
+  metadata: `general.size_label = 7.5B`, `block_count = 42`. The "E4B" name
+  counts only the ~4B params *activated per token*; all 7.5B are resident in
+  RAM. At Q4_K_M that is 4.7 GB on disk (vs Llama 3.2 3B at 1.9 GB) and **7.15
+  GB RSS at only ctx=2048** — measured on the VM after a clean health check.
+- Our production context is 6144 (bigger KV), and the shipped stack also runs
+  an embedding server + Go engine + SQLite alongside it. 7.15 GB + the rest
+  breaches the 8 GB hard-DQ ceiling. (Owner correctly flagged that "a 4B taking
+  7 GB" was implausible — the resolution is that it was never a 4B model in
+  memory terms; the E-series label counts activated, not total, params.)
 - Sliding-window attention would genuinely help prefill, but a model that OOMs
   never gets to demonstrate it. Speed is irrelevant if it doesn't fit.
 - Smaller options don't rescue it: harder quants (IQ2/Q3) than our Q4_K_M risk
