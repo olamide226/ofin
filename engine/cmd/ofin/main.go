@@ -41,6 +41,7 @@ func main() {
 	flag.StringVar(&cfg.ChatModel, "chat-model", cfg.ChatModel, "chat GGUF")
 	draft := flag.Bool("draft", false, "enable speculative decoding (demo machines only, ADR-012; needs the 1B draft GGUF in models-dev/)")
 	pidgin := flag.Bool("pidgin", false, "answer in Nigerian Pidgin regardless of question language")
+	flag.IntVar(&cfg.TopN, "topn", cfg.TopN, "fused sources per question (retrieval tuning)")
 	jsonOut := flag.Bool("json", false, "machine-readable JSON output")
 	port := flag.Int("port", 8090, "web UI port (serve)")
 	flag.Parse()

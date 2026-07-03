@@ -68,6 +68,14 @@ var intentGates = map[string]*regexp.Regexp{
 	"termination_notice": regexp.MustCompile(`(?i)notice|sack|dismiss|terminat|fire|lay.?off|redundan|resign`),
 }
 
+// tenancyVeto blocks the LABOUR notice computation for landlord/tenant
+// questions: "how much notice must a landlord give" passes the notice gate
+// but belongs to the Lagos Tenancy Law, not Labour Act s.11 (eval TN02
+// misroute — a wrong-law computed answer recall metrics cannot see).
+var tenancyVeto = regexp.MustCompile(`(?i)\b(landlord|tenant|tenancy|premises|quit)\b`)
+
+var digitRe = regexp.MustCompile(`\d`)
+
 // Computation runs the rules engine for the extracted parameters.
 // ok=false means the question falls through to the normal lookup path.
 func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
@@ -76,6 +84,9 @@ func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
 	}
 	switch p.Computation {
 	case "termination_notice":
+		if tenancyVeto.MatchString(question) {
+			return Outcome{}, false // tenancy notice is Lagos law, not s.11
+		}
 		months, ok := tenureMonths(p, question, now)
 		if !ok {
 			return Outcome{}, false
@@ -87,6 +98,13 @@ func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
 
 	case "paye":
 		if p.GrossIncome == nil || *p.GrossIncome <= 0 {
+			return Outcome{}, false
+		}
+		// The income figure must be traceable to the question: the
+		// extractor was observed inventing ₦70,000 for "I earn exactly the
+		// minimum wage" (eval XD05) — a computed answer built on a number
+		// the user never gave. ADR-010 applies to inputs, not just math.
+		if !digitRe.MatchString(question) {
 			return Outcome{}, false
 		}
 		annual := *p.GrossIncome
@@ -125,13 +143,19 @@ func tenureMonths(p *Params, question string, now time.Time) (float64, bool) {
 			return months, true
 		}
 	}
-	if p.EmploymentYears != nil && *p.EmploymentYears > 0 {
+	// Model-extracted years count only when the question itself contains
+	// SOME duration evidence (digits or a spelled-out duration) — the
+	// extractor invents figures for questions that state none (ADR-010
+	// applies to inputs, not just math).
+	qMonths, qOK := durationFromText(question)
+	if p.EmploymentYears != nil && *p.EmploymentYears > 0 &&
+		(qOK || digitRe.MatchString(question)) {
 		return *p.EmploymentYears * 12, true
 	}
 	// Fallback: the extractor was observed missing month-denominated
 	// tenures entirely ("18 months", eval CP05). When it extracted nothing,
-	// parse the first explicit duration from the question deterministically.
-	return durationFromText(question)
+	// use the question's first explicit duration, parsed deterministically.
+	return qMonths, qOK
 }
 
 var wordNumbers = map[string]float64{

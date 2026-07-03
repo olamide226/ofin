@@ -176,8 +176,13 @@ func (s *Store) Search(embedding []float32, question string, n int) ([]Chunk, er
 	// get a bounded QUOTA (at most hopSlots of the final n), never score
 	// competition: an earlier score-discount design let hop noise displace
 	// genuine leg hits (recall regressed on the golden set), while a quota
-	// can only ever cost the two weakest fused ranks.
-	const hopSeeds, hopSlots = 3, 2
+	// can only ever cost the weakest fused ranks.
+	//
+	// Slots fill BREADTH-FIRST across seeds (each seed's best hop before any
+	// seed's second): depth-first let the rank-1 seed consume every slot,
+	// starving the seed that actually held the needed edge (eval L19: s.81
+	// at rank 2 cites s.80, but both slots were spent on the rank-1 seed).
+	const hopSeeds, hopSlots = 5, 3
 	ranked := rank()
 	fusedTop := map[int64]bool{}
 	for i, r := range ranked {
@@ -186,12 +191,7 @@ func (s *Store) Search(embedding []float32, question string, n int) ([]Chunk, er
 		}
 		fusedTop[r.id] = true
 	}
-	var hops []int64
-	addHop := func(id int64) {
-		if !fusedTop[id] && len(hops) < hopSlots && !slices.Contains(hops, id) {
-			hops = append(hops, id)
-		}
-	}
+	var perSeed [][]int64
 	for i, r := range ranked {
 		if i >= hopSeeds {
 			break
@@ -200,16 +200,43 @@ func (s *Store) Search(embedding []float32, question string, n int) ([]Chunk, er
 		if err != nil {
 			continue
 		}
+		var mine []int64
+		addMine := func(id int64) {
+			if !fusedTop[id] && !slices.Contains(mine, id) {
+				mine = append(mine, id)
+			}
+		}
 		// Reverse edges first — statutes cite backwards (the exemption
 		// section cites the rule, never the other way), so a seed's
 		// exemptions/provisos are the chunks citing it.
 		for _, id := range s.reverseRefIDs(seed.ActShort, seed.SectionID) {
-			addHop(id)
+			addMine(id)
 		}
 		for _, ref := range seed.CrossRefs {
 			for _, id := range s.resolveRefIDs(seed.ActShort, ref) {
-				addHop(id)
+				addMine(id)
 			}
+		}
+		perSeed = append(perSeed, mine)
+	}
+	var hops []int64
+collect:
+	for round := 0; ; round++ {
+		progressed := false
+		for _, mine := range perSeed {
+			if round >= len(mine) {
+				continue
+			}
+			progressed = true
+			if id := mine[round]; !slices.Contains(hops, id) {
+				hops = append(hops, id)
+				if len(hops) == hopSlots {
+					break collect
+				}
+			}
+		}
+		if !progressed {
+			break
 		}
 	}
 

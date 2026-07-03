@@ -26,7 +26,16 @@ OFIN = REPO / "engine/bin/ofin"
 GOLDEN_FILES = sorted((REPO / "eval/golden").glob("*.jsonl"))
 RESULTS_DIR = REPO / "eval/golden/results"
 
-REFUSAL_MARKER = "do not answer"
+# Refusals in the wild use several phrasings (the system prompt's canonical
+# template plus the model's natural declines) — eval 2026-07-03 counted five
+# genuine refusals as failures because only one marker was checked.
+REFUSAL_MARKERS = (
+    "do not answer",
+    "do not cover this",
+    "not cover this area",
+    "can't provide",
+    "cannot provide",
+)
 
 
 def run_ofin(cmd: str, question: str) -> dict:
@@ -71,7 +80,7 @@ def evaluate(questions: list[dict], full: bool) -> dict:
             for r in receipts:
                 verdicts[r["verdict"]] += 1
             answer = report.get("answer", "")
-            refused = REFUSAL_MARKER in answer.lower()
+            refused = any(m in answer.lower() for m in REFUSAL_MARKERS)
             expected_refusal = q["category"] == "negative"
             row.update({
                 "verified": verdicts["verified"], "flagged": verdicts["flagged"],

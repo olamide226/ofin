@@ -27,7 +27,7 @@ func TestStartDateOutranksModelYears(t *testing.T) {
 
 func TestPayeMonthlyDefault(t *testing.T) {
 	p := &Params{Computation: "paye", GrossIncome: f(450_000)}
-	out, ok := Computation(p, "how much notice and tax do I get if they sack me?", now)
+	out, ok := Computation(p, "I earn 450,000 monthly, how much tax should they deduct?", now)
 	if !ok {
 		t.Fatal("expected computation")
 	}
@@ -109,6 +109,34 @@ func TestDurationFromText(t *testing.T) {
 		if ok != c.ok || (ok && got != c.months) {
 			t.Errorf("durationFromText(%q) = %v,%v want %v,%v", c.text, got, ok, c.months, c.ok)
 		}
+	}
+}
+
+// Captured misroute (eval 2026-07-03 TN02): "how much notice must a
+// landlord give a yearly tenant" passed the notice gate and computed
+// LABOUR Act bands for a TENANCY question — a wrong-law answer invisible
+// to recall metrics. Tenancy contexts must veto the notice computation.
+func TestTenancyVetoBlocksNoticeComputation(t *testing.T) {
+	p := &Params{Computation: "termination_notice", EmploymentYears: f(1)}
+	if _, ok := Computation(p, "How much notice must a landlord give a yearly tenant in Lagos?", now); ok {
+		t.Error("landlord/tenant notice must not route to the Labour Act computation")
+	}
+	if _, ok := Computation(p, "My landlord served me a notice to quit after 1 year. Is it valid?", now); ok {
+		t.Error("notice-to-quit must not route to the Labour Act computation")
+	}
+}
+
+// Captured invention (eval 2026-07-03 XD05): "I earn exactly the minimum
+// wage — do I pay income tax?" routed to PAYE with a ₦70,000 figure the
+// model made up. Computed figures must be traceable to the question.
+func TestInventedFiguresDoNotCompute(t *testing.T) {
+	p := &Params{Computation: "paye", GrossIncome: f(70_000)}
+	if _, ok := Computation(p, "I earn exactly the minimum wage in Nigeria. Do I pay income tax on it?", now); ok {
+		t.Error("paye must not compute from an income the question never stated")
+	}
+	p2 := &Params{Computation: "termination_notice", EmploymentYears: f(3)}
+	if _, ok := Computation(p2, "They sacked me without notice, wetin I fit do?", now); ok {
+		t.Error("notice must not compute from a tenure the question never stated")
 	}
 }
 

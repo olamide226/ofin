@@ -24,7 +24,8 @@ type Config struct {
 	DraftModel  string // optional: speculative decoding draft GGUF
 	EmbedPort   int
 	ChatPort    int
-	TopN        int
+	TopN        int // fused sources retrieved per question
+	PromptFullN int // of those, how many get full text in the prompt (rest are summarized)
 	MaxTokens   int
 	Temp        float64
 	ChatCtxSize int
@@ -40,9 +41,14 @@ func DefaultConfig(root string) Config {
 		// is not shipped by download_model.sh, and a default path here made
 		// the chat server crash on fresh clones. Opt in with `ofin -draft`.
 		DraftModel:  "",
-		EmbedPort:   8091,
-		ChatPort:    8092,
-		TopN:        6,
+		EmbedPort: 8091,
+		ChatPort:  8092,
+		// 8 fused sources, full text for the top 4 only: eval 2026-07-03
+		// found genuine hits parked at ranks 7-8 (L03, E08, XD02) after the
+		// corpus grew to 678 chunks. Widening the window while narrowing the
+		// full-text tier costs LESS prefill than the old 6-full layout.
+		TopN:        8,
+		PromptFullN: 4,
 		MaxTokens:   700,
 		Temp:        0.2,
 		ChatCtxSize: 6144, // trimmed from 8192 after prompt diet
@@ -226,7 +232,7 @@ func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 	}
 	messages := []llama.ChatMessage{
 		{Role: "system", Content: system},
-		{Role: "user", Content: answer.BuildUserMessage(question, chunks, a.Config.TopN)},
+		{Role: "user", Content: answer.BuildUserMessage(question, chunks, a.Config.PromptFullN)},
 	}
 	var full string
 	onToken := em.Token
