@@ -6,6 +6,39 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-016 — Gemma 4 E4B rejected as a base-model swap: 7.15 GB RSS breaks the 8 GB budget (2026-07-03)
+
+**Decision:** Stay on Llama 3.2 3B (ADR-006). Gemma 4 E4B is disqualified for
+Òfin on memory alone, before Pidgin quality even matters.
+
+**Context:** Gemma 4 (Google, Apr 2026) markets sliding-window attention and
+edge efficiency — a candidate to attack the prefill bottleneck (ADR-014)
+architecturally. Spike run on the target VM (Hetzner 4 vCPU / 7.6 GB,
+llama.cpp b9864, which does support `gemma4`).
+
+**Findings:**
+- **`gemma-4-E4B-it-Q4_K_M.gguf` is 4.7 GB on disk (vs Llama 3.2 3B at 1.9 GB)
+  and loads to 7.15 GB RSS at only ctx=2048.** Our production context is 6144
+  (bigger KV), and the shipped stack also runs an embedding server + Go engine
+  + SQLite alongside it. 7.15 GB + the rest breaches the 8 GB hard-DQ ceiling.
+- The "E4B = effective 4B" naming is misleading for our purposes: the nested
+  MatFormer / Per-Layer-Embedding design that makes it *behave* like 4B still
+  loads full weights in llama.cpp b9864 — no active-memory offload. We can't
+  ship on a hypothetical future PLE-streaming implementation.
+- Sliding-window attention would genuinely help prefill, but a model that OOMs
+  never gets to demonstrate it. Speed is irrelevant if it doesn't fit.
+- Smaller options don't rescue it: harder quants (IQ2/Q3) than our Q4_K_M risk
+  legal-citation precision; E2B (2B) is smaller than the incumbent 3B and
+  unlikely to beat it. Pidgin quality untested — moot given the memory DQ.
+
+**Consequence:** Base model stays Llama 3.2 3B. The prefill latency lever
+remains prompt size (ADR-015) and demo-UX masking, not a model swap. This
+re-vindicates ADR-006 on a new axis: memory fit, not just Pidgin.
+
+**Note for the record:** b9864's `llama-cli` dropped `-no-cnv` (use
+`llama-completion`); several first smoke tests failed on that flag change, not
+the model. The `gemma4` arch loads fine.
+
 ## ADR-015 — Prompt packing kept configurable but NOT enabled by default; app latency is not scored, accuracy is (2026-07-03)
 
 **Decision:** Source packing is now tunable (`answer.Pack`, CLI `-full-n /
