@@ -27,14 +27,17 @@ GOLDEN_FILES = sorted((REPO / "eval/golden").glob("*.jsonl"))
 RESULTS_DIR = REPO / "eval/golden/results"
 
 # Refusals in the wild use several phrasings (the system prompt's canonical
-# template plus the model's natural declines) — eval 2026-07-03 counted five
-# genuine refusals as failures because only one marker was checked.
-REFUSAL_MARKERS = (
-    "do not answer",
-    "do not cover this",
-    "not cover this area",
-    "can't provide",
-    "cannot provide",
+# template plus the model's natural declines). Substring lists proved too
+# rigid ("does not cover matters of divorce" missed every marker) — match
+# the shapes instead.
+import re
+REFUSAL_RES = (
+    # canonical template: "the provided statutes/sources do not cover ..."
+    re.compile(r"\b(provided\s+)?(statutes?|sources?)\s+do\s+not\s+cover\b"),
+    # act-as-subject refusals: "... does not cover matters of divorce"
+    re.compile(r"\bdo(es)?\s+not\s+cover\s+(matters?|this\s+area|questions?)\b"),
+    re.compile(r"\bdo\s+not\s+answer\b"),
+    re.compile(r"\bcan(no|')t\s+provide\b"),
 )
 
 
@@ -80,7 +83,7 @@ def evaluate(questions: list[dict], full: bool) -> dict:
             for r in receipts:
                 verdicts[r["verdict"]] += 1
             answer = report.get("answer", "")
-            refused = any(m in answer.lower() for m in REFUSAL_MARKERS)
+            refused = any(rx.search(answer.lower()) for rx in REFUSAL_RES)
             expected_refusal = q["category"] == "negative"
             row.update({
                 "verified": verdicts["verified"], "flagged": verdicts["flagged"],

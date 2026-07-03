@@ -104,7 +104,8 @@ func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
 		// extractor was observed inventing ₦70,000 for "I earn exactly the
 		// minimum wage" (eval XD05) — a computed answer built on a number
 		// the user never gave. ADR-010 applies to inputs, not just math.
-		if !digitRe.MatchString(question) {
+		// Digits or spelled-out amounts both count as evidence.
+		if !digitRe.MatchString(question) && !moneyEvidenceRe.MatchString(question) {
 			return Outcome{}, false
 		}
 		annual := *p.GrossIncome
@@ -167,12 +168,13 @@ var wordNumbers = map[string]float64{
 }
 
 var durationRe = regexp.MustCompile(
-	`(?i)\b(\d+(?:\.\d+)?|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|an?)[\s-]+(years?|months?)\b`)
+	`(?i)\b(\d+(?:\.\d+)?|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|an?)(\s+and\s+a\s+half)?[\s-]+(years?|months?)\b`)
 
 // durationFromText parses the first explicit duration in a question into
-// months. Digits or number words, years or months ("18 months", "three
-// years", "a year"). First match only — summing multiple mentions would
-// conflate tenure with an unrelated duration in the same sentence.
+// months. Digits or number words, years or months, "and a half" ("18
+// months", "three years", "two and a half years", "a year"). First match
+// only — summing multiple mentions would conflate tenure with an unrelated
+// duration in the same sentence.
 func durationFromText(text string) (float64, bool) {
 	m := durationRe.FindStringSubmatch(text)
 	if m == nil {
@@ -187,11 +189,19 @@ func durationFromText(text string) (float64, bool) {
 	if n <= 0 {
 		return 0, false
 	}
-	if strings.HasPrefix(strings.ToLower(m[2]), "year") {
+	if m[2] != "" {
+		n += 0.5
+	}
+	if strings.HasPrefix(strings.ToLower(m[3]), "year") {
 		n *= 12
 	}
 	return n, true
 }
+
+// moneyEvidenceRe: a question stating an amount in words ("seventy thousand
+// naira") is evidence for a model-extracted income even without digits
+// (eval H15 — the guard must not block spelled-out figures).
+var moneyEvidenceRe = regexp.MustCompile(`(?i)\b(thousand|million|billion)\b`)
 
 func tenureFromStart(startRaw string, now time.Time) (float64, bool) {
 	raw := strings.ToLower(startRaw)

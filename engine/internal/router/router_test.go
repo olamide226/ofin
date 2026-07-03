@@ -103,6 +103,7 @@ func TestDurationFromText(t *testing.T) {
 		{"2.5 years", 30, true},
 		{"worked there since forever", 0, false},
 		{"eighteen-months", 18, true},
+		{"two and a half years at my job", 30, true}, // eval H13
 	}
 	for _, c := range cases {
 		got, ok := durationFromText(c.text)
@@ -137,6 +138,19 @@ func TestInventedFiguresDoNotCompute(t *testing.T) {
 	p2 := &Params{Computation: "termination_notice", EmploymentYears: f(3)}
 	if _, ok := Computation(p2, "They sacked me without notice, wetin I fit do?", now); ok {
 		t.Error("notice must not compute from a tenure the question never stated")
+	}
+}
+
+// Spelled-out figures ARE question evidence (eval H15: "seventy thousand
+// naira" blocked by the digit guard despite the model extracting it right).
+func TestSpelledOutFiguresCompute(t *testing.T) {
+	p := &Params{Computation: "paye", GrossIncome: f(70_000)}
+	out, ok := Computation(p, "My monthly pay is seventy thousand naira, the national minimum wage. Should PAYE tax be deducted?", now)
+	if !ok {
+		t.Fatal("spelled-out income must count as question evidence")
+	}
+	if !strings.Contains(out.Summary, "exempt") {
+		t.Errorf("minimum-wage earner must be exempt, got: %s", out.Summary)
 	}
 }
 
