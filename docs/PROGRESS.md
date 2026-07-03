@@ -14,7 +14,32 @@
 | "18 months" extractor (CP05) | done | Two layers: extraction-prompt hint (months → fractional years) + deterministic fallback — when the model extracts no tenure, the question's first explicit duration ("18 months", "three years", digits or words) is parsed in Go. Precedence: start date > model years > question regex. Table-driven tests incl. Pidgin phrasing |
 | Pidgin answer toggle | done | `ofin -pidgin` flag + web UI pill toggle (persisted): appends `answer.PidginDirective` to the system prompt — answers in Pidgin whatever language the question used, citations stay bracket-format for the verifier. Targets +15% African Alpha / Best Localisation |
 
-Remaining Week 6 worklist: 90-question eval baseline (running), top-N tuning,
+### 90-question eval — three calibration rounds (2026-07-03)
+
+| Metric | v1 | v2 | v3 |
+|---|---|---|---|
+| Recall (90-Q set) | 63% | 70% | **70%** |
+| Recall (old-68 subset) | 71% | 78% | **78%** |
+| Citation precision | 77% | 82% | **84%** |
+| Failed-after-regen | 20 | 13 | **7** |
+| Refusal calibration | 85/90 | 85/90 | **88/90** |
+| Rules-engine routed | 15 (2 misroutes) | 11 | **13 (0 misroutes)** |
+
+Per-round fixes: v1→v2 routing guards (tenancy veto, question-evidence for
+figures), retrieval tuning (8 fused / 4 full-text, breadth-first hops),
+golden-set corrections (XD01/TX07 cited derivation rules instead of the s.50
+severance exemption / NTAA s.14 PAYE machinery), regeneration context-overflow
+fix. v2→v3 "and a half" durations, spelled-figure evidence, narrower refusal
+trigger + partial-answer duty, shape-based refusal detection in the harness.
+
+**Known remaining misses (documented, ranked):**
+1. Cross-domain recall 2/11 — structural; needs query decomposition (post-freeze candidate) or better cross-act seeding
+2. TX03 "what are the tax bands" refuses — s.58 never seeds (NTA margin-note artifacts pollute its embedding; the corpus-polish item is now load-bearing). Schedule-ordinal hop resolution landed (sch.7 follows s.58 whenever s.58 seeds)
+3. E02 — ECA s.5 missing from corpus (transcription dropout; needs source gazette)
+4. L19 (s.80) / N02 (s.4) — hop-quota lottery; principled fix is a reranker
+5. N03 — Pidgin phrasing retrieves poorly against statutory English (Pidgin query normalization, Week 7 candidate)
+
+Remaining Week 6 worklist: NTA margin-note cleanup (promoted — see TX03),
 context 6144→4096 + VM re-measure, test_prompts selection, evidence pack.
 
 ## Week 5 (July 29–Aug 4, started early July 2) — Performance + UX

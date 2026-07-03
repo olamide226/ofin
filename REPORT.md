@@ -61,16 +61,21 @@ statutory text — "answers with receipts".
 | Retrieval recall@6 | 84% (31/37) | cross-ref hop raised from 81% |
 | Citation precision | 91% (52/57) | all claims ✓/⚠/✗-marked |
 
-### Three-domain baseline (68 questions, Week 4–5 with prompt diet)
+### Three-domain hardened baseline (90 questions, 8 acts, 2026-07-03)
 
-| Metric | Value (2026-07-02) | Notes |
+| Metric | Value | Notes |
 |---|---|---|
-| Retrieval recall@6 | **76%** (45/59) | cross-domain 1/5; cross-act edges Week 6 |
-| Citation precision | **78%** (116/148) | 28 flagged, 4 failed |
-| Computed answers | 7 routed | PAYE, notice — verified by construction |
-| Refusal calibration | **65/68** | out-of-scope correctly refused |
-| Regeneration rate | 10/68 | single constrained retry, hard cap 1 |
-| Prompt diet | recall unchanged, precision −1pt | SystemPrompt −30%, companions 800 chars, ctx 6144 |
+| Retrieval recall | **70%** (55/79) | 90-Q set incl. 22 deliberately hard hardening questions; old-68 subset: 78% |
+| Citation precision | **84%** (173/207) | 27 flagged, 7 failed — all ✓/⚠/✗-marked in the UI |
+| Computed answers | 13 routed, 0 misroutes | question-evidence guards: figures must be traceable to the question (ADR-010 extended to inputs) |
+| Refusal calibration | **88/90** | canonical refusal template + partial-answer duty |
+| Regeneration rate | 12/90 | single constrained retry, context-budget-aware |
+| Corpus | 678 chunks, 8 acts | incl. Nigeria Tax Administration Act 2025 (PAYE machinery) |
+
+Three same-day calibration rounds (v1 63%/77% → v3 70%/84%); every fix is
+pinned by a unit test or corrected golden expectation. Remaining misses are
+documented and ranked in docs/PROGRESS.md (cross-domain query decomposition,
+one corpus transcription gap, Pidgin query normalization).
 
 Verifier coverage note: prose citations ("Section 11(3) of the Labour Act
 2004") are parsed and resolved, not just bracket tokens — coverage tripled
