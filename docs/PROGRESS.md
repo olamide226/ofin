@@ -54,6 +54,13 @@ function saved for the restart:
 `re.compile(r'^(.{55,}?)\s{6,}(\S.{0,45})$')` → keep group(1). Left-margin needs
 a column-detection companion.
 
+### Plan-audit closures (2026-07-04)
+
+| Item | Status | Notes |
+|---|---|---|
+| Pillar 2 completion: tenancy + redundancy calculators | **done** | Rules engine now has 4 computation kinds. Tenancy: s.13(1) bands by tenancy type (deterministic type parse from question, per the input-evidence rule), arrears-lapse notes s.13(2)/(3), fixed-term s.13(5) 7-day rule, stipulation caveat + Lagos jurisdiction flag. Redundancy: **corrected the plan's assumption after reading the gazette — s.20 prescribes NO severance formula** (duty to negotiate, s.20(1)(c)); encoded as an honest entitlement breakdown (union notice, LIFO, negotiated pay) + the s.11 notice band from tenure. Kind normalization re-routes tenancy-notice questions the extractor mislabels. Guard eval: TN01+TN02 now compute deterministically, 14/19 routed, no regressions |
+| Tri-language spike (Yoruba/Hausa/Igbo) | **rejected — ADR-017** | Retrieval collapses on non-English queries AND Llama 3.2 3B cannot translate them (hallucinated translations at temp 0). Mistranslation → confident wrong legal answer = harm. African-language claim scoped to Pidgin only, honestly |
+
 ### Week 6 close-out
 
 Landed: web UI + chat history, verifier latency cache, cross-act + schedule

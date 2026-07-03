@@ -6,6 +6,38 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-017 — African-language scope is Pidgin-only: Yoruba/Hausa/Igbo query understanding is not achievable with the onboard model (2026-07-04)
+
+**Decision:** The African Alpha (+15%) and localisation claims rest on
+**Nigerian Pidgin only**. Yoruba, Hausa, and Igbo query understanding is
+explicitly out of scope and will not be claimed.
+
+**Context:** The master plan's Pillar 3 called for tri-language query
+understanding (query in local language → retrieve in English → answer in
+English/Pidgin). Spiked 2026-07-04 with the same 3-year-notice question
+translated into all three languages.
+
+**Findings:**
+1. **Retrieval collapses** for all three languages (English embeddings +
+   FTS): the Yoruba/Hausa/Igbo queries surfaced random tax/tenancy sections;
+   the English control put Labour Act s.11 at rank 1. A translation pre-step
+   would be required.
+2. **The onboard model cannot provide that step.** Llama 3.2 3B asked to
+   translate to English produced: Yoruba → total hallucination ("My mother
+   taught me a skill for my village"), Hausa → garbled nonsense, Igbo → half
+   right, half invented. Temperature 0.
+3. In a legal product this failure mode is **dangerous, not just degraded**: a
+   silently mistranslated question becomes a confident, cited answer to the
+   wrong question. No warning the user could act on.
+
+**Alternatives considered:** dedicated translation model on-device (RAM budget
++ another model to certify — out of proportion for a bonus layer); cloud
+translation (violates the offline guarantee); shipping it anyway with a
+disclaimer (rejected — harm potential, and judges reward candour over
+checkbox features). Pidgin remains genuinely strong (bake-off 7/8, toggle
+shipped) and is a real African language with tens of millions of speakers —
+the claim stands on it honestly.
+
 ## ADR-016 — Gemma 4 E4B rejected as a base-model swap: 7.15 GB RSS breaks the 8 GB budget (2026-07-03)
 
 **Decision:** Stay on Llama 3.2 3B (ADR-006). Gemma 4 E4B is disqualified for
