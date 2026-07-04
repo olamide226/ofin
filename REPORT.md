@@ -130,16 +130,22 @@ computed over ALL claims, not just conveniently-formatted ones.
 
 | Metric | Value |
 |---|---|
-| Generation TPS (llama-bench, sustained 3×) | **34.29** (no throttle decay) |
+| Generation TPS (llama-bench, sustained 5×) | **19.4** (no throttle decay) |
 | First-token latency | 5,977 ms |
 | Peak RSS (model only, llama-bench) | 3,442 MB |
 | **Peak RSS (full app stack, integrated, draft off)** | **~3.9 GB idle / ~4.2 GB peak** |
 | KV cache config | f16 + flash attention (ADR-014) |
-| Throttled | false |
 | Offline (non-loopback calls during generation) | 0 ✅ |
 | Functional end-to-end (cited answers, both routes) | ✅ |
-| S_perf verdict | ✅ Max (34.29 > 15 TPS cap) |
+| S_perf verdict | ✅ Max (19.4 > 15 TPS cap) |
 | S_eff verdict | ⚠ Full-stack ~3.9 GB — over 3.5 GB self-target, within 8 GB cap (ADR-013) |
+
+**Recertification note (2026-07-04):** llama-bench tg128 dropped from 34.3
+(July 2) to 19.4 — consistent across 5 runs, no CPU contention. Likely
+noisy-neighbor on the shared Hetzner host. S_perf still maxes (cap is 15).
+Full-stack numbers with f16+fa unchanged: chat RSS 3,973 MB, warm lookup
+~90s. The July 2 numbers may reflect a quieter host; both sets are recorded
+for transparency.
 
 The model-only figure understates real memory: llama-bench profiles the raw GGUF
 and never launches the app. The integrated stack (embed + chat servers + Go

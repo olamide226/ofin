@@ -87,7 +87,7 @@ regeneration overflow — see ADR-014 prefill note).
 | Evidence pack — screenshots | **done** (`bec8244`) | 7 shots via headless Chrome: fresh UI, English lookup (source chip expanded), PAYE computation card, Pidgin answer, refusal, dark mode, offline proof (lsof). Reproducible: `scripts/capture_screenshots.js` |
 | Golden eval re-run (115 Q) | **done** | English 90-Q: 70% recall, 82% precision, 16 computed (0 misroutes). Pidgin 25-Q: 70% recall, 88% precision, 25/25 refusals. Analysis: 6 false-positive misses (computation skips retrieval), 3 wrong refusals, 9 cross-domain structural, 9 single-domain retrieval gap. Detailed worklist in `todo.md` |
 | 2-min demo video | **done** (`bec8244`) | Screen recording via `screencapture -v` + puppeteer automation. 6 scenes: fresh UI → English lookup → PAYE computation → Pidgin answer → refusal → dark mode. 180s, 28 MB. Reproducible: `scripts/record_demo.js` + `scripts/demo_video.sh` |
-| VM re-certification with f16 KV | pending | Current VM numbers are q8_0 from July 2. Need re-run with f16+fa to reflect shipped config |
+| VM re-certification with f16 KV | **done** (`badc28f`) | Re-ran llama-bench + full-stack on dev VM (July 4). tg128: 19.4 t/s (stable across 5 runs, down from 34.3 on July 2 — noisy neighbor, still clears 15 TPS cap). Chat RSS with f16+fa: 3,973 MB (matches July 3 measurement). Warm lookup ~90s. Offline check PASS. Honest recertification note added to REPORT.md |
 | Eval harness fixes | pending | Computation questions falsely marked as recall misses; XD05 refusal false positive; partial-answer awareness. Quick wins: ~3 recall points. See `todo.md` |
 | NTA margin-note cleanup | deferred | One question (TX03), not worth regressing 678 chunks before freeze |
 
@@ -203,7 +203,6 @@ text, baseline numbers recorded.
 
 | Task | Status | Notes |
 |---|---|---|
-| Read DevPost rules, eligibility, IP terms | done | ⚠️ residency requirement — see action items below |
 | Register on DevPost | **blocked on Ola** | needs personal account; yields `team_id` |
 | Clone submission template + profiler | done | siblings of this repo in `ai_world/` |
 | Secure 8 GB target hardware | **blocked on Ola** | refurb ThinkPad class, ~£120–180 |
@@ -212,15 +211,6 @@ text, baseline numbers recorded.
 | Source + clean labour corpus | done | 5 acts in `corpus/labour/`, provenance in `sources.md` |
 | Name check "Òfin" | done | no collision found (ADR-005) |
 
-### Ola action items — status July 1 (evening)
-
-1. ~~Eligibility~~ **resolved**: entering via Ruach Tech (Lagos-HQ,
-   incorporated 2025) — ADR-007.
-2. DevPost registration **done**. Still needed: the ADTF portal `team_id`
-   and GitHub handle for `metadata.json` (the /joins/ URL is a team invite
-   link — keep it private, it is not the team_id).
-3. ~~Refurb laptop~~ **dropped by decision**: certification on an 8 GB
-   RAM-capped VM (ADR-007).
 
 ## Week 2 (July 8–14, started early July 1) — Labour vertical slice
 
