@@ -29,3 +29,4 @@ CLAUDE.md
 
 # Secrets
 .env
+model/ofin-model-vanilla-backup.gguf
