@@ -77,10 +77,15 @@ def evaluate(questions: list[dict], full: bool) -> dict:
                          "error": str(e)[-300:], "wall_s": round(time.time() - t0, 1)})
             print(f"  ✗ {q['id']} ERROR: {str(e)[-120:]}", flush=True)
             continue
+        # Computation questions skip retrieval — the rules engine computes
+        # directly from the statute, so expected_sections are never retrieved.
+        # Don't mark them as recall misses.
+        is_computed = report.get("computation") is not None
         row = {
             "id": q["id"], "category": q["category"], "language": q["language"],
-            "recall": expected_hit(q["expected_sections"], report["retrieved"])
-                      if q["expected_sections"] else None,
+            "recall": None if is_computed else
+                      (expected_hit(q["expected_sections"], report["retrieved"])
+                       if q["expected_sections"] else None),
             "wall_s": round(time.time() - t0, 1),
         }
         if full:
@@ -89,7 +94,15 @@ def evaluate(questions: list[dict], full: bool) -> dict:
             for r in receipts:
                 verdicts[r["verdict"]] += 1
             answer = report.get("answer", "")
-            refused = any(rx.search(answer.lower()) for rx in REFUSAL_RES)
+            # A refusal phrase alone doesn't mean a refusal if the answer
+            # already provided valid citations — it's a partial answer, not
+            # a pure refusal (H02: answered tenancy half, missed tax half;
+            # XD05: long correct answer with contradictory refusal tail;
+            # TX06: prose citations without brackets).
+            has_citation = re.search(r"\[[\w\s]+\d{4},\s*s\.\d+", answer) or \
+                           re.search(r"[Ss]ection\s+\d+[\w.]*\s+of\s+the\s+[\w\s']+Act", answer)
+            refused = any(rx.search(answer.lower()) for rx in REFUSAL_RES) and \
+                      not has_citation
             expected_refusal = q["category"] == "negative"
             row.update({
                 "verified": verdicts["verified"], "flagged": verdicts["flagged"],
