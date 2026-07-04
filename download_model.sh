@@ -5,9 +5,10 @@
 set -euo pipefail
 
 # Base model locked 2026-07-01 by bake-off (docs/DECISIONS.md ADR-006).
-# Final submission may point to a Ruach Tech HF repo with the system prompt
-# baked into the chat template (Week 7 packaging).
-MODEL_URL="https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q4_K_M.gguf"
+# Baked with Òfin system prompt in chat template 2026-07-04
+# (scripts/bake_chat_template.py). Vanilla upstream:
+# https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF
+MODEL_URL="https://huggingface.co/olamide226/ofin-model/resolve/main/ofin-model.gguf"
 MODEL_PATH="model/ofin-model.gguf"
 EXPECTED_MIN_BYTES=1500000000  # sanity floor: a 3B Q4_K_M is ~2 GB
 
