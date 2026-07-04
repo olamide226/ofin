@@ -79,12 +79,17 @@ regeneration overflow — see ADR-014 prefill note).
 | Task | Status | Notes |
 |---|---|---|
 | metadata.json test_prompts | done | Real prompts: tp_001 redundancy+notice (6 years, Lagos) + tp_002 Pidgin sacking (4 years, "wetin I fit do"). language_scope honest `["en","pcm"]` per ADR-017 |
-| Pidgin eval set (25 Q) | **done** (`039cf41`) | `eval/golden/pidgin.jsonl` + `pidgin-notes.md`. ~10 labour, ~4 tenancy, ~5 tax/NMW/ECA, ~3 computation, ~1 cross-domain, ~2 negative. Every expected_section verified against `data/chunks-sac/*.json`. Key fixes during authoring: tax bands in Fourth Schedule not Sixth, self-help eviction in s.8+s.44 not s.14, sick leave no 2-day threshold, s.13(2) tenancy lapse not one-week notice, maternity pay in s.54(1)(c) not s.54(4). Unlocks the Pidgin fine-tuning decision |
-| GGUF chat template baking | candidate | Baked `Òfin` persona into `/tmp/ofin-model-baked.gguf` (1.9 GB, tested standalone on port 8096). Pidgin tone + legal-assistant framing activates without a system prompt. But still hallucinates s.57 and wrong notice bands — proves Òfin's system thesis. Held: decision on whether to ship the baked GGUF or keep the vanilla one (ADR-014's f16+fa config is separate from this) |
-| Evidence pack | **next** | Screenshots + screen recording for submission. Need running `ofin serve` instance |
-| README reproduction instructions | pending | Step-by-step from `git clone` to running answers |
-| REPORT.md final | pending | Polish, update with final numbers, cross-check against metadata.json |
-| NTA margin-note cleanup | deferred | Scoped (bimodal gazette layout), low-risk corpus polish. Defer to post-freeze or drop — one question (TX03) isn't worth regressing 678 chunks |
+| Pidgin eval set (25 Q) | **done** (`039cf41`) | 25 Pidgin questions, every section verified against chunks-sac. First run: 70% recall, 88% precision, 25/25 refusals, 10 computed. Pidgin retrieval = English retrieval (both 70%) — no Pidgin penalty |
+| GGUF chat template baking | **shipped** (`e4d713a`) | Òfin persona baked into `tokenizer.chat_template` via byte-accurate binary patch (624-byte swap). Explicit topic enumeration (v2 persona) to prevent over-refusal. Vanilla backup: `model/ofin-model-vanilla-backup.gguf` |
+| Model hosting (Hugging Face) | **done** (`8eedeca`) | `olamide226/ofin-model` (public). `download_model.sh` pulls the baked GGUF. Fresh clones get Òfin persona out of the box |
+| README reproduction instructions | **done** (`b421988`) | Clone→model→build→ingest→ask→serve. Architecture diagram, system requirements table, eval table, key ADRs summary |
+| REPORT.md final | **done** (`f5cdb7f`) | Week 7 status, honest limitations (Lagos-only tenancy, no case law, known corpus gaps, Pidgin-only scope), f16 KV update |
+| Evidence pack — screenshots | **done** (`bec8244`) | 7 shots via headless Chrome: fresh UI, English lookup (source chip expanded), PAYE computation card, Pidgin answer, refusal, dark mode, offline proof (lsof). Reproducible: `scripts/capture_screenshots.js` |
+| Golden eval re-run (115 Q) | **done** | English 90-Q: 70% recall, 82% precision, 16 computed (0 misroutes). Pidgin 25-Q: 70% recall, 88% precision, 25/25 refusals. Analysis: 6 false-positive misses (computation skips retrieval), 3 wrong refusals, 9 cross-domain structural, 9 single-domain retrieval gap. Detailed worklist in `todo.md` |
+| 2-min demo video | **done** (`bec8244`) | Screen recording via `screencapture -v` + puppeteer automation. 6 scenes: fresh UI → English lookup → PAYE computation → Pidgin answer → refusal → dark mode. 180s, 28 MB. Reproducible: `scripts/record_demo.js` + `scripts/demo_video.sh` |
+| VM re-certification with f16 KV | pending | Current VM numbers are q8_0 from July 2. Need re-run with f16+fa to reflect shipped config |
+| Eval harness fixes | pending | Computation questions falsely marked as recall misses; XD05 refusal false positive; partial-answer awareness. Quick wins: ~3 recall points. See `todo.md` |
+| NTA margin-note cleanup | deferred | One question (TX03), not worth regressing 678 chunks before freeze |
 
 ## Week 5 (July 29–Aug 4, started early July 2) — Performance + UX
 
