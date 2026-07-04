@@ -3,10 +3,7 @@
   "domain": "corporate_enterprise",
   "language_scope": [
     "en",
-    "pcm",
-    "yo",
-    "ha",
-    "ig"
+    "pcm"
   ],
   "african_alpha_claim": true,
   "budget_laptop_claim": true,
@@ -18,16 +15,16 @@
   "cross_disciplinary_pairing": {
     "discipline": "law",
     "load_bearing": true,
-    "description": "Neuro-symbolic legal assistant: the LLM handles language understanding and cited explanation over Nigerian labour/tenancy/tax statutes, while a deterministic rules engine (PAYE tax bands, severance and notice-period computations encoded from statute) performs all calculations. A deterministic citation verifier checks every legal claim against the local corpus before display. Remove either component and the product breaks."
+    "description": "Neuro-symbolic legal assistant: the LLM handles language understanding and cited explanation over Nigerian labour/tenancy/tax statutes (8 acts), while a deterministic rules engine performs all statutory computation — PAYE tax bands, employment notice periods, Lagos tenancy notice bands, and redundancy entitlements, each encoded from the gazette text. A deterministic citation verifier checks every legal claim against the local corpus before display; failed claims trigger one constrained regeneration. Remove either component and the product breaks."
   },
   "test_prompts": [
     {
       "prompt_id": "tp_001",
-      "prompt": "PLACEHOLDER — selected strategically in Week 6 per plan"
+      "prompt": "My employer in Lagos made me redundant after 6 years of service. What are my entitlements under Nigerian labour law?"
     },
     {
       "prompt_id": "tp_002",
-      "prompt": "PLACEHOLDER — selected strategically in Week 6 per plan"
+      "prompt": "My oga sack me from work without notice, and I don work there for 4 years. Wetin I fit do under Nigeria labour law?"
     }
   ],
   "model": {
