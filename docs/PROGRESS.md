@@ -74,6 +74,18 @@ test_prompts selection, evidence pack, Pidgin eval set (unlock for the
 fine-tuning differentiation thread). Dropped: ctx 6144→4096 (would worsen the
 regeneration overflow — see ADR-014 prefill note).
 
+## Week 7 (Aug 12–18, started early July 4) — Submission packaging
+
+| Task | Status | Notes |
+|---|---|---|
+| metadata.json test_prompts | done | Real prompts: tp_001 redundancy+notice (6 years, Lagos) + tp_002 Pidgin sacking (4 years, "wetin I fit do"). language_scope honest `["en","pcm"]` per ADR-017 |
+| Pidgin eval set (25 Q) | **done** (`039cf41`) | `eval/golden/pidgin.jsonl` + `pidgin-notes.md`. ~10 labour, ~4 tenancy, ~5 tax/NMW/ECA, ~3 computation, ~1 cross-domain, ~2 negative. Every expected_section verified against `data/chunks-sac/*.json`. Key fixes during authoring: tax bands in Fourth Schedule not Sixth, self-help eviction in s.8+s.44 not s.14, sick leave no 2-day threshold, s.13(2) tenancy lapse not one-week notice, maternity pay in s.54(1)(c) not s.54(4). Unlocks the Pidgin fine-tuning decision |
+| GGUF chat template baking | candidate | Baked `Òfin` persona into `/tmp/ofin-model-baked.gguf` (1.9 GB, tested standalone on port 8096). Pidgin tone + legal-assistant framing activates without a system prompt. But still hallucinates s.57 and wrong notice bands — proves Òfin's system thesis. Held: decision on whether to ship the baked GGUF or keep the vanilla one (ADR-014's f16+fa config is separate from this) |
+| Evidence pack | **next** | Screenshots + screen recording for submission. Need running `ofin serve` instance |
+| README reproduction instructions | pending | Step-by-step from `git clone` to running answers |
+| REPORT.md final | pending | Polish, update with final numbers, cross-check against metadata.json |
+| NTA margin-note cleanup | deferred | Scoped (bimodal gazette layout), low-risk corpus polish. Defer to post-freeze or drop — one question (TX03) isn't worth regressing 678 chunks |
+
 ## Week 5 (July 29–Aug 4, started early July 2) — Performance + UX
 
 | Task | Status | Notes |
