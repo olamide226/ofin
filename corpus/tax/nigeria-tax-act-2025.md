@@ -1,12 +1,12 @@
 # Nigeria Tax Act, 2025 (Act No. 7)
 
 Federal Republic of Nigeria
-No. 117                              Lagos - 26th June 2025                                    Vol. 112
+No. 117                              Lagos - 26th June 2025
 
 Government Notice No. 26
     .
-Act No.                                           Short Title                                     Page
-   7 Nigeria Tax Act, 2025           ..      ..      ..     ..      ..       ..       ..   A385-A597
+Act No.                                           Short Title
+   7 Nigeria Tax Act, 2025           ..      ..      ..     ..
 
               Printed and Published by The Federal Government Printer, Lagos, Nigeria
                                          FGP 29/72025/500
@@ -19,30 +19,29 @@ Gazette after 1st January should apply to the Federal Government Printer, Lagos 
                                             ARRANGEMENT OF SECTIONS
 
 Section:
-                      CHAPTER 1                                Part V – Ascertainment of Assessable Profits
-              OBJECTIVE AND APPLICATION                                        and Income
+                      CHAPTER 1
+              OBJECTIVE AND APPLICATION
 1.    Objective                                             22. Basis for computing assessable profits for trade
-2.    Application                                               or business
-                                                            23. Change in accounting date
+2.    Application
                      CHAPTER 2                              24. Cessation of trade or business
             TAXATION OF INCOME OF PERSON                    25. Continuity of trades
        Part I – Imposition of Tax on Income                 26. Basis for computing assessable income
                   Profits or Gains
-                                                                Part VI – Ascertainment of Total Profits of
+
 3.    Imposition of tax
-                                                                                Companies
+
 4.    Income, profits or gains chargeable to tax
 5.    Chargeability to tax                                  27. Ascertainment of total profits of companies
 
-        Part 1I – Taxation of Resident Persons                 Part VII – Ascertainment of Total Income of
-                                                                              an Individual
+        Part 1I – Taxation of Resident Persons
+
 6.    Nigerian company                                      28. Total income of an individual
 7.    Nigerian dividends                                    29. Presumptive taxation
 8.    Profits of a company from certain dividends           30. Ascertainment of chargeable income of individuals
 9.    Substitution of dividend for total profit             31. Deductions to be claimed
 10.   Certain undistributed profits may be treated as       32. Proof of claims
       distributed
-11.   Partnership of companies                                     Part VIII – Ascertainment of Chargeable
+11.   Partnership of companies
 12.   Resident individual
                                                             33.   Chargeable gains Gains
 13.   Employment income
@@ -70,52 +69,50 @@ Section:
 20. Deductions allowed
                                                             47.   Indirect transfer of ownership of companies or
 21. Deductions not allowed
-                                                                  assets
+
 
 48. Life assurance policies                                 82. Expense deductibility
 49. Rights under policies of insurance, other than life     83. Basis period for income tax on petroleum
-    assurance policies                                          operations
+    assurance policies
 50. Personal injury                                         84. Additional income tax payable in certain
-51. Principal private residences                                circumstances
+51. Principal private residences
 52. Personal chattels                                       85. Non-associated gas greenfield developments in
-53. Motor vehicles                                              onshore and shallow water terrains
+53. Motor vehicles
 54. Gifts                                                   86. Provision relating to decommissioning and
-55. Assets held in trust for charities                          abandonment of funds
+55. Assets held in trust for charities
                                                             87. General application of this Part and other matters
               Part IX – Rates of Tax                        88. Fiscal stabilisation
 56. Rate of tax for companies                               89. Petroleum royalty
 57. Effective tax rate
-58. Rates of tax for individuals                                    Part II - Petroleum Profits Tax
-                                                                 Imposition of Tax and Ascertainment of
-            Part X – Development Levy                             Chargeable Profits, Ascertainment of
-                                                                 Assessable Tax and of Chargeable Tax
+58. Rates of tax for individuals
+
+            Part X – Development Levy
+
 59. Development levy
                                                             90. Charge of petroleum profits tax
     Part XI – Specialised Trade or Business                 91. Ascertainment of profits, adjusted profit,
-60. Export processing and export free trade zone entities        assessable profits and chargeable profits
+60. Export processing and export free trade zone entities
 61. Insurance trade or business                             92. Deductions allowed
 62. Lottery and gaming trade or business                    93. Incentives for utilisation of associated gas
 63. Collective investment scheme                            94. Application of incentives to utilisation of non-
-64. Mining operations                                            associated gas
-                                                            95. Deductions not allowed
-                                                            96. Exclusion of certain profits
+64. Mining operations
                      CHAPTER 3
                                                             97. Assessable profits and losses
    TAXATION OF INCOME FROM PETROLEUM OPERATIONS
                                                             98. Chargeable profits and capital allowances
     Part I - Hydrocarbon Tax, Ascertainment of              99. Assessable petroleum profits tax
    Chargeable Tax, Ascertainment of Chargeable              100. Additional chargeable tax payable in certain
-    Profits and Consolidation for Tax Purposes                   circumstances
+    Profits and Consolidation for Tax Purposes
 65. Application of this Part                                101. Partnerships
 66. Charge of hydrocarbon tax
-67. Ascertainment of crude oil revenue, adjusted profit,        Part III - Deep Offshore And Inland Basin
-    assessable profits                                                Production Sharing Contracts
+67. Ascertainment of crude oil revenue, adjusted profit,
+    assessable profits
 68. Allowable deductions                                    102. Production sharing contracts
 69. Deductions not allowed                                  103. Duration of oil prospecting licence
 70. Assessable profits and losses                           104. Determination of petroleum profits tax
 71. Chargeable profits and allowances                       105. Determination of investment tax allowance
 72. Chargeable hydrocarbon tax                              106. Royalty payable in respect of deep offshore
-73. Additional chargeable tax payable in certain                 production sharing contracts
+73. Additional chargeable tax payable in certain
     circumstances                                           107. Computation of petroleum profit tax
 74. Pre-production cost                                     108. Allocation of royalty oil
 75. Trade or business sold or transferred                   109. Allocation of cost oil
@@ -124,62 +121,62 @@ Section:
 78. Income tax on petroleum operations                      112. Payment royalty
 79. Registration and use of separate company for each       113. Chargeable tax petroleum operations
     stream of petroleum operations                          114. Use of realisable price in determining royalty and
-80. Provisions relating to gas                                   petroleum profits tax in respect of crude oil
+80. Provisions relating to gas
 81. Allowances for the purposes of income tax on            115. Submission of receipts
     petroleum operations                                    116. Adaptation of laws
 
-117. Review of the production sharing contract               147. Time of supply
-                                                             148. Rate of VAT
-         Part IV - Miscellaneous Provisions                  149. Value of taxable supplies
-118. Administration of royalties                             150. Value of imported taxable supply
-119. Interpretation                                          151. Taxable supply of non-residents
+117. Review of the production sharing contract
 
-                       CHAPTER 4                                 Part II - Remittances and Recovery of Vat
-             RELIEF FOR DOUBLE TAXATION                      152. Payment of VAT by taxable person
-120. Unilateral relief of double taxation                    153. VAT Invoice
-121. Double taxation agreement                               154. Collection of VAT by taxable person
+         Part IV - Miscellaneous Provisions
+118. Administration of royalties
+119. Interpretation
+
+                       CHAPTER 4
+             RELIEF FOR DOUBLE TAXATION
+120. Unilateral relief of double taxation
+121. Double taxation agreement
 122. Method of calculating relief to be allowed for double   155. Collection of VAT by persons other than the
-     taxation                                                     supplier
-123. Interpretation                                          156. Credit for input tax and remission of VAT
-                                                             157. Business sold out
-                                                             158. Fiscalisation of supplies for VAT
+     taxation
+123. Interpretation
+
+
                       CHAPTER 5
-         TAXATION OF DUTIABLE INSTRUMENTS                                      CHAPTER 7
-         Part I - Imposition of Stamp Duties                                  SURCHARGE
-124. Charge of duties                                        159. Imposition of surcharge
-125. Manner of denoting duty                                 160. Chargeable transaction and base for surcharge
-126. Obligation to stamp                                     161. Administration of the surcharge
-127. Admissible evidence                                     162. Exemption from surcharge
+         TAXATION OF DUTIABLE INSTRUMENTS
+         Part I - Imposition of Stamp Duties
+124. Charge of duties
+125. Manner of denoting duty
+126. Obligation to stamp
+127. Admissible evidence
            Part II - Chargeable Instruments
-                                                                               CHAPTER 8
+
 128. Bill of exchange
-129. Promissory Note                                                          TAX INCENTIVES
-130. Sale or purchase of options                                    Part I - Income Tax Exemptions
-131. Conveyance on sale                                      163. Income tax exemption
-132. Conveyance in consideration of a debt                   164. Deductible donations
-133. Duty on transfer of mineral assets                      165. Deduction for research and development
+129. Promissory Note
+130. Sale or purchase of options
+131. Conveyance on sale
+132. Conveyance in consideration of a debt
+133. Duty on transfer of mineral assets
 134. Provisions as to exchange
-135. Leases                                                      Part II - Economic Development Tax
-136. Duty on share capital                                                      Incentives
-137. Duty on loan capital                                    166. Priority sectors
-138. Marketable security                                     167. Eligibility for economic development incentive
-139. Appraisements                                                certificate
-                                                             168. Application for economic development
-          Part III - Miscellaneous Provisions                     incentive certificate
-140. Duplicates and counterparts                             169. Approval of application
-141. Duty relating to one instrument covering multiple       170. Terms of economic development incentive
-     transactions                                                 certificate
+135. Leases
+136. Duty on share capital
+137. Duty on loan capital
+138. Marketable security
+139. Appraisements
+
+          Part III - Miscellaneous Provisions
+140. Duplicates and counterparts
+141. Duty relating to one instrument covering multiple
+     transactions
 142. Duty relating to multiple instruments covering same     171. Addition of product to the economic
-     transaction                                                  development incentive certificate
-143. Provisions on non-monetary consideration                172. Application of economic development incentive
-                                                                  certificate
-                     CHAPTER 6                               173. Production day and qualifying capital
-                                                                  expenditure
-                 VALUE ADDED TAX                             174. Cancellation of economic development incentive
-      Part I - Imposition of Value Added Tax                      certificate
-144. Imposition of value added tax                           175. Information
-145. Charge of VAT                                           176. Publication of economic development incentive
-146. Taxable supplies                                             certificate
+     transaction
+143. Provisions on non-monetary consideration
+
+                     CHAPTER 6
+
+                 VALUE ADDED TAX
+      Part I - Imposition of Value Added Tax
+144. Imposition of value added tax
+145. Charge of VAT
+146. Taxable supplies
 
 177. Economic development tax credit
 178. Economic development incentive period
@@ -245,8 +242,8 @@ ACT, THE NIGERIAN MINERALS AND MINING ACT, THE NIGERIA START-UP ACT, THE
      TAXATION OF INCOME, TRANSACTIONS AND INSTRUMENTS; AND FOR RELATED
                                   MATTERS.
 
-                                                       [ 26th June, 2025 ]      Commence-
-                                                                                ment
+                                                       [ 26th June, 2025 ]
+
      ENECTED by the National Assembly of the Federal Republic of Nigeria -
                         CHAPTER 1 – OBJECTIVE AND APPLICATION
      1. The objective of this Act is to provide a unified fiscal legislation    Objective
@@ -257,7 +254,7 @@ person.
                         CHAPTER 2 – TAXATION OF INCOME OF PERSONS
                   PART 1 - IMPOSITION OF TAX ON INCOME, PROFITS OR GAINS
       3. Income tax shall be determined in accordance with the provisions of    Imposition
-this Act, and imposed on the –                                                  of tax
+this Act, and imposed on the –
       (a) profits or gains of any company or enterprise;
       (b) income of any individual or family; and
 
@@ -339,8 +336,8 @@ instrument; and
 transaction shall not amount to a disposal, provided that such securities or
 shares are transferred from a lender and subsequently returned by the
 borrower to the lender.
-  5. (1) A company may be charged to tax –                                         Chargeability
-                                                                                   to tax
+  5. (1) A company may be charged to tax –
+
 
                       (a) in its own name;
                       (b) in the name of any principal officer, attorney, factor, agent or
@@ -386,18 +383,18 @@ dends
       (2) The income from a dividend distributed by a Nigerian company
 is deemed to arise on the day on which payment of that dividend be-
 comes due.
-     8. (1) A company shall include dividend income in its profits, gross       Profits of a
-of any tax paid or deducted at source.                                          company
-                                                                                from certain
-                                                                                dividends
+     8. (1) A company shall include dividend income in its profits, gross
+of any tax paid or deducted at source.
+
+
       (2) Dividends received by a Nigerian company by way of shares
 of the paying company shall not be included in its profits chargeable to
 tax under this Act and shall not be subject to the deduction prescribed
 under section 51 of Nigeria Tax Administration Act, 2025.
-    9. (1) Where a Nigerian company declares dividend out of profits            Substitution
-on which no tax is payable due to ––                                            of dividend
-                                                                                for total
-                                                                                profit
+    9. (1) Where a Nigerian company declares dividend out of profits
+on which no tax is payable due to ––
+
+
       (a) there being no total profits, or
       (b) total profits which are less than the amount of dividend which
   it declared, whether or not the recipient of the dividend is a Nigerian
@@ -418,11 +415,11 @@ on which no tax is payable due to ––                                        
   behalf of those shareholders, whether such dividends are paid out of
   profits of the year in which the dividend is declared or out of profits of
   previous reporting periods.
-      10. (1) Where a Nigerian company controlled by not more than              Certain
+      10. (1) Where a Nigerian company controlled by not more than
 five individuals has not distributed to its shareholders as dividend, profits   undistributed
-                                                                                profits may
-made in any period for which accounts have been made up by such                 be treated as
-company, the Service may direct that the proportion of the profits of the       distributed
+
+made in any period for which accounts have been made up by such
+company, the Service may direct that the proportion of the profits of the
 company, which could have been distributed without detriment to the
 company's business, be construed as distributed.
      (2) The gross amount of profits construed as distributed under the
@@ -467,12 +464,12 @@ of companies   partnership, joint venture or a similar arrangement in Nigeria, a
                      (4) The provisions of this section shall not apply to any partnership engaged
                in petroleum operations under Chapter Three of this Act.
 
-     12. The income, gains or profits of an individual who is a resident      Resident
-of Nigeria are deemed to accrue in Nigeria and are chargeable to tax in       individual
+     12. The income, gains or profits of an individual who is a resident
+of Nigeria are deemed to accrue in Nigeria and are chargeable to tax in
 Nigeria wherever they arise, and whether or not the income, profits or
 gains have been brought into or received in Nigeria.
-     13. (1) The income, gain or profit from an employment is derived         Employment
-from Nigeria where –                                                          income
+     13. (1) The income, gain or profit from an employment is derived
+from Nigeria where –
 
      (a) the employee is a resident of Nigeria; or
      (b) the duties of the employment are wholly or partly performed in
@@ -580,9 +577,9 @@ employee, the spouse or family, and the employee –
         (ii) the part of the premises occupied, or
         (iii) both a period of occupation within a year and the part of the
      premises occupied, as may be determined by the relevant tax authority.
-    15. (1) The gains or profits of a partner from a partnership shall be the      Partnership
-sum of –                                                                           of individu-
-                                                                                   als
+    15. (1) The gains or profits of a partner from a partnership shall be the
+sum of –
+
      (a) any remuneration, interest on capital, cost of passages wholly or
   mainly undertaken for the purpose of leave or recreation, or any other
   perquisite or benefits in kind which is charged to the partnership accounts in
@@ -640,15 +637,15 @@ with subsection (7), tax may be assessed and charged by the relevant tax
 authority as though the whole gains or profits of such partnership accrued to
 any individual partner or were divisible between the partners, as may appear
 just and reasonable to that tax authority.
-      16. The income of an individual, a trustee or executor from a settlement,         Settlements,
-trust, or estate of a deceased person, made, created or administered in or              trusts and
-outside Nigeria, shall be ascertained in accordance with the provisions of the          estates
-Fifth Schedule to this Act.                                                             Fifth
-                                                                                        Schedule
+      16. The income of an individual, a trustee or executor from a settlement,
+trust, or estate of a deceased person, made, created or administered in or
+outside Nigeria, shall be ascertained in accordance with the provisions of the
+Fifth Schedule to this Act.
+
 
                     PART III - TAXATION OF NON-RESIDENT PERSONS
-      17. (1) The income, profits or gains of a non-resident person accruing in,        Non-Resident
-or derived from Nigeria are chargeable to tax in accordance with the provisions         person
+      17. (1) The income, profits or gains of a non-resident person accruing in,
+or derived from Nigeria are chargeable to tax in accordance with the provisions
 of this Act.
       (2) Gains derived by a non-resident person from disposal of chargeable
 assets are taxable in Nigeria where the gains relate to –
@@ -812,7 +809,7 @@ determined by applying the -
   carriage of passengers, mails, livestock or goods shipped or loaded in Nigeria
   to arrive at the assessable profits; and
      (b) global depreciation ratio to the gross revenue in respect of the carriage    First
-  of passengers, mails, livestock or goods shipped or loaded in Nigeria, in           Schedule
+  of passengers, mails, livestock or goods shipped or loaded in Nigeria, in
   place of any allowances to be given under the provisions of Part I of the
   First Schedule.
      (5) Where at the time of assessment, the provisions of subsections (3)
@@ -877,8 +874,8 @@ Schedule        the income of the trade, business, profession or vocation, subje
 
      (e) any amount of expenditure incurred for establishing, preserving or
   defending title to or rights over an asset;
-     (f) any contribution to any staff pension, provident or other retirement         Act No. 4,
-  benefits fund, society or scheme approved under the Pension Reform Act              2014
+     (f) any contribution to any staff pension, provident or other retirement
+  benefits fund, society or scheme approved under the Pension Reform Act
   or any similar enactment in Nigeria;
      (g) any expense proven to the satisfaction of the relevant tax authority to
   have been incurred, being damage to, or loss of stock or inventory of the
@@ -967,19 +964,19 @@ Act No. 4,         (f) any payment to a savings, widows and orphans, pension, pr
                                AND INCOME
 
       22. (1) Except as provided in this section, the profits of any trade, business,   Basis for
-profession or vocation for each year of assessment (the assessable profits)             computing
-                                                                                        assessable
+profession or vocation for each year of assessment (the assessable profits)
+
 shall be the profits of the accounting period immediately preceding the year of
-                                                                                        profits for
-assessment from all sources.                                                            trade or
-                                                                                        business
+
+assessment from all sources.
+
       (2) Notwithstanding the provisions of subsection (1), the assessable profits
 of the first year of assessment for a new business, shall be the profits from the
 date in which such trade, business, profession or vocation commences in Nigeria
 to the end of the first accounting period.
-      23. (1) Where a taxable person changes the date to which it usually               Change in
-computes its assessable profits, the basis period for the computation of the            accounting
-                                                                                        date
+      23. (1) Where a taxable person changes the date to which it usually
+computes its assessable profits, the basis period for the computation of the
+
 assessable profits for the relevant year of assessment shall be the period
 commencing from the first day after the basis period of the immediately
 preceding year of assessment up to the new date on which the account was
@@ -988,9 +985,9 @@ computed on the basis of the new accounting period.
       (2) Where there is a change in the accounting date under subsection (1),
 the taxable person shall notify the relevant tax authority not later than 30 days
 before the usual due date of filing its income tax returns.
-      24. (1) Where a trade, business, profession or vocation permanently               Cessation of
-ceases to carry on operations in Nigeria in an accounting period, the assessable        trade or
-                                                                                        business
+      24. (1) Where a trade, business, profession or vocation permanently
+ceases to carry on operations in Nigeria in an accounting period, the assessable
+
 profits for the relevant year of assessment shall be the amount of the profits
 from the beginning of the accounting period to the date of cessation and the
 tax shall be payable within six months from the date of cessation.
@@ -1049,16 +1046,16 @@ Schedule      determined under the provisions of the Fifth Schedule to this Act.
                  PART VI – ASCERTAINMENT OF TOTAL PROFITS
                               OF COMPANIES
 
-      27. (1) The total profits of a company for any year of assessment, shall         Ascertain-
+      27. (1) The total profits of a company for any year of assessment, shall
 be the amount of its total assessable profits from all sources, including chargeable   ment of total
-                                                                                       profits of
+
 gains computed in accordance with Part VIII of Chapter Two, less the amount
-                                                                                       companies
+
 of any loss ascertained in accordance with subsection (6), and capital allowance
-in accordance with the provisions of Part I of the First Schedule to this Act.         First
-                                                                                       Schedule
-     (2) The capital allowance to be deducted in accordance with the provisions        First
-of Part I of the First Schedule shall be the amount relating to the qualifying         Schedule
+in accordance with the provisions of Part I of the First Schedule to this Act.
+
+     (2) The capital allowance to be deducted in accordance with the provisions
+of Part I of the First Schedule shall be the amount relating to the qualifying
 capital expenditure incurred in generating the assessable profits:
       Provided that where value added tax is due under this Act but not charged
 on an asset, or in the case of an imported item, where the applicable import
@@ -1134,26 +1131,26 @@ Schedule
      (iv) any loss incurred in any period from sales, disposal or any other
   transaction in digital or virtual assets shall only be deductible against the
   profit or gain from digital or virtual assets.
-      29. Notwithstanding any provisions of Chapter Two of this Act, where         Presumptive
+      29. Notwithstanding any provisions of Chapter Two of this Act, where
 for all practical purposes, the income of a person chargeable to tax under this    taxation
 Act cannot be ascertained or records are not kept in such a manner as to
 enable proper assessment of income, then such person shall be assessed on
 such terms and conditions as may be prescribed by the Minister on the advice
 of the Joint Revenue Board in a regulation under a presumptive tax regime.
-      30. (1) The chargeable income of an individual, is the total income of       Ascertain-
+      30. (1) The chargeable income of an individual, is the total income of
 that individual ascertained under the provisions of section 28 of this Act, less   ment of
-                                                                                   chargeable
+
 eligible deductions.
-                                                                                   income of
-     (2) For the purposes of this section –                                        individuals
+
+     (2) For the purposes of this section –
 
     (a) "eligible deductions" include payments made by the individual in a
   year of assessment in respect of –
        (i) the individual's contributions under the National Housing Fund,
        (ii) the individual's contributions under the National Health Insurance
     Scheme,
-       (iii) the individual's contributions under the Pension Reform Act,          Act No. 4,
-       (iv) interest on loans for developing an owner-occupied residential         2014
+       (iii) the individual's contributions under the Pension Reform Act,
+       (iv) interest on loans for developing an owner-occupied residential
     house,
        (v) annual amount of any annuity or premium paid by the individual
     during the year preceding the year of assessment in respect of insurance
@@ -1165,11 +1162,11 @@ eligible deductions.
     may be prescribed by the relevant tax authority ; and
     (b) "total income" means total income as specified in section 28 of this
   Act.
-     31. Deduction shall not be allowed under this Part to any person for a        Deductions
+     31. Deduction shall not be allowed under this Part to any person for a
 year of assessment, unless claimed in writing in such form as the relevant tax     to be claimed
 authority may prescribe.
-    32. (1) The relevant tax authority may require a claimant to a deduction       Proof of
-under section 30 (2) (a) of this Act to produce such documentary evidence as       Claims
+    32. (1) The relevant tax authority may require a claimant to a deduction
+under section 30 (2) (a) of this Act to produce such documentary evidence as
 may be necessary in support of any claim and in the absence of such evidence,
 or where such evidence is inadequate, the relevant tax authority may refuse to
 
@@ -1215,8 +1212,8 @@ assets       Eight of this Act, all forms of property shall be chargeable assets
 
 asset in respect of which qualifying capital expenditure had been incurred
 under any provision of this Act.
-     35. (1) For the purpose of this Act, there is a disposal of assets by a            Disposal of
-person where any sum is derived from a sale, lease, transfer, an assignment, a          assets
+     35. (1) For the purpose of this Act, there is a disposal of assets by a
+person where any sum is derived from a sale, lease, transfer, an assignment, a
 compulsory acquisition or any other disposition of assets, subject to any
 exemptions as may be provided in Chapter Eight of this Act.
      (2) Subsection (1) shall apply, notwithstanding that no asset is acquired
@@ -1236,12 +1233,12 @@ by the person paying the sum, and in particular where the sum is –
   by the disposal, and
      (ii) a part of the interest in the property which subsists before the disposal
   remains with the person making the disposal.
-      36. (1) Subject to the provisions of this Act, the acquisition and disposal       Disposal of
-of an asset by a person shall be deemed to be for a consideration equal to the          assets,
-                                                                                        provisions as
+      36. (1) Subject to the provisions of this Act, the acquisition and disposal
+of an asset by a person shall be deemed to be for a consideration equal to the
+
 market value of the asset where the person acquires the asset –
-                                                                                        to consider-
-                                                                                        ations
+
+
     (a) otherwise than by way of a bargain made at arm's length;
     (b) wholly or partly for a consideration that cannot be valued;
     (c) as trustee for creditors of the person making the disposal; or
@@ -1302,9 +1299,9 @@ as a testamentary disposition and not as a gift;
   of a deceased person under any law in force in Nigeria; or
      (b) persons who, under the law of another country, have functions
   corresponding to personal representatives as defined under paragraph (a).
-   37. (1) A person shall not be charged to tax under this Act in respect of           Compulsory
-gains on any acquisition and disposal of land by reference to a disposal to an         acquisition
-authority exercising or having compulsory powers, if that person had not –             of land
+   37. (1) A person shall not be charged to tax under this Act in respect of
+gains on any acquisition and disposal of land by reference to a disposal to an
+authority exercising or having compulsory powers, if that person had not –
 
      (a) acquired the land at a time when he knew or might reasonably have
   known that it was likely to be acquired by the authority; or
@@ -1312,14 +1309,14 @@ authority exercising or having compulsory powers, if that person had not –    
   or to make his willingness to dispose of it known to the authority or others.
      (2) In this section, "authority exercising or having compulsory
 powers" means, in relation to any disposal of land, an authority, a person or
-body of persons acquiring the land compulsorily under the Land Use Act or              Cap L5,
-any other similar enactment or law of a country other than Nigeria, or who has         LFN 2004
+body of persons acquiring the land compulsorily under the Land Use Act or
+any other similar enactment or law of a country other than Nigeria, or who has
 or have been, or may be, authorised to acquire it compulsorily for the purposes
 for which it is acquired, or for whom another authority, person or body of
 persons has or have been, or may be authorised to acquire it.
-      38. Any asset acquired or disposed of by a person chargeable to tax              Date of
-shall, be deemed to have been acquired or disposed of at the date at which             acquisition
-                                                                                       or disposal
+      38. Any asset acquired or disposed of by a person chargeable to tax
+shall, be deemed to have been acquired or disposed of at the date at which
+
 there is an enforceable right to acquire or a binding duty to dispose of the asset
 or any right or interest in it, and in particular, where –
      (a) any contract is to be performed subject to any condition, the date of
@@ -1332,9 +1329,9 @@ or any right or interest in it, and in particular, where –
      (c) an option is conferred by virtue of any contract, the date of the
   acquisition or disposal of the asset shall be the date when the option is
   exercised.
-     39. The gains chargeable to tax shall, subject to other provisions of this        Computation
-Act, be computed as follows –                                                          of chargeable
-                                                                                       gains
+     39. The gains chargeable to tax shall, subject to other provisions of this
+Act, be computed as follows –
+
 
 First                (a) in the case of a disposal of an asset used for a trade, business, pro-
 Schedule          fession or vocation, for which capital allowance has been made in accord-
@@ -1406,15 +1403,15 @@ by way of a loan made to that person by the other party to the transaction.
   subsequently shown to the satisfaction of the relevant tax authority to be
   irrecoverable, such adjustment, whether by way of discharge, or repayment
   of tax or otherwise, shall be made as required.
-     43. (1) Where an asset is lost or destroyed, and a capital sum received            Assets lost
-by way of compensation for the loss or destruction is applied within three              or destroyed
+     43. (1) Where an asset is lost or destroyed, and a capital sum received
+by way of compensation for the loss or destruction is applied within three
 years of receipt in acquiring another asset in its replacement, the owner shall,
 where the compensation received together with the residual or scrap value
 is –
      (a) greater than the cost of the asset acquired in replacement of the lost
   or destroyed asset, be deemed to make a chargeable gain; and
-     (b) lower than the cost of the asset acquired in its replacement, be deemed,       First
-  for the purposes of the First Schedule to this Act, to have acquired an               Schedule
+     (b) lower than the cost of the asset acquired in its replacement, be deemed,
+  for the purposes of the First Schedule to this Act, to have acquired an
   additional asset for an amount equal to the cost of that new asset, less the
   compensation together with the residual or scrap value.
 
@@ -1494,11 +1491,11 @@ assets
   indirect beneficial ownership, control or interest over the right or property is
   resident in Nigeria or has a permanent establishment in Nigeria to which the
   property is connected.
-      47. Gains accruing to any person in respect of a disposal of shares by a           Indirect
-non-resident shall be a chargeable gain under this Act where the disposal                transfer of
-results into a change –                                                                  ownership of
-                                                                                         companies or
-                                                                                         assets
+      47. Gains accruing to any person in respect of a disposal of shares by a
+non-resident shall be a chargeable gain under this Act where the disposal
+results into a change –
+
+
     (a) in the ownership structure or group membership of any Nigerian
   company; or
     (b) of ownership of, title in, or interest in any asset located in Nigeria.
@@ -1555,9 +1552,9 @@ under this section to the relevant tax authority.
       (4) The tax so deducted shall be remitted within the time specified under
 the Pay-As-You-Earn or deduction of tax at source regulations issued pursu-
 ant to the Nigeria Tax Administration Act, 2025.
-      51. (1) The gains accruing to an individual are exempt from tax in respect      Principal
-of the disposal of, or an interest in -                                               private
-                                                                                      residences
+      51. (1) The gains accruing to an individual are exempt from tax in respect
+of the disposal of, or an interest in -
+
       (a) a dwelling-house or part of such dwelling-house; and
       (b) land, other than land used for commercial purposes, immediately
    adjoining the dwelling house up to a maximum of one acre.
@@ -1567,7 +1564,7 @@ of an individual.
 only a part of a dwelling-house or a house used partly as dwelling place and
 partly for carrying out a trade, business, profession or vocation.
        52. (1) A gain accruing on a disposal of an asset which is tangible movable    Personal
-property being personal chattels of an individual shall not be a chargeable gain      chattels
+property being personal chattels of an individual shall not be a chargeable gain
 if the total amount or value of the consideration for the disposal does not, in a
 period of assessment, exceed N5,000,000 or three times the annual national
 minimum wage, whichever is higher.
@@ -1586,8 +1583,8 @@ of any description, which are tangible movable properties in the same manner
 as they apply in relation to a gain accruing on a disposal of an asset, or two or
 more assets forming part of a set of articles.
      (5) This section shall not apply to a disposal of currency of any description.
-      53. (1) A motor vehicle used solely for private or non-profit purposes          Motor
-shall not be an asset for the purposes of this Part.                                  vehicles
+      53. (1) A motor vehicle used solely for private or non-profit purposes
+shall not be an asset for the purposes of this Part.
 
                     (2) The exemption under this section shall be limited to not more than
                two motor vehicles by an individual in any year of assessment.
@@ -1646,18 +1643,13 @@ its effective tax rate equal to 15%.
         "profits" means the net profits before tax as reported in the audited
      financial statement less 5% of depreciation and personnel cost for the
      year.
-      58. The income tax payable on the chargeable income of an individual,      Rates of tax
-other than an individual earning the Minimum Wage in line with the minimum       for individu-
-                                                                                 als
-wage Act, in respect of each year of assessment, shall be as specified in the
-                                                                                 Act No. 8,
-Fourth Schedule to this Act.                                                     2019
-                                                                                 Fourth
-                                                                                 Schedule
+      58. The income tax payable on the chargeable income of an individual, other than an individual earning the Minimum Wage in line with the minimum wage Act, in respect of each year of assessment, shall be as specified in the Fourth Schedule to this Act.
+
+
 
                     PART X – DEVELOPMENT LEVY
       59. (1) A development levy of 4% is imposed on the assessable profits of   Develop-
-all companies chargeable to tax under Chapters Two and Three of this Act,        ment Levy
+all companies chargeable to tax under Chapters Two and Three of this Act,
 other than small companies and non-resident companies.
      (2) The Service shall collect the levy and pay it into a special account
 created for that purpose.
@@ -1801,10 +1793,10 @@ or business
   by lot or chance, or as a result of the exercise of skill and chance or based
   on the outcome of real or virtual sporting events, or any other game, scheme,
   arrangement, system, plan, competition or device.
-      63. (1) Where under the provisions of the Investments and Securities           Collective
+      63. (1) Where under the provisions of the Investments and Securities
 Act, a mutual fund is established for the purpose of providing facilities for the    Investment
 participation of the public, as beneficiaries under a trust, in profits or income    Scheme
-arising from acquisition, holding, management or disposal of securities or any       Act No. 2,
+arising from acquisition, holding, management or disposal of securities or any
 other property, chapter two of this Act shall, in respect of the income arising to   2025
 the trustees of a collective investment, have effect as if the –
       (a) trustees were a company whose business consists mainly in the making
@@ -1828,8 +1820,8 @@ available for payment to unit holders or for investment shall be deemed to be
 dividends paid or payable by the trustees to the unit holders in proportion to
 their rights, and shall be taxed in the hands of the unit holders.
      (5) In this section –
-     "authorised collective investment" means a scheme that is authorised            Act No. 2,
-  by the Securities and Exchange Commission under the Investment and                 2025
+     "authorised collective investment" means a scheme that is authorised
+  by the Securities and Exchange Commission under the Investment and
   Securities Act to carry on the business of dealing in a mutual fund scheme
   or collective investment scheme;
 
@@ -1866,9 +1858,9 @@ Schedule     or mining operations at a rate prescribed under the Eighth Schedule
      PART I - HYDROCARBON TAX, ASCERTAINMENT OF CHARGEABLE TAX,
     ASCERTAINMENT OF CHARGEABLE PROFITS AND CONSOLIDATION FOR TAX
                               PURPOSES
-     65. (1) This Part shall apply to companies engaged in upstream petroleum       Application
-operations in the onshore, shallow water and deep offshore with licences and        of this Part
-leases under the Petroleum Industry Act.                                            Act No. 6,
+     65. (1) This Part shall apply to companies engaged in upstream petroleum
+operations in the onshore, shallow water and deep offshore with licences and
+leases under the Petroleum Industry Act.
      (2) In this Part–
      (a) hydrocarbon tax shall apply to crude oil as well as field condensates
   and liquid natural gas liquids derived from associated gas and produced in
@@ -1896,8 +1888,8 @@ as crude oil and natural gas liquids as natural gas.
      (6) Upstream petroleum operations shall in addition to hydrocarbon tax,
 be subject to Chapter Two of this Act.
       66. Subject to the provisions of section 65(2) of this Act, there is levied   Charge of
-upon the profits of any company engaged in upstream petroleum operations in         hydrocarbon
-                                                                                    tax
+upon the profits of any company engaged in upstream petroleum operations in
+
 relation to crude oil, a tax to be known as hydrocarbon tax, which shall be
 
              charged and assessed on its profits related to the operations for each account-
@@ -1957,15 +1949,15 @@ such surplus is returned to the lessee ;
 State or Local Government Council by way of levies, stamp duties and fees;
       (g) costs of gas reinjection wells, which are re-injecting natural gas that
 otherwise would be flared, subject to ratification by the Commission; and
-      (h) any amount contributed to any fund, scheme or arrangement approved          Act No. 6,
-by the Commission pursuant to the establishment of host communities'                  2021
+      (h) any amount contributed to any fund, scheme or arrangement approved
+by the Commission pursuant to the establishment of host communities'
 development trusts under Chapter 3 of the Petroleum Industry Act,
 Environmental Remediation Fund, Niger Delta Development Commission and
 other similar contributions.
       (2) Liability waived, released or recovered shall be treated under this
 Part in accordance with section 193 of this Act.
       69. Subject to this Part, for the purpose of ascertaining the adjusted profit   Deductions
-of a company in the accounting period from its upstream petroleum operations          not allowed
+of a company in the accounting period from its upstream petroleum operations
 applicable to crude oil, no deduction shall be allowed in respect of –
       (a) expenditure for the purchase of information relating to the existence
 and extent of petroleum deposits, other than for the acquisition of geophysical,
@@ -2030,18 +2022,18 @@ losses
 
 shall be deferred to and be made in the succeeding accounting period, and may
 so elect in any succeeding accounting period.
-      71. (1) The chargeable profits of a company for any accounting period          Chargeable
+      71. (1) The chargeable profits of a company for any accounting period
 shall be the amount of the assessable profits of that period after the deduction     profits and
-of any amount to be allowed in accordance with the provisions of this section        allowances
+of any amount to be allowed in accordance with the provisions of this section
 as follows –
-      (a) the aggregate amount of capital allowances due to the company un-          First
-der the provisions of Part II of First Schedule to this Act for the accounting       Schedule
+      (a) the aggregate amount of capital allowances due to the company un-
+der the provisions of Part II of First Schedule to this Act for the accounting
 period;
-      (b) the aggregate amount of all production allowances due to the com-          Sixth
-pany under the provisions of the Sixth Schedule to this Act for the accounting       Schedule
+      (b) the aggregate amount of all production allowances due to the com-
+pany under the provisions of the Sixth Schedule to this Act for the accounting
 period; and
       (c) in the case of acquisition costs of petroleum rights, the value of the     First
-rights and the value of the assets acquired shall be reported separately to the      Schedule
+rights and the value of the assets acquired shall be reported separately to the
 Service, provided that the value of the rights shall be eligible for annual allow-
 ance of 20% per annum until it is fully written off and the value of the assets
 shall be depreciated based on the applicable depreciation rates for the respec-
@@ -2055,22 +2047,22 @@ this Act.
 asset, or in the case of an imported item, the applicable import duty or levy was
 not paid, the relevant expenditure shall not be eligible as a qualifying capital
 expenditure under the provisions of Part II of First Schedule to this Act.
-      72. The chargeable hydrocarbon tax for any accounting period of a com-         Chargeable
-pany shall be a percentage of the aggregated chargeable profit for that period       hydrocarbon
-and it shall be –                                                                    tax
+      72. The chargeable hydrocarbon tax for any accounting period of a com-
+pany shall be a percentage of the aggregated chargeable profit for that period
+and it shall be –
 
       (a) 30% of the profit from crude oil for petroleum mining leases selected
   under section 93 (6) (b) and (7) (b) of the Petroleum Industry Act with
   respect to onshore and shallow water areas; and
-      (b) 15% of profit from crude oil for onshore and shallow water and for         Act No. 6,
-  petroleum prospecting licences selected under section 93 (6) (a) and (7) (a)       2021
+      (b) 15% of profit from crude oil for onshore and shallow water and for
+  petroleum prospecting licences selected under section 93 (6) (a) and (7) (a)
   of Petroleum Industry Act.
-                                                                                     Additional
-     73. (1) Where, for any accounting period of a company, there is a sale of       chargeable
-chargeable oil between connected persons, or disposal of chargeable oil be-          tax payable
-tween connected or unconnected persons, and the amount of the chargeable             in certain
-hydrocarbon tax for that period, calculated in accordance with the provisions        circum-
-                                                                                     stances
+
+     73. (1) Where, for any accounting period of a company, there is a sale of
+chargeable oil between connected persons, or disposal of chargeable oil be-
+tween connected or unconnected persons, and the amount of the chargeable
+hydrocarbon tax for that period, calculated in accordance with the provisions
+
 
              of this Part other than this section, is less than the amount prescribed in sub-
              section (2), the company shall pay an additional amount of chargeable hydro-
@@ -2112,18 +2104,18 @@ cost
              purpose of coming into upstream petroleum operations, subject to sections 68
              and 69 of this Act, shall upon commencement of production and sale or disposal
 of chargeable oil be deemed to have incurred a qualifying pre-production capi-
-tal expenditure which shall be amortised in line with paragraphs 2 and 14 of        First
-Part II of First Schedule to this Act.                                              Schedule
+tal expenditure which shall be amortised in line with paragraphs 2 and 14 of
+Part II of First Schedule to this Act.
 
-      75. The sale or transfer of a trade or business of upstream petroleum         Trade or
-operations carried on in Nigeria by a company to another company shall be           business
-                                                                                    sold or
+      75. The sale or transfer of a trade or business of upstream petroleum
+operations carried on in Nigeria by a company to another company shall be
+
 treated in accordance with section 190 of this Act.
-                                                                                    transferred
 
-      76. (1) A company engaged in upstream petroleum operations across             Consolida-
-terrains shall be allowed to consolidate costs and incomes for the purpose of       tion of costs
-                                                                                    and revenue
+
+      76. (1) A company engaged in upstream petroleum operations across
+terrains shall be allowed to consolidate costs and incomes for the purpose of
+
 income tax under Chapter Two of this Act.
       (2) A company engaged in upstream petroleum operations related to crude
 oil across terrains shall be allowed to consolidate costs and revenue for the
@@ -2199,16 +2191,16 @@ Act No. 6,          (2) For the purpose of determining the value of chargeable c
 
   any accounting period, ascertained in accordance with the relevant provi-
   sions of Part VIII of Chapter two of this Act.
-      79. (1) Subject to sections 142 (2) and 197(2) of the Petroleum Industry       Registration
+      79. (1) Subject to sections 142 (2) and 197(2) of the Petroleum Industry
 Act, a person intending to be involved in more than one stream, that is, upstream,   and use of
-                                                                                     separate
+
 midstream or downstream petroleum operations, shall register and use a separate
-                                                                                     company for
-company for each stream of petroleum operations under the Petroleum Industry         each stream
-Act:                                                                                 of petroleum
-                                                                                     operations
-     Provided that, for companies with petroleum mining leases selected un-          Act No. 6,
-der section 93 (6) (b) and (7) (b) of the Petroleum Industry Act, no stamp           2021
+
+company for each stream of petroleum operations under the Petroleum Industry
+Act:
+
+     Provided that, for companies with petroleum mining leases selected un-
+der section 93 (6) (b) and (7) (b) of the Petroleum Industry Act, no stamp
 duties, value added tax or income tax on chargeable gains shall be levied by
 the Government on such segregation.
       (2) For strategic projects in the upstream petroleum operations that seek
@@ -2225,7 +2217,7 @@ upstream petroleum operations for purposes of tax.
      (b) capital investment in the midstream petroleum operations consoli-
 dated with upstream petroleum operations shall not be represented for capital
 allowance when fiscalising the income from midstream petroleum operations.
-      80. (1) In addition to the economic development tax incentive that may         Provisions
+      80. (1) In addition to the economic development tax incentive that may
 be granted under Part II of Chapter Eight of this Act, investors in gas pipeline     relating to
 shall be granted a tax-free period of five years at the expiration of the economic   gas
 development incentive certificate.
@@ -2235,12 +2227,12 @@ of Chapter Two of this Act.
      (3) Natural gas liquids and liquid petroleum gases derived from natural
 gas shall be subject to income tax under the relevant provisions of Chapter
 Two of this Act.
-     81. (1) Acquisition costs of petroleum rights shall be eligible for annual      Allowances
-allowance at the rate of 20% until the cost is fully written off.                    for the
-                                                                                     purposes of
-                                                                                     income tax
-                                                                                     on petroleum
-                                                                                     operations
+     81. (1) Acquisition costs of petroleum rights shall be eligible for annual
+allowance at the rate of 20% until the cost is fully written off.
+
+
+
+
                      (2) Capital allowance for other assets shall be granted as follows –
 First                 (a) upstream petroleum operations assets shall be in accordance with
 Schedule        Part II of the First Schedule to this Act; and
@@ -2284,12 +2276,12 @@ tax on
 petroleum       for its income tax.
 operations
 
-      84. (1) Where, for any accounting period of a company, there is a sale of        Additional
-chargeable oil or chargeable gas between connected persons, or disposal of             income tax
-chargeable oil or chargeable gas between connected or unconnected persons,             payable in
-                                                                                       certain
-and the amount of the income tax chargeable for that period, calculated in             circum-
-accordance with the provisions of sections 78 to 83, and Chapter Two of this           stances
+      84. (1) Where, for any accounting period of a company, there is a sale of
+chargeable oil or chargeable gas between connected persons, or disposal of
+chargeable oil or chargeable gas between connected or unconnected persons,
+
+and the amount of the income tax chargeable for that period, calculated in
+accordance with the provisions of sections 78 to 83, and Chapter Two of this
 Act, is less than the amount prescribed in subsection (2), the company shall be
 liable to pay an additional amount of chargeable tax for that period equal to the
 difference between those two amounts.
@@ -2378,41 +2370,41 @@ production tax allowance.
      (9) The incentives under this section shall not apply to any company that
 has claimed Associated Gas Framework Agreement incentives for the same
 Non-Associated Gas Greenfield project.
-     86. Notwithstanding section 233(1) of the Petroleum Industry Act, a               Provision
-provision made for decommissioning and abandonment fund shall not be                   Relating to
-deductible for tax purposes, except –                                                  Decommis-
-                                                                                       sioning and
-                                                                                       Abandon-
-                                                                                       ment of
-                                                                                       Funds
-      (a) the licensee or lessee deposit a minimum of 30% of the                       Act No. 6,
-   decommissioning and abandonment fund with a Nigerian Bank, in the form              2021
+     86. Notwithstanding section 233(1) of the Petroleum Industry Act, a
+provision made for decommissioning and abandonment fund shall not be
+deductible for tax purposes, except –
+
+
+
+
+      (a) the licensee or lessee deposit a minimum of 30% of the
+   decommissioning and abandonment fund with a Nigerian Bank, in the form
    of an escrow account accessible by the Commission or Authority; and
       (b) the Nigerian bank is accredited in accordance with the criteria for
    accreditation for participation in the management of the fund, determined
    by the Central Bank of Nigeria in collaboration with the Service.
-      87. (1) This Part and the provisions of the Petroleum Industry Act shall         General
-not apply to holders of an oil prospecting licence or oil mining lease who do not      application
-                                                                                       of this Part
-enter into a conversion contract until the termination or expiration of the            and other
-respective oil prospecting licence or oil mining lease.                                matters
-                                                                                       Act No. 6,
+      87. (1) This Part and the provisions of the Petroleum Industry Act shall
+not apply to holders of an oil prospecting licence or oil mining lease who do not
+
+enter into a conversion contract until the termination or expiration of the
+respective oil prospecting licence or oil mining lease.
+
 
       (2) Notwithstanding subsection (1), the provisions of Chapter Two of this
 Act and paragraph 6 of the First Schedule to the Petroleum Industry Act shall
 apply to licences and leases awarded to indigenous Nigerian companies on a
 sole risk basis under the Petroleum Act Cap. P10, LFN 2024, on which the
 Government has successfully exercised its back-in rights prior to the effective
-date of the Petroleum Industry Act, but any renewal of an oil mining lease shall       Act No. 6,
-be based on the provisions of this Part and the Petroleum Industry Act.                2021
+date of the Petroleum Industry Act, but any renewal of an oil mining lease shall
+be based on the provisions of this Part and the Petroleum Industry Act.
 
       (3) The fiscal provisions of this Part are the base terms that are applicable,
 and the Commission may under section 74(2) of Petroleum Industry Act conduct
 a licensing round whereby the bid parameter is a higher royalty, profit oil share
 or other fiscal features in order to ensure that the Government receives the full
 market value for each block.
-     88. (1) Fiscal stabilisation sections contained in a production sharing           Fiscal
-contract or other contracts entered into after the commencement of the                 stabilisation
+     88. (1) Fiscal stabilisation sections contained in a production sharing
+contract or other contracts entered into after the commencement of the
 Petroleum Industry Act shall not be applicable to the fiscal provisions listed in
 Act No. 6,
 2021          this Part, regardless of whether the changes in fiscal provisions affect the
@@ -2478,8 +2470,8 @@ adjustment to be made in accordance with the provisions of sections 92(2) and
 profit of that period after any deduction allowed under section 97 of this Act.
       (5) The chargeable profits of an accounting period shall be the assessable
 profits of that period after the deductions allowed under section 98 of this Act.
-      92. (1) In computing the adjusted profit of a company for an accounting        Deductions
-period from its petroleum operations, there shall be deducted all outgoings and      allowed
+      92. (1) In computing the adjusted profit of a company for an accounting
+period from its petroleum operations, there shall be deducted all outgoings and
 expenses wholly and exclusively incurred, during the period by the company
 for the purpose of its operations, as follows -
      (a) rents incurred by the company for that period in respect of land or
@@ -2498,8 +2490,8 @@ for the purpose of its operations, as follows -
      (f) any expense incurred for repair of premises, plant machinery, or fixtures
   employed for the purpose of carrying on petroleum operations, or for the
   renewal, repair or alteration of any implement, utensils or articles employed;
-     (g) interest incurred on money borrowed by such company where the               Third
-  Service is satisfied that the interest was payable on capital employed in          Schedule
+     (g) interest incurred on money borrowed by such company where the
+  Service is satisfied that the interest was payable on capital employed in
 
              carrying on its petroleum operations subject to the provisions of the Third
              Schedule to this Act and the Transfer Pricing Regulations;
@@ -2550,12 +2542,12 @@ Act No. 2,      (j) any contributions to pension, provident or other society, sc
   this Part.
       (2) Liability waived, released or recovered shall be treated under this
 Part in accordance with section 193 of this Act.
-      93. (1) The following incentives shall apply to a company engaged in the        Incentives
-utilisation of associated gas –                                                       for
-      (a) investment required to separate crude oil and gas from the reservoir        utilisation of
-                                                                                      associated
+      93. (1) The following incentives shall apply to a company engaged in the
+utilisation of associated gas –
+      (a) investment required to separate crude oil and gas from the reservoir
+
    into usable products shall be considered as part of the oil field development;
-                                                                                      gas
+
       (b) capital investment on facilities or equipment to deliver associated gas
    in usable form at utilisation or designated custody transfer points shall be
    treated for tax purposes, as part of the capital investment for oil development;
@@ -2635,14 +2627,14 @@ Schedule           Schedule to this Act, and any expense or deduction in respect
 the adjusted profit of any company of any accounting period, deduction shall
 not be allowed in respect of any sum incurred to a related party where the cost
 is not in accordance with the Transfer Pricing Regulations.
-      96. Where a company engaged in petroleum operations is engaged in               Exclusion of
-the transportation of chargeable oil by ocean going oil-tankers operated by or        certain
-on behalf of the company from Nigeria to another territory, adjustments shall         profits
+      96. Where a company engaged in petroleum operations is engaged in
+the transportation of chargeable oil by ocean going oil-tankers operated by or
+on behalf of the company from Nigeria to another territory, adjustments shall
 be made in computing an adjusted profit or a loss to exclude any profit or loss
 attributable to such transportation.
       97. (1) Subject to the provisions of this section, the assessable profits of    Assessable
-a company for any accounting period shall be the amount of the adjusted profit        profits and
-                                                                                      losses
+a company for any accounting period shall be the amount of the adjusted profit
+
 of that period after the deduction of –
       (a) the amount of any loss incurred by that company during any previous
   accounting period; and
@@ -2657,13 +2649,13 @@ and in subsequent accounting periods, until the loss is fully recouped.
 months after the end of an accounting period, or such further time as the
 Service may permit, elect in writing, that a deduction to be made under this
 section, or part of the deduction, be deferred to succeeding accounting periods.
-      98. (1) The chargeable profits of a company of any accounting period            Chargeable
-shall be the amount of the assessable profits of that period after the deduction      profits and
-                                                                                      capital
+      98. (1) The chargeable profits of a company of any accounting period
+shall be the amount of the assessable profits of that period after the deduction
+
 of any amount to be allowed in accordance with the provisions of this section.
-                                                                                      allowances
-      (2) There shall be computed the aggregate amount of all allowances due          First
-to the company under the provisions of Part III of the First Schedule to this         Schedule
+
+      (2) There shall be computed the aggregate amount of all allowances due
+to the company under the provisions of Part III of the First Schedule to this
 Act for the accounting period.
       (3) In calculating the amount of the deduction to be allowed under this
 section for an accounting period, the limitation imposed by subsection(4) shall
@@ -2709,12 +2701,12 @@ profits tax
                 company shall be subject to tax under the provision of subsection (1) from
                 its first accounting period.
 
-      100. (1) Where, for any accounting period of a company, there is a sale         Additional
-of chargeable oil between connected persons, or disposal of chargeable oil            chargeable
-                                                                                      tax payable
-between connected or unconnected persons, and the amount of the charge-               in certain
-able tax for that period, calculated in accordance with the provisions of this        circum-
-Part other than this section, is less than the amount prescribed in subsection        stances
+      100. (1) Where, for any accounting period of a company, there is a sale
+of chargeable oil between connected persons, or disposal of chargeable oil
+
+between connected or unconnected persons, and the amount of the charge-
+able tax for that period, calculated in accordance with the provisions of this
+Part other than this section, is less than the amount prescribed in subsection
 (2), the company shall pay an additional amount of chargeable tax for that
 period, equal to the difference between those two amounts.
       (2) The amount referred to in subsection (1) is, for any accounting period
@@ -2744,7 +2736,7 @@ price per barrel established shall bear a fair and reasonable relationship –
 company's chargeable oil is exported from Nigeria or sold locally by another
 company, that chargeable oil for the purpose of this Part shall be deemed to be
 exported from Nigeria or sold by that particular company.
-     101. (1) A person, other than a company, who engages in petroleum                Partnership
+     101. (1) A person, other than a company, who engages in petroleum
 operations either on his own account or jointly with any other person or in
 partnership with any other person with a view to sharing the profits arising
 from those operations commits an offence.
@@ -2791,49 +2783,49 @@ contracts
 Act No. 6,   provisions of the Petroleum Industry Act No. 6, 2021 or have been renegotiated
 2021         in accordance with the provisions of the Petroleum Industry Act.
 
-      103. The duration of an oil prospecting licence relating to production        Duration of
-sharing contracts in the deep offshore and inland basin shall be determined by      oil pros-
-                                                                                    pecting
+      103. The duration of an oil prospecting licence relating to production
+sharing contracts in the deep offshore and inland basin shall be determined by
+
 the Minister charged with responsibility for matters relating to petroleum and
-                                                                                    licence
+
 shall be for a minimum period of five years and not exceeding ten years.
-      104. (1) The petroleum profits tax payable under a production sharing         Determina-
+      104. (1) The petroleum profits tax payable under a production sharing
 contract shall be determined in accordance with Part II of chapter three of this    tion of
 Act, provided that the petroleum profits tax rate applicable to the contract area   petroleum
-                                                                                    profits tax
+
 as defined in the production sharing contracts shall be 50% of chargeable
 profits for the duration of the production sharing contracts.
      (2) Nothing contained in this Part shall be construed as having exempted
 any holder or contractor from the payment of any other tax, duty or levy
 imposed by any Federal, State or Local Government, or Area Council Authority.
        105. Where a holder and a contractor have incurred any qualifying capital    Determina-
-expenditure wholly and exclusively for the purposes of petroleum operations         tion of
+expenditure wholly and exclusively for the purposes of petroleum operations
 carried out under the terms of a production sharing contract in the deep offshore   investment
-                                                                                    tax
+
 or inland basin, the parties shall be entitled to investment tax allowance at a     allowance
 rate of 50% of the qualifying expenditure in accordance with the provisions of
 existing applicable legislation for the accounting period in which that asset was
 first used for the purposes of such operations.
-     106. Royalty shall be determined and payable in accordance with the            Royalty
-provisions of the Seventh Schedule to the Petroleum Industry Act.                   payable in
-                                                                                    respect of
-                                                                                    deep
-                                                                                    offshore
-                                                                                    production
-                                                                                    sharing
-                                                                                    contracts
-                                                                                    Act No. 6,
-    107. Computation of estimated and final petroleum profit tax shall be           Computa-
-made in the US dollars on the basis of the US dollar returns filed.                 tion of
-                                                                                    petroleum
-                                                                                    profits tax
-      108. Royalty oil shall be allocated to the Commission or the holder, in       Allocation
-such quantum as shall generate an amount equal to actual royalty payable            of royalty
-                                                                                    oil
+     106. Royalty shall be determined and payable in accordance with the
+provisions of the Seventh Schedule to the Petroleum Industry Act.
+
+
+
+
+
+
+
+    107. Computation of estimated and final petroleum profit tax shall be
+made in the US dollars on the basis of the US dollar returns filed.
+
+
+      108. Royalty oil shall be allocated to the Commission or the holder, in
+such quantum as shall generate an amount equal to actual royalty payable
+
 during each month and the concession rental payable annually in accordance
 with the production sharing contract terms.
       `109. (1) Cost oil shall be allocated to the contractor in such quantum as    Allocation
-shall generate an amount sufficient for the recovery of operating costs in oil      of cost oil
+shall generate an amount sufficient for the recovery of operating costs in oil
 prospecting licences as defined in the production sharing contract and any oil
 mining leases derived therefrom.
      (2) All operating costs shall be recovered in U S dollars through cost oil
@@ -2886,15 +2878,15 @@ tion sharing
 contract
 
                    PART IV - MISCELLANEOUS PROVISIONS
-     118. (1) The Service shall administer royalties payable under this Act in      Administra-
-accordance with the provisions of the Nigeria Tax Administration Act, 2025.         tion of
-                                                                                    royalties
+     118. (1) The Service shall administer royalties payable under this Act in
+accordance with the provisions of the Nigeria Tax Administration Act, 2025.
+
       (2) Notwithstanding any other provision of this Act and any other law the
 Commission shall account for all royalties due within the ten-year period im-
 mediately preceding the commencement of this Act and the Service shall have
 the authority to verify the records provided.
-     119. In this Part -–                                                           Interpreta-
-                                                                                    tion
+     119. In this Part -–
+
       "accounting date" means the date on which a company usually prepares
   its accounting statement;
       "accounting period" in relation to a company engaged in upstream
@@ -2994,15 +2986,15 @@ stations for the distribution, marketing and retailing of petroleum products;
     "exploration well" means a well that in the opinion of the Commission
 is aimed at discovering petroleum in a separate field in which petroleum has
 not been previously discovered;
-    "Federation Account" means the Federation Account as specified in                 Cap, C23
-the Constitution of the Federal Republic of Nigeria;                                  LFN, 2024
+    "Federation Account" means the Federation Account as specified in
+the Constitution of the Federal Republic of Nigeria;
 
     "field" includes an area consisting of a single reservoir or multiple
 reservoirs all grouped on, or related to, the same geological structural feature,
 stratigraphic condition, a combination of both and refers to the underground
 productive formations or their vertical projection to the surface;
-    "fiscal gas price" means the price established in paragraph 8(3) of the           Act, No. 6,
-Seventh Schedule to the Petroleum Industry Act;                                       2021
+    "fiscal gas price" means the price established in paragraph 8(3) of the
+Seventh Schedule to the Petroleum Industry Act;
 
     "fiscal oil price" means the price established in paragraphs 8(1) and (2)
 of the Seventh Schedule of the Petroleum Industry Act;
@@ -3066,8 +3058,8 @@ and retail customers –
    (a) for use as a domestic, commercial and industrial fuel; and
    (b) as feedstock or industrial raw material;
    "measurement point" means –
-   (a) a point determined in the field development plan under section 79 (2)        Act No. 6,
-of Petroleum Industry Act, where petroleum is being measured and its value          2021
+   (a) a point determined in the field development plan under section 79 (2)
+of Petroleum Industry Act, where petroleum is being measured and its value
 is determined for royalty purposes;
    (b) where the point has not been determined, a point directly down-
 stream of the flow station in the petroleum mining lease; and
@@ -3148,7 +3140,7 @@ tractor;
    "permit" means an official certificate of permission to undertake an activity
 issued by the Commission or Authority;
    "person" includes a company and any unincorporated body of persons;
-   "petroleum" means for the purposes of –                                                Act, No. 6,
+   "petroleum" means for the purposes of –
    (a) Part I of Chapter Three of this Act, hydrocarbons and associated
 substances as exist in its natural state in strata, and includes crude oil, natural
 gas, condensate and mixtures of any of them, but does not include bitumen
@@ -3171,8 +3163,8 @@ operations or process, not including refining at a refinery, in the course of a
 business carried on by the company engaged in such operations, and all
 operations incidental thereto and any sale of or any disposal of chargeable
 oil by or on behalf of the company;
-   "petroleum products" means materials derived from crude oil and natural                Act, No. 6,
-gas processing such as ethane, propane, butanes, pentanes, liquefied petroleum            2021
+   "petroleum products" means materials derived from crude oil and natural
+gas processing such as ethane, propane, butanes, pentanes, liquefied petroleum
 gas, natural gas liquids, asphalts, gasoline, diesel, gas oil, jet fuel, transportation
 fuels, fuel oils for heating and electricity generation and such other derivatives;
 
@@ -3243,10 +3235,10 @@ LFN, 2004     Three of this Act means the exploration for, appraisal of, develop
 
                                    CHAPTER 4
                           RELIEF FOR DOUBLE TAXATION
-      120. (1) Where, in any year of assessment, any part of the income or                Unilateral
-profit of a resident of Nigeria, derived from outside Nigeria, has been charged           relief of
-to tax in the source country, and that income or profit is also chargeable to tax         double
-                                                                                          taxation
+      120. (1) Where, in any year of assessment, any part of the income or
+profit of a resident of Nigeria, derived from outside Nigeria, has been charged
+to tax in the source country, and that income or profit is also chargeable to tax
+
 in Nigeria, the tax paid outside Nigeria may be allowed as a credit against the
 tax payable in Nigeria.
      (2) The credit to be allowed in subsection (1) shall be the lower of the –
@@ -3256,9 +3248,9 @@ tax payable in Nigeria.
      (3) The Nigerian tax under subsection (2) (a) attributable to the foreign
 income or profit shall be the proportion of the foreign income to total income,
 multiplied by the Nigerian tax.
-     121. (1) Where the Government of the Federal Republic of Nigeria                     Double
-enters into an agreement with a treaty partner for the purpose of providing               taxation
-                                                                                          agreement
+     121. (1) Where the Government of the Federal Republic of Nigeria
+enters into an agreement with a treaty partner for the purpose of providing
+
 
                relief from double taxation in relation to tax imposed under this Act, the agree-
                ment shall have effect upon ratification or domestication by the National As-
@@ -3337,8 +3329,8 @@ as are material in determining whether any of credit is due.
 derived by a resident of Nigeria is exempt from tax under this Act, the exempt
 income shall be taken into account in determining the rate of tax applicable on
 the remaining income of such resident.
-     123. For purposes of Chapter Four of this Act–                                  Interpreta-
-                                                                                     tion
+     123. For purposes of Chapter Four of this Act–
+
     "foreign tax" means any tax paid to a treaty partner and covered by an
   agreement with the treaty partner;
 
@@ -3385,7 +3377,7 @@ stamp           as prescribed under Chapter Five of this Act, shall be stamped n
 
 security in a transaction for which an instrument is executed, shall be respon-
 sible for paying the duty relating to the transaction.
-     127. (1) Any unstamped dutiable instrument shall not be admissible in            Admissible
+     127. (1) Any unstamped dutiable instrument shall not be admissible in
 evidence in any court, judicial or arbitration proceedings, and in satisfying any     evidence
 evidentiary requirements unless otherwise stated by this Act.
 
@@ -3393,8 +3385,8 @@ evidentiary requirements unless otherwise stated by this Act.
 may be given in evidence in a criminal proceeding.
 
                     PART II – CHARGEABLE INSTRUMENTS
-     128. For the purposes of Chapter Five of this Act –                              Bill of
-                                                                                      exchange
+     128. For the purposes of Chapter Five of this Act –
+
      "bill of exchange" includes draft, order, cheque and letter of credit, and
   any document or writing, except a bank note entitling or purporting to entitle
   a person, whether named therein or not, to payment by any other person of
@@ -3411,15 +3403,15 @@ may be given in evidence in a criminal proceeding.
   and sent or delivered by the person making the same to the person by whom
   the payment is to be made and not to the person to whom the payment is to
   be made, or to any person on his behalf.
-     129. (1) For the purposes of Chapter Five of this Act, "promissory note"         Promissory
-includes any document or writing, except a bank note, containing a promise to         Note
+     129. (1) For the purposes of Chapter Five of this Act, "promissory note"
+includes any document or writing, except a bank note, containing a promise to
 pay any sum of money.
       (2) A note promising the payment of any sum of money out of any particular
 fund which may or may not be available, or upon any condition or contingency
 which may or may not be performed or happen, shall be deemed a promissory
 note for that sum of money.
-      130. (1) The provisions of Chapter Five of this Act as to contract notes        Sale or
-shall apply to any contract under which an option is given or taken to purchase       purchase of
+      130. (1) The provisions of Chapter Five of this Act as to contract notes
+shall apply to any contract under which an option is given or taken to purchase
 or sell any stock or marketable security at a future time at a certain price, as it   options
 applies to the sale or purchase of any stock or marketable security.
       (2) Where under the contract in subsection (1), a double option is given
@@ -3469,11 +3461,11 @@ capital         duty, as specified in the Ninth Schedule to this Act.
 Ninth              beneficiary of the disbursement shall be responsible to pay the duty as
 Schedule           prescribed in the Ninth Schedule to this Act.
 
-      138. An instrument made for the purpose of issuing marketable securi-         Marketable
-ties by or on behalf of a company or body of persons, corporate or unincorpo-       Security
+      138. An instrument made for the purpose of issuing marketable securi-
+ties by or on behalf of a company or body of persons, corporate or unincorpo-
 rated, formed or established in Nigeria shall be subject to duty under Chapter
 Five of this Act, whether the securities are issued in Nigeria or not.
-     139. (1) Every appraisement or valuation carried out for the purpose of        Appraisements
+     139. (1) Every appraisement or valuation carried out for the purpose of
 ascertaining the value of a real property is subject to duty, which shall be
 accounted for by the appraiser.
      (2) For the purpose of Chapter Five of this Act, "appraiser" means any
@@ -3481,40 +3473,40 @@ person who values or appraises any estate or real property, or any interest,
 whether in possession or not, in any estate or real property, for a fee.
 
                   PART III – MISCELLANEOUS PROVISIONS
-      140. The duplicate or counterpart of an instrument chargeable with duty       Duplicates
+      140. The duplicate or counterpart of an instrument chargeable with duty
 shall not be deemed duly stamped, unless it is stamped as an original instrument    and
-                                                                                    counterparts
+
 or certified by the relevant tax authority that the full duty on the original
 instrument has been paid.
       141. Where an instrument contains or relates to more than one transaction     Duty relating
 or several distinct matters, each transaction or distinct matter shall be charged   to one
-to duty separately.                                                                 instrument
-                                                                                    covering
-                                                                                    multiple
-                                                                                    transactions
+to duty separately.
 
-      142. (1) Where multiple instruments chargeable with advalorem duties          Duty relating
-are executed for effecting the same transaction, only one of the instruments,       to multiple
-                                                                                    instruments
-as may be determined by the relevant tax authority, shall be charged with the       covering
-advalorem duty.                                                                     same
-                                                                                    transaction
-     (2) Any other instrument referred to in subsection (1) shall be stamped        Nineth
-as counterparts at flat rates prescribed in the Nineth Schedule to this Act.        Schedule
 
-      143. Where an instrument chargeable with advalorem duty consists of           Provision on
-non-monetary consideration, the value shall be deemed as the market value of        non-
-                                                                                    monetary
-the consideration or part thereof.                                                  consideration
+
+
+      142. (1) Where multiple instruments chargeable with advalorem duties
+are executed for effecting the same transaction, only one of the instruments,
+
+as may be determined by the relevant tax authority, shall be charged with the
+advalorem duty.
+
+     (2) Any other instrument referred to in subsection (1) shall be stamped
+as counterparts at flat rates prescribed in the Nineth Schedule to this Act.
+
+      143. Where an instrument chargeable with advalorem duty consists of
+non-monetary consideration, the value shall be deemed as the market value of
+
+the consideration or part thereof.
 
                                   CHAPTER 6
                                VALUE ADDED TAX
                   PART I – IMPOSITION OF VALUE ADDED TAX
-     144. Value Added Tax (VAT) is imposed in accordance with the provisions        Imposition
-of Chapter Six of this Act.                                                         of Value
-                                                                                    Added Tax
-     145. Subject to the exemptions in Part IV of Chapter Eight of this Act,        Charge of
-                                                                                    VAT
+     144. Value Added Tax (VAT) is imposed in accordance with the provisions
+of Chapter Six of this Act.
+
+     145. Subject to the exemptions in Part IV of Chapter Eight of this Act,
+
 
            VAT shall be paid on all taxable supplies in Nigeria.
 Taxable         146. A taxable supply shall be deemed to take place in Nigeria where, in
@@ -3581,12 +3573,12 @@ Supply     shall be deemed to take place at the time an invoice or receipt is is
   the supply shall be deemed to take place at the time the taxable supply is
   delivered or the time any payment of consideration is received by the supplier
   in respect of the supply, whichever occurs first.
-    148. Subject to the provisions of Part IV of Chapter Eight of this Act,         Rate of VAT
+    148. Subject to the provisions of Part IV of Chapter Eight of this Act,
 VAT shall be charged on the value of all taxable supplies at the rate of 7.5%.
 
      149. (1) For the purposes of Chapter Six of this Act, the value of taxable     Value of
-supplies shall be determined as follows, where the supply is -                      taxable
-                                                                                    supplies
+supplies shall be determined as follows, where the supply is -
+
      (a) for a money consideration, its value shall be the amount which with
   the addition of the VAT chargeable is equal to the consideration; and
      (b) not for a money consideration, the value of the supply shall be its
@@ -3640,12 +3632,12 @@ residents
             proof of payment of the VAT.
 
             PART II – REMITTANCES AND RECOVERY OF VAT
-     152. (1) A taxable person shall pay VAT to a supplier on the taxable          Payment of
-supply made to the person.                                                         VAT by
-                                                                                   taxable
-    (2) The VAT paid by a taxable person under subsection (1) shall be             person
+     152. (1) A taxable person shall pay VAT to a supplier on the taxable
+supply made to the person.
+
+    (2) The VAT paid by a taxable person under subsection (1) shall be
 known as input VAT.
-     153. (1) A taxable person who makes a taxable supply shall maintain a         VAT Invoice
+     153. (1) A taxable person who makes a taxable supply shall maintain a
 sequential invoice numbering, and shall in respect of a supply, furnish the pur-
 chaser with a VAT invoice containing, the following –
      (a) supplier's tax ID;
@@ -3665,14 +3657,14 @@ person who makes taxable supplies to adopt the use of electronic invoice,
 provided that it gives a notice of, at least 30 days to the person.
      154. (1) A taxable person shall, on making taxable supplies under Chapter     Collection of
 Six of this Act, collect VAT at the rate specified in section 148 of this Act.     VAT by
-                                                                                   taxable
-    (2) The VAT collected by a taxable person under subsection (1) shall be        person
+
+    (2) The VAT collected by a taxable person under subsection (1) shall be
 known as output VAT.
       155. (1) Without prejudice to any provision of this Act or any other tax     Collection of
-law, the following persons shall collect or withhold VAT on taxable supplies       VAT by
+law, the following persons shall collect or withhold VAT on taxable supplies
 made to them and remit it to the Service within the time prescribed by this Act,   persons
-                                                                                   other than
-the Nigeria Tax Administration Act, 2025, or any regulation made pursuant          the supplier
+
+the Nigeria Tax Administration Act, 2025, or any regulation made pursuant
 thereto –
      (a) Federal, State, Local Government and their respective Ministries,
   Departments or Agencies; or
@@ -3727,12 +3719,12 @@ VAT
    the end of the tax period in which the input tax was incurred.
       (6) The input tax which may be deducted in line with subsection (5) shall
 be limited to taxable supplies made as from the commencement of this Act.
-      157. The provisions of section 190 of this Act shall apply in respect of       Business
+      157. The provisions of section 190 of this Act shall apply in respect of
 sale or transfer of trade, business, profession or vocation carried on in Nigeria.   sold out
 
-      158. (1) A taxable person making a taxable supply shall implement the          Fiscalisation
-fiscalisation system deployed by the Service in accordance with Nigeria Tax          of supplies
-Administration Act, 2025.                                                            for VAT
+      158. (1) A taxable person making a taxable supply shall implement the
+fiscalisation system deployed by the Service in accordance with Nigeria Tax
+Administration Act, 2025.
 
       (2) The fiscalisation system may include fiscal equipment consisting of
 electronic devices, software solutions or a communication system involving a
@@ -3741,24 +3733,24 @@ invoicing and data transfer as the Service may prescribe or deploy.
 
                                    CHAPTER 7
                                    SURCHARGE
-     159. A surcharge is imposed at 5% on chargeable fossil fuel products            Imposition
+     159. A surcharge is imposed at 5% on chargeable fossil fuel products
 provided or produced in Nigeria, and shall be collected at the time a chargeable     of surcharge
 transaction occurs.
        160. (1) For the purpose of imposing surcharge on fossil fuel product, the    Chargeable
-chargeable transaction shall be the supply, sale or payment whichever occurs         transaction
-first.                                                                               and base for
-                                                                                     surcharge
+chargeable transaction shall be the supply, sale or payment whichever occurs
+first.
+
       (2) Surcharge shall be computed based on the retail price of all chargeable
 fossil fuel products.
-     161. (1) The Minister may by an order issued in the Official Gazette            Administra-
-indicate the effective date of commencement of the administration of the             tion of
-                                                                                     Surcharge
+     161. (1) The Minister may by an order issued in the Official Gazette
+indicate the effective date of commencement of the administration of the
+
 surcharge on fossil fuel products under this Chapter.
       (2) The Service shall administer and collect the surcharge on a monthly
 basis, and may issue regulations for its administration.
       162. (1) The surcharge under this Chapter shall not apply to the following     Exemption
-fossil fuel products –                                                               from
-                                                                                     Surcharge
+fossil fuel products –
+
      (a) clean or renewable energy products;
      (b) household kerosene;
      (c) cooking gas; and
@@ -3823,11 +3815,11 @@ by him in Nigeria:
 Provided that this exemption shall not apply to the income of an employee
 engaged in domestic duties, or where the officer or employee ordinarily
 resides in Nigeria and is not a national of the foreign State;
-   (g) an income in respect of which tax is remitted or exempt under the          Cap. D9
-provisions of the Diplomatic Immunities and Privileges Act or of any              LFN, 2004
+   (g) an income in respect of which tax is remitted or exempt under the
+provisions of the Diplomatic Immunities and Privileges Act or of any
 enactment, order or notice continued in force or effected by that Act;
-   (h) pension funds and assets created pursuant to the Pension Reform            Act No. 4,
-Act;                                                                              2014
+   (h) pension funds and assets created pursuant to the Pension Reform
+Act;
    (i) pension, gratuity or any retirement benefits granted in accordance
 with the Pension Reform Act;
    (j) wound and disability pensions granted to members of the armed forces
@@ -3896,13 +3888,13 @@ Schedule       including crop production, livestock, aquaculture, forestry, dair
      "net employment" means the total number of persons employed less the
   total number of persons disengaged during the calendar year, whether such
   disengagement is voluntary or not.
-     "other rank" has the meaning assigned to it by the Armed Forces Pen-              Cap. A23,
-  sions Act.                                                                           LFN 2004
+     "other rank" has the meaning assigned to it by the Armed Forces Pen-
+  sions Act.
   "personal emoluments" means wages or salaries and includes allowances,
   benefits in kind, gratuities, superannuation or pension schemes and any other
   income derived solely by reason of employment as other rank.
-      164. (1) Subject to the provisions of this section and notwithstanding           Deductible
-anything contained in section 20 of this Act, for the purposes of ascertaining         donations
+      164. (1) Subject to the provisions of this section and notwithstanding
+anything contained in section 20 of this Act, for the purposes of ascertaining
 the profits or loss of any company for any period from any source chargeable
 with tax under Chapter Two of this Act, there shall be deducted the amount of
 any donation made for that period by that company to any fund, body or
@@ -3915,8 +3907,8 @@ period notwithstanding that the donation is of a revenue or capital nature.
      (b) statutory bodies or institutions;
      (c) religious, charitable, educational and scientific institutions, established
   in Nigeria;
-     (d) bodies recognised under the Diplomatic Immunities and Privileges              Cap. D9,
-  Act; or                                                                              LFN, 2004
+     (d) bodies recognised under the Diplomatic Immunities and Privileges
+  Act; or
      (e) any pandemic, natural disaster or other public emergency interven-
   tions.
     (4) A company making a deduction for a donation shall provide requisite
@@ -3977,14 +3969,14 @@ qualifying capital expenditure to be incurred by the company on or before
 production day, if the application is approved, is not below the amount specified
 in the 10th Schedule to this Act.
 
-168. (1) Subject to the provisions of this Part, every application for economic      Application
-development incentive certificate shall be addressed to the Executive Secretary      for economic
-of the Nigerian Investment Promotion Commission (NIPC), and shall be in              development
-                                                                                     incentive
-such form as may be specified.                                                       certificate
+168. (1) Subject to the provisions of this Part, every application for economic
+development incentive certificate shall be addressed to the Executive Secretary
+of the Nigerian Investment Promotion Commission (NIPC), and shall be in
+
+such form as may be specified.
 
      (2) The application shall –
-      (a) show a commitment of, or the ability to commit, the minimum capital        Tenth
+      (a) show a commitment of, or the ability to commit, the minimum capital
   required to invest in the specified priority sector listed in the Tenth Schedule   Schedule
   to this Act;
       (b) state whether the company is, or the proposed company when
@@ -4069,7 +4061,7 @@ days after the approval of the President, issue the certificate and communicate
 it to the applicant.
      (6) Notwithstanding anything contained in section 178 of this Act, where
 a company to which economic development incentive status has been issued –
-     (a) acquires another company to which an economic development                 Cap. I7
+     (a) acquires another company to which an economic development
   incentive certificate has been issued under this Part or its equivalent under    LFN, 2004
   the Industrial Development (Income Tax Relief) Act, the incentive status of
   both companies shall cease on the expiry date indicated on the economic
@@ -4093,12 +4085,12 @@ a company to which economic development incentive status has been issued –
      company, shall not be longer than the later date on the economic
      development incentive certificate of the merging companies.
      171. (1) A priority company may, at any time during its incentive period,     Addition of
-make an application in writing to the Executive Secretary of the NIPC for its      product to
-                                                                                   the economic
+make an application in writing to the Executive Secretary of the NIPC for its
+
 economic development incentive certificate to be amended to add another
-                                                                                   development
-product to the priority product or products specified in the certificate.          incentive
-                                                                                   certificate
+
+product to the priority product or products specified in the certificate.
+
 
                    (2) An application under this section shall specify the additional priority
               product and the reasons for the application and the provisions of sections 168
@@ -4151,8 +4143,8 @@ assessment given under the provisions of the Nigeria Tax Administration Act,
       (8) Where the amount of the qualifying capital expenditure incurred by
 the company prior to production day has been determined and certified by the
 Service, the Service shall notify the NIPC of the amount.
-      (9) Where a certificate issued by the Service under subsection (6) certi-      10th
-fies that the company has on or before production day incurred qualifying            Schedule
+      (9) Where a certificate issued by the Service under subsection (6) certi-
+fies that the company has on or before production day incurred qualifying
 capital expenditure lower than the amount specified in the 10th Schedule to
 this Act, the Service shall discountenance such economic development incen-
 tive certificate and notify the NIPC accordingly.
@@ -4163,10 +4155,10 @@ to a company -
      (b) engaged in manufacturing, processing, mining, agricultural or any
   other priority industry, the date in which the company begins to produce the
   priority product in commercial quantities.
-     174.           (1) The NIPC shall cancel an economic development                Cancellation
-incentive certificate –                                                              of economic
-                                                                                     development
-     (a) on the application of the priority company concerned;                       incentive
+     174.           (1) The NIPC shall cancel an economic development
+incentive certificate –
+
+     (a) on the application of the priority company concerned;
      (b) on the cessation of the priority business or the company being liquidated   certificate
   or wound up; or
      (c) where the priority company fails to commence production 12 months
@@ -4234,14 +4226,14 @@ that section
      (3) A company having unutilised tax credit may utilise it within five
 assessment years after the end of the priority period, after which any
 unutilised tax credit shall lapse.
-     178. The incentive period of a priority company shall commence           Economic
-on the production day of the company, and subject to sections 170, 171        development
-and 174 of this Act, shall be for a period of five years.                     incentive
-                                                                              period
-      179. (1) Where a priority company carries on a non-priority busi-       Books and
-ness, the company shall maintain separate records of income and books         records for
-of account for each business.                                                 priority
-                                                                              products
+     178. The incentive period of a priority company shall commence
+on the production day of the company, and subject to sections 170, 171
+and 174 of this Act, shall be for a period of five years.
+
+      179. (1) Where a priority company carries on a non-priority busi-
+ness, the company shall maintain separate records of income and books
+of account for each business.
+
       (2) The records of each business certified by an auditor, shall be
 sufficient to enable the determination of the turnover, income or profits
 of each class of business.
@@ -4253,15 +4245,15 @@ shall not be granted.
 the Nigeria Tax Administration Act, 2025, including the filing of returns,    profits
 shall apply to a company granted economic development incentive sta-
 tus during the priority period.
-      (2) The company shall provide evidence of compliance with the           10th
-minimum qualifying criteria specified in sections 167 and 168, and the        Schedule
+      (2) The company shall provide evidence of compliance with the
+minimum qualifying criteria specified in sections 167 and 168, and the
 10th Schedule to this Act, accompanied with the annual income tax returns.
  181. (1) The Service may, not later than six years after the cancellation    Cancellation
-of an economic development incentive certificate, withdraw or discoun-        or discounte-
-tenance an economic development tax credit granted under this Part,           nance of
-                                                                              economic
-except in the case of fraud where there is no limit to the time for the       development
-withdrawal of the economic development tax credit.                            tax credit
+of an economic development incentive certificate, withdraw or discoun-
+tenance an economic development tax credit granted under this Part,
+
+except in the case of fraud where there is no limit to the time for the
+withdrawal of the economic development tax credit.
      (2) Where an economic development tax credit is withdrawn or
 discountenanced under subsection (1), the Service shall, within the time
 prescribed under the Nigeria Tax Administration Act, 2025, issue notice
@@ -4327,8 +4319,8 @@ duties
   and intra-bank self- transfers.
 
                      PART IV - EXEMPTION FROM VALUE ADDED TAX
-    186.(1) The following supplies are exempt from the VAT imposed under            Exempt
-Chapter Six of this Act –                                                           Supplies
+    186.(1) The following supplies are exempt from the VAT imposed under
+Chapter Six of this Act –
 
      (a) oil and gas exports;
      (b) crude petroleum oil and feed gas for all processed gas;
@@ -4345,7 +4337,7 @@ Chapter Six of this Act –                                                     
   free trade zones, provided that the supplies are consumed on its approved
   activity;
      (j) goods or services supplied to a diplomatic mission, diplomat or person     Cap. D9,
-  recognised under the Diplomatic Immunities and Privileges Act whose               LFN, 2004
+  recognised under the Diplomatic Immunities and Privileges Act whose
   activity is in public interest, and not for profit;
      (k) plays and performances conducted by educational institutions as part
   of learning;
@@ -4391,8 +4383,8 @@ the President
                 project from VAT, the President may, by an order published in the Official
 
 Gazette, give effect to the exemption.
-     189. For the purposes of this Part and Chapter Six of this Act –                Interpreta-
-                                                                                     tion
+     189. For the purposes of this Part and Chapter Six of this Act –
+
      "agricultural seeds and seedlings" refer to seeds and seedlings for
   the cultivation of agricultural plants and crops;
      "baby products" means products made for the use of babies from birth
@@ -4554,10 +4546,10 @@ accessory, consumable or other piece of medical equipment, including vet-
 
                                CHAPTER NINE
                              GENERAL PROVISIONS
-     190. (1) The following rules shall apply in the event of restructuring of       Business
-trades or businesses –                                                               restructuring
-                                                                                     First
-     (a) in the case of a merger of two or more trades or businesses –               Schedule
+     190. (1) The following rules shall apply in the event of restructuring of
+trades or businesses –
+
+     (a) in the case of a merger of two or more trades or businesses –
         (i) a new trade or business shall not be deemed to have commenced
      as a result of the merger, and the provisions of this Act as they relate to
      cessation of trade or business shall not apply to the trade or business that
@@ -4569,7 +4561,7 @@ trades or businesses –                                                        
      have been transferred at the residue of the qualifying capital expenditure
      on the day following the merger,
         (iv) the provisions of the First Schedule to this Act shall apply on the     First
-     remaining useful life of the asset transferred as a result of the merger        Schedule
+     remaining useful life of the asset transferred as a result of the merger
 
         (v) unutilised capital allowance on the assets transferred shall be
      available for the use of the new or surviving trade or business,
@@ -4584,7 +4576,7 @@ trades or businesses –                                                        
      cessation of trade, business, profession or vocation shall apply to the
      trade or business that was sold or transferred,
         (ii) for the purposes of the First Schedule to this Act, the asset sold or   First
-     transferred shall be recognised at the value at which they are sold or          Schedule
+     transferred shall be recognised at the value at which they are sold or
      transferred,
         (iii) the provisions of Part VIII of Chapter two of this Act as they
      relate to chargeable gains shall apply on any asset sold or transferred,
@@ -4639,7 +4631,7 @@ supply of goods or services for the purposes of VAT, provided that the pur-
 chaser is registered in accordance with Part II of the Nigeria Tax Administra-
 tion Act, 2025 or registerable as a result of the transfer.
        191. (1) Where a relevant tax authority is of the opinion that a disposition   Artificial
-is not given effect to, or that a transaction which reduces or may reduce the         transactions
+is not given effect to, or that a transaction which reduces or may reduce the
 amount of tax payable, is artificial or fictitious, it may disregard any such
 disposition or transaction, or direct that such adjustments be made with re-
 spect to liability to tax as it considers appropriate, to counteract the reduction
@@ -4653,12 +4645,12 @@ under this section.
   arrangement; and
       (b) a transaction between connected persons shall be deemed to be
   artificial or fictitious if, in the opinion of the relevant tax authority, the
-  transaction has not been made at arm's length.                                      Transactions
-      192. (1) A company involved in an arrangement with a related party              between
-shall –                                                                               related
-                                                                                      parties to be
-     (a) ensure that the terms and conditions for which the arrangement is            at arm's
-  carried out is at arm's length; and                                                 length
+  transaction has not been made at arm's length.
+      192. (1) A company involved in an arrangement with a related party
+shall –
+
+     (a) ensure that the terms and conditions for which the arrangement is
+  carried out is at arm's length; and
 
      (b) report the arrangement in the form and manner prescribed by the
   relevant tax authority.
@@ -4718,9 +4710,9 @@ Repeals             196. From the commencement of this Act, the following enactm
   2004; and
     (l) Venture Capital (Incentives) Act, Cap. V2, Laws of the Federation of
   Nigeria, 2004.
-                                                                                    Consequen-
-      197. (1) The Petroleum Industry Act, No. 6, 2021 is amended by                tial amend-
-deleting –                                                                          ments
+
+      197. (1) The Petroleum Industry Act, No. 6, 2021 is amended by
+deleting –
 
      (a) Part I - X of Chapter Four;
      (b) the Fifth and Sixth Schedules;
@@ -4812,9 +4804,9 @@ Gazette for the effective implementation of this subsection.
 under this Act or under any other law shall, for the purposes of giving effect
 to imposition of any tax, levy, royalty, surcharge on fossil fuel, discharge
 such duty or obligation in accordance with this Act.
-   202. In this Act –                                                               General
-                                                                                    interpreta-
-   "accelerator" is as defined in the Nigeria Startup Act, No. 32, 2022 ;           tion
+   202. In this Act –
+
+   "accelerator" is as defined in the Nigeria Startup Act, No. 32, 2022 ;
    "accounting period" means a period for which accounts have been
 made up ;
    "advalorem" means the value of a transaction or property ;
@@ -5232,7 +5224,7 @@ conveyance for the transportation by land of human beings or goods ;
 human beings or goods ; and
       "year of assessment" means government tax year being 1st of January
 to 31st of December of any year.
-     203. This Act may be cited as the Nigeria Tax Act, 2025.                       Citation
+     203. This Act may be cited as the Nigeria Tax Act, 2025.
 
                                        SCHEDULES
 
@@ -5854,11 +5846,11 @@ provisions of this Part.
         have their own provisions under the model contract.
                                    Capital allowance rates
              14. (1) Qualifying expenditure shall be subject to the rates below –
-          Qualifying Capital Expenditure 1st          2nd       3rd   4th   5th
-          Qualifying Plant Expenditure 20%            20%       20%   20%   20%
-          Qualifying Pipeline Expenditure 20%         20%       20%   20%   20%
-          Qualifying Building Expenditure 20%         20%       20%   20%   20%
-          Qualifying Drilling Expenditure 20%         20%       20%   20%   20%
+          Qualifying Capital Expenditure 1st          2nd
+          Qualifying Plant Expenditure 20%            20%
+          Qualifying Pipeline Expenditure 20%         20%
+          Qualifying Building Expenditure 20%         20%
+          Qualifying Drilling Expenditure 20%         20%
               (2) Exploration expenditure and the first two appraisal wells expenditure
         in the same field are to be treated as deductible costs 100% in the year incurred,
         while for additional exploration expenditures and appraisal expenditures in the
@@ -6140,7 +6132,7 @@ petroleum operations carried on by the owner, the asset shall be deemed to be
   5th year .................................................................................... 20
 
                                        Second Schedule
-                                                                                        Section 60
+
     EXPORT PROCESSING AND FREE TRADE ZONE ENTITIES
       1. This schedule applies to the export processing and free trade zones,
 (the zones) and approved export processing and fre3e trade zone entities, (the
@@ -6199,7 +6191,7 @@ provide evidence of export proceeds, either in cash inflow or imported raw
 materials or equipment, as a condition to claim the tax incentives.
 
                                Second Schedule
-                                                                       Section 60
+
      EXPORT PROCESSING AND FREE TRADE ZONE ENTITIES
       1. This schedule applies to the export processing and free trade zones,
 (the zones) and approved export processing and fre3e trade zone entities, (the
@@ -6288,7 +6280,7 @@ deductible in the computation of income chargeable under the head "profits
 and gains of business or profession".
 
                                 Fourth Schedule
-                                                                    Section 58(1)
+
                   INDIVIDUALS' INCOME TAX RATES
 After the relief allowance and exemptions had been granted in accordance
 with subsection (1) of section 30 of this Act, the taxable income ascertained
@@ -6301,7 +6293,7 @@ shall be taxed at the following rates –
      (f) Above N50,000,000 at 25%.
 
                                         Fifth Schedule
-                                                                  Sections 16 and 26(4)
+
 
               INCOME FROM SETTLEMENTS, TRUSTS AND ESTATES
                   PART I - INCOME FROM SETTLEMENTS, TRUSTS AND ESTATES
@@ -6559,9 +6551,8 @@ of the First Schedule to this Act, excluding those related to section 68(1)(a),
           the hydrocarbon tax.
 
                                       Seventh Schedule
-                                                               Sections 73(3), 89(1), (2),
-                                                                                 and 119
-                                 PETROLEUM ROYALTY
+
+
                            PART I — ADMINISTRATION OF ROYALTIES
                              Royalties on petroleum production
               1. (1) The Service shall administer royalties payable in accordance with
@@ -6620,9 +6611,9 @@ case of -
   month on terrain basis as follows –
 
               (i) onshore areas - 15%,
-                  (ii) shallow water (up to 200m water depth) –            12.5%,
-                  (iii) deep offshore (beyond 200m water depth) –          7.5%, and
-                  (iv) frontier basins                               –     7.5%;
+                  (ii) shallow water (up to 200m water depth) –
+                  (iii) deep offshore (beyond 200m water depth) –
+                  (iv) frontier basins
               (c) for deep offshore fields with a production during a month of not more
            than 50,000 bopd, the royalty rate shall be 5% and the share of the production
            above 50,000 bopd shall be at the royalty rate specified in paragraph (b);
@@ -6676,12 +6667,12 @@ case of -
 on a monthly basis, which shall be at a rate per centum of the chargeable value
 of the crude oil and casing head petroleum spirit produced from the relevant
 area in the relevant period as follows –
-     (a) onshore areas                               –          20%;
-     (b) offshore areas up to 100 metres water depth –          18.5%;
+     (a) onshore areas                               –
+     (b) offshore areas up to 100 metres water depth –
      (c) offshore areas above 100 up to 200 metres water depth -16.5%;
-     (d) offshore areas beyond 200 metres water depth –             10%;
-     (e) frontier basin                              –          7.5%; and
-     (f) inland basin                                –          7.5%.
+     (d) offshore areas beyond 200 metres water depth –
+     (e) frontier basin                              –
+     (f) inland basin                                –
  Royalty for Onshore and shallow Offshore Production Sharing Con-
                                tracts
     (2) The following royalties for onshore and shallow offshore production
@@ -6721,11 +6712,11 @@ area in the relevant period as follows –
               (b) the royalty rates shall be based on increase that exceeds US$20 per
         barrel, and shall be determined separately for crude oil and condensates as
         follows –
-              (i) from US$ 0 and up to US$ 20 per barrel             – 0%,
-              (ii) above US$ 20 and up to US$ 60 per barrel          – 2.5%,
+              (i) from US$ 0 and up to US$ 20 per barrel
+              (ii) above US$ 20 and up to US$ 60 per barrel
               (iii) above US$60 and up to US$ 100 per barrel – 4%,
               (iv) above US$ 100 and up to US$ 150 per barrel – 8%, and
-              (v) above US$ 150                                      – 10%;
+              (v) above US$ 150
               (c) royalty based on production for natural gas shall be at a rate per
         centum of the price received by a licensee, lessee or marginal field holder in
         the relevant area, or at a price not less than the fees prescribed for gas flare
@@ -6745,7 +6736,7 @@ regulations whichever is greater.
 
                                 Eighth Schedule
                                                         Section 64 (3), 124, 133
-                                                                    and 142 (2)
+
                        SOLID MINERALS ROYALTY
      1. Any person who extracts any solid mineral shall pay royalty in accord-
 ance with the provisions of this Act and the Nigeria Tax Administration Act,
@@ -6838,106 +6829,106 @@ S/N     MINERALS                   AD VALOREM
 71   ZIRCON SAND                           10
 72   MOGANITE                              10
 72   ANY OTHER MINERAL                     10
-          Name of Instruments                 Type        New Rate   Persons liable     Exemptions          A 554
+          Name of Instruments                 Type        New Rate   Persons liable     Exemptions
 S/N
-                                                                     to Pay Duty
 
-      Agreement or Contract accompanied      Ad Valorem   0.375%     Mortgagee        Relates to property
-1     with a deposit (see Mortgage)                                                   less than
-                                                                                      N10,000,000
+
+      Agreement or Contract accompanied      Ad Valorem   0.375%     Mortgagee
+1     with a deposit (see Mortgage)
+
 2     Agreement for sale of real property
-                                             Ad Valorem   1.5%       Transferee
-      (see Conveyance on sale)                                                                              2025 No. 7
+                                             Ad Valorem   1.5%
+      (see Conveyance on sale)
 
-3     Annuity (see Conveyance on Sale)       Ad Valorem   1.5%       Transferee
-                                                                                      Relates to property
-4     Assignment (by way of security or      Ad Valorem              Mortgagee
-                                                          0.375%                      less than
+3     Annuity (see Conveyance on Sale)       Ad Valorem   1.5%
+
+4     Assignment (by way of security or      Ad Valorem
+                                                          0.375%
       of any security) (see Mortgage)
-                                                                                      N10,000,000
+
 5     Irrevocable Assignment (upon a sale
-                                             Ad Valorem   1.5%       Transferee
+                                             Ad Valorem   1.5%
       or otherwise) (see Conveyance)
 
-6     Bill of Exchange - of any other Kind   Ad Valorem   0.10%      Payee
-      (Local & Foreign)                                                                                     Nigeria Tax Act, 2025
+6     Bill of Exchange - of any other Kind   Ad Valorem   0.10%
+      (Local & Foreign)
 
       Bonds (Repayment of money &                         0.375%     Party taking
 7                                            Ad Valorem
-      Transfer Stocks)                                               security
+      Transfer Stocks)
 
-8     Capital Duty on Nominal Shares         Ad Valorem   0.75%      Company
+8     Capital Duty on Nominal Shares         Ad Valorem   0.75%
 9    Capital Duty on Loan capital           Ad Valorem   0.125%   Borrower     .  Overdraft at the
-                                                                               bank
-                                                                               Loan raised for a
-                                                                               .
-                                                                               period not exceeding 12
-                                                                               months
-                                                                                Loan obtained for
-                                                                               .
-                                                                               onward disbursement to
-                                                                               any other person in an
-                                                                               onlending arrangement
+
+
+
+
+
+
+
+
+
+
 
 10   Capital Duty on Loan Capital issued    Ad Valorem   0.1%     Lender
      wholly or partly for the purpose of
      converting or consolidating existing
      capital
-                                                                                                         Nigeria Tax Act, 2025
+
 
 11   Contract notes for marketable          Ad Valorem   0.8%     Transferee   Contract note sent
-     security                                                                  by a broker or agent
-                                                                               to his principal where
-                                                                               the principal is
-                                                                               himself acting as a
-                                                                               broker or agent for a
-                                                                               principal.                2025 No. 7
+     security
+
+
+
+
+
 
 12   Contract notes for marketable          Ad Valorem   0.08%    Transferee
      security
 
 13   Contract note (Option note)            Ad Valorem   0.04%    Transferee
 
-          Name of Instruments                      Type         New Rate   Persons liable to        Exemptions             A 556
+          Name of Instruments                      Type         New Rate   Persons liable to
 S/N
 
-14    Contract note (following a duly             Ad Valorem   0.04%       Transferee
+14    Contract note (following a duly             Ad Valorem   0.04%
       stamped option note)
 
-15    Conveyance or transfer on sale              Ad Valorem   1.5%         Transferee         • Where the property has
-                                                                                               a value of N10,000,000
-                                                                                               or less                     2025 No. 7
+15    Conveyance or transfer on sale              Ad Valorem   1.5%
 
-                                                                                               • Where the transfer is
-                                                                                               between associated
-                                                                                               companies holding at
-                                                                                               least 90% shareholding in
-                                                                                               each other or through a
-                                                                                               third party, provided it
 
-16    Conveyance or transfer by way of            Ad Valorem   0.375%       Mortgagee          Relates to property
-      security of any property or security (see                                                less than                   Nigeria Tax Act, 2025
+
+
+
+
+
+
+
+
+16    Conveyance or transfer by way of            Ad Valorem   0.375%
+      security of any property or security (see
       Mortgage)
-17    Conveyance or transfers (dispositions       Ad Valorem   1.5%         Transferee
+17    Conveyance or transfers (dispositions       Ad Valorem   1.5%
       inter vivos except to entity created by
       Act for the benefit of Nigeria) (see
 
-18    Covenant (payment of money or               Ad Valorem   0.375%       Mortgagee          Relates to property
-      transfer or re-transfer of stock) (see                                                   less than
+18    Covenant (payment of money or               Ad Valorem   0.375%
+      transfer or re-transfer of stock) (see
       mortgage)
-19   Covenant on annuity (original        Ad Valorem   1.5%      Transferee
+19   Covenant on annuity (original        Ad Valorem   1.5%
 
 20   Covenant on annuity (not original    Ad Valorem   0.375%    Party taking
      creation and sale) (see Bond,
      Covenant)
 
-21   Defeasance (of any conveyance,       Ad Valorem   0.375%    Mortgagee      Relates to property
+21   Defeasance (of any conveyance,       Ad Valorem   0.375%    Mortgagee
      apparently absolute but intended
      only as a security for money or
      stock) (see Mortgage)
 
-22   Demise (see Lease)                   Ad Valorem   Up to 7   Lessee         Relates to property
-                                                       years =                                        Nigeria Tax Act, 2025
+22   Demise (see Lease)                   Ad Valorem   Up to 7   Lessee
+                                                       years =
 
                                                        0.78%.
                                                        Above 7
@@ -6945,116 +6936,116 @@ S/N
 23   Further charge of further security   Ad Valorem   0.375%    Mortgagee
 
 24   Marketable security (all types)      Ad Valorem   0.225%
-                                                                                                      2025 No. 7
+
 25   Mortgage, Bond, Debenture, Covenant Ad Valorem    0.375%    Party taking
      (See bonds)
 
-26   Mutual disposition (see Exchange)    Ad Valorem   1.5%      Transferee
+26   Mutual disposition (see Exchange)    Ad Valorem   1.5%
 
-                                               Type         New Rate   Persons liable to        Exemptions          A 558
+                                               Type         New Rate   Persons liable to
 S/N       Name of Instruments
-                                                                       Pay Duty
 
-27    Partition or Division (see Conveyance   Ad Valorem   1.5%        Transferee
+
+27    Partition or Division (see Conveyance   Ad Valorem   1.5%
       on sale)
 
-28    Policy of insurance (life insurance)    Ad Valorem   0.075%       Policy Holder
+28    Policy of insurance (life insurance)    Ad Valorem   0.075%
       (on premium)
-                                                                                                                    2025 No. 7
 
-29    Policy of insurance (of any other       Ad Valorem   0.075%       Policy Holder
+
+29    Policy of insurance (of any other       Ad Valorem   0.075%
       kind)
 
 30    Promissory note (see Bill of            Ad Valorem   0.1%
       Exchange)
 
-31    Reconveyance (of any security) (see     Ad Valorem   0.375%       Mortgagee          Relates to property      Nigeria Tax Act, 2025
-      Mortgage)                                                                            less than ¦ 10,000,000
+31    Reconveyance (of any security) (see     Ad Valorem   0.375%       Mortgagee
+      Mortgage)
 
-32    Superannuation annuity (see Bond,       Ad Valorem   0.375%       Party taking       Relates to property
-      Covenant)                                                         security           less than ¦ 10,000,000
+32    Superannuation annuity (see Bond,       Ad Valorem   0.375%
+      Covenant)
 
-33    Transfer (see Conveyance)               Ad Valorem   1.5%         Transferee
+33    Transfer (see Conveyance)               Ad Valorem   1.5%
 
-34    Transfer of Mineral Assets              Ad Valorem   2%           Transferee
+34    Transfer of Mineral Assets              Ad Valorem   2%
 35   Agreement or Contracts (all types)   Fixed duty   N1,000   Beneficiary of   • Relates to a subject,
-                                                                service          the value of which is
-                                                                                 less than ¦ 1,000,000.
-                                                                                 • Is for the hire of any
-                                                                                 labourer, employee,
-                                                                                 artificer, manufacturer
-                                                                                 or menial servant.
-                                                                                  • Is made for or
-                                                                                 relating to the sale of
-                                                                                 any goods, wares or
-                                                                                 merchandise, including
-                                                                                 a Hire Purchase
-                                                                                 Agreement.
-                                                                                                            Nigeria Tax Act, 2025
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 36   Agreement or Memorandum of           Fixed duty   N500     Beneficiary of   (See Agreement)
-     Agreement under hand                                       service
+     Agreement under hand
 
 37   Bill of Exchange - Payable on        Fixed duty   N500     Payee
      Demand
 
-38   Bill of Lading                       Fixed duty   N500                      Master’s Copy              2025 No. 7
+38   Bill of Lading                       Fixed duty   N500
 
-                                               Type        New Rate   Persons liable to        Exemptions         A 560
+                                               Type        New Rate   Persons liable to
 S/N       Name of Instruments
-                                                                      Pay Duty
 
-39    Cheque leaf (Bill of Exchange)         Fixed duty   N50         Account owner
 
-40    Counterpart or Duplicate               Fixed duty   N500        (Same as
-                                                                      original)
-41    Draft for money (see Bill of           Fixed duty   N50         Payee                                       2025 No. 7
+39    Cheque leaf (Bill of Exchange)         Fixed duty   N50
+
+40    Counterpart or Duplicate               Fixed duty   N500
+
+41    Draft for money (see Bill of           Fixed duty   N50         Payee
       Exchange)
-42    Guarantee                              Fixed duty   N500        Guarantor
+42    Guarantee                              Fixed duty   N500
 
 43    Letter of credit (see Bill of Ex-      Fixed duty   N500
       change)
 
-44    Order (for the payment of money)       Fixed duty   N50         Payee
+44    Order (for the payment of money)       Fixed duty   N50
       (see Bill of Exchange)
 
-45    Policy of marine insurance             Fixed duty   N500        Policy Holder       Cover notes, slips or
-                                                                                          other instruments
-                                                                                                                  Nigeria Tax Act, 2025
+45    Policy of marine insurance             Fixed duty   N500
 
-                                                                                          made in anticipation
-                                                                                          of a formal marine
-                                                                                          insurance policy
-46    Policy of insurance against personal   Fixed duty   N500        Policy Holder       Insurance policies on
-      injury                                                                              personal or household
-                                                                                          effects.
+
+
+
+
+
+46    Policy of insurance against personal   Fixed duty   N500
+      injury
+
 47   Receipt (for value from N10,000)    Fixed duty   N50   (Same as liable
                                                             for underlying
                                                             transaction)
 
-48   Electronic receipt or Transfer of   Fixed duty   N50   Transferor        Money paid into one’s
-     N10,000 upwards                                                          own account or
-                                                                              transferred electroni-
-                                                                              cally between ac-
-                                                                              counts of the same
-                                                                              owner within the same
-                                                                              bank
+48   Electronic receipt or Transfer of   Fixed duty   N50   Transferor
+     N10,000 upwards
 
-                                                                                                       Nigeria Tax Act, 2025
 
-                                                                                                       2025 No. 7
+
+
+
+
+
+
+
 
                                                           Tenth Schedule
                                             Section 166(1), (2), (3), 167(2), 168(2)(a),
                                                         169 (2) 173(9) 180(2)
                                                             184 and 202
 
-                          Economic                                                         Threshold     Sunset
+                          Economic
 S/N    Sub-Sector                                       Priority
-                        Development                  Product/Service                                              2025 No. 7
+                        Development                  Product/Service
                        Incentive Status
 
-1                   Manufacture of            Starches from rice, maize,             N500m             15 years
+1                   Manufacture of            Starches from rice, maize,
                     starches and starch       potatoes, wheat, cassava;
                     products.
                                               Wet corn milling;
@@ -7063,16 +7054,16 @@ S/N    Sub-Sector                                       Priority
                                               inulin;
 
                                               Gluten.
-                                                                                                                  Nigeria Tax Act, 2025
-2     Aquaculture   Marine and Freshwa-       All fish, shellfish and all aquatic    N500m             20 years
+
+2     Aquaculture   Marine and Freshwa-       All fish, shellfish and all aquatic    N500m
                     ter fishing and all
                                               species
                     forms of aquaculture.
 
-                    Aquaculture               Fish processing and preservation       N500m             20 years
+                    Aquaculture               Fish processing and preservation
                     processing
 
-3                   Manufacture of tea        Blending of tea.                       N500m             20 years
+3                   Manufacture of tea        Blending of tea.
                     products.
 4   Refining of     Manufacture of           Oil-based lubricating oils/grease:    N100b   20 years
     Crude Oil and   refined petroleum        hydraulic/engine oil, gear oil, low
@@ -7088,19 +7079,19 @@ S/N    Sub-Sector                                       Priority
 
                                              Aviation fuel;
 
-                                             Products for road covering:                              Nigeria Tax Act, 2025
+                                             Products for road covering:
 
                                              asphalt.
 
-5   Manufacture     Manufacture of           Distribution transformers;            N20b    20 years
+5   Manufacture     Manufacture of           Distribution transformers;
     of Electrical   electric motors,
                                              Power generators;
     Equipment and   generators, transform-
-    Electronics.    ers and electricity      Transmission and distribution                            2025 No. 7
+    Electronics.    ers and electricity      Transmission and distribution
                     distribution and         regulators;
                     control apparatus.
 
-                         Economic                                                Threshold     Sunset   A 564
+                         Economic
 S/N   Sub-Sector                                     Priority
                        Development                Product/Service
                       Incentive Status
@@ -7108,9 +7099,7 @@ S/N   Sub-Sector                                     Priority
                                            Electric motors, power circuit
                                            breaker, surge suppressors (for
                                            distribution level voltage);
-                                                                                                        2025 No. 7
-                                           Control panels, for electric power
-                                           distribution;
+
 
                                            Electrical relays;
 
@@ -7118,9 +7107,9 @@ S/N   Sub-Sector                                     Priority
                                            apparatus, electric fuses, power
                                            switching equipment.
 
-6                  Manufacture of          Primary cells and primary            N20b         20 years
+6                  Manufacture of          Primary cells and primary
                    batteries and accumu-   batteries;
-                                                                                                        Nigeria Tax Act, 2025
+
                    lators.                 Electric accumulators;
                                            Lead acid batteries;
                                            NiCad batteries;
@@ -7128,7 +7117,7 @@ S/N   Sub-Sector                                     Priority
                                            Lithium batteries;
                                            Dry cell batteries;
                                            Wet cell batteries
-7   Manufacture of           Manufacture of discharge,             N10b   12 years
+7   Manufacture of           Manufacture of discharge,
     wiring and electrical    incandescent, fluorescent, ultra-
     lighting equipment.      violet, infra-red bulbs
 
@@ -7139,11 +7128,11 @@ S/N   Sub-Sector                                     Priority
                              Insulated wire and cables made
                              of steel, copper and aluminium
 
-8   Manufacture of           Refrigerators, freezers, oven,        N5b    15 years
+8   Manufacture of           Refrigerators, freezers, oven,
     domestic appliances      cookers, dishwashers, washing
                              and drying machine, vacuum
                              cleaners, floor polisher, blenders,
-                                                                                     Nigeria Tax Act, 2025
+
 
                              juicers, electric shavers, electric
                              toothbrush, tin openers, micro-
@@ -7152,7 +7141,7 @@ S/N   Sub-Sector                                     Priority
 
 9   Manufacture of           Electrical capacitors, resistors,     N5b    15 years
     electronic components.   condensers;
-                                                                                     2025 No. 7
+
 
                              Carbon and graphite electrodes;
                              welding electrodes;
@@ -7160,29 +7149,26 @@ S/N   Sub-Sector                                     Priority
                              Diodes, transistors, light emitting
                              diodes;
 
-                              Economic                                                 Threshold     Sunset
-S/N    Sub-Sector                                          Priority                                           A 566
+                              Economic
+S/N    Sub-Sector                                          Priority
                             Development                 Product/Service
                            Incentive Status
 
                                                  Inverters, rectifying apparatus,
                                                  fuel cells, photovoltaic modules,
                                                  regulated and unregulated power
-                                                 supplies, solar home systems;                                2025 No. 7
+                                                 supplies, solar home systems;
 
                                                  Uninterrupted power supplies,
                                                  surge protectors.
 
-10    Manufacture of    Manufacture of           Irradiation apparatus and tubes,     N20b         15 years
+10    Manufacture of    Manufacture of           Irradiation apparatus and tubes,     N20b
       Electrical        irradiation,             CT Scanners, PET scanners,
       Equipment and     electromedical and       magnetic resonance imaging
       Electronics       electrotherapeutic       (MRI) equipment, medical
                         equipment                ultrasound equipment, electrocar-
-                                                 diographs, electromedical endo-                              Nigeria Tax Act, 2025
-                                                 scopic equipment, medical laser
-                                                 equipment, pacemakers, hearing
-                                                 aids
-11    Electricity and   Electric power           Operation of generation facilities   N100b        20 years
+                                                 diographs, electromedical endo-
+11    Electricity and   Electric power           Operation of generation facilities   N100b
       gas supply.       generation, transmis-    that produce electric energy
                         sion and distribution.   including thermal, nuclear,
                                                  hydroelectric, gas turbine, and
@@ -7200,54 +7186,53 @@ S/N    Sub-Sector                                          Priority             
                                              transmission system to the final
                                              consumer.
 
-12   Electricity and   Production of gas     Production of gaseous fuels with    N100b        20 years
-                                                                                                         Nigeria Tax Act, 2025
+12   Electricity and   Production of gas     Production of gaseous fuels with    N100b
+
 
      gas supply.       including gas         a specified calorific value, by
-                                                                                 Separate
+
                        utilisation (down-    purification, blending and other
-                                                                                 power from
+
                        stream operations).   processes from gases of various
-                                                                                 gas
-                                             types including natural gas;
+
 
                                              Transportation, distribution and
                                              supply of gaseous fuels
-                                                                                                         2025 No. 7
-13   Renewable         Manufacture of        Production and manufacture of       N100b        20 years
+
+13   Renewable         Manufacture of        Production and manufacture of
      Energy            irradiation,          renewable energy equipment and
                        electromedical and    apparatus
                        electrotherapeutic
                        equipment
 
-                              Economic                                                  Threshold      Sunset   A 568
+                              Economic
 S/N    Sub-Sector                                           Priority
                              Development                 Product/Service
                            Incentive Status
 
-14    Mining of Coal    Mining and processing     Coal                                 N10b         20 years
+14    Mining of Coal    Mining and processing     Coal
                         of coal.
 
-15    Mining of metal   Mining and processing     Lead, zinc, iron ore and gold.       N10b         20 years    2025 No. 7
+15    Mining of metal   Mining and processing     Lead, zinc, iron ore and gold.
       Ores.             of lead, zinc, iron ore
                         and gold.
 
-16    Quarrying and     Quarrying of lime-         Limestone, barite, bitumen, and     N5b          20 years
+16    Quarrying and     Quarrying of lime-         Limestone, barite, bitumen, and     N5b
       Mining of other   stone and mining of        bentonite.
       Minerals.         barite, bitumen and
                         bentonite.
 
-17    Mining of         Mining of lithium, rare   Lithium, rare earth.                 N10b         20 years
-      lithium, rare     earth                                                                                   Nigeria Tax Act, 2025
+17    Mining of         Mining of lithium, rare   Lithium, rare earth.
+      lithium, rare     earth
       earth
-18                      Manufacture of            Surgical drapes and sterile string   N5b          20 years
+18                      Manufacture of            Surgical drapes and sterile string   N5b
                         medical and dental        and tissue; Surgical Instruments
                         equipment and             including disposables;
                         supplies.
                                                   Dental fillings and cements,
                                                   dental wax and other dental
                                                   plaster preparations;
-                         Economic                                              Threshold     Sunset
+                         Economic
 S/N   Sub-Sector                                    Priority
                        Development               Product/Service
                       Incentive Status
@@ -7262,46 +7247,42 @@ S/N   Sub-Sector                                    Priority
                                          Distilling apparatus, centrifuges;
 
                                          Medical, surgical, dental or
-                                         veterinary furniture (operating                              Nigeria Tax Act, 2025
-                                         tables, examining tables, hospital
-                                         beds, dentists chair);
+                                         veterinary furniture (operating
 
                                          Bone plates and screws, syringes,
                                          needles, catheters, cannulae;
 
                                          Dental instruments;
 
-                                         Orthopaedic and prosthetic                                   2025 No. 7
-                                         devices;
+                                         Orthopaedic and prosthetic
 
                                          medical thermometers.
-19                 Construction of       Tertiary hospitals;                  N5b          20 years
+19                 Construction of       Tertiary hospitals;
                    Hospitals
                                          Specialist hospitals
-                                Economic                                                    Threshold     Sunset
-S/N    Sub-Sector                                              Priority                                            A 570
-                              Development                   Product/Service
+                                Economic
+S/N    Sub-Sector                                              Priority
                              Incentive Status
 
       Motion picture,    Production and post-         Digital movies, animation, videos,   N5b
-20                                                                                                      15 years
+20
       video and          production of digital        television programmes,
       television         content for motion           commercials;
-      programme          picture, videos,             Online distribution;                                         2025 No. 7
+      programme          picture, videos,             Online distribution;
       production,        television
       distribution and   programmes, com-             Exhibition.
       exhibition.        mercials, distribution
                          and exhibition.
 
-21    Music              Music production,           Lithium, rare earth.                  N250m        20 years
+21    Music              Music production,           Lithium, rare earth.
       production         distribution, publishing,
                          manufacture of
                          musical equipment,
-                         instruments and                                                                           Nigeria Tax Act, 2025
+                         instruments and
 
                          accessories
 
-22                       Building and operation      Long-distance pipelines,              N200b        20 years
+22                       Building and operation      Long-distance pipelines,
                          of utility projects.        communication and power lines;
 
                                                      power plants;
@@ -7314,7 +7295,7 @@ S/N    Sub-Sector                                              Priority         
 
                                             Petrochemical plants;
 
-23   Manufacture   Manufacture of basic     Organic and inorganic basic          N20b   15 years
+23   Manufacture   Manufacture of basic     Organic and inorganic basic
      of chemical   chemicals, fertilisers   chemicals.
      and pharma-   and nitrogen com-
                                             Associated nitrogen products:
@@ -7324,30 +7305,27 @@ S/N    Sub-Sector                                              Priority         
                                             ammonia, ammonium chloride,
                                             ammonium carbonate, nitrites and
                                             nitrates of potassium.
-                                                                                                   Nigeria Tax Act, 2025
-                                            Polyethylene terephthalate,
-                                            Amorphous-Polyethylene
-                                            Terephthalate.
+
 
 24                 Manufacture of           Insecticides, rodenticides, fungi-   N5b    15 years
                    pesticides and agro-     cides, herbicides.
                    chemicals.
-                                                                                                   2025 No. 7
+
 25                 Manufacture of           Medicinal active substances to be    N2b    15 years
                    pharmaceuticals and      used for their pharmacological
                    medical chemicals.       properties in the manufacture of
                                             medicaments: antibiotics, basic
                                             vitamins, salicylic and o-
                                             acetylsalicylic acids;
-                             Economic                                             Threshold     Sunset
-S/N    Sub-Sector                                      Priority                                          A 572
+                             Economic
+S/N    Sub-Sector                                      Priority
                             Development             Product/Service
                           Incentive Status
 
                                               Medicaments - antisera and
                                               other blood functions, vaccines;
 
-                                              Processing of blood;                                       2025 No. 7
+                                              Processing of blood;
 
                                               Medical diagnostic preparations;
 
@@ -7359,16 +7337,16 @@ S/N    Sub-Sector                                      Priority                 
                                               Medical impregnated wadding,
                                               gauze, bandages, dressing.
 
-      Manufacture of   Manufacture of glass   Flat glass (toughened or           N2b
-26                                                                                            15 years
-                                                                                                         Nigeria Tax Act, 2025
+      Manufacture of   Manufacture of glass   Flat glass (toughened or
+26
+
 
       non- metallic    and glass products.    laminated, wired, coloured or
       products                                tinted);
 
                                               Laboratory, hygienic or
                                               pharmaceutical glassware
-27    Manufacture of   Manufacture of         Refractory mortars, concretes;     N5b          15 years
+27    Manufacture of   Manufacture of         Refractory mortars, concretes;     N5b
       non- metallic    refractory products
       products
                                            Refractory ceramic goods:
@@ -7382,25 +7360,25 @@ S/N    Sub-Sector                                      Priority                 
                                            Refractory articles containing
                                            magnesite, dolomite.
 
-28                  Manufacture of lime,   Quicklime, slaked lime and          N2b   15 years
+28                  Manufacture of lime,   Quicklime, slaked lime and
                     plaster.               hydraulic lime;
-                                           Plasters of calcined gypsum;                         Nigeria Tax Act, 2025
+                                           Plasters of calcined gypsum;
 
                                            Calcined dolomite;
 
                                            Powdered and pre-mixed
                                            mortar;
-29   Manufacture    Manufacture of basic   Ferro-alloys, ferrous products      N5b   15 years
+29   Manufacture    Manufacture of basic   Ferro-alloys, ferrous products
      of basic       iron and steel.        by direct reduction of iron and
-     Metals, Iron                          other spongy ferrous products,                       2025 No. 7
+     Metals, Iron                          other spongy ferrous products,
      and Steel.                            iron of exceptional purity,
                                            granular iron and iron powder,
                                            steel in ingots and other
                                            primary forms, semi-finished
                                            products of steel, hot- rolled
                                            and cold-rolled flat rolled
-                                           products of steel, steel bars                        A 573
-                         Economic                                               Threshold     Sunset   A 574
+                                           products of steel, steel bars
+                         Economic
 S/N   Sub-Sector                                    Priority
                        Development               Product/Service
                       Incentive Status
@@ -7409,39 +7387,26 @@ S/N   Sub-Sector                                    Priority
                                           sections of steel, wires of steel,
                                           sheet piling, railway track
                                           materials, seamless and welded
-                                                                                                       2025 No. 7
-                                          tubes and pipes of steel, tube
-                                          fittings of steel; flat sheets;
-                                          angle bar.
-                                          Operation of blast furnaces,
-                                          steel converters, rolling and
-                                          finishing mills/ foundries.
 
-30                 Manufacture of other   Aluminium; aluminium alloys;         N5b          12 years
+
+30                 Manufacture of other   Aluminium; aluminium alloys;
                    non- ferrous metals.   Lead, zinc, tin, copper, chrome,
-                                          manganese, nickel from ores or                               Nigeria Tax Act, 2025
-                                          oxides; Lead, zinc, tin, copper,
-                                          chrome, manganese, nickel from
-                                          electrolytic refining; Lead, zinc,
-                                          tin, copper, chrome, manganese,
-                                          nickel alloys; mattes of nickel;
-                                          uranium; uranium from pitch-
-                                          blende or other ores.
-31   Manufacture      Manufacture of tanks,    Metal containers for compressed       N5b    12 years
+                                          manganese, nickel from ores or
+31   Manufacture      Manufacture of tanks,    Metal containers for compressed
      of fabricated    reservoirs, containers   or liquefied gas, silos and similar
      metal products   of metal, nails and      containers of metal for storage or
      excluding        other fabricated         manufacturing use, boilers and
      machinery and    metals.                  radiators.
      equipment.
 
-32   Manufacture      Manufacture of motor     Passenger cars, buses, vans,          N50b   15 years
+32   Manufacture      Manufacture of motor     Passenger cars, buses, vans,
      of motor         vehicles and             coaches, truck, tractors; fire
      vehicles and     components.              engines; armoured vehicle;
      components
                                                Motor vehicle engines, chassis,
      and other
                                                bodies, out fittings;
-     transport                                                                                         Nigeria Tax Act, 2025
+     transport
      equipment                                 Parts and accessories for motor
                                                vehicles: brakes, batteries,
                                                gearbox, axles, road wheels,
@@ -7449,22 +7414,22 @@ S/N   Sub-Sector                                    Priority
                                                radiators, silencers, exhaust
                                                pipes, catalytic converters,
                                                clutches, steering wheels,
-                                               steering columns, steering boxes,                       2025 No. 7
+                                               steering columns, steering boxes,
 
                                                safety belts, airbags, doors,
                                                bumpers, car seats, alternators,
                                                spark plugs, ignition wiring
                                                harnesses, power window and
                                                door systems, voltage regulators.
-                           Economic                                                Threshold       Sunset   A 576
+                           Economic
 S/N   Sub-Sector                                        Priority
                          Development                 Product/Service
                         Incentive Status
-                   Manufacture of            Motorcycles, mopeds and cycles      N20b          12 years
+                   Manufacture of            Motorcycles, mopeds and cycles
 33                                           fitted with an auxiliary engine;
                    motorcycles, tricycles
                    and components.           Engines, parts and accessories
-                                             for motorcycles;                                               2025 No. 7
+                                             for motorcycles;
 
                                              Motorised and non-motorised
                                              tricycles;
@@ -7472,21 +7437,21 @@ S/N   Sub-Sector                                        Priority
                                              for
                                              tricycles.
 
-34                 Building of ships,       Commercial vessels (passenger        N5b           15 years
+34                 Building of ships,       Commercial vessels (passenger
                    boats and floating       vessels, ferry boats, cargo ships,
-                   structures for trans-    tankers, tugs), warships, fishing                               Nigeria Tax Act, 2025
+                   structures for trans-    tankers, tugs), warships, fishing
 
                    portation.               boats and fish-processing factory
                                             vessels;
 
                                             Sail boats, motor boats.
-35                 Manufacture of           Organic and inorganic basic          N50b          15 years
+35                 Manufacture of           Organic and inorganic basic
                    aircraft and compo-      chemicals.
                    nents.
                                             Associated nitrogen products:
                                             nitric and sulphonitric acids,
                                             ammonia, ammonium chloride,
-                               Economic                                               Threshold     Sunset
+                               Economic
 S/N    Sub-Sector                                         Priority
                              Development               Product/Service
                             Incentive Status
@@ -7495,11 +7460,11 @@ S/N    Sub-Sector                                         Priority
                                                  Polyethylene terephthalate,
                                                  Amorphous-Polyethylene
                                                  Terephthalate.
- 36                      Manufacture of         Electric, diesel, steam and other    N10b         20 years
+ 36                      Manufacture of         Electric, diesel, steam and other    N10b
                          railway locomotives    rail locomotives;
                          and rolling stock      Self-propelled/non- self- pro-
                                                 pelled railway coaches, vans,
-                                                trucks, maintenance/service                                  Nigeria Tax Act, 2025
+                                                trucks, maintenance/service
 
                                                 vehicles and Wagons- Specialised
                                                 parts of railway locomotives;
@@ -7507,22 +7472,22 @@ S/N    Sub-Sector                                         Priority
                                                 cal signalling, safety and traffic
                                                 control equipment for railways,
                                                 railway car seats.
- 37   Maintenance,       Maintenance, repair     Repair, maintenance and             N10b         15 years   2025 No. 7
+ 37   Maintenance,       Maintenance, repair     Repair, maintenance and
       repair and         and overhaul            overhaul of aircraft and
       overhaul.          aircrafts.              aircraft engines.
 
-38    Transportation.   Repair, maintenance     Passenger rail transport: inter      N5b          15 years
+38    Transportation.   Repair, maintenance     Passenger rail transport: inter
                         and overhaul of         and intra urban service.
                         aircraft and aircraft
-                        engines.                                                                             A 577
-                         Freight rail transportation:                            A 578
+                        engines.
+                         Freight rail transportation:
                          mainline rail network and short-
                          line freight rail.
                          Freight transport by road: stock
                          haulage; refrigerated;
                          Transportation via pipelines:
                          gases, liquids, slurry and other
-                                                                                 2025 No. 7
+
                          commodities.
                          harbour operation and other
                          auxiliary activities such as
@@ -7532,11 +7497,11 @@ S/N    Sub-Sector                                         Priority
                          transportation: transport of
                          passenger via rivers, canals,
                          lakes and other inland
-                         waterways including inside                              Nigeria Tax Act, 2025
+                         waterways including inside
 
                          harbours and ports.
 
-39   Manufacture of      Circular or reciprocating saws,        N5b   10 years
+39   Manufacture of      Circular or reciprocating saws,
      power-driven hand   drills and hammer drills, hand
      tools.              held power sanders, pneumatic
                          nailers, buffers, routers, grinders,
@@ -7544,11 +7509,11 @@ S/N    Sub-Sector                                         Priority
                          planers, shears and nibblers,
                          impact wrenches, power
                          actuated nailers.
-S/N     Sub-Sector            Economic                   Priority                     Threshold      Sunset
+S/N     Sub-Sector            Economic                   Priority
                             Development               Product/Service
                            Incentive Status
 
-40                     Manufacture of         Industrial refrigerating or freez-    N10b          10 years
+40                     Manufacture of         Industrial refrigerating or freez-    N10b
                        general-purpose        ing equipment, industrial air
                        machinery.             conditioning machines, non-
                                               domestic fans;
@@ -7556,9 +7521,8 @@ S/N     Sub-Sector            Economic                   Priority               
                                               ery;
                                               Fire extinguishers
 
-41    Other Manufac-   Manufacture of         Ploughs, harvesters, threshers,       N10b          15 years
-                                              planters, tractors used in agricul-
-                                                                                                              Nigeria Tax Act, 2025
+41    Other Manufac-   Manufacture of         Ploughs, harvesters, threshers,
+
       turing           agricultural and
                        forestry machinery.    ture and forestry, mowers,
                                               manure spreader, seeder, har-
@@ -7567,22 +7531,20 @@ S/N     Sub-Sector            Economic                   Priority               
                                               tural use, poultry-keeping ma-
                                               chinery, bee-keeping machinery,
                                               equipment for preparing fodder,
-                                                                                                              2025 No. 7
-                                              machines for cleaning, sorting or
-                                              grading eggs, fruits.
 
-42                     Manufacture of         Machine tools for working metals      N5b           10 years
+
+42                     Manufacture of         Machine tools for working metals
                        aircraft and compo-    and other materials (wood, bone,
                        nents.                 stone, hard rubber, hard plastics,
                                               cold glass);
-                            Machine tools for turning,                          A 580
+                            Machine tools for turning,
                             drilling, milling, shaping,
                             planning, boring, grinding; -
                             Stamping or pressing machine
                             tools;
                             Punch presses, hydraulic
                             presses, hydraulic brakes, drop
-                            hammers, forging machines;                          2025 No. 7
+                            hammers, forging machines;
 
                             Draw-benches, thread rollers
                             or machines for working
@@ -7593,50 +7555,44 @@ S/N     Sub-Sector            Economic                   Priority               
                             percussion drills, filing
                             machines, riveters, sheet metal
                             cutters;
-                                                                                Nigeria Tax Act, 2025
+
 
                             Presses for the manufacture
                             of particle board;
                             Electroplating machinery.
 
-43   Manufacture of         Machines and equipment for         N5b   10 years
+43   Manufacture of         Machines and equipment for
      machinery for metal-   handling hot metals (converters,
      lurgy                  ingot moulds, ladles, casting
                             machines);
-S/N    Sub-Sector            Economic                  Priority                     Threshold     Sunset
+S/N    Sub-Sector            Economic                  Priority
                             Development             Product/Service
                           Incentive Status
 
                                               Metal-rolling mills and rolls for
                                               such mills.
 
-44                     Manufacture of        Agricultural dryers;                  N5b          11 years
+44                     Manufacture of        Agricultural dryers;
                        railway locomotives   Machinery for dairy industry,
                        and rolling stock     grain milling industry, bakery
                                              industry;
-                                             Presses, crushers for fruit juices;                           Nigeria Tax Act, 2025
-                                             Machines and equipment to
-                                             process diverse foods;
-                                             Machines for extraction or
-                                             preparation of animal or veg-
-                                             etable fats and oils.
+                                             Presses, crushers for fruit juices;
 
-45    Other Manufac-   Manufacture of        Machinery for making pulp;            N5b          10 years
-                                                                                                           2025 No. 7
-                                             Paper and paperboard making
+45    Other Manufac-   Manufacture of        Machinery for making pulp;
+
       turing           machinery for paper
                                              machines;
                        and paperboard        Dryers for wood, paper, paper
                        production            pulp, paper or paperboard.
 
-46                  Waste treatment,         Conversion of waste to useable      N2b   12 years   A 582
+46                  Waste treatment,         Conversion of waste to useable
                     disposal and material    materials;
                     recovery.
                                              Treatment of organic waste for
                                              disposal;
                                              Operation of facilities for
                                              treatment of hazardous waste;
-                                             Treatment and disposal of toxic                      2025 No. 7
+                                             Treatment and disposal of toxic
 
                                              live or dead animals or
                                              contaminated waste;
@@ -7647,8 +7603,8 @@ S/N    Sub-Sector            Economic                  Priority                 
                                              or chemical transformation
                                              process.
 
-                    Preparation, spinning    Yarn or thread for weaving or       N2b   12 years
-                                                                                                  Nigeria Tax Act, 2025
+                    Preparation, spinning    Yarn or thread for weaving or
+
 47 Manufacture of
                     of textile fibres,       sewing;
      textiles and
@@ -7668,23 +7624,20 @@ S/N    Sub-Sector            Economic                  Priority                 
                                              Synthetic filament tow, staple
                                              fibres, filament yarn,
                                              monofilament;
-                                             Synthetic hair threads, weave-                        Nigeria Tax Act, 2025
-                                             ons and attachments.
+                                             Synthetic hair threads, weave-
 
-48 Manufacture of                            Manufacture of sportswear,         N500b   20 years
+48 Manufacture of                            Manufacture of sportswear,
    sportswear                                sports apparels.
 
 49   Manufacture of    Manufacture of        Footwear, boxes, wallets, belt,    N2b     12 years
      sportswear        leather products      shirts, trousers, bags etc.
-                                             Leather-chamois dressed,                              2025 No. 7
-                                             parchment dressed, patent or
-                                             metallised, composition leather.
+                                             Leather-chamois dressed,
 
-50   Manufacture of    Manufacture of pulp   Bleached, semi-bleached or         N1b     10 years
+50   Manufacture of    Manufacture of pulp   Bleached, semi-bleached or
      pulp, paper and   and paper             unbleached paper pulp manufac-
      paper products                          tured by mechanical, chemical
                                              or semi- chemical processes;
-                                           Cotton-linters pulp;                              A 584
+                                           Cotton-linters pulp;
                     Manufacture of         Removal of ink and pulp from
                     household and          waste paper;
                     personal hygiene       Paper and paperboard for
@@ -7692,10 +7645,9 @@ S/N    Sub-Sector            Economic                  Priority                 
                                            Creped or crinkled paper.
                                            Wall paper;
                                            Sanitary towels, tampons and
-                                                                                             2025 No. 7
-                                           diapers
 
-51   Business       Setting up of Re-      Shared services centres          N2b   10 years
+
+51   Business       Setting up of Re-      Shared services centres
      process        gional/Global shared
      outsourcing.   services centres in
                     Nigeria for the
@@ -7703,10 +7655,10 @@ S/N    Sub-Sector            Economic                  Priority                 
                     management of
                     technical services.
 
-                                                                                             Nigeria Tax Act, 2025
+
 
                                Eleventh Schedule
-                                                                Sections 186 (2)
+
 
      ITEMS ON WHICH TAX IS SUSPENDED UNDER THIS ACT
 
@@ -7742,7 +7694,7 @@ methane (CH4), compressed to less than 1% of the volume it occupies at
 standard atmospheric pressure.
 
                                  Twelfth Schedule
-                                                                      Section 15(6)
+
                    DETERMINATION OF RESIDENCE
                             Foreign employments
       1. An individual, not being a person to whom section 3 (1) (a) (iv) of
@@ -7958,7 +7910,7 @@ Animal feeds         animal feeds          Animal feed, edible oils and
                                            supplements.
 
                               Fourteenth Schedule
-                                                              Sections 59(6)
+
 
        DEFENCE AND SECURITY INFRASTRUCTURE FUND
                             Establishment of Fund
@@ -8001,20 +7953,20 @@ and accountability of funding.
     3. The 10% allocation from the development levy shall be divided and
 managed as follows:
 
-     S/N     AGENCY                                            PERCENTAGE
-                                                               OF THE FUND
-     1       Defence Headquarters                                  8%
-     2       Nigerian Army                                         20%
-     3       Nigerian Navy                                         12.5%
-     4       Nigerian Airforce                                     12.5%
-     5       ONSA / Counter-Terrorism Center                       6%
-     6       Nigeria Police Force                                  10%
-     7       Police Trust Fund                                     8%
-     8       Department of State Security                          9%
-     9       Nigerian Security and Civil Defence Corps             5%
+     S/N     AGENCY
 
-     10      Nigerian Forest Security Service                       5%
-     11      Defence Intelligence Agency                            4%
+     1       Defence Headquarters
+     2       Nigerian Army
+     3       Nigerian Navy
+     4       Nigerian Airforce
+     5       ONSA / Counter-Terrorism Center
+     6       Nigeria Police Force
+     7       Police Trust Fund
+     8       Department of State Security
+     9       Nigerian Security and Civil Defence Corps
+
+     10      Nigerian Forest Security Service
+     11      Defence Intelligence Agency
 
                                  Modification
       4. The allocation, distribution, and management of the Fund established
@@ -8030,7 +7982,7 @@ Bill passed by both Houses of the National Assembly.
                                       Clerk to the National Assembly
                                           11th Day of June, 2025
 Petroleum Industry Act, Tertiary     Petroleum Industry Act, Tertiary
-Educations        Trust     Fund     Educations        Trust      Fund
+Educations        Trust     Fund     Educations        Trust
 (Establishment etc.) Act, the        (Establishment etc.) Act, the
 National Agency for Science and      National Agency for Science and
 Engineering Infrastructure Act,      Engineering Infrastructure Act,
@@ -8049,29 +8001,29 @@ Income Tax (Significant Economic     (Significant Economic Presence)
 Presence) Order, 2020 and the        Order, 2020 and the Petroleum
 Petroleum       (Drilling     and    (Drilling     and    Production)
 Production) Regulations 1969, to     Regulations 1969, to consolidate
-                                                                          2025 No. 7
+
 consolidate the legal frameworks     the legal frameworks relating to
 
-             relating to taxation and enacts      taxation and enacts the Nigeria                                         A 596
+             relating to taxation and enacts      taxation and enacts the Nigeria
              the Nigeria Tax Act to provide for   Tax Act to provide for taxation of
              taxation of income, transactions     income, transactions and
              and instruments ; and for related    instruments.
              matters.
 
-                                                                                                                          2025 No. 7
+
 I certify that this Bill has been carefully compared by me with the decision reached by the National Assembly and found
 by me to be true and correct decision of the Houses and is in accordance with the provisions of the Acts Authentication
 Act Cap. A2, Laws of the Federation of Nigeria, 2004.
 
-                                                                                 KAMORU OGUNLANA, ESQ.
+
 I ASSENT
-                                                                           Clerk to the National Assembly
 
- LS                                                                            11th Day of June, 2025
 
-                                                                                                                          Nigeria Tax Act, 2025
-                                                                                BOLA AHMED TINUBU, GCFR
+ LS
 
-                                                                     President of the Federal Republic of Nigeria
 
-                                                                               26th Day of June, 2025
+
+
+
+
+
