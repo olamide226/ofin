@@ -13,6 +13,8 @@ import (
 	"ofin/internal/llama"
 	"ofin/internal/retrieve"
 	"ofin/internal/router"
+	"regexp"
+	"sort"
 	"ofin/internal/rules"
 	"ofin/internal/verify"
 )
@@ -173,6 +175,62 @@ type Options struct {
 	Pidgin bool // force Pidgin-first answers regardless of question language
 }
 
+// sentenceBreakRe splits a question into sub-questions on sentence boundaries
+// and major conjunctions that join independent legal questions.
+var sentenceBreakRe = regexp.MustCompile(`\s+(?:and|also|plus)\s+(?i)(?:what|how|is|are|do|does|can|does|am|I|my|which|wetin|abeg|who)\b`)
+
+// decomposeQuery splits a compound question into independent sub-queries
+// when it spans multiple legal domains. Returns the original question as a
+// single element if the question isn't compound.
+func decomposeQuery(question string) []string {
+	// Strategy: find sentence boundaries (?, !, .) first, then split
+	// compound clauses joined by "and"/"also" when followed by question words.
+	parts := sentenceBreakRe.Split(question, -1)
+	if len(parts) <= 1 {
+		return []string{question}
+	}
+
+	// Filter out fragments that are too short to be meaningful queries.
+	var out []string
+	for _, p := range parts {
+		p = strings.TrimSpace(p)
+		p = strings.TrimRight(p, "?.!,")
+		words := strings.Fields(p)
+		if len(words) >= 4 {
+			out = append(out, p)
+		}
+	}
+
+	if len(out) <= 1 {
+		return []string{question}
+	}
+	return out
+}
+
+// mergeChunks deduplicates search results by chunk ID, keeping the best
+// score for each chunk.
+func mergeChunks(batches [][]retrieve.Chunk) []retrieve.Chunk {
+	seen := map[int64]float64{}
+	for _, batch := range batches {
+		for _, c := range batch {
+			if existing, ok := seen[c.ID]; !ok || c.Score > existing {
+				seen[c.ID] = c.Score
+			}
+		}
+	}
+	out := make([]retrieve.Chunk, 0, len(seen))
+	for _, batch := range batches {
+		for _, c := range batch {
+			if best, ok := seen[c.ID]; ok && best == c.Score {
+				out = append(out, c)
+				delete(seen, c.ID) // emit once
+			}
+		}
+	}
+	sort.Slice(out, func(i, j int) bool { return out[i].Score > out[j].Score })
+	return out
+}
+
 // Ask runs the full retrieval → route → compute/generate → verify pipeline.
 // Every stage calls the matching Emitter callback so the CLI can log to
 // stderr and the web UI can push SSE events.
@@ -180,13 +238,46 @@ func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 	report := &Report{Question: question}
 
 	t0 := time.Now()
-	vec, err := a.Embed.Embed(llama.QueryPrefix + question)
-	if err != nil {
-		return nil, fmt.Errorf("embedding: %w", err)
-	}
-	chunks, err := a.Store.Search(vec, question, a.Config.TopN)
-	if err != nil {
-		return nil, fmt.Errorf("retrieval: %w", err)
+	var err error
+	// Query decomposition for compound cross-domain questions.
+	// A single embedding can't represent "do I pay tax on rent AND
+	// can I ask for 2 years' rent upfront?" — we split, embed, search
+	// each sub-query, and merge with dedup.
+	subs := decomposeQuery(question)
+	var chunks []retrieve.Chunk
+	if len(subs) == 1 {
+		vec, e := a.Embed.Embed(llama.QueryPrefix + question)
+		if e != nil {
+			return nil, fmt.Errorf("embedding: %w", e)
+		}
+		chunks, err = a.Store.Search(vec, question, a.Config.TopN)
+		if err != nil {
+			return nil, fmt.Errorf("retrieval: %w", err)
+		}
+	} else {
+		// Embed all sub-queries in one batch round-trip.
+		prefixes := make([]string, len(subs))
+		for i, s := range subs {
+			prefixes[i] = llama.QueryPrefix + s
+		}
+		vecs, e := a.Embed.EmbedBatch(prefixes)
+		if e != nil {
+			return nil, fmt.Errorf("embedding batch: %w", e)
+		}
+		var batches [][]retrieve.Chunk
+		for i, vec := range vecs {
+			batch, e := a.Store.Search(vec, subs[i], a.Config.TopN)
+			if e != nil {
+				return nil, fmt.Errorf("retrieval sub-query %d: %w", i, e)
+			}
+			batches = append(batches, batch)
+		}
+		chunks = mergeChunks(batches)
+		// Cap at TopN × len(subs) to give cross-domain answers more
+		// source material without unbounded growth.
+		if maxN := a.Config.TopN * len(subs); len(chunks) > maxN {
+			chunks = chunks[:maxN]
+		}
 	}
 	report.RetrievalMs = time.Since(t0).Milliseconds()
 
