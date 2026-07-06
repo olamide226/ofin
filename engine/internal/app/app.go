@@ -239,6 +239,7 @@ func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 
 	t0 := time.Now()
 	var err error
+
 	// Query decomposition for compound cross-domain questions.
 	// A single embedding can't represent "do I pay tax on rent AND
 	// can I ask for 2 years' rent upfront?" — we split, embed, search
@@ -255,7 +256,9 @@ func (a *App) Ask(question string, opts Options, em Emitter) (*Report, error) {
 			return nil, fmt.Errorf("retrieval: %w", err)
 		}
 	} else {
-		// Embed all sub-queries in one batch round-trip.
+		// Normalize each sub-query individually — the original split
+		// preserves Pidgin markers for detection, this step adds
+		// statutory English expansions.
 		prefixes := make([]string, len(subs))
 		for i, s := range subs {
 			prefixes[i] = llama.QueryPrefix + s
