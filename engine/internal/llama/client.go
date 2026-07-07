@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"runtime"
 	"strings"
 	"time"
 )
@@ -84,6 +85,10 @@ func (s *Server) EnsureRunning() error {
 
 func Stop(port int) error {
 	// llama-server has no shutdown endpoint; match on the port argument.
+	// pkill on Linux/macOS, taskkill on Windows.
+	if runtime.GOOS == "windows" {
+		return exec.Command("taskkill", "/F", "/FI", fmt.Sprintf("COMMAND eq llama-server.exe")).Run()
+	}
 	return exec.Command("pkill", "-f", fmt.Sprintf("llama-server.*--port %d", port)).Run()
 }
 

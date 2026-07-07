@@ -34,7 +34,7 @@ Built for the [Africa Deep Tech Challenge 2026](https://adtc-2026.devpost.com)
 | Disk | ~3 GB (model 1.9 GB GGUF + 2.8 MB SQLite DB) |
 | CPU | 4 vCPU (x86 or ARM) |
 | Network | **Zero** at runtime — fully offline |
-| OS | macOS (dev) or Linux (target). `libsqlite3-dev` required on Linux |
+| OS | Linux (target) or macOS (dev). **Windows: use WSL2** — see [docs/WINDOWS.md](docs/WINDOWS.md) |
 
 Performance on the 4 vCPU / 7.6 GB audit profile: **34.3 TPS** generation
 (S_perf capped at 15 — full marks), warm RAG+verify ~143s, offline check PASS.
