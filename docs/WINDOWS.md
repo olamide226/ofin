@@ -22,55 +22,49 @@ Restart when prompted. After reboot, Ubuntu will open — create a username and 
 ### 2. Install tools inside WSL
 
 ```bash
-sudo apt update && sudo apt install -y build-essential cmake git curl unzip libsqlite3-dev
+sudo apt update && sudo apt install -y git curl unzip libsqlite3-dev
 
-# Go 1.21+ (if not already installed)
-sudo snap install go --classic
-# or: wget https://go.dev/dl/go1.21.0.linux-amd64.tar.gz && sudo tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
-# Add to ~/.bashrc: export PATH=/usr/local/go/bin:$PATH
-
-# Verify
-go version  # should print go1.21.x or later
+# Download llama.cpp binaries (needed at runtime)
+# Get the latest llama.cpp release from:
+# https://github.com/ggml-org/llama.cpp/releases
+# Or build from source if you prefer.
 ```
 
-### 3. Clone and build Òfin
+### 3. Clone and get the model
 
 ```bash
 git clone https://github.com/olamide226/ofin.git
 cd ofin
 bash download_model.sh    # downloads the GGUF (~1.9 GB)
-
-# Build the CLI
-cd engine
-go build -tags sqlite_fts5 -o bin/ofin ./cmd/ofin
-cd ..
 ```
 
-### 4. The corpus DB is pre-built
-
-The repo includes `data/ofin.db` (the pre-built SQLite-vec + FTS5 database).
-You don't need to run the Python pipeline unless you're modifying the corpus.
-If you DO need to rebuild it:
+### 4. Download the pre-built binary (no Go needed)
 
 ```bash
-sudo apt install -y python3-venv python3-pip
-python3 -m venv .venv
-.venv/bin/pip install -r pipeline/requirements.txt
-make chunk sac ingest   # 'make sac' needs GOOGLE_API_KEY
+curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-linux
+chmod +x ofin
 ```
 
 ### 5. Ask a question
 
 ```bash
-engine/bin/ofin ask "How much notice after 3 years of service?"
+./ofin ask "How much notice after 3 years of service?"
 # Web UI:
-engine/bin/ofin serve    # → http://127.0.0.1:8090
+./ofin serve    # → http://127.0.0.1:8090
 ```
 
 ### 6. Stop background processes
 
 ```bash
-engine/bin/ofin stop
+./ofin stop
+```
+
+### Building from source (developers only)
+
+```bash
+sudo snap install go --classic
+cd engine
+go build -tags sqlite_fts5 -o bin/ofin ./cmd/ofin
 ```
 
 ## Option B: Native Windows (PowerShell — not recommended)
@@ -78,38 +72,28 @@ engine/bin/ofin stop
 If you absolutely can't use WSL, here's the PowerShell path. It's untested
 and several steps may need adjustment.
 
-### Prerequisites
+### 1. Download the model
 
 ```powershell
-# Install Go from https://go.dev/dl/
-# Install CMake from https://cmake.org/download/
-# Install Git from https://git-scm.com/download/win
-# Install sqlite3.dll and dev headers (MSYS2 recommended):
-#   https://www.msys2.org/ → pacman -S mingw-w64-x86_64-sqlite3
+.\download_model.ps1
 ```
 
-### Download the model
-
+Or manually:
 ```powershell
-# PowerShell equivalent of download_model.sh
 $url = "https://huggingface.co/olamide226/ofin-model/resolve/main/ofin-model.gguf"
-$out = "model/ofin-model.gguf"
 New-Item -ItemType Directory -Force -Path model
-Invoke-WebRequest -Uri $url -OutFile $out
+Invoke-WebRequest -Uri $url -OutFile model/ofin-model.gguf
 ```
 
-### Build
+### 2. Get the binary
 
-```powershell
-cd engine
-$env:CGO_ENABLED = "1"
-go build -tags sqlite_fts5 -o bin/ofin.exe ./cmd/ofin
-```
+Download `ofin-linux` from [GitHub Releases](https://github.com/olamide226/ofin/releases).
+There's no native Windows `.exe` yet — use WSL2 instead.
 
-### Run
+### 3. Run (in WSL)
 
-```powershell
-bin/ofin.exe serve    # → http://127.0.0.1:8090
+```bash
+./ofin serve    # → http://127.0.0.1:8090
 ```
 
 Note: `ofin stop` (which runs `pkill` internally) won't work on native Windows.

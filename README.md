@@ -43,16 +43,29 @@ Performance on the 4 vCPU / 7.6 GB audit profile: **34.3 TPS** generation
 
 ### Prerequisites
 
-- **Go 1.21+** with CGo enabled
-- **llama.cpp** (commit b9864 or later — tested on Linux; Homebrew b9850 has a
-  known embedding crash above 1700 chars on macOS, worked around in the ingest
-  pipeline)
-- **Python 3.11+** (build-time only — corpus pipeline)
-- `libsqlite3-dev` on Linux (`brew install sqlite3` on macOS)
-- `GOOGLE_API_KEY` (build-time only — Gemini 2.5 Flash-Lite for chunk
-  enrichment. Set it once for the `make sac` step; never needed at runtime.)
+- **llama.cpp** — download `llama-server` and `llama-cli` from
+  [llama.cpp releases](https://github.com/ggml-org/llama.cpp/releases)
+  and place them in your PATH.
+- `libsqlite3-dev` on Linux, or Xcode CLI tools on macOS
+  (needed for the pre-built binary's SQLite dependency).
+- **Python** is NOT needed — the repo ships a pre-built `data/ofin.db`.
+  Only install Python + `GOOGLE_API_KEY` if rebuilding the corpus from scratch.
 
-### 1. Clone and get the model
+### 1. Download the binary (no Go needed)
+
+Get the latest binary from [GitHub Releases](https://github.com/olamide226/ofin/releases):
+
+```bash
+# Linux x86_64
+curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-linux
+chmod +x ofin
+
+# macOS ARM64 (Apple Silicon)
+curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin
+chmod +x ofin
+```
+
+### 2. Clone the repo and download the model
 
 ```bash
 git clone https://github.com/olamide226/ofin.git
@@ -60,43 +73,28 @@ cd ofin
 bash download_model.sh          # → model/ofin-model.gguf (~1.9 GB)
 ```
 
-### 2. Build the CLI
+### 3. Ask a question
+
+```bash
+./ofin ask "How much notice should my employer give me after 3 years of service?"
+# or with Pidgin:
+./ofin -pidgin ask "My oga sack me without notice, I don work 4 years. Wetin I fit do?"
+```
+
+### 4. Launch the web UI
+
+```bash
+./ofin serve                    # → http://127.0.0.1:8090
+```
+
+### Building from source (developers only)
 
 ```bash
 cd engine
 go build -tags sqlite_fts5 -o bin/ofin ./cmd/ofin
-cd ..
 ```
 
-The `sqlite_fts5` build tag is **required** — this isn't optional. FTS5
-powers the hybrid retrieval (vector + full-text search).
-
-### 3. Ingest the corpus
-
-```bash
-make setup                     # create Python venv + install pipeline deps
-make chunk                     # statute markdown → structured chunks
-make sac                       # enrich chunks with summaries + cross-refs
-make ingest                    # → data/ofin.db (SQLite-vec + FTS5)
-```
-
-`make sac` needs `GOOGLE_API_KEY` in your environment. This step enriches each
-chunk with a summary and cross-reference edges. It runs once at build time;
-the enriched chunks are what you ingest.
-
-### 4. Ask a question
-
-```bash
-make ask Q="How much notice should my employer give me after 3 years of service?"
-# or with Pidgin:
-engine/bin/ofin -pidgin ask "My oga sack me without notice, I don work 4 years. Wetin I fit do?"
-```
-
-### 5. Launch the web UI
-
-```bash
-engine/bin/ofin serve           # → http://127.0.0.1:8090
-```
+The `sqlite_fts5` build tag is **required**.
 
 The web UI is a single `go:embed` HTML file — no build toolchain, no npm, no
 CDN. It works fully offline.

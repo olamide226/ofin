@@ -30,3 +30,9 @@ CLAUDE.md
 # Secrets
 .env
 model/ofin-model-vanilla-backup.gguf
+engine/bin/ofin
+engine/bin/ofin-linux
+engine/bin/ofin.exe
+eval/golden/results/
+corpus/tax/nigeria-tax-act-2025-original.md
+corpus/tax/nigeria-tax-act-2025-cleaned.md
