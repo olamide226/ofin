@@ -206,6 +206,16 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
   background:var(--accent);border-radius:1px;animation:blink 1s steps(2) infinite;margin-left:2px;
 }
 @keyframes blink{50%{opacity:0}}
+/* copy button */
+.answer-wrap{position:relative}
+.answer .copy-btn{
+  position:absolute;top:0;right:0;padding:4px 10px;font-size:.72rem;
+  font-family:var(--sans);font-weight:600;border:1px solid var(--border-strong);
+  border-radius:6px;color:var(--muted);background:var(--bg);cursor:pointer;
+  opacity:0;transition:opacity .15s;
+}
+.answer-wrap:hover .copy-btn,.answer-wrap:focus-within .copy-btn{opacity:1}
+.copy-btn.copied{color:var(--accent);border-color:var(--accent)}
 .cite{
   font-family:var(--sans);display:inline-block;vertical-align:baseline;
   background:var(--accent-soft);color:var(--accent-text);
@@ -631,8 +641,30 @@ function userBubble(q){
 }
 function assistantShell(){
   const msg=el('div','msg assistant');
+  // answer wrap with copy button
+  const aw=el('div','answer-wrap');
+  const copy=el('button','copy-btn');copy.textContent='Copy';copy.title='Copy answer as plain text';
+  copy.onclick=()=>{
+    const a=msg.querySelector('.answer');
+    if(!a)return;
+    const txt=a.innerText.trim();
+    navigator.clipboard.writeText(txt).then(()=>{
+      copy.textContent='Copied!';copy.classList.add('copied');
+      setTimeout(()=>{copy.textContent='Copy';copy.classList.remove('copied')},1500);
+    }).catch(()=>{
+      // Fallback for older browsers
+      const ta=document.createElement('textarea');
+      ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      document.execCommand('copy');document.body.removeChild(ta);
+      copy.textContent='Copied!';copy.classList.add('copied');
+      setTimeout(()=>{copy.textContent='Copy';copy.classList.remove('copied')},1500);
+    });
+  };
+  const ans=el('div','answer');
+  aw.append(ans,copy);
   msg.append(el('div','pipeline-slot'),el('div','sources'),el('div','comp'),
-             el('div','answer'),el('div','verify'),el('div','extra'));
+             aw,el('div','verify'),el('div','extra'));
   thread.appendChild(msg);
   return msg;
 }
