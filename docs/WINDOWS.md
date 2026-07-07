@@ -41,7 +41,7 @@ bash download_model.sh    # downloads the GGUF (~1.9 GB)
 ### 4. Download the pre-built binary (no Go needed)
 
 ```bash
-curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-linux
+curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-linux-x86_64
 chmod +x ofin
 ```
 

@@ -57,11 +57,11 @@ Get the latest binary from [GitHub Releases](https://github.com/olamide226/ofin/
 
 ```bash
 # Linux x86_64
-curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-linux
+curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-linux-x86_64
 chmod +x ofin
 
-# macOS ARM64 (Apple Silicon)
-curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin
+# macOS Apple Silicon (ARM64)
+curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-darwin-arm64
 chmod +x ofin
 ```
 
