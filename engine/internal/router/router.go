@@ -133,7 +133,11 @@ func Computation(p *Params, question string, now time.Time) (Outcome, bool) {
 
 	case "paye":
 		if p.GrossIncome == nil || *p.GrossIncome <= 0 {
-			return Outcome{}, false
+			// No income figure — user asked "how is tax calculated?"
+			// conceptually. Render band structure without a specific income.
+			return Outcome{Kind: "paye_conceptual",
+				Rendered: rules.PAYEConceptual(),
+				Summary:   "PAYE tax bands and formula"}, true
 		}
 		// The income figure must be traceable to the question: the
 		// extractor was observed inventing ₦70,000 for "I earn exactly the

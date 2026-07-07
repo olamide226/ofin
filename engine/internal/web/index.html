@@ -167,6 +167,15 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
 .sources{display:none}
 .sources.show{display:block}
 .sources-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.section-head{
+  display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;
+  padding:4px 0;border-radius:4px;transition:color .15s;
+}
+.section-head:hover{color:var(--text)}
+.section-head .chev{font-size:.85rem;transition:transform .2s;color:var(--muted)}
+.section-head.open .chev{transform:rotate(90deg)}
+.section-body{overflow:hidden;transition:max-height .25s ease,opacity .25s ease}
+.section-body.collapsed{max-height:0!important;opacity:0}
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{
   display:inline-flex;align-items:center;gap:6px;
@@ -208,14 +217,16 @@ main{flex:1;overflow-y:auto;scroll-behavior:smooth}
 @keyframes blink{50%{opacity:0}}
 /* copy button */
 .answer-wrap{position:relative}
-.answer .copy-btn{
-  position:absolute;top:0;right:0;padding:4px 10px;font-size:.72rem;
-  font-family:var(--sans);font-weight:600;border:1px solid var(--border-strong);
-  border-radius:6px;color:var(--muted);background:var(--bg);cursor:pointer;
-  opacity:0;transition:opacity .15s;
+.copy-btn{
+  position:absolute;top:0;right:0;padding:6px;border:none;border-radius:6px;
+  color:var(--muted);background:transparent;cursor:pointer;
+  opacity:0;transition:opacity .15s;display:flex;align-items:center;gap:4px;
 }
 .answer-wrap:hover .copy-btn,.answer-wrap:focus-within .copy-btn{opacity:1}
-.copy-btn.copied{color:var(--accent);border-color:var(--accent)}
+.copy-btn:hover{background:var(--accent-soft)}
+.copy-btn.copied{color:var(--accent)}
+.copy-btn svg{width:16px;height:16px}
+.copy-btn span{font-size:.7rem;font-family:var(--sans);font-weight:600}
 .cite{
   font-family:var(--sans);display:inline-block;vertical-align:baseline;
   background:var(--accent-soft);color:var(--accent-text);
@@ -555,7 +566,10 @@ function makePipeline(container){
 /* ---------- sources ---------- */
 function renderSources(container,chunks){
   const wrap=container.querySelector('.sources');
-  wrap.innerHTML=`<div class="sources-label">Sources — ${chunks.length} statutory section${chunks.length===1?'':'s'}</div>`;
+  // Collapsible head
+  const head=el('button','section-head');
+  head.innerHTML=`<span class="chev">▷</span><span class="sources-label" style="margin:0">Sources — ${chunks.length} statutory section${chunks.length===1?'':'s'}</span>`;
+  const body=el('div','section-body collapsed');
   const chipRow=el('div','chips');
   const panel=el('div','source-panel');
   chunks.forEach(c=>{
@@ -575,7 +589,13 @@ function renderSources(container,chunks){
     };
     chipRow.appendChild(chip);
   });
-  wrap.append(chipRow,panel);
+  body.append(chipRow,panel);
+  head.onclick=()=>{
+    const open=head.classList.toggle('open');
+    body.classList.toggle('collapsed',!open);
+    body.style.maxHeight=open?body.scrollHeight+'px':'';
+  };
+  wrap.innerHTML='';wrap.append(head,body);
   wrap.classList.add('show');
   autoscroll();
 }
@@ -590,30 +610,38 @@ function renderVerify(container,receipts,uncited){
   if(counts.verified)pills+=`<span class="vpill ok">✓ ${counts.verified} verified</span>`;
   if(counts.flagged)pills+=`<span class="vpill warn">! ${counts.flagged} flagged</span>`;
   if(counts.failed)pills+=`<span class="vpill fail">✕ ${counts.failed} failed</span>`;
-  wrap.innerHTML=`<div class="verify-head">
-    <span class="verify-title">Receipts — every claim checked against the statute</span>
-    <span class="verify-summary">${pills}</span></div>`;
+  // Collapsible — open by default
+  const head=el('button','section-head open');
+  head.innerHTML=`<span class="chev">▷</span><span class="verify-title" style="margin:0">Receipts — every claim checked against the statute</span><span class="verify-summary">${pills}</span>`;
+  const body=el('div','section-body');
   receipts.forEach(r=>{
     const[cls,mark]=VER[r.verdict]||['','?'];
     const card=el('div','receipt');
     card.dataset.ref=r.source_ref||'';
-    const head=el('button','receipt-head',
+    const cardHead=el('button','receipt-head',
       `<span class="badge ${cls}">${mark}</span>
        <span class="claim">${esc(r.claim)}</span>
        <span class="ref">${esc(r.source_ref||'')}</span>`);
-    const body=el('div','receipt-body');
+    const cardBody=el('div','receipt-body');
     let bh='';
     if(r.source_text)bh+=`<div class="src-label">Statutory text</div><div class="src-text">${esc(r.source_text)}</div>`;
     (r.reasons||[]).forEach(rs=>bh+=`<div class="reason">${esc(rs)}</div>`);
     if(r.similarity)bh+=`<div class="sim">semantic support: ${r.similarity.toFixed(3)}</div>`;
-    body.innerHTML=bh||'<div class="sim">no source text</div>';
-    head.onclick=()=>card.classList.toggle('open');
-    card.append(head,body);wrap.appendChild(card);
+    cardBody.innerHTML=bh||'<div class="sim">no source text</div>';
+    cardHead.onclick=()=>card.classList.toggle('open');
+    card.append(cardHead,cardBody);body.appendChild(card);
   });
   (uncited||[]).forEach(u=>{
-    wrap.appendChild(el('div','uncited-note',
+    body.appendChild(el('div','uncited-note',
       `<span class="lbl">General guidance — not verified against statute</span>${esc(u)}`));
   });
+  head.onclick=()=>{
+    const open=head.classList.toggle('open');
+    body.classList.toggle('collapsed',!open);
+    body.style.maxHeight=open?body.scrollHeight+'px':'';
+  };
+  body.style.maxHeight=body.scrollHeight+'px'; // open by default
+  wrap.innerHTML='';wrap.append(head,body);
   wrap.classList.add('show');
   autoscroll();
 }
@@ -643,22 +671,23 @@ function assistantShell(){
   const msg=el('div','msg assistant');
   // answer wrap with copy button
   const aw=el('div','answer-wrap');
-  const copy=el('button','copy-btn');copy.textContent='Copy';copy.title='Copy answer as plain text';
+  const copy=el('button','copy-btn');copy.title='Copy answer';
+  copy.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span></span>';
   copy.onclick=()=>{
     const a=msg.querySelector('.answer');
     if(!a)return;
     const txt=a.innerText.trim();
+    const lbl=copy.querySelector('span');
     navigator.clipboard.writeText(txt).then(()=>{
-      copy.textContent='Copied!';copy.classList.add('copied');
-      setTimeout(()=>{copy.textContent='Copy';copy.classList.remove('copied')},1500);
+      lbl.textContent='Copied!';copy.classList.add('copied');
+      setTimeout(()=>{lbl.textContent='';copy.classList.remove('copied')},1500);
     }).catch(()=>{
-      // Fallback for older browsers
       const ta=document.createElement('textarea');
       ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
       document.body.appendChild(ta);ta.select();
       document.execCommand('copy');document.body.removeChild(ta);
-      copy.textContent='Copied!';copy.classList.add('copied');
-      setTimeout(()=>{copy.textContent='Copy';copy.classList.remove('copied')},1500);
+      lbl.textContent='Copied!';copy.classList.add('copied');
+      setTimeout(()=>{lbl.textContent='';copy.classList.remove('copied')},1500);
     });
   };
   const ans=el('div','answer');

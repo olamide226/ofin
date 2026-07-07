@@ -36,3 +36,4 @@ engine/bin/ofin-*
 eval/golden/results/
 corpus/tax/nigeria-tax-act-2025-original.md
 corpus/tax/nigeria-tax-act-2025-cleaned.md
+/ofin

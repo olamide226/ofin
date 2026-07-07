@@ -430,6 +430,8 @@ func ComputationHTML(outcome router.Outcome) string {
 	switch outcome.Kind {
 	case "paye":
 		return renderPAYETable(outcome)
+	case "paye_conceptual":
+		return renderPAYEConceptual(outcome)
 	case "termination_notice":
 		return renderNoticeCard(outcome)
 	case "tenancy_notice":
@@ -438,6 +440,44 @@ func ComputationHTML(outcome router.Outcome) string {
 		return renderRedundancyCard(outcome)
 	}
 	return ""
+}
+
+func renderPAYEConceptual(outcome router.Outcome) string {
+	var b strings.Builder
+	b.WriteString(`<div class="computation paye">`)
+	b.WriteString(`<div class="conceptual">`)
+	b.WriteString(simpleMarkdown(outcome.Rendered))
+	b.WriteString(`</div>`)
+	b.WriteString(`</div>`)
+	return b.String()
+}
+
+// simpleMarkdown converts basic markdown (bold, paragraphs) to HTML.
+func simpleMarkdown(s string) string {
+	// Bold: **text** → <strong>text</strong>
+	s = strings.ReplaceAll(s, "**", "\x00") // placeholder for opening
+	parts := strings.Split(s, "\x00")
+	var b strings.Builder
+	for i, part := range parts {
+		if i%2 == 0 {
+			b.WriteString(part)
+		} else {
+			b.WriteString("<strong>" + part + "</strong>")
+		}
+	}
+	// Paragraphs: double newline → </p><p>
+	s = b.String()
+	b.Reset()
+	paras := strings.Split(s, "\n\n")
+	b.WriteString("<p>")
+	for i, p := range paras {
+		if i > 0 {
+			b.WriteString("</p><p>")
+		}
+		b.WriteString(strings.ReplaceAll(strings.TrimSpace(p), "\n", "<br>"))
+	}
+	b.WriteString("</p>")
+	return b.String()
 }
 
 func renderTenancyCard(outcome router.Outcome) string {

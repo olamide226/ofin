@@ -130,6 +130,45 @@ func (r PAYEResult) Render() string {
 	return b.String()
 }
 
+// PAYEConceptual explains how PAYE is calculated, the band structure,
+// and the formula — for when the user asks "how is tax calculated?"
+// without providing a specific income figure.
+func PAYEConceptual() string {
+	var b strings.Builder
+	b.WriteString("Here is how Nigerian personal income tax (PAYE) is calculated " +
+		"under the Nigeria Tax Act 2025:\n\n")
+	b.WriteString("**Step 1: Determine your annual gross income.**\n")
+	b.WriteString("If you earn a monthly salary, multiply it by 12. " +
+		"Include bonuses, allowances, and benefits in kind.\n\n")
+	b.WriteString("**Step 2: Subtract eligible reliefs** from your gross income " +
+		"to get your taxable income:\n")
+	b.WriteString("- **Rent relief:** 20% of your annual rent, capped at ₦500,000 per year.\n")
+	b.WriteString("- **Pension contributions:** your employee contribution is deductible " +
+		"[Pension Reform Act 2014, s.4(1)].\n\n")
+	b.WriteString("**Step 3: Apply the graduated tax bands** to your taxable income " +
+		"[Nigeria Tax Act 2025, s.58(1) and Fourth Schedule]:\n\n")
+	b.WriteString("| Band (annual taxable income) | Rate |\n")
+	b.WriteString("|------------------------------|------|\n")
+	b.WriteString("| First         ₦800,000       |  0%  |\n")
+	b.WriteString("| Next        ₦2,200,000       | 15%  |\n")
+	b.WriteString("| Next        ₦9,000,000       | 18%  |\n")
+	b.WriteString("| Next       ₦13,000,000       | 21%  |\n")
+	b.WriteString("| Next       ₦25,000,000       | 23%  |\n")
+	b.WriteString("| Above      ₦50,000,000       | 25%  |\n\n")
+	b.WriteString("**Step 4: Divide by 12** to get your monthly PAYE.\n\n")
+	b.WriteString("**Minimum wage exemption:** if your gross income is at or below " +
+		"₦70,000 per month (₦840,000 per year), you pay no PAYE " +
+		"[Nigeria Tax Act 2025, s.58(1)].\n\n")
+	b.WriteString("**Example:** someone earning ₦450,000 per month " +
+		"(₦5,400,000 per year) with no rent or pension reliefs " +
+		"pays ₦63,500 per month in PAYE.\n\n")
+	b.WriteString("Basis: Nigeria Tax Act 2025 (in force from 2026-01-01). " +
+		"Rates verified against the gazette Fourth Schedule. " +
+		"Computed deterministically — the LLM does not touch these figures.\n\n")
+	b.WriteString("To get your specific PAYE calculation, tell me your monthly salary.")
+	return b.String()
+}
+
 func formatNaira(v float64) string {
 	s := fmt.Sprintf("%.0f", v)
 	var b strings.Builder
