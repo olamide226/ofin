@@ -12,6 +12,8 @@ corpus/**/raw/
 # Build artifacts
 engine/bin/
 *.db
+# ofin.db is the shipped retrieval DB — committed so CI packaging can find it
+!data/ofin.db
 *.sqlite
 
 # Profiler outputs
@@ -49,3 +51,4 @@ llama-dist/
 packaging/**/dmg-staging/
 packaging/**/ofin_*_amd64/
 packaging/macos/Ofin.app/Contents/Resources/llama/
+todo.md

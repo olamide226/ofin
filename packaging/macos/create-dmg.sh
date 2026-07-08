@@ -56,6 +56,28 @@ chmod +x "$APP/Contents/MacOS/ofin-launcher" "$RES/ofin-darwin-arm64" "$RES/llam
 echo "Verifying bundled llama-server..."
 "$RES/llama/llama-server" --version 2>&1 | head -1
 
+# ── Code signing (optional) ─────────────────────────────────────────
+# Set SIGN_ID to a "Developer ID Application: NAME (TEAMID)" identity to
+# sign for distribution outside the App Store. Without it, the .dmg is
+# unsigned and Gatekeeper will warn.
+#   SIGN_ID="Developer ID Application: Olamide Adebayo (TEAMID)"
+SIGN_ID="${SIGN_ID:-}"
+ENTITLEMENTS="$HERE/entitlements.plist"
+
+if [ -n "$SIGN_ID" ]; then
+  echo "Signing bundle with: $SIGN_ID"
+  # Inner-to-outer, Hardened Runtime (--options runtime) + secure timestamp.
+  # Every nested Mach-O must be signed or notarization fails.
+  find "$RES/llama" -name "*.dylib" -print0 | while IFS= read -r -d '' lib; do
+    codesign --force --timestamp --options runtime --sign "$SIGN_ID" "$lib"
+  done
+  codesign --force --timestamp --options runtime --sign "$SIGN_ID" "$RES/llama/llama-server"
+  codesign --force --timestamp --options runtime --entitlements "$ENTITLEMENTS" --sign "$SIGN_ID" "$RES/ofin-darwin-arm64"
+  # Sign the app bundle last (outermost).
+  codesign --force --timestamp --options runtime --entitlements "$ENTITLEMENTS" --sign "$SIGN_ID" "$APP"
+  codesign --verify --deep --strict --verbose=2 "$APP" 2>&1 | tail -2
+fi
+
 # Build .dmg with an /Applications symlink for drag-install
 echo "Creating $DMG..."
 rm -rf "$STAGING" "$DMG"
@@ -65,9 +87,30 @@ ln -s /Applications "$STAGING/Applications"
 hdiutil create -volname "Òfin" -srcfolder "$STAGING" -ov -format UDZO "$DMG"
 rm -rf "$STAGING"
 
+# ── Notarization (optional) ─────────────────────────────────────────
+# Set NOTARY_PROFILE to a keychain profile created once via:
+#   xcrun notarytool store-credentials "ofin-notary" \
+#       --apple-id <you@email> --team-id <TEAMID> --password <app-specific-pw>
+NOTARY_PROFILE="${NOTARY_PROFILE:-}"
+
+if [ -n "$SIGN_ID" ]; then
+  codesign --force --timestamp --sign "$SIGN_ID" "$DMG"
+fi
+if [ -n "$NOTARY_PROFILE" ]; then
+  echo "Notarizing $DMG (this can take a few minutes)..."
+  xcrun notarytool submit "$DMG" --keychain-profile "$NOTARY_PROFILE" --wait
+  xcrun stapler staple "$DMG"
+  echo "Stapled. Verifying Gatekeeper acceptance:"
+  spctl -a -t open --context context:primary-signature -vv "$DMG" 2>&1 | tail -2
+fi
+
 SIZE=$(du -h "$DMG" | cut -f1)
 echo ""
 echo "✓ Done: $DMG ($SIZE)"
-echo "  Standalone — bundles official llama.cpp, no external deps."
-echo "  To notarize (optional):"
-echo "    xcrun notarytool submit \"$DMG\" --apple-id <id> --team-id <team> --wait"
+if [ -z "$SIGN_ID" ]; then
+  echo "  UNSIGNED — set SIGN_ID (and NOTARY_PROFILE) to remove the Gatekeeper warning."
+elif [ -z "$NOTARY_PROFILE" ]; then
+  echo "  Signed but NOT notarized — set NOTARY_PROFILE to fully clear Gatekeeper."
+else
+  echo "  Signed + notarized + stapled — no Gatekeeper warning."
+fi

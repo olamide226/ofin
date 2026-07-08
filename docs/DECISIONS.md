@@ -6,6 +6,38 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-018 — Commit the built data/ofin.db to git; release CI packages it directly rather than rebuilding it (2026-07-08)
+
+**Decision:** Carve a `!data/ofin.db` exception into `.gitignore`'s `*.db`
+rule and commit the built retrieval DB (~6 MB). `packaging/{macos,linux}`
+scripts and the Windows staging step already default to `$REPO/data/ofin.db`
+unmodified — no CI step needed beyond checkout.
+
+**Context:** First real run of `release.yml` (added in 4a86729) failed on all
+three platforms. macOS/Linux died in the packaging step —
+`ERROR: missing .../data/ofin.db` — because the DB is a gitignored build
+artifact (`make ingest` → `pipeline/ingest.py`, which needs a live
+`llama-server --embedding` process) and the workflow never builds one.
+Windows would have hit the same wall at its `cp data/ofin.db ...` step.
+
+**Alternatives considered:** add an `ingest` step to each CI job (spin up
+llama-server + embedding GGUF + `pip install sqlite-vec`, run
+`pipeline/ingest.py`). Rejected for now — three extra minutes and a heavier
+dependency surface per job, for a DB that only changes when the corpus does.
+Revisit if `data/chunks-sac/` starts changing often enough that a
+manually-recommitted DB goes stale.
+
+**Also fixed in the same run:** Windows `go build` failed independently —
+`sqlite-vec.h:7:10: fatal error: sqlite3.h: No such file or directory` — the
+`sqlite-vec-go-bindings/cgo` package `#include`s `sqlite3.h` directly; macOS
+gets it free from Xcode CLT, Linux from the explicit
+`apt-get install libsqlite3-dev` step, but `windows-latest` has neither.
+Fixed by installing just the header via `vcpkg install sqlite3:x64-windows`
+(vcpkg ships preinstalled on that runner image) and pointing `CGO_CFLAGS` at
+it — no linking needed, since the actual sqlite3 symbols are satisfied at
+final link time by `mattn/go-sqlite3`'s bundled amalgamation (compiled
+`-DSQLITE_CORE` into the same binary).
+
 ## ADR-017 — African-language scope is Pidgin-only: Yoruba/Hausa/Igbo query understanding is not achievable with the onboard model (2026-07-04)
 
 **Decision:** The African Alpha (+15%) and localisation claims rest on
