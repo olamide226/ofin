@@ -1,0 +1,30 @@
+#!/bin/bash
+# Òfin macOS Launcher
+# Double-click the .app bundle to start Òfin. Opens your browser automatically.
+set -e
+
+DIR="$(cd "$(dirname "$0")/../Resources" && pwd)"
+DATA="$HOME/Library/Application Support/Ofin"
+
+# The ofin binary locates the bundled llama-server itself (it looks in
+# <its-dir>/llama/). llama-server's @loader_path rpath finds the sibling
+# dylibs. Fully self-contained: no Homebrew, no system llama.cpp.
+
+# First run: set up the data directory (corpus DB + embedding model).
+if [ ! -d "$DATA" ]; then
+  mkdir -p "$DATA/data" "$DATA/model" "$DATA/models-dev"
+  cp "$DIR/ofin.db" "$DATA/data/ofin.db"
+  cp "$DIR/bge-small-en-v1.5-f16.gguf" "$DATA/models-dev/bge-small-en-v1.5-f16.gguf"
+fi
+
+# Start Òfin. The web server shows a first-launch download page if the
+# 1.9 GB model isn't present yet, then flips to the app automatically.
+"$DIR/ofin-darwin-arm64" serve --data-dir "$DATA" &
+OFIN_PID=$!
+
+# Give the HTTP listener a moment, then open the browser.
+sleep 3
+open "http://127.0.0.1:8090"
+
+# Keep running until the user quits the app (or the server dies).
+wait $OFIN_PID

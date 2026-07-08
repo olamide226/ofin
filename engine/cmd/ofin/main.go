@@ -25,9 +25,13 @@ import (
 
 func repoRoot() string {
 	dir, _ := os.Getwd()
-	for d := dir; d != "/"; d = filepath.Dir(d) {
+	for d := dir; ; d = filepath.Dir(d) {
 		if _, err := os.Stat(filepath.Join(d, "metadata.json")); err == nil {
 			return d
+		}
+		parent := filepath.Dir(d)
+		if parent == d {
+			break // reached filesystem root (works on Windows drive roots too)
 		}
 	}
 	return dir
@@ -36,9 +40,12 @@ func repoRoot() string {
 func main() {
 	root := repoRoot()
 	cfg := app.DefaultConfig(root)
+	var dataDir string
+	flag.StringVar(&dataDir, "data-dir", "", "data directory (default: repo root in dev, platform app data when installed)")
+	flag.StringVar(&cfg.ChatModel, "model-path", cfg.ChatModel, "chat model GGUF path")
 	flag.StringVar(&cfg.DBPath, "db", cfg.DBPath, "retrieval database")
 	flag.StringVar(&cfg.EmbedModel, "embed-model", cfg.EmbedModel, "embedding GGUF")
-	flag.StringVar(&cfg.ChatModel, "chat-model", cfg.ChatModel, "chat GGUF")
+	flag.StringVar(&cfg.ChatModel, "chat-model", cfg.ChatModel, "chat GGUF (alias for --model-path)")
 	draft := flag.Bool("draft", false, "enable speculative decoding (demo machines only, ADR-012; needs the 1B draft GGUF in models-dev/)")
 	pidgin := flag.Bool("pidgin", false, "answer in Nigerian Pidgin regardless of question language")
 	flag.IntVar(&cfg.TopN, "topn", cfg.TopN, "fused sources per question (retrieval tuning)")
@@ -48,6 +55,15 @@ func main() {
 	jsonOut := flag.Bool("json", false, "machine-readable JSON output")
 	port := flag.Int("port", 8090, "web UI port (serve)")
 	flag.Parse()
+
+	// If --data-dir is set, resolve all paths relative to it.
+	if dataDir != "" {
+		if cfg.ChatModel == app.DefaultConfig(root).ChatModel {
+			cfg.ChatModel = filepath.Join(dataDir, "model", "ofin-model.gguf")
+		}
+		cfg.DBPath = filepath.Join(dataDir, "data", "ofin.db")
+		cfg.EmbedModel = filepath.Join(dataDir, "models-dev", "bge-small-en-v1.5-f16.gguf")
+	}
 
 	args := flag.Args()
 	if len(args) < 1 {
@@ -80,6 +96,10 @@ func main() {
 		if len(args) > 1 { // positional port form: ofin serve 8091
 			fmt.Sscanf(args[1], "%d", port)
 		}
+		// The web server handles first-launch model download itself (shows a
+		// progress page in the browser). No blocking here — `ofin serve` stays
+		// decoupled from packaging: dev runs with the model already present,
+		// packaged installs get the setup page.
 		serve(a, *port)
 		return
 	}

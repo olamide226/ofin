@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"runtime"
 	"strings"
 	"time"
@@ -26,6 +27,8 @@ type Server struct {
 	DraftModel string // optional: speculative decoding draft GGUF
 	Embedding  bool
 	ExtraArgs  []string
+	cmd        *exec.Cmd // the running child process (nil if not started by us)
+	pidFile    string    // path to PID file for cross-invocation stopping
 }
 
 func (s *Server) baseURL() string { return fmt.Sprintf("http://127.0.0.1:%d", s.Port) }
@@ -38,6 +41,30 @@ func (s *Server) Healthy() bool {
 	}
 	defer resp.Body.Close()
 	return resp.StatusCode == 200
+}
+
+// llamaServerPath locates the llama-server binary. It prefers a copy bundled
+// next to the ofin executable (packaged app layout: <exe-dir>/llama/ or
+// <exe-dir>/), then falls back to the name so PATH resolution applies in
+// development. Returning an absolute path avoids Go's refusal to exec a
+// binary found via a relative PATH entry (ErrDot).
+func llamaServerPath() string {
+	name := "llama-server"
+	if runtime.GOOS == "windows" {
+		name += ".exe"
+	}
+	if exe, err := os.Executable(); err == nil {
+		dir := filepath.Dir(exe)
+		for _, cand := range []string{
+			filepath.Join(dir, "llama", name), // packaged: Resources/llama/llama-server
+			filepath.Join(dir, name),          // flat: alongside the binary
+		} {
+			if info, err := os.Stat(cand); err == nil && !info.IsDir() {
+				return cand
+			}
+		}
+	}
+	return name // dev: resolve via PATH
 }
 
 // EnsureRunning starts a llama-server for this model if one is not already
@@ -65,13 +92,17 @@ func (s *Server) EnsureRunning() error {
 		}
 	}
 	args = append(args, s.ExtraArgs...)
-	cmd := exec.Command("llama-server", args...)
-	cmd.Stdout = nil
-	cmd.Stderr = nil
-	if err := cmd.Start(); err != nil {
+	s.cmd = exec.Command(llamaServerPath(), args...)
+	s.cmd.Stdout = nil
+	s.cmd.Stderr = nil
+	if err := s.cmd.Start(); err != nil {
 		return fmt.Errorf("starting llama-server: %w", err)
 	}
-	go cmd.Wait() // reap if it dies; health checks are the real signal
+	// Write PID file for cross-invocation stopping (ofin stop).
+	if s.pidFile != "" {
+		os.WriteFile(s.pidFile, []byte(fmt.Sprint(s.cmd.Process.Pid)), 0644)
+	}
+	go s.cmd.Wait() // reap if it dies; health checks are the real signal
 
 	deadline := time.Now().Add(90 * time.Second)
 	for time.Now().Before(deadline) {
@@ -83,13 +114,33 @@ func (s *Server) EnsureRunning() error {
 	return fmt.Errorf("llama-server on port %d not healthy after 90s", s.Port)
 }
 
+// pidFilePath returns the expected PID file path for a given port.
+func pidFilePath(port int) string {
+	return filepath.Join(os.TempDir(), fmt.Sprintf("ofin-llama-%d.pid", port))
+}
+
+// Stop kills a llama-server on the given port. It tries the PID file first
+// (written by a previous invocation), then falls back to pkill/taskkill.
 func Stop(port int) error {
-	// llama-server has no shutdown endpoint; match on the port argument.
-	// pkill on Linux/macOS, taskkill on Windows.
-	if runtime.GOOS == "windows" {
-		return exec.Command("taskkill", "/F", "/FI", fmt.Sprintf("COMMAND eq llama-server.exe")).Run()
+	// 1. Try PID file first — most reliable cross-platform.
+	pidFile := pidFilePath(port)
+	if data, err := os.ReadFile(pidFile); err == nil {
+		var pid int
+		if _, scanErr := fmt.Sscanf(string(data), "%d", &pid); scanErr == nil && pid > 0 {
+			proc, _ := os.FindProcess(pid)
+			if proc != nil {
+				proc.Kill()
+			}
+		}
+		os.Remove(pidFile)
 	}
-	return exec.Command("pkill", "-f", fmt.Sprintf("llama-server.*--port %d", port)).Run()
+	// 2. Fallback: pkill/taskkill by port pattern.
+	if runtime.GOOS == "windows" {
+		return exec.Command("taskkill", "/F", "/FI",
+			fmt.Sprintf("COMMAND eq llama-server.exe")).Run()
+	}
+	return exec.Command("pkill", "-f",
+		fmt.Sprintf("llama-server.*--port %d", port)).Run()
 }
 
 // EmbedBatch embeds several texts in one request — llama-server accepts an

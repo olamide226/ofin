@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Òfin
+Comment=Nigerian Legal Companion
+Exec=ofin-launch
+Icon=ofin
+Terminal=false
+Type=Application
+Categories=Utility;Office;
+Keywords=legal;nigeria;law;labour;tax;tenancy;

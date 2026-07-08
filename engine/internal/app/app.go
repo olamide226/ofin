@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -37,9 +38,9 @@ type Config struct {
 // DefaultConfig returns the config used by the CLI and development.
 func DefaultConfig(root string) Config {
 	return Config{
-		DBPath:     root + "/data/ofin.db",
-		EmbedModel: root + "/models-dev/bge-small-en-v1.5-f16.gguf",
-		ChatModel:  root + "/models-dev/Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+		DBPath:     filepath.Join(root, "data", "ofin.db"),
+		EmbedModel: filepath.Join(root, "models-dev", "bge-small-en-v1.5-f16.gguf"),
+		ChatModel:  filepath.Join(root, "model", "ofin-model.gguf"),
 		// Speculative decoding is OFF by default (ADR-012): the draft GGUF
 		// is not shipped by download_model.sh, and a default path here made
 		// the chat server crash on fresh clones. Opt in with `ofin -draft`.

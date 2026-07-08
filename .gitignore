@@ -37,3 +37,15 @@ eval/golden/results/
 corpus/tax/nigeria-tax-act-2025-original.md
 corpus/tax/nigeria-tax-act-2025-cleaned.md
 /ofin
+
+# Packaging outputs
+packaging/macos/Ofin.app/Contents/Resources/*
+packaging/windows/bin/*
+packaging/linux/usr/bin/*
+*.dmg
+*.deb
+Ofin-Setup-*.exe
+llama-dist/
+packaging/**/dmg-staging/
+packaging/**/ofin_*_amd64/
+packaging/macos/Ofin.app/Contents/Resources/llama/
