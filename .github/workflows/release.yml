@@ -1,0 +1,136 @@
+name: Build and Package
+
+# Builds standalone installers for macOS, Windows, and Linux on tag push.
+# Each installer bundles the official llama.cpp build (binary + libraries)
+# so end users need no Homebrew / apt / manual llama.cpp install. Only the
+# 1.9 GB model downloads on first launch (handled by the app's setup page).
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+env:
+  LLAMA_TAG: b9905          # official llama.cpp release to bundle
+  GO_VERSION: '1.23'
+
+jobs:
+  # ── macOS .dmg ─────────────────────────────────────────────
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: '${{ env.GO_VERSION }}' }
+
+      - name: Build ofin binary
+        working-directory: engine
+        run: go build -tags sqlite_fts5 -o bin/ofin-darwin-arm64 ./cmd/ofin
+
+      - name: Fetch official llama.cpp (macOS arm64)
+        run: |
+          curl -L -o llama.tar.gz \
+            "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_TAG}/llama-${LLAMA_TAG}-bin-macos-arm64.tar.gz"
+          mkdir -p llama-dist && tar xzf llama.tar.gz -C llama-dist --strip-components=1
+
+      - name: Fetch embedding model
+        run: |
+          mkdir -p models-dev
+          curl -L -o models-dev/bge-small-en-v1.5-f16.gguf \
+            "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-f16.gguf"
+
+      - name: Build .dmg
+        env:
+          LLAMA_DIR: ${{ github.workspace }}/llama-dist
+        run: bash packaging/macos/create-dmg.sh "${GITHUB_REF_NAME#v}"
+
+      - uses: actions/upload-artifact@v4
+        with: { name: ofin-macos-dmg, path: packaging/macos/*.dmg }
+
+  # ── Windows .exe installer ─────────────────────────────────
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: '${{ env.GO_VERSION }}' }
+
+      - name: Build ofin.exe
+        working-directory: engine
+        run: go build -tags sqlite_fts5 -o bin/ofin.exe ./cmd/ofin
+
+      - name: Fetch official llama.cpp (Windows x64)
+        shell: bash
+        run: |
+          curl -L -o llama.zip \
+            "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_TAG}/llama-${LLAMA_TAG}-bin-win-cpu-x64.zip"
+          mkdir -p packaging/windows/bin/llama
+          unzip -o llama.zip -d packaging/windows/bin/llama
+
+      - name: Fetch embedding model + stage assets
+        shell: bash
+        run: |
+          cp engine/bin/ofin.exe packaging/windows/bin/ofin.exe
+          cp data/ofin.db packaging/windows/bin/ofin.db
+          curl -L -o packaging/windows/bin/bge-small-en-v1.5-f16.gguf \
+            "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-f16.gguf"
+
+      - name: Setup NSIS
+        run: choco install nsis -y
+
+      - name: Compile installer
+        working-directory: packaging/windows
+        shell: cmd
+        run: makensis ofin.nsi
+
+      - uses: actions/upload-artifact@v4
+        with: { name: ofin-windows-exe, path: packaging/windows/Ofin-Setup-*.exe }
+
+  # ── Linux .deb ─────────────────────────────────────────────
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: '${{ env.GO_VERSION }}' }
+
+      - name: Install build deps
+        run: sudo apt-get update && sudo apt-get install -y libsqlite3-dev
+
+      - name: Build ofin binary
+        working-directory: engine
+        run: go build -tags sqlite_fts5 -o bin/ofin-linux-x86_64 ./cmd/ofin
+
+      - name: Fetch official llama.cpp (Ubuntu x64)
+        run: |
+          curl -L -o llama.tar.gz \
+            "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_TAG}/llama-${LLAMA_TAG}-bin-ubuntu-x64.tar.gz"
+          mkdir -p llama-dist && tar xzf llama.tar.gz -C llama-dist --strip-components=1
+
+      - name: Fetch embedding model
+        run: |
+          mkdir -p models-dev
+          curl -L -o models-dev/bge-small-en-v1.5-f16.gguf \
+            "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-f16.gguf"
+
+      - name: Build .deb
+        env:
+          LLAMA_DIR: ${{ github.workspace }}/llama-dist
+        run: bash packaging/linux/build-deb.sh "${GITHUB_REF_NAME#v}"
+
+      - uses: actions/upload-artifact@v4
+        with: { name: ofin-linux-deb, path: packaging/linux/*.deb }
+
+  # ── GitHub Release ─────────────────────────────────────────
+  release:
+    needs: [macos, windows, linux]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: release }
+      - run: find release -type f -ls
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: release/**/*
+          generate_release_notes: true

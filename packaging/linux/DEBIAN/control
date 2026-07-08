@@ -1,0 +1,15 @@
+Package: ofin
+Version: 0.2.0
+Architecture: amd64
+Maintainer: Ruach Tech <dev@ruac.tech>
+Depends: libc6 (>= 2.31)
+Section: utils
+Priority: optional
+Homepage: https://github.com/olamide226/ofin
+Description: Offline Nigerian legal companion
+ Òfin is an offline legal assistant for Nigerian labour, tenancy,
+ and tax law. It runs fully offline on an 8 GB laptop, answers in
+ English or Nigerian Pidgin, and backs every legal claim with a
+ verifiable citation to the statutory text.
+ .
+ Built for the Africa Deep Tech Challenge 2026.
