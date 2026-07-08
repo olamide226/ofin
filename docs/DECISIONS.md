@@ -61,11 +61,14 @@ dropping the unused return-code argument on both `ExecWait` calls (lines
 76-77) — the script only uses these to best-effort-kill running processes
 before uninstall and never inspected the exit code anyway.
 
-**Testing note:** the workflow only triggers on `v*` tags or manual dispatch.
-Manually dispatching on `main` (as done here, since no tag was ready) makes
-`GITHUB_REF_NAME` = `"main"`, which `build-deb.sh`'s `dpkg-deb` step correctly
-rejects as an invalid Debian version — that failure is an artifact of testing
-off-branch, not a workflow bug; a real `v0.x.y` tag push resolves it.
+A fifth issue surfaced repeatedly while verifying the above via manual
+`workflow_dispatch` runs on `main` (no tag pushed yet): `GITHUB_REF_NAME` is
+then just `"main"`, and `packaging/linux/build-deb.sh` passed it straight to
+`dpkg-deb`, which correctly rejects `"main"` as a Debian version (must start
+with a digit). Rather than leave ad-hoc test runs permanently red, added a
+`Compute version` step to the macOS and Linux jobs: strip a leading `v` as
+before, but fall back to `0.0.0-dev` when the result doesn't start with a
+digit. A real `v0.x.y` tag push is unaffected.
 
 ## ADR-017 — African-language scope is Pidgin-only: Yoruba/Hausa/Igbo query understanding is not achievable with the onboard model (2026-07-04)
 
