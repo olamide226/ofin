@@ -3,7 +3,10 @@
 ; Requires NSIS 3.x (brew install makensis or choco install nsis)
 
 !define PRODUCT "Òfin"
-!define VERSION "0.2.0"
+; Override from the command line: makensis /DVERSION=0.3.0 ofin.nsi
+!ifndef VERSION
+  !define VERSION "0.2.0"
+!endif
 !define PUBLISHER "Ruach Tech"
 
 Name "${PRODUCT} ${VERSION}"

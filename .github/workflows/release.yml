@@ -66,6 +66,15 @@ jobs:
       - uses: actions/setup-go@v5
         with: { go-version: '${{ env.GO_VERSION }}' }
 
+      - name: Compute version
+        # Same fallback as the macOS/Linux jobs (see there for why).
+        id: version
+        shell: bash
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if ! [[ "$VERSION" =~ ^[0-9] ]]; then VERSION="0.0.0-dev"; fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
       - name: Provide sqlite3.h for cgo
         # sqlite-vec-go-bindings' cgo package #includes "sqlite3.h" directly;
         # macOS gets it from Xcode CLT and Linux from libsqlite3-dev, but
@@ -119,7 +128,7 @@ jobs:
       - name: Compile installer
         working-directory: packaging/windows
         shell: cmd
-        run: makensis ofin.nsi
+        run: makensis /DVERSION=${{ steps.version.outputs.version }} ofin.nsi
 
       - uses: actions/upload-artifact@v4
         with: { name: ofin-windows-exe, path: packaging/windows/Ofin-Setup-*.exe }

@@ -70,6 +70,14 @@ with a digit). Rather than leave ad-hoc test runs permanently red, added a
 before, but fall back to `0.0.0-dev` when the result doesn't start with a
 digit. A real `v0.x.y` tag push is unaffected.
 
+**Follow-up:** the Windows job never had this problem because
+`packaging/windows/ofin.nsi` hardcoded `!define VERSION "0.2.0"` rather than
+taking it from the git ref at all — meaning the shipped Windows installer's
+version could silently drift from whatever tag actually triggered the build.
+Fixed by wrapping the define in `!ifndef VERSION` (NSIS convention for a
+command-line-overridable default) and passing the same computed version from
+the workflow via `makensis /DVERSION=...`, matching macOS/Linux.
+
 ## ADR-017 — African-language scope is Pidgin-only: Yoruba/Hausa/Igbo query understanding is not achievable with the onboard model (2026-07-04)
 
 **Decision:** The African Alpha (+15%) and localisation claims rest on
