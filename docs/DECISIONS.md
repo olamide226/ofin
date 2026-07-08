@@ -44,6 +44,14 @@ already pinned in `go.sum`, and its `SQLITE_API` macro is plain (no
 dllimport) by default, so the linker resolves the symbols from go-sqlite3's
 own compiled object as expected.
 
+That fix uncovered a third, independent Windows failure one step later:
+`'makensis' is not recognized`, even though the preceding `choco install
+nsis -y` step succeeded. `choco` updates the machine `PATH` in the registry,
+but the Actions runner process was already started and doesn't re-read it —
+every later step still sees the stale PATH from job start. Fixed by
+appending NSIS's install dir to `$GITHUB_PATH`, which Actions injects into
+every subsequent step regardless of OS-level env caching.
+
 **Testing note:** the workflow only triggers on `v*` tags or manual dispatch.
 Manually dispatching on `main` (as done here, since no tag was ready) makes
 `GITHUB_REF_NAME` = `"main"`, which `build-deb.sh`'s `dpkg-deb` step correctly

@@ -95,7 +95,15 @@ jobs:
             "https://huggingface.co/CompendiumLabs/bge-small-en-v1.5-gguf/resolve/main/bge-small-en-v1.5-f16.gguf"
 
       - name: Setup NSIS
-        run: choco install nsis -y
+        # choco installs makensis.exe to Program Files, but it updates the
+        # machine PATH in the registry, which the already-running Actions
+        # runner process doesn't pick up — subsequent steps still see the
+        # old PATH. Append the install dir via $GITHUB_PATH instead, which
+        # Actions honors for every later step regardless of OS env caching.
+        shell: pwsh
+        run: |
+          choco install nsis -y
+          echo "C:\Program Files (x86)\NSIS" >> $env:GITHUB_PATH
 
       - name: Compile installer
         working-directory: packaging/windows
