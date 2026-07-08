@@ -32,11 +32,23 @@ manually-recommitted DB goes stale.
 `sqlite-vec-go-bindings/cgo` package `#include`s `sqlite3.h` directly; macOS
 gets it free from Xcode CLT, Linux from the explicit
 `apt-get install libsqlite3-dev` step, but `windows-latest` has neither.
-Fixed by installing just the header via `vcpkg install sqlite3:x64-windows`
-(vcpkg ships preinstalled on that runner image) and pointing `CGO_CFLAGS` at
-it — no linking needed, since the actual sqlite3 symbols are satisfied at
-final link time by `mattn/go-sqlite3`'s bundled amalgamation (compiled
-`-DSQLITE_CORE` into the same binary).
+First attempt (`vcpkg install sqlite3:x64-windows`, pointing `CGO_CFLAGS` at
+its include dir) compiled but failed to *link*:
+`undefined reference to __imp_sqlite3_auto_extension` etc. — vcpkg's sqlite3
+port declares its API `__declspec(dllimport)` (built for its own DLL), which
+doesn't resolve against `mattn/go-sqlite3`'s bundled amalgamation compiled
+statically into the same binary. Fixed by reusing `go-sqlite3`'s own vendored
+`sqlite3-binding.h` instead (`go list -m -f '{{.Dir}}' github.com/mattn/go-sqlite3`,
+copied to a scratch include dir referenced via `CGO_CFLAGS`) — same version
+already pinned in `go.sum`, and its `SQLITE_API` macro is plain (no
+dllimport) by default, so the linker resolves the symbols from go-sqlite3's
+own compiled object as expected.
+
+**Testing note:** the workflow only triggers on `v*` tags or manual dispatch.
+Manually dispatching on `main` (as done here, since no tag was ready) makes
+`GITHUB_REF_NAME` = `"main"`, which `build-deb.sh`'s `dpkg-deb` step correctly
+rejects as an invalid Debian version — that failure is an artifact of testing
+off-branch, not a workflow bug; a real `v0.x.y` tag push resolves it.
 
 ## ADR-017 — African-language scope is Pidgin-only: Yoruba/Hausa/Igbo query understanding is not achievable with the onboard model (2026-07-04)
 

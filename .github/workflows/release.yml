@@ -55,17 +55,24 @@ jobs:
       - uses: actions/setup-go@v5
         with: { go-version: '${{ env.GO_VERSION }}' }
 
-      - name: Install sqlite3 headers (vcpkg)
+      - name: Provide sqlite3.h for cgo
         # sqlite-vec-go-bindings' cgo package #includes "sqlite3.h" directly;
         # macOS gets it from Xcode CLT and Linux from libsqlite3-dev, but
-        # windows-latest has neither. We only need the header (actual sqlite3
-        # symbols are satisfied at link time by mattn/go-sqlite3's bundled
-        # amalgamation, compiled -DSQLITE_CORE into the same binary), so pull
-        # just the header via the vcpkg preinstalled on this runner image.
+        # windows-latest has neither. vcpkg's sqlite3 port declares its API
+        # `__declspec(dllimport)` (built for its own DLL), which breaks static
+        # linkage with "undefined reference to __imp_sqlite3_*" since the
+        # actual symbols come from mattn/go-sqlite3's bundled amalgamation
+        # compiled into the same binary, not a DLL. Reuse go-sqlite3's own
+        # vendored header instead: same version already pinned in go.sum,
+        # and its SQLITE_API macro is plain (no dllimport) by default.
+        working-directory: engine
         shell: pwsh
         run: |
-          vcpkg install sqlite3:x64-windows
-          echo "CGO_CFLAGS=-I$env:VCPKG_INSTALLATION_ROOT\installed\x64-windows\include" >> $env:GITHUB_ENV
+          go mod download github.com/mattn/go-sqlite3
+          $pkgDir = go list -m -f '{{.Dir}}' github.com/mattn/go-sqlite3
+          New-Item -ItemType Directory -Force -Path "$env:RUNNER_TEMP\sqlite3-include" | Out-Null
+          Copy-Item "$pkgDir\sqlite3-binding.h" "$env:RUNNER_TEMP\sqlite3-include\sqlite3.h"
+          echo "CGO_CFLAGS=-I$env:RUNNER_TEMP\sqlite3-include" >> $env:GITHUB_ENV
 
       - name: Build ofin.exe
         working-directory: engine
