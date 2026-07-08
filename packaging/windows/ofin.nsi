@@ -73,8 +73,8 @@ SectionEnd
 
 Section "Uninstall"
   ; Stop running instance
-  ExecWait "taskkill /F /IM ofin.exe" 0
-  ExecWait "taskkill /F /IM llama-server.exe" 0
+  ExecWait "taskkill /F /IM ofin.exe"
+  ExecWait "taskkill /F /IM llama-server.exe"
 
   ; Remove application files
   Delete "$INSTDIR\ofin.exe"

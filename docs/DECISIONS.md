@@ -52,6 +52,15 @@ every later step still sees the stale PATH from job start. Fixed by
 appending NSIS's install dir to `$GITHUB_PATH`, which Actions injects into
 every subsequent step regardless of OS-level env caching.
 
+Fixing that uncovered a fourth, unrelated bug: `makensis` now ran but rejected
+`packaging/windows/ofin.nsi` at line 76 — `ExecWait "taskkill ... " 0`.
+`ExecWait`'s optional second argument must be a *user variable* to receive
+the return code (e.g. `$0`), not a literal integer; `0` isn't a valid
+variable reference, so NSIS printed its usage error and aborted. Fixed by
+dropping the unused return-code argument on both `ExecWait` calls (lines
+76-77) — the script only uses these to best-effort-kill running processes
+before uninstall and never inspected the exit code anyway.
+
 **Testing note:** the workflow only triggers on `v*` tags or manual dispatch.
 Manually dispatching on `main` (as done here, since no tag was ready) makes
 `GITHUB_REF_NAME` = `"main"`, which `build-deb.sh`'s `dpkg-deb` step correctly
