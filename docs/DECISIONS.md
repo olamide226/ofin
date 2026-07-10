@@ -6,6 +6,31 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-019 — Scope contents:write to the release job only, not the whole repo (2026-07-10)
+
+**Decision:** Add `permissions: { contents: write }` to just the `release`
+job in `release.yml`, rather than flipping the repo's default workflow
+token permission (Settings > Actions > General) to read-write for every job.
+
+**Context:** First real `v0.2.0` tag push (all fixes from ADR-018 verified
+via `workflow_dispatch` beforehand) built all three installers successfully,
+then `release` failed: `softprops/action-gh-release@v1` got
+`GitHub release failed with status: 403` on every retry, aborting with
+"Too many retries." `gh api repos/olamide226/ofin/actions/permissions/workflow`
+confirmed `default_workflow_permissions: "read"` — the default `GITHUB_TOKEN`
+had no write access to create a release.
+
+**Alternatives considered:** repo-wide "Read and write permissions" toggle.
+Rejected — it would grant write access to every job in every workflow in the
+repo (least-privilege violation) when only the one job that calls the
+Releases API needs it.
+
+**Note:** the `v0.2.0` tag itself still points at the pre-fix commit; tags
+don't move with `main`. Re-running the existing failed run would reuse that
+commit's workflow file and fail identically — needs either the tag
+re-pointed at the fixed commit and re-pushed, or a fresh tag (e.g. `v0.2.1`)
+cut once the fix lands.
+
 ## ADR-018 — Commit the built data/ofin.db to git; release CI packages it directly rather than rebuilding it (2026-07-08)
 
 **Decision:** Carve a `!data/ofin.db` exception into `.gitignore`'s `*.db`
