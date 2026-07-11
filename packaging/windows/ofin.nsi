@@ -45,14 +45,18 @@ Section "Install"
   SetOutPath "$INSTDIR\llama"
   File "bin\llama\*.*"
 
-  ; Corpus DB + embedding model — staged here, copied to the data dir by
-  ; launcher.bat on first run.
+  ; Corpus DB + embedding model — staged here, re-seeded into the data dir
+  ; by launcher.bat whenever VERSION differs from what's already installed
+  ; (not just on first run — see launcher.bat).
   SetOutPath "$INSTDIR\data"
   File "bin\ofin.db"
   SetOutPath "$INSTDIR\models-dev"
   File "bin\bge-small-en-v1.5-f16.gguf"
 
   SetOutPath "$INSTDIR"
+  FileOpen $0 "$INSTDIR\VERSION" w
+  FileWrite $0 "${VERSION}"
+  FileClose $0
 
   ; Start Menu shortcut
   CreateDirectory "$SMPROGRAMS\${PRODUCT}"
@@ -85,6 +89,7 @@ Section "Uninstall"
   Delete "$INSTDIR\launcher.bat"
   Delete "$INSTDIR\uninstall.exe"
   Delete "$INSTDIR\metadata.json"
+  Delete "$INSTDIR\VERSION"
   RMDir /r "$INSTDIR\llama"
   Delete "$INSTDIR\data\ofin.db"
   Delete "$INSTDIR\models-dev\bge-small-en-v1.5-f16.gguf"

@@ -7,14 +7,29 @@ cd /d "%~dp0"
 
 set "OFIN_DATA=%LOCALAPPDATA%\Ofin"
 
-:: First run: seed the data directory (corpus DB + embedding model).
-if not exist "%OFIN_DATA%\data\ofin.db" (
-    echo First run - setting up...
-    mkdir "%OFIN_DATA%\data" 2>nul
-    mkdir "%OFIN_DATA%\model" 2>nul
-    mkdir "%OFIN_DATA%\models-dev" 2>nul
+:: Seed (or re-seed on upgrade) the corpus DB + embedding model. Gated on a
+:: version stamp, not just "does ofin.db exist" -- otherwise a corpus fix
+:: shipped in a later version would never reach an already-installed user.
+:: The 1.9 GB chat model is untouched here: it's fetched once, separately,
+:: and doesn't change between versions.
+mkdir "%OFIN_DATA%\data" 2>nul
+mkdir "%OFIN_DATA%\model" 2>nul
+mkdir "%OFIN_DATA%\models-dev" 2>nul
+
+set "BUNDLED_VERSION="
+if exist "VERSION" set /p BUNDLED_VERSION=<"VERSION"
+set "INSTALLED_VERSION="
+if exist "%OFIN_DATA%\.version" set /p INSTALLED_VERSION=<"%OFIN_DATA%\.version"
+
+set "NEED_SEED=0"
+if not "%BUNDLED_VERSION%"=="%INSTALLED_VERSION%" set "NEED_SEED=1"
+if not exist "%OFIN_DATA%\data\ofin.db" set "NEED_SEED=1"
+
+if "%NEED_SEED%"=="1" (
+    echo Setting up / updating Ofin data...
     copy /Y "data\ofin.db" "%OFIN_DATA%\data\ofin.db" >nul
     copy /Y "models-dev\bge-small-en-v1.5-f16.gguf" "%OFIN_DATA%\models-dev\bge-small-en-v1.5-f16.gguf" >nul
+    >"%OFIN_DATA%\.version" echo %BUNDLED_VERSION%
 )
 
 :: Start Òfin. The web server shows a first-launch download page if the

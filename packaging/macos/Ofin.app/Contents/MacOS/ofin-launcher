@@ -10,11 +10,18 @@ DATA="$HOME/Library/Application Support/Ofin"
 # <its-dir>/llama/). llama-server's @loader_path rpath finds the sibling
 # dylibs. Fully self-contained: no Homebrew, no system llama.cpp.
 
-# First run: set up the data directory (corpus DB + embedding model).
-if [ ! -d "$DATA" ]; then
-  mkdir -p "$DATA/data" "$DATA/model" "$DATA/models-dev"
+# Seed (or re-seed on upgrade) the corpus DB + embedding model. Gated on a
+# version stamp, not just "does the data dir exist" — otherwise a corpus fix
+# shipped in a later version would never reach an already-installed user.
+# The 1.9 GB chat model is untouched here: it's fetched once, separately,
+# and doesn't change between versions.
+mkdir -p "$DATA/data" "$DATA/model" "$DATA/models-dev"
+BUNDLED_VERSION="$(cat "$DIR/VERSION" 2>/dev/null || true)"
+INSTALLED_VERSION="$(cat "$DATA/.version" 2>/dev/null || true)"
+if [ "$BUNDLED_VERSION" != "$INSTALLED_VERSION" ] || [ ! -f "$DATA/data/ofin.db" ]; then
   cp "$DIR/ofin.db" "$DATA/data/ofin.db"
   cp "$DIR/bge-small-en-v1.5-f16.gguf" "$DATA/models-dev/bge-small-en-v1.5-f16.gguf"
+  echo "$BUNDLED_VERSION" > "$DATA/.version"
 fi
 
 # Start Òfin. The web server shows a first-launch download page if the

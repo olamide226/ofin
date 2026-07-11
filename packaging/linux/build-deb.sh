@@ -53,6 +53,7 @@ cp "$LLAMA_DIR/llama-server" "$STAGING/usr/lib/ofin/llama/"
 cp "$LLAMA_DIR/"*.so* "$STAGING/usr/lib/ofin/llama/" 2>/dev/null || true
 cp "$OFIN_DB" "$STAGING/usr/share/ofin/ofin.db"
 cp "$EMBED_MODEL" "$STAGING/usr/share/ofin/bge-small-en-v1.5-f16.gguf"
+echo "$VERSION" > "$STAGING/usr/share/ofin/VERSION"
 cp "$ICON" "$STAGING/usr/share/icons/hicolor/256x256/apps/ofin.png"
 cp "$HERE/usr/share/applications/ofin.desktop" "$STAGING/usr/share/applications/ofin.desktop"
 
@@ -60,10 +61,18 @@ cp "$HERE/usr/share/applications/ofin.desktop" "$STAGING/usr/share/applications/
 cat > "$STAGING/usr/bin/ofin-launch" << 'LAUNCHER'
 #!/bin/bash
 DATA="$HOME/.local/share/ofin"
-if [ ! -f "$DATA/data/ofin.db" ]; then
-  mkdir -p "$DATA/data" "$DATA/model" "$DATA/models-dev"
+# Seed (or re-seed on upgrade) the corpus DB + embedding model. Gated on a
+# version stamp, not just "does ofin.db exist" — otherwise a corpus fix
+# shipped in a later version would never reach an already-installed user.
+# The 1.9 GB chat model is untouched here: it's fetched once, separately,
+# and doesn't change between versions.
+mkdir -p "$DATA/data" "$DATA/model" "$DATA/models-dev"
+BUNDLED_VERSION="$(cat /usr/share/ofin/VERSION 2>/dev/null || true)"
+INSTALLED_VERSION="$(cat "$DATA/.version" 2>/dev/null || true)"
+if [ "$BUNDLED_VERSION" != "$INSTALLED_VERSION" ] || [ ! -f "$DATA/data/ofin.db" ]; then
   cp /usr/share/ofin/ofin.db "$DATA/data/ofin.db"
   cp /usr/share/ofin/bge-small-en-v1.5-f16.gguf "$DATA/models-dev/bge-small-en-v1.5-f16.gguf"
+  echo "$BUNDLED_VERSION" > "$DATA/.version"
 fi
 # Start Òfin. Web server shows a download page if the model is missing.
 /usr/lib/ofin/ofin serve --data-dir "$DATA" &

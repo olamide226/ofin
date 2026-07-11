@@ -6,6 +6,38 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-021 — Re-seed the bundled corpus DB + embedding model on version change, not just first install (2026-07-11)
+
+**Decision:** Stamp a `VERSION` file into every package (macOS `Resources/`,
+Windows `$INSTDIR`, Linux `/usr/share/ofin/`), and have each platform's
+launcher compare it against a `.version` marker in the user's data
+directory. Re-copy `ofin.db` and the embedding GGUF whenever they differ (or
+`ofin.db` is simply missing), not only when the data directory doesn't
+exist yet.
+
+**Context:** Asked directly: "on app updates, do we check if the model
+exists before trying to download afresh?" The 1.9 GB chat model already did
+— `download.Model()` (`engine/internal/download/model.go:29`) is idempotent
+on `os.Stat` + size check, and lives in a per-user data dir outside the app
+bundle, so app updates never re-trigger that download. But all three
+launchers gated the *smaller* bundled files (`ofin.db`, the embedding model)
+on a one-time "does the data dir exist" check:
+`ofin-launcher` (`[ ! -d "$DATA" ]`), `launcher.bat`
+(`if not exist ...\data\ofin.db`), `ofin-launch`
+(`[ ! -f "$DATA/data/ofin.db" ]`). Once true from the first install, that
+copy never ran again on any later launch — meaning a future corpus fix
+(tracked gaps: ECA s.15, T9 reconstructions, `corpus/labour/sources.md`)
+shipped in a new version would never reach an already-installed user who
+upgrades in place; only a fresh install or manually deleting the data dir
+would pick it up.
+
+**Verified:** isolated shell repro of the exact seeding logic — fresh
+install seeds, same-version relaunch skips (no wasted re-copy of the ~130 MB
+embedding model on every launch), version bump re-seeds and picks up the
+new `ofin.db` content. Windows' `FileOpen`/`FileWrite` NSIS instructions and
+the batch comparison logic could not be tested locally (no `makensis` on
+this machine) — verify via a CI dispatch run before shipping.
+
 ## ADR-020 — Apply --data-dir before the flag package has actually parsed it (2026-07-11)
 
 **Decision:** Move the `if dataDir != "" { ... }` override block in

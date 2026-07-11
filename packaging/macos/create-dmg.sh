@@ -45,6 +45,7 @@ cp "$OFIN_BIN" "$RES/ofin-darwin-arm64"
 cp "$EMBED_MODEL" "$RES/bge-small-en-v1.5-f16.gguf"
 cp "$OFIN_DB" "$RES/ofin.db"
 cp "$ICON" "$RES/ofin.icns"
+echo "$VERSION" > "$RES/VERSION"
 
 # Bundle the official llama.cpp: llama-server + every dylib it needs.
 cp "$LLAMA_DIR/llama-server" "$RES/llama/"
