@@ -34,67 +34,71 @@ Built for the [Africa Deep Tech Challenge 2026](https://adtc-2026.devpost.com)
 | Disk | ~3 GB (model 1.9 GB GGUF + 2.8 MB SQLite DB) |
 | CPU | 4 vCPU (x86 or ARM) |
 | Network | **Zero** at runtime — fully offline |
-| OS | Linux (target) or macOS (dev). **Windows: use WSL2** — see [docs/WINDOWS.md](docs/WINDOWS.md) |
+| OS | macOS (Apple Silicon), Windows 10/11, or Linux (x86_64) — native installers for all three |
 
 Performance on the 4 vCPU / 7.6 GB audit profile: **34.3 TPS** generation
 (S_perf capped at 15 — full marks), warm RAG+verify ~143s, offline check PASS.
 
 ## Quick start
 
-### Prerequisites
+The easiest way to run Òfin is the native installer for your platform — each
+one bundles llama.cpp, the retrieval database, and the embedding model, so
+there's nothing else to install. The 1.9 GB chat model downloads once on
+first launch (progress shown in the browser), then Òfin runs fully offline.
 
-- **llama.cpp** — download `llama-server` and `llama-cli` from
-  [llama.cpp releases](https://github.com/ggml-org/llama.cpp/releases)
-  and place them in your PATH.
-- `libsqlite3-dev` on Linux, or Xcode CLI tools on macOS
-  (needed for the pre-built binary's SQLite dependency).
-- **Python** is NOT needed — the repo ships a pre-built `data/ofin.db`.
-  Only install Python + `GOOGLE_API_KEY` if rebuilding the corpus from scratch.
+Grab the latest installer from
+[GitHub Releases](https://github.com/olamide226/ofin/releases/latest).
 
-### 1. Download the binary (no Go needed)
+### macOS (Apple Silicon)
 
-Get the latest binary from [GitHub Releases](https://github.com/olamide226/ofin/releases):
+Open `Ofin-<version>-darwin-arm64.dmg`, drag **Òfin** into Applications, then
+open it from Launchpad. First launch shows the model-download page in your
+browser; after that, just reopen the app.
+
+### Windows
+
+Run `Ofin-Setup-<version>.exe` and follow the installer. Òfin appears in the
+Start Menu; launching it opens the setup page in your browser on first run.
+
+### Linux (.deb — Debian/Ubuntu)
+
+Download the `.deb` from the [latest release](https://github.com/olamide226/ofin/releases/latest)
+page, or fetch it directly:
 
 ```bash
-# Linux x86_64
-curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-linux-x86_64
-chmod +x ofin
-
-# macOS Apple Silicon (ARM64)
-curl -L -o ofin https://github.com/olamide226/ofin/releases/download/v0.1.0/ofin-darwin-arm64
-chmod +x ofin
+curl -L -o ofin.deb "$(curl -s https://api.github.com/repos/olamide226/ofin/releases/latest \
+  | grep -o 'https://[^"]*\.deb')"
+sudo apt install ./ofin.deb     # resolves the one dependency (libc6) automatically
 ```
 
-### 2. Clone the repo and download the model
+Then launch **Òfin** from your applications menu, or run `ofin-launch` from a
+terminal — either opens `http://127.0.0.1:8090` in your browser. First launch
+downloads the chat model; every launch after that is fully offline.
+
+### Other Linux distros, or running the binary directly
+
+Only the `.deb` is packaged today. On other distros — or if you'd rather
+manage the model yourself — build and run the binary directly:
 
 ```bash
 git clone https://github.com/olamide226/ofin.git
 cd ofin
 bash download_model.sh          # → model/ofin-model.gguf (~1.9 GB)
-```
 
-### 3. Ask a question
-
-```bash
-./ofin ask "How much notice should my employer give me after 3 years of service?"
-# or with Pidgin:
-./ofin -pidgin ask "My oga sack me without notice, I don work 4 years. Wetin I fit do?"
-```
-
-### 4. Launch the web UI
-
-```bash
-./ofin serve                    # → http://127.0.0.1:8090
-```
-
-### Building from source (developers only)
-
-```bash
 cd engine
-go build -tags sqlite_fts5 -o bin/ofin ./cmd/ofin
+go build -tags sqlite_fts5 -o bin/ofin ./cmd/ofin   # the sqlite_fts5 tag is required
+cd ..
+
+./engine/bin/ofin ask "How much notice should my employer give me after 3 years of service?"
+./engine/bin/ofin -pidgin ask "My oga sack me without notice, I don work 4 years. Wetin I fit do?"
+./engine/bin/ofin serve         # → http://127.0.0.1:8090
 ```
 
-The `sqlite_fts5` build tag is **required**.
+You'll also need `llama-server`/`llama-cli` from
+[llama.cpp releases](https://github.com/ggml-org/llama.cpp/releases) on your
+PATH, and `libsqlite3-dev` (Linux) or Xcode CLI tools (macOS). Python is NOT
+needed for any of the above — the repo ships a pre-built `data/ofin.db`.
+Only install Python + `GOOGLE_API_KEY` if rebuilding the corpus from scratch.
 
 The web UI is a single `go:embed` HTML file — no build toolchain, no npm, no
 CDN. It works fully offline.
@@ -129,6 +133,7 @@ ofin/
 │   │   ├── llama/            # llama.cpp HTTP client (chat + embeddings)
 │   │   └── web/              # go:embed single-file web UI + SSE handler
 │   └── bin/                  # Compiled binary (gitignored)
+├── packaging/                # Native installers: macOS .dmg, Windows .exe (NSIS), Linux .deb
 ├── pipeline/                 # Build-time Python (statute chunker, SAC enrichment, ingest)
 ├── eval/
 │   ├── golden/               # Golden evaluation sets (90 + 25 Pidgin Qs)
