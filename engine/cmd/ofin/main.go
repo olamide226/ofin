@@ -56,15 +56,6 @@ func main() {
 	port := flag.Int("port", 8090, "web UI port (serve)")
 	flag.Parse()
 
-	// If --data-dir is set, resolve all paths relative to it.
-	if dataDir != "" {
-		if cfg.ChatModel == app.DefaultConfig(root).ChatModel {
-			cfg.ChatModel = filepath.Join(dataDir, "model", "ofin-model.gguf")
-		}
-		cfg.DBPath = filepath.Join(dataDir, "data", "ofin.db")
-		cfg.EmbedModel = filepath.Join(dataDir, "models-dev", "bge-small-en-v1.5-f16.gguf")
-	}
-
 	args := flag.Args()
 	if len(args) < 1 {
 		fmt.Fprintln(os.Stderr, "usage: ofin [flags] ask|retrieve|serve|stop [question]")
@@ -72,13 +63,26 @@ func main() {
 	}
 	cmd := args[0]
 
-	// Go's flag package stops at the first positional, so `ofin ask -json "q"`
-	// would silently ignore -json. Re-parse whatever followed the subcommand.
+	// Go's flag package stops at the first positional, so `ofin serve
+	// --data-dir X` (the packaged launcher's invocation) would silently
+	// leave --data-dir unparsed — dataDir would still be "" below, and a
+	// packaged install with no repo root found would resolve models under
+	// "/model" instead of the app data dir. Re-parse whatever followed the
+	// subcommand before dataDir is read.
 	if len(args) > 1 {
 		if err := flag.CommandLine.Parse(args[1:]); err != nil {
 			os.Exit(2)
 		}
 		args = append([]string{cmd}, flag.Args()...)
+	}
+
+	// If --data-dir is set, resolve all paths relative to it.
+	if dataDir != "" {
+		if cfg.ChatModel == app.DefaultConfig(root).ChatModel {
+			cfg.ChatModel = filepath.Join(dataDir, "model", "ofin-model.gguf")
+		}
+		cfg.DBPath = filepath.Join(dataDir, "data", "ofin.db")
+		cfg.EmbedModel = filepath.Join(dataDir, "models-dev", "bge-small-en-v1.5-f16.gguf")
 	}
 
 	if *draft {

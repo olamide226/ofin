@@ -6,6 +6,43 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-020 — Apply --data-dir before the flag package has actually parsed it (2026-07-11)
+
+**Decision:** Move the `if dataDir != "" { ... }` override block in
+`engine/cmd/ofin/main.go` to run *after* the subcommand re-parse step, not
+before it.
+
+**Context:** First real-world install report on the published `v0.2.0` .dmg:
+"Download failed: creating model directory: mkdir /model: read-only file
+system." Traced (with a live repro, not just reading) to two compounding
+bugs:
+1. `packaging/macos/Ofin.app/Contents/MacOS/ofin-launcher` invokes
+   `ofin-darwin-arm64 serve --data-dir "$HOME/Library/Application
+   Support/Ofin"` — subcommand first. Go's `flag` package stops parsing at
+   the first positional argument (`serve`), so the *first* `flag.Parse()`
+   call in `main()` never sees `--data-dir`; `dataDir` is still `""` when
+   the override block ran. A second parse of the trailing args already
+   existed (`main.go`, added earlier for `ofin ask -json "q"`) and correctly
+   picks up `--data-dir`, but it ran *after* the override block had already
+   executed and no-opped — the override was checking the wrong parse pass.
+2. With `dataDir` empty, `cfg.ChatModel` fell through to
+   `DefaultConfig(root)`, and `repoRoot()` — which looks for `metadata.json`
+   walking up from `os.Getwd()` — never finds it inside the packaged
+   `.app` (only `ofin-darwin-arm64`, the GGUF, `ofin.db`, and llama binaries
+   are copied into `Resources/`, not `metadata.json`), so it falls back to
+   the original `os.Getwd()`. A GUI-launched macOS app's initial working
+   directory is `/` (LaunchServices doesn't inherit a shell cwd), so
+   `root` = `/` and `ChatModel` = `/model/ofin-model.gguf` — a build-sealed,
+   read-only system volume on modern macOS. Exact match to the report.
+
+**Verified:** built the fixed binary and ran
+`ofin serve --data-dir /tmp/ofin-datadir-test` from `cwd=/` (replicating the
+launcher's exact invocation) — `/tmp/ofin-datadir-test/model/` was created
+correctly instead of `/model`.
+
+**Follow-up needed:** the published `v0.2.0` release still ships the buggy
+binary; a new tag (e.g. `v0.2.1`) is needed once this lands on `main`.
+
 ## ADR-019 — Scope contents:write to the release job only, not the whole repo (2026-07-10)
 
 **Decision:** Add `permissions: { contents: write }` to just the `release`
