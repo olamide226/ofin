@@ -6,6 +6,76 @@ decision, the alternatives considered, and why. This log feeds REPORT.md
 
 ---
 
+## ADR-023 — Close the temp file before renaming it into place (Windows download lock) (2026-07-15)
+
+**Decision:** In `engine/internal/download/model.go:Model`, explicitly
+`f.Close()` the partially-written `.tmp` file before calling
+`os.Rename(tmpPath, destPath)`, instead of relying on `defer f.Close()`
+(which only runs when `Model` returns — i.e. *after* the rename already
+ran). Also wrap the rename in a bounded retry (5 attempts, 300ms·attempt
+backoff) for resilience against a transient external lock (e.g. an
+antivirus scan of the freshly-written 1.9 GB `.gguf`).
+
+**Context:** Windows user reported, at 100% download: "Download failed:
+installing model: rename ...\ofin-model.gguf.tmp ...\ofin-model.gguf: The
+process cannot access the file because it is being used by another
+process." Asked whether a double-install could cause it. It couldn't —
+the real cause is `model.go:95-99` (pre-fix): `f, err :=
+os.OpenFile(tmpPath, ...)` followed by `defer f.Close()`, then later
+`os.Rename(tmpPath, destPath)` at the old line 131, all inside the same
+function — so the rename always ran while `f` was still open. POSIX
+`rename(2)` permits renaming a file you have open (macOS/Linux never hit
+this); Windows' `MoveFileEx` does not — it reports "used by another
+process" without distinguishing a foreign handle from the calling
+process's own lingering one. This affects every Windows user on every
+fresh install, not just repeat installs; the reporter's double-install
+was circumstantial, not causal.
+
+**Verified:** `go build ./...` and `go vet ./internal/download/...`
+clean. Could not reproduce Windows' open-handle rename failure locally
+(macOS `rename` succeeds regardless of open handles, so this exact bug is
+unreproducible off Windows) — reasoning about the fix is direct code
+inspection (the defer-vs-rename ordering is unambiguous), not simulation;
+recommend confirming on a real Windows box or CI before the next tag.
+
+## ADR-022 — Declare libssl3/libgomp1 as .deb Depends; surface llama-server's stderr on startup failure (2026-07-13)
+
+**Decision:** Add `libgomp1, libssl3 | libssl3t64` to
+`packaging/linux/DEBIAN/control`'s `Depends:` line (previously only
+`libc6 (>= 2.31)`). Also stop discarding llama-server's stderr in
+`engine/internal/llama/client.go:EnsureRunning` — capture it into a
+mutex-guarded buffer and include its last lines in the error returned on
+both early-exit and the 90s health-check timeout.
+
+**Context:** Linux users reported "Model downloaded but the engine failed
+to start: llama-server on port 8091 not healthy after 90s" at 100%
+download (WhatsApp report, 2026-07-12). Downloaded the exact bundled
+`llama-b9905-bin-ubuntu-x64.tar.gz` release used by
+`.github/workflows/release.yml:164-165` and inspected the ELF `NEEDED`
+entries of the shipped binaries directly: `llama-server` →
+`libllama-server-impl.so` → `libssl.so.3` + `libcrypto.so.3`, and
+`libggml-cpu-x64.so` (the runtime CPU-dispatch backend, loaded via dlopen
+by `libggml.so`) → `libgomp.so.1`. Neither `libssl3`/`libssl3t64` nor
+`libgomp1` was declared in `DEBIAN/control`. Reproduced end-to-end in a
+`debian:12-slim` container (`docker run --platform linux/amd64`): running
+the bundled `llama-server` there fails with
+`error while loading shared libraries: libssl.so.3: cannot open shared
+object file: No such file or directory` — the exact failure mode, since
+`engine/internal/llama/client.go` set `s.cmd.Stderr = nil` and threw that
+message away, leaving only the generic 90s timeout on the setup page.
+After `apt-get install libgomp1 libssl3` (matching the new `Depends`),
+`./llama-server --version` runs clean. Root cause confirmed, not a
+hypothesis.
+
+**Alternatives considered:** Rebuild llama.cpp ourselves without
+`LLAMA_CURL`/TLS to drop the OpenSSL dependency entirely — rejected for
+now as a much larger lift (own build pipeline vs. bundling the official
+release) than declaring two more `Depends`.
+
+**Verified:** `go build ./...` and `go vet ./internal/llama/...` clean.
+Reproduced the exact failure and the fix in a `debian:12-slim` Docker
+container (see Context) — confirmed end-to-end, not simulated.
+
 ## ADR-021 — Re-seed the bundled corpus DB + embedding model on version change, not just first install (2026-07-11)
 
 **Decision:** Stamp a `VERSION` file into every package (macOS `Resources/`,

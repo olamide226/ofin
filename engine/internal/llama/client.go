@@ -15,6 +15,7 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+	"sync"
 	"time"
 )
 
@@ -93,8 +94,14 @@ func (s *Server) EnsureRunning() error {
 	}
 	args = append(args, s.ExtraArgs...)
 	s.cmd = exec.Command(llamaServerPath(), args...)
+	// Capture stderr so a startup failure (missing shared library, bad model
+	// file, port conflict, ...) is diagnosable instead of a bare "not healthy"
+	// timeout — llama-server logs its fatal error there before exiting.
+	// Guarded by a mutex: exec.Cmd copies into this writer from its own
+	// goroutine, concurrently with reads below while we're still polling.
+	stderr := &syncBuffer{}
 	s.cmd.Stdout = nil
-	s.cmd.Stderr = nil
+	s.cmd.Stderr = stderr
 	if err := s.cmd.Start(); err != nil {
 		return fmt.Errorf("starting llama-server: %w", err)
 	}
@@ -102,16 +109,51 @@ func (s *Server) EnsureRunning() error {
 	if s.pidFile != "" {
 		os.WriteFile(s.pidFile, []byte(fmt.Sprint(s.cmd.Process.Pid)), 0644)
 	}
-	go s.cmd.Wait() // reap if it dies; health checks are the real signal
+	exited := make(chan error, 1)
+	go func() { exited <- s.cmd.Wait() }()
 
 	deadline := time.Now().Add(90 * time.Second)
 	for time.Now().Before(deadline) {
 		if s.Healthy() {
 			return nil
 		}
+		select {
+		case <-exited:
+			return fmt.Errorf("llama-server on port %d exited during startup: %s", s.Port, lastLines(stderr.String(), 5))
+		default:
+		}
 		time.Sleep(300 * time.Millisecond)
 	}
-	return fmt.Errorf("llama-server on port %d not healthy after 90s", s.Port)
+	return fmt.Errorf("llama-server on port %d not healthy after 90s: %s", s.Port, lastLines(stderr.String(), 5))
+}
+
+// lastLines returns the last n non-empty lines of s, for compact error
+// messages that surface llama-server's own fatal log line to the user.
+func lastLines(s string, n int) string {
+	lines := strings.Split(strings.TrimSpace(s), "\n")
+	if len(lines) > n {
+		lines = lines[len(lines)-n:]
+	}
+	return strings.Join(lines, " | ")
+}
+
+// syncBuffer is a bytes.Buffer safe for concurrent Write (from exec.Cmd's
+// output-copying goroutine) and String (from the polling loop) calls.
+type syncBuffer struct {
+	mu  sync.Mutex
+	buf bytes.Buffer
+}
+
+func (b *syncBuffer) Write(p []byte) (int, error) {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	return b.buf.Write(p)
+}
+
+func (b *syncBuffer) String() string {
+	b.mu.Lock()
+	defer b.mu.Unlock()
+	return b.buf.String()
 }
 
 // pidFilePath returns the expected PID file path for a given port.

@@ -2,7 +2,7 @@ Package: ofin
 Version: 0.2.0
 Architecture: amd64
 Maintainer: Ruach Tech <dev@ruac.tech>
-Depends: libc6 (>= 2.31)
+Depends: libc6 (>= 2.31), libgomp1, libssl3 | libssl3t64
 Section: utils
 Priority: optional
 Homepage: https://github.com/olamide226/ofin

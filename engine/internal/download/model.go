@@ -96,7 +96,6 @@ func Model(destPath string, onProgress Progress) (int64, error) {
 	if err != nil {
 		return 0, fmt.Errorf("creating temp file: %w", err)
 	}
-	defer f.Close()
 
 	// Copy with progress.
 	buf := make([]byte, 256*1024) // 256 KB buffer
@@ -105,6 +104,7 @@ func Model(destPath string, onProgress Progress) (int64, error) {
 		n, readErr := resp.Body.Read(buf)
 		if n > 0 {
 			if _, writeErr := f.Write(buf[:n]); writeErr != nil {
+				f.Close()
 				return 0, fmt.Errorf("writing temp file: %w", writeErr)
 			}
 			downloaded += int64(n)
@@ -116,6 +116,7 @@ func Model(destPath string, onProgress Progress) (int64, error) {
 			break
 		}
 		if readErr != nil {
+			f.Close()
 			return 0, fmt.Errorf("reading response: %w", readErr)
 		}
 	}
@@ -123,14 +124,27 @@ func Model(destPath string, onProgress Progress) (int64, error) {
 	// Verify size.
 	totalBytes := offset + downloaded
 	if totalBytes < MinBytes {
+		f.Close()
 		return 0, fmt.Errorf("downloaded file too small (%d bytes, expected ≥%d) — network interrupted? delete %s and retry",
 			totalBytes, MinBytes, destPath)
 	}
 
-	// Atomic rename.
-	if err := os.Rename(tmpPath, destPath); err != nil {
-		return 0, fmt.Errorf("installing model: %w", err)
+	// Close before renaming: on Windows, renaming a file this process still
+	// has open fails with "being used by another process" — the OS doesn't
+	// distinguish our own lingering handle from a foreign one.
+	if err := f.Close(); err != nil {
+		return 0, fmt.Errorf("closing temp file: %w", err)
 	}
 
-	return downloaded, nil
+	// Atomic rename, with retries: on Windows a brief handle from an
+	// antivirus scan of the just-written .gguf can transiently hold the
+	// same rename we've already made safe against our own handle.
+	var renameErr error
+	for attempt := 0; attempt < 5; attempt++ {
+		if renameErr = os.Rename(tmpPath, destPath); renameErr == nil {
+			return downloaded, nil
+		}
+		time.Sleep(time.Duration(attempt+1) * 300 * time.Millisecond)
+	}
+	return 0, fmt.Errorf("installing model: %w", renameErr)
 }
